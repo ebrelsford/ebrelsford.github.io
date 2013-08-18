@@ -1,0 +1,40 @@
+---
+layout: default
+title: Eric Brelsford
+---
+
+<div id="home">
+
+    <section>
+        <h2>About</h2>
+        <p>
+            I'm a programmer. I make maps and other data-centric web things.
+        </p>
+        <p>
+            In progress:
+            <ul>
+                <li>
+                    Revamp of <a href="http://farmingconcrete.org/">Farming Concrete</a> to accept data for farmers and gardeners outside of NYC.
+                </li>
+                <li>
+                    Continuous tweaks to <a href="http://596acres.org">596 Acres</a>
+                </li>
+                <li>
+                    Finishing phase one of <a href="http://groundedinphilly.org">Grounded in Philly</a>
+                </li>
+            </ul>
+        </p>
+        <p>
+            Learn more at my <a href="https://github.com/ebrelsford">github account</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Blog Posts</h2>
+        <ul class="posts">
+        {% for post in site.posts %}
+            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </section>
+</div>
