@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Lecture 2 | Class 2 | Methods 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href="http://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet" type="text/css">
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+        <![endif]-->
+
+        <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+        <!--[if lte IE 8]>
+            <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
+        <![endif]-->
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+        <script src="bids.geojson"></script>
+        <script src="js/map.js"></script>
+        <script src="js/pig.js"></script>
+
+        <script src="bids.geojson"></script>
+        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.standalone.js'></script>
+
+        <style type='text/css'>
+          .wax-legend .legend-title {
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 90%;
+            }
+          .wax-legend .legend-scale ul {
+            margin: 0;
+            padding: 0;
+            float: left;
+            list-style: none;
+            }
+          .wax-legend .legend-scale ul li {
+            display: block;
+            float: left;
+            width: 25px;
+            margin-bottom: 6px;
+            text-align: center;
+            font-size: 80%;
+            list-style: none;
+            }
+          .wax-legend ul.legend-labels li span {
+            display: block;
+            float: left;
+            height: 15px;
+            width: 25px;
+            }
+          .wax-legend .legend-source {
+            font-size: 70%;
+            color: #787878;
+            clear: both;
+            }
+          .wax-legend a {
+            color: #777;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                var map = L.mapbox.map('building-age-map', 'nilo89.map-d7ckxovw', {
+                    minZoom: 13,
+                    maxZoom: 16,
+                    maxBounds: [[40.5646,-74.05],[40.7448,-73.8]]
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="slide">
+            <h1>Making maps with TileMill</h1>
+        </div>
+
+        <!--
+
+        Last week we talked about making maps using Google Maps and Fusion Tables.
+        Over the next few weeks we will look at some newer and more advanced tools
+        for making shareable maps. While these tools can be more complicated to use,
+        you have more control over the end product.
+
+        Be aware that both of these services also cost money if you use too much 
+        space or have too many views. While this is certainly a limitation, I have
+        used them for a number of projects with no problems. I can also likely get
+        you different restrictions since you are students.
+
+        While both cost money, both use, create, and support open source software
+        and open projects such as OpenStreetMap. I am reluctant to rely heavily on
+        any one company or platform, but if my choices are Google or one of these
+        companies, I would definitely go with the latter.
+
+        Using CartoDB and TileMill, it's possible to quickly create maps that will
+        work and scale well.
+
+        -->
+
+        <div class="slide">
+            <div id="building-age-map" style="width: 100%; height: 550px;"></div>
+            <a href="http://bklynr.com/block-by-block-brooklyns-past-and-present/">
+                (bklynr)
+            </a>
+        </div>
+
+        <!-- How does this work? Remember last week? -->
+
+        <!-- Begin anatomy of a web map -->
+
+        <div id="mechanics" class="slide">
+            <h2>Anatomy of a web map</h2>
+        </div>
+
+        <div class="slide">
+            <p>1. Start with some data</p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/database.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/data.png" />
+        </div>
+
+        <div class="slide">
+            <p>2. Make or reuse base tiles</p>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <p>Street, water and land data</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <p>Street, water and land data &rarr;</p>
+            </div>
+            <div class="right">
+                <img class="small" src="img/tile.png" />
+            </div>
+        </div>
+
+        <div class="slide">
+            <p>3. Overlay data</p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/bids.png" />
+        </div>
+
+        <div class="slide">
+            <p>4. Mix with some html, css, and javascript</p>
+        </div>
+
+        <div id="map-all-together" class="slide">
+            <div id="final-map"></div>
+        </div>
+        <!-- End anatomy of a web map -->
+
+
+        <!--
+
+        Base layer, overlay layer, etc. Where do CartoDB and TileMill come in?
+
+        You can create base layers and overlay layers with both services. The
+        process goes something like this:
+
+         * Open a file, such as a shapefile.
+         * Pick the data you want out of the shapefile.
+         * Style your map.
+         * Add interactions.
+         * Put it online / publish it.
+
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/tilemill-logo.png" />
+        </div>
+
+        <div class="slide">
+            <p>Feels kinda-sorta like a traditional GIS application.</p>
+        </div>
+
+        <!--
+        You can browse for and add data files much like in most desktop GIS apps.
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/tilemill-browse.png" />
+        </div>
+
+        <!--
+        And you create layers out of these data files. (Order matters - those on 
+        top will be drawn on top of those below them.)
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/tilemill-layers.png" />
+        </div>
+
+        <!--
+        The data that you add is made up of features with attributes.
+        -->
+        <div class="slide">
+            <img src="img/tilemill-featuredata.png" />
+        </div>
+
+        <!--
+        And it's pretty easy to make an ugly-looking map.
+        -->
+        <div class="slide">
+            <img class="small" src="img/tilemill-basicmap.png" />
+        </div>
+
+        <!--
+        Two notes:
+
+        1. No export as .shp. TileMill is all about *tiles*.
+        2. Upload!
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/tilemill-export.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/tilemill-uploaded.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/tilemill-interactivity.png" />
+        </div>
+
+
+        <!--
+
+        Let's look at an example using TileMill.
+
+        (Switch to TileMill, get started with something, up to needing to style.)
+
+        -->
+
+
+        <!-- 
+
+        Intro to CartoCSS 
+
+        Okay, styling is one area where the geoweb bears little resemblence to 
+        traditional GIS. To style your map with either TileMill or CartoDB, we use 
+        a simple language called CartoCSS. 
+
+        -->
+
+        <div class="slide">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/carto-github.png" />
+            <a href="https://github.com/mapbox/carto">(open source)</a>
+        </div>
+
+        <!--
+
+        Open source doesn't mean much on its own, but CartoCSS is actually used by
+        other projects that we'll be talking about:
+
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/osm.png" />
+            <img class="small" src="img/cartodb.png" />
+        </div>
+
+        <!--
+        
+        Part of why the geoweb community is so invested in CartoCSS is that CartoCSS
+        speaks to the renderer that many geoweb projects depend on, Mapnik.
+
+        Mapnik is a piece of software that takes your data and turns it into map 
+        tiles.
+
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/mapnik.png" />
+        </div>
+
+        <!--
+
+        You used to have to tell mapnik how to style your tiles through a 
+        cumbersome series of XML files. Here is a very small excerpt from OSM's
+        style files. This goes on for thousands of lines.
+
+        -->
+
+        <div class="slide">
+            <img src="img/mapnik-xml.png" />
+        </div>
+
+
+        <!--
+
+        CSS is the styling language of the web. CartoCSS (maybe you noticed from
+        the name!) is inspired by CSS. We will explore CSS more later, but here's a
+        very quick overview...
+
+        -->
+
+        <div class="slide">
+            <h2>CSS</h2>
+        </div>
+
+        <div class="slide">
+            <p>I have <span class="code">thing</span>s on my page.</p>
+            <p>Let's change all <span class="code">thing</span>s' properties using given values.</p>
+        </div>
+
+        <div class="slide">
+            <p>I have <span class="code">thing</span>s on my page.</p>
+            <p>Let's change all <span class="code">thing</span>s' properties using given values.</p>
+            <pre>
+    thing {
+        property: value;
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have <span class="code">thing</span>s on my page.</p>
+            <p>Let's change all <span class="code">thing</span>s' properties using given values.</p>
+            <pre>
+    thing {
+        color: red;
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have <span class="code">thing</span>s on my page.</p>
+            <p>Let's change all <span class="code">thing</span>s' properties using given values.</p>
+            <pre>
+    thing {
+        color: red;
+        height: 25px;
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have <span class="code">thing</span>s on my page.</p>
+            <p>Let's change all <span class="code">thing</span>s' properties using given values.</p>
+            <pre>
+    thing {
+        color: red;
+        height: 25px;
+        width: 25px;
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have a set of <span class="code">thing</span>s with class <span class="code">example-things</span></p>
+            <pre>
+    thing.example-things {
+        property: value;
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have a set of <span class="code">thing</span>s with class <span class="code">example-things</span></p>
+            <pre>
+    thing<span class="highlighted">.</span>example-things {
+        property: value;
+        ...
+    }</pre>
+        </div>
+
+        <!--
+
+        If your thing has a unique id, you can refer to it with #id.
+
+        -->
+
+        <div class="slide">
+            <p>I have a <span class="code">thing</span> with an id of <span class="code">my-thing</span></p>
+            <pre>
+    thing#my-thing {
+        property: value;
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have a <span class="code">thing</span> with an id of <span class="code">my-thing</span></p>
+            <pre>
+    thing<span class="highlighted">#</span>my-thing {
+        property: value;
+        ...
+    }</pre>
+        </div>
+
+        <!--
+
+        More concretely, I have two links (a)s. I can style either or both.
+
+        -->
+
+        <div class="slide">
+            <p>I have two links with class <span class="code">example-links</span>:</p>
+            <a class="example-links" href="#">Link One</a>
+            <a class="example-links" href="#">Link Two</a>
+            <style>
+                a.example-links {
+                    background: lightgreen;
+                }
+            </style>
+            <pre style="margin-top: 50px;">
+    a.example-links {
+        background: lightgreen;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>I have two links, the second with an id of <span class="code">two</span>:</p>
+            <a class="example-links" href="#">Link One</a>
+            <a class="example-links" href="#" id="two">Link Two</a>
+            <style>
+                a#two {
+                    color: blue;
+                }
+            </style>
+            <pre style="margin-top: 50px;">
+    a#two {
+        color: blue;
+    }</pre>
+        </div>
+
+
+        <!--
+
+        Here it is easy to see the impact of the web and of programmers on the 
+        geoweb.  Since CartoCSS is supported by both TileMill and CartoDB, it's 
+        worth going into in some detail here.
+
+        Talk about map, polygon, line, markers, text.
+
+        -->
+
+        <div class="slide">
+            <h2><strong>Carto</strong>CSS</h2>
+        </div>
+
+        <div class="slide">
+            <p>Usually each <strong>layer</strong> gets its own unique id.</p>
+            <p>Layers can have <strong>classes</strong>, and this allows for grouping of style rules.</p>
+        </div>
+
+
+        <!--
+        
+        For example, here we have a layer named bids and style its features by 
+        referring to it as #bids.
+
+        -->
+
+        <div class="slide">
+            <p>We have a layer named <span class="code">bids</span>. We can style it like so:</p>
+            <pre>
+    #bids {
+        line-color: #ae8;
+        line-width: 0.5;
+        polygon-opacity: 1;
+        polygon-fill: #ae8;
+    }</pre>
+        </div>
+
+
+        <!--
+
+        Variables can save you time and make it easier to change styles later.
+        They start with @.
+
+        -->
+
+        <div class="slide">
+            <p>Use <strong>variables</strong> to remove redundancy and improve flexibility:</p>
+            <pre>
+    <span class="highlighted">@bidcolor: #ae8;</span>
+    #bids {
+        line-color: <span class="highlighted">@bidcolor</span>;
+        line-width: 0.5;
+        polygon-opacity: 1;
+        polygon-fill: <span class="highlighted">@bidcolor</span>;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>Mostly you're going to be interested in:</p>
+            <div style="margin-left: 50px;">
+                <p>
+                    <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>,
+                </p>
+                <p>
+                    <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>, and
+                </p>
+                <p>
+                    <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Markers -->
+
+        <!--
+
+        Markers apply to point features.
+
+        -->
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                marker-fill<br />
+                marker-fill-opacity
+            </p>
+            <p>
+                marker-line-color<br />
+                marker-line-opacity
+            </p>
+            <p>
+                marker-height<br /> 
+                marker-width
+            </p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cartocss-marker.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cartocss-marker.png" />
+            <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }</pre>
+        </div>
+
+
+        <!-- Lines -->
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                line-color
+            </p>
+            <p>
+                line-width
+            </p>
+            <p>
+                line-opacity
+            </p>
+        </div>
+
+
+        <!-- Polygons -->
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                polygon-fill
+            </p>
+            <p>
+                polygon-opacity
+            </p>
+        </div>
+
+
+        <!--
+
+        Vary rules by attribute values.
+
+        -->
+
+        <div class="slide">
+            <p>We can vary styling based on the map's zoom level</p>
+            <pre>
+    #my-points<span class="highlighted">[zoom=14]</span> {
+      marker-height: 90;
+      marker-width: 90;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+    #my-points<span class="highlighted">[population > 300000]</span> {
+      marker-height: 90;
+      marker-width: 90;
+    }</pre>
+        </div>
+
+        <!--
+
+        (Switch back to TileMill, style some stuff. Polygons, markers, text.
+        Differentiate styles based on values.)
+
+        Once you're happy with your map, you can put it online (do this).
+
+        -->
+
+        <div class="slide">
+            <h2>Lab</h2>
+        </div>
+
+        <div class="slide">
+            <p>Download this data:</p>
+            <a href="http://bit.ly/20130903-m3l2">
+                bit.ly/20130903-m3l2
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>Load the data in TileMill.</p>
+        </div>
+
+        <div class="slide">
+            <p>Style it (use marker-* rules).</p>
+        </div>
+
+        <div class="slide">
+            <p>Upload it to MapBox.</p>
+        </div>
+
+        <div class="slide">
+            <p>1. Download this data:
+                <a href="http://bit.ly/20130903-m3l2">
+                    bit.ly/20130903-m3l2
+                </a>
+            </p>
+            <p>2. Load the data in TileMill.</p>
+            <p>3. Style it (use marker-* rules).</p>
+            <p>4. Upload it to MapBox.</p>
+        </div>
+
+        <!--
+
+        Files for download:
+            points
+            lines
+            polygons
+
+        Have the students load each and style them. Should there be a goal?
+
+        -->
+        <div class="slide">
+            <p>
+                Get a CartoDB account
+                <a href="https://cartodb.com/signup">cartodb.com/signup</a>
+            </p>
+            <a href="https://cartodb.com/signup"><img class="large" src="img/cartodb_account.png" style="width: 75%" /></a>
+        </div>
+    </div>
+
+    </body>
+</html>
