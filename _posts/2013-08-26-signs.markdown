@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "Permitted Signs"
+date:   2013-08-26 17:38:05
+categories: nyc maps opendata
+---
+
+Well now, after [last week's][accidental-graffiti] exploration of a rather stale
+dataset on NYC's [open data portal][portal], it's exciting to work with one that
+appears to actually be updated daily. I'm talking about the DOB's 
+[Sign Application Filings dataset][data], some of which is explained in this
+[dictionary][dict] of job statuses and permit types. In the DOB's words, the
+dataset is:
+
+> A list of sign applications filed for a particular day and associated data.
+
+When an entity is looking to put a sign on the exterior of a building, that 
+request pops through this dataset at some point. If you haven't posted a sign in
+New York, you probably don't know that you need [permits][] to do that,
+including a special one for illuminated signs, and there are licensed Sign
+Hangers that you have to go through. [Some hangers][special] are "master" and 
+some are "special" and I have no idea what either means.
+
+Since the data is constantly updated, everything I say here is probably out of 
+date already, but at the time of downloading there were nearly 1300 records. 
+Those records had last been touched between April 25, 2013, and August 19, 2013.
+
+There are a bunch of potentially useful fields in this dataset, including how
+much a permit costs and how far a location is from a park or highway (different 
+regulations on these, though the fields are mostly empty). I'm sure there are 
+others, but once I ran into **Text on Sign** I stopped looking at anything else.
+Maybe you'll find other bits of the data that are worth looking at?
+
+Okay I'm gonna skip straight to the map now. Some details on how I made it are
+below it.
+
+### Sign permit application filings with some kind of activity in the past four months or so:
+<iframe width='100%' height='400' frameborder='0' src='http://eric.cartodb.com/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/embed_map?title=false&description=false&search=false&shareable=false&cartodb_logo=true&layer_selector=false&legends=false&scrollwheel=true&sublayer_options=1&sql=SELECT%20%0A%20%20%20%20house%2C%0A%20%20%20%20street_name%2C%0A%20%20%20%20MIN(cartodb_id)%20AS%20cartodb_id%2C%0A%20%20%20%20MIN(the_geom)%20AS%20the_geom%2C%20%0A%20%20%20%20MIN(the_geom_webmercator)%20AS%20the_geom_webmercator%2C%0A%20%20%20%20MIN(text_on_sign)%20AS%20text_on_sign%2C%0A%20%20%20%20MAX(text_occurrences)%20AS%20text_occurrences%2C%0A%20%20%20%20MIN(rotation)%20AS%20rotation%0AFROM%20sign_application_filings%0AWHERE%20text_on_sign%20!%3D%20''%0AGROUP%20BY%20house%2C%20street_name%2C%20text_on_sign&sw_lat=40.64000942809261&sw_lon=-74.19204711914062&ne_lat=40.883409680091006&ne_lon=-73.53286743164062'></iframe>
+
+Blue is least common, red is most common. Zoom in a bit. I had a hard time
+making these look good at a distance, but I tried balancing a view of the shape
+of the city with a view of the signs.
+
+There's something entertaining about reading through these sign-texts that were
+most likely written on a form, paper or electronic, and have been shepherded
+through the DOB's databases and regulations. I find the stand-in text of "LOGO"
+and "PHONE NUMBER" to be especially entertaining as digital, neon signs.
+
+Also, the translation errors like the one below. I can't imagine someone made a
+sign that says "DEALS YOUR 1ST STOP FOR SAVING?" but there's a nearly identical
+one to the west a bit, so who knows.
+
+<iframe width='100%' height='400' frameborder='0' src='http://eric.cartodb.com/viz/77e7ea98-0baf-11e3-8684-5404a6a69006/embed_map?title=false&description=false&search=false&shareable=false&cartodb_logo=true&layer_selector=false&legends=false&scrollwheel=true&sublayer_options=1&sql=SELECT%20%0A%20%20%20%20house%2C%0A%20%20%20%20street_name%2C%0A%20%20%20%20MIN(cartodb_id)%20AS%20cartodb_id%2C%0A%20%20%20%20MIN(the_geom)%20AS%20the_geom%2C%20%0A%20%20%20%20MIN(the_geom_webmercator)%20AS%20the_geom_webmercator%2C%0A%20%20%20%20MIN(text_on_sign)%20AS%20text_on_sign%2C%0A%20%20%20%20MAX(text_occurrences)%20AS%20text_occurrences%2C%0A%20%20%20%20MIN(rotation)%20AS%20rotation%0AFROM%20sign_application_filings%0AWHERE%20text_on_sign%20!%3D%20''%0AGROUP%20BY%20house%2C%20street_name%2C%20text_on_sign&sw_lat=40.62646106367355&sw_lon=-73.97712707519531&ne_lat=40.687407052121316&ne_lon=-73.81233215332031'></iframe>
+
+
+### Methods
+
+For the curious, here are the steps I took:
+
+1. Download the [CSV][data] and remove spaces from the headers.
+1. Upload into [CartoDB][]
+1.  Geocode the addresses of the locations. Unfortunately, no coordinates are
+    given in the database so I couldn't reproject as I did with the 
+    [graffiti locations][accidental-graffiti] data. Also it would be great to be
+    able to geocode using the borough, block, and lot (BBL) numbers of the 
+    records, but MapPLUTO is too big for my account. It would be extremely
+    useful if CartoDB made a function like their 
+    [reverse geocoder][reverse-geocoder] that is based on MapPLUTO.
+1.  Add a rotation column and [random][]ly populate it.
+1.  Add a text\_occurrences column to track how frequently the text shows up in
+    the dataset. I added the `DISTINCT(house, street_name)` because locations can 
+    show up multiple times depending on which stage in the permitting process they
+    are in. I'm sure there are nicer ways to do this, but accuracy wasn't exactly
+    paramount and this got me close enough:
+
+    {% gist 6348685 %}
+
+1. Select just the features we want. The ones with text on the signs, namely,
+    preferably once per address:
+
+    {% gist 6348691 %}
+
+1.  Style the map. Simulating the neon sign look by rendering the labels twice
+    was fun, and this was generally a good excuse to become more familiar with
+    how [text properties][text] work in CartoCSS and CartoDB. 
+
+    The basic idea is to render the text two times: once (`::outer`) with a low 
+    opacity, a halo, and darker color to represent the glow of the sign; 
+    another time (`::inner`) more brightly and boldly to represent the sign 
+    itself.
+
+    Here is the full CartoCSS for the above map. Please do copy, change, 
+    critique, etc.
+
+    {% gist 6348642 %}
+
+Thanks to the DOB for posting and maintaining a really solid dataset!
+
+[accidental-graffiti]: /nyc/maps/opendata/2013/08/18/graffiti-is-intentional.html
+[portal]: https://data.cityofnewyork.us/
+[data]: https://data.cityofnewyork.us/Housing-Development/Sign-Application-Filings/nyis-y4yr
+[dict]: http://www.nyc.gov/html/dob/downloads/pdf/bisjobstatus.pdf
+[permits]: http://www.nyc.gov/html/dob/html/development/install_sign.shtml
+[special]: http://www.nyc.gov/html/dob/downloads/pdf/sign_hanger.pdf
+[CartoDB]: http://cartodb.com
+[reverse-geocoder]: http://blog.cartodb.com/post/58247530913/free-geocoder-for-new-york-based-on-pluto-open-data
+[random]: http://www.postgresql.org/docs/current/static/functions-math.html
+[text]: http://www.mapbox.com/carto/api/2.1.0/#text

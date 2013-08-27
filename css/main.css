@@ -203,6 +203,16 @@ ul.posts span {
   background-color: #333;
 }
 
+.highlight pre {
+  line-height: 14px;
+}
+
+/* Don't bother with errors for CSS (CartoCSS will mess this up) */
+.highlight .css .err {
+    color: inherit;
+    background-color: inherit;
+}
+
 
 /* Maps */
 
