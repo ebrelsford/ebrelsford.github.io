@@ -600,7 +600,7 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         -->
 
         <div class="slide">
-            <p>We have a layer named <span class="code">bids</span>. We can style it like so:</p>
+            <p>We have a layer named <span class="code">bids</span>. We can style the features in it like so:</p>
             <pre>
     #bids {
         line-color: #ae8;
@@ -679,6 +679,7 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         </div>
 
         <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>
             <p>
                 marker-fill<br />
                 marker-fill-opacity
@@ -718,6 +719,7 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         </div>
 
         <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>
             <p>
                 line-color
             </p>
@@ -737,12 +739,17 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         </div>
 
         <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>
             <p>
                 polygon-fill
             </p>
             <p>
                 polygon-opacity
             </p>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartocss-experiment.png" />
         </div>
 
 
@@ -753,17 +760,35 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         -->
 
         <div class="slide">
-            <p>We can vary styling based on the map's zoom level</p>
+            <p>Selectors</p>
             <pre>
-    #my-points<span class="highlighted">[zoom=14]</span> {
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }
+    #my-points<span class="highlighted">[]</span> {
       marker-height: 90;
       marker-width: 90;
     }</pre>
         </div>
 
         <div class="slide">
+            <p>Vary styling based on the map's zoom level</p>
             <pre>
-    #my-points<span class="highlighted">[population > 300000]</span> {
+    #my-points[<span class="highlighted">zoom = 14</span>] {
+      marker-height: 90;
+      marker-width: 90;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>Vary styling based on the features' attributes</p>
+            <pre>
+    #my-points[<span class="highlighted">population > 300000</span>] {
       marker-height: 90;
       marker-width: 90;
     }</pre>
