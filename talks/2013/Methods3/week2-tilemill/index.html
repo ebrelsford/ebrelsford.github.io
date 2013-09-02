@@ -570,6 +570,9 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
                 }
             </style>
             <pre style="margin-top: 50px;">
+    a.example-links {
+        background: lightgreen;
+    }
     a#two {
         color: blue;
     }</pre>
@@ -756,6 +759,11 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
             <img src="img/cartocss-experiment.png" />
         </div>
 
+        <div class="slide">
+            <img src="img/cartocss-experiment.png" />
+            <a href="http://www.mapbox.com/carto/api/2.1.0/">mapbox.com/carto</a>
+        </div>
+
 
         <!--
 
@@ -783,6 +791,14 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         <div class="slide">
             <p>Vary styling based on the map's zoom level</p>
             <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }
     #my-points[<span class="highlighted">zoom = 14</span>] {
       marker-height: 90;
       marker-width: 90;
@@ -792,6 +808,14 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
         <div class="slide">
             <p>Vary styling based on the features' attributes</p>
             <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }
     #my-points[<span class="highlighted">population > 300000</span>] {
       marker-height: 90;
       marker-width: 90;
@@ -845,26 +869,19 @@ h   ccccccccc   ddddddddd  eeeeeeeee  ffffffff        ggg
                     bit.ly/20130903-m3a2-cheatsheet
                 </a>
             </p>
+            <p>The data and cheatsheet are in Lore under Class 2, also.</p>
         </div>
 
-        <!--
-
-        Files for download:
-            points
-            lines
-            polygons
-
-        Have the students load each and style them. Should there be a goal?
-
-        -->
         <div class="slide">
             <p>
                 Get a CartoDB account
                 <a href="https://cartodb.com/signup">cartodb.com/signup</a>
             </p>
+            <p>
+                Email your CartoDB username to Eric.
+            </p>
             <a href="https://cartodb.com/signup"><img class="large" src="img/cartodb_account.png" style="width: 75%" /></a>
         </div>
-    </div>
 
     </body>
 </html>
