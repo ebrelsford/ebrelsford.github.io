@@ -16,6 +16,111 @@
         <canvas id='scroll-chart'></canvas>
 
         <div class="slide">
+            <h1>GeoJSON</h1>
+        </div>
+
+        <div class="slide">
+            <h2>Where do file formats come from?</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-mailinglist.png" />
+        </div>
+
+        <div class="slide">
+            <h2>Where does GeoJSON work?</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-qgis.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-tilemill.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-worstyears.png" />
+            <a href="https://github.com/AnnieGitUrGun/MappingTest/blob/11bec007758702269b504ece55e09e54fa8f60fa/AnnesPOI.geojson">
+                AnnieGitUrGun on github
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-worstyears-attribution.png" />
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON is readable</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-worstyears-raw.png" />
+        </div>
+
+        <div class="slide">
+            <p>How to write a shapefile:</p>
+            <img class="small" src="img/geojson-shp.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-shp-binary.png" />
+        </div>
+
+        <div class="slide">
+            <pre>
+    {
+        ...
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+    {
+        "type": "FeatureCollection",
+        "features": [ ... ]
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+    {
+        "type": "FeatureCollection",
+        "features": [
+            { ... },
+            { ... },
+            { ... }
+        ]
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+    {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "id": 1,
+                    "Name": "My House",
+                    "City": "White Hall",
+                    "Comments": "It's OK"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-76.596, 39.684]
+                }
+            }
+        ]
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p><a href="http://geojson.io/">geojson.io</a></p>
+        </div>
+
+        <div class="slide">
             <h1>Making maps with CartoDB</h1>
         </div>
 
