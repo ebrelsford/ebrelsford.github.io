@@ -9,7 +9,7 @@ function initializeMap() {
     var toner = new L.StamenTileLayer('toner');
     map.addLayer(toner);
 
-    $.get('citibike.geojson', function (data) {
+    $.get('http://ebrelsford.neocities.org/citibike.json', function (data) {
         console.log(data);
         var layer = L.geoJson(data, {
             style: {
