@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction to CartoDB</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link href='css/pig.css' rel='stylesheet' type='text/css' />
+        <link href='css/base.css' rel='stylesheet' type='text/css' />
+        <link href="http://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet" type="text/css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src='js/pig.js'></script>
+        <script src='js/scrollchart.js'></script>
+        <script src='js/main.js'></script>
+    </head>
+    <body>
+        <canvas id='scroll-chart'></canvas>
+
+        <div class="slide">
+            <h1>Introduction to CartoDB</h1>
+        </div>
+
+        <div class="slide">
+            <h2>Tables</h2>
+            <p>Where you import / edit / analyze your data</p>
+        </div>
+
+        <div class="slide">
+            <h2>Visualizations</h2>
+            <p>Where you make public map views of your tables</p>
+        </div>
+
+
+        <!-- Intro to SQL -->
+
+        <div class="slide">
+            <h1>Basic SQL</h1>
+        </div>
+
+        <div class="slide">
+            <h1>Basic SQL</h1>
+            <p>Carto<strong>DB</strong></p>
+        </div>
+
+        <div class="slide">
+            <p>SQL</p>
+        </div>
+
+        <div class="slide">
+            <p>SQL = Structured Query Language</p>
+        </div>
+
+        <div class="slide">
+            <p>SQL = the language databases understand</p>
+        </div>
+
+        <div class="slide fullscreen">
+            <img class="small" src="img/cartodb-table.png" />
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the pages that refer to properties in Brooklyn.</p>              
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the pages that refer to properties in Brooklyn.</p>              
+                    <p>Give me the addresses of the properties in Brooklyn.</p>              
+                </div>
+            </div>
+        </div>
+
+        <div class="slide fullscreen">
+            <img class="small" src="img/cartodb-table.png" />
+        </div>
+
+        <div class="slide fullscreen">
+            <img class="small" src="img/cartodb-table-query.png" />
+        </div>
+
+        <div class="slide fullscreen">
+            <img class="small" src="img/cartodb-table-select.png" />
+        </div>
+
+        <div class="slide fullscreen">
+            <img class="small" src="img/cartodb-table-where.png" />
+        </div>
+
+        <div class="slide fullscreen">
+            <img class="small" src="img/cartodb-table-select-and-where.png" />
+        </div>
+
+        <div class="slide">
+            <p>Much more in the SQL cheatsheet:</p>
+            <p>
+                <a href="http://bit.ly/20130917-sql">
+                    bit.ly/20130917-sql
+                </a>
+            </p>
+        </div>
+
+        <!--
+
+        SQL, Structured Query Language, is a standard language used by databases
+        for pulling data from databases.
+
+        A database is a collection of things that may or may not be related to each
+        other. A table describes a particular type of things within a database.
+        When you interact with a database, you need to specify a table in order to
+        get what you want.
+
+        (Need a funny example of a collection of things.)
+
+        Tables are a lot like spreadsheets. They have columns that have names and
+        types (eg, string, number, geometry). When you ask for data from a table,
+        you can get as little or as many of these columns as you want at once. You
+        generally will only want to get the columns you actually need since this
+        will be faster. Think of this as showing or hiding columns in a
+        spreadsheet - this makes it easier for you to look through the spreadsheet
+        for what you're looking for.
+
+        (Build on example of collection of things.)
+
+        When we want to pull from a table, we use the keyword FROM:
+
+            FROM {table}
+
+        This won't do anything on its own. We have to tell the database what we
+        want to know about our things. Do this with SELECT:
+
+            SELECT {attribute1, attribute2, attribute3}
+
+        Now put it together:
+
+            SELECT {attribute1, attribute2, attribute3}
+            FROM {table}
+
+        Nice! So SELECT restricts the columns that we receive. What if we want to
+        restrict the rows that we receive? This is something spreadsheets are not
+        generally good at, so it might be a little weird to think about.
+
+        You do it with WHERE:
+
+            WHERE {attribute1} = {value1}
+
+        Put it all together:
+
+            SELECT {attribute1, attribute2, attribute3}
+            FROM {table}
+            WHERE {attribute1} = {value1}
+
+        Also:
+
+            IN
+            >
+            <
+            >=
+            <=
+            etc.
+
+        (Combining WHERE conditions with AND and OR.)
+
+        (Negating WHERE conditions with NOT.)
+
+        All of this works great for one collection of things, but what if you want
+        to relate multiple types of things?
+
+        (This needs an example.)
+
+        We don't have time to cover this right now, but if you're curious look up
+        JOIN. (And include a reading?)
+
+        -->
+
+
+        <!-- SQL for spatial databases -->
+
+        <!--
+
+        Stephen's going to be talking about spatial queries and other fun things
+        next week, but for now let's just say that when you're working with a 
+        spatial database the geometry is just another column in a table. So you can
+        SELECT it and use it in WHERE clauses.
+
+        (Add a spatial attribute to the example we've been using.)
+
+        Geometries are often way more interesting than numbers and strings, and you
+        can do so much more with them.
+
+        (An example.)
+
+        -->
+
+    </body>
+</html>
