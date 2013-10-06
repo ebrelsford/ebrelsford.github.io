@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            .legend-title {
+                font-weight: bold;
+            }
+
+            .legend-labels {
+                list-style: none;
+                padding: 0;
+            }
+
+            .legend-labels span {
+                display: inline-block;
+                border: 1px solid black;
+                width: 25px;
+                height: 10px;
+                margin-right: 5px;
+            }
+
+            .legend-source {
+                font-size: 12px;
+            }
+
+            #legend-slot-0 {
+                background: #FFFFFF;
+            }
+
+            #legend-slot-1 {
+                background: #FFFFE5;
+            }
+
+            #legend-slot-2 {
+                background: #FFF7BC;
+            }
+
+            #legend-slot-3 {
+                background: #FEE391;
+            }
+
+            #legend-slot-4 {
+                background: #FEC44F;
+            }
+
+            #legend-slot-5 {
+                background: #FE9929;
+            }
+        </style>
+        <div class="legend">
+            <div class="legend-title">
+                Legend title
+            </div>
+            <div class="legend-scale">
+                <ul class="legend-labels">
+                    <li>
+                        <span id="legend-slot-0"></span>None
+                    </li>
+                    <li>
+                        <span id="legend-slot-1"></span>&lt; 1
+                    </li>
+                    <li>
+                        <span id="legend-slot-2"></span>1 - 5
+                    </li>
+                    <li>
+                        <span id="legend-slot-3"></span>5 - 10
+                    </li>
+                    <li>
+                        <span id="legend-slot-4"></span>10 - 50
+                    </li>
+                    <li>
+                        <span id="legend-slot-5"></span>50+
+                    </li>
+                </ul>
+            </div>
+            <div class="legend-source">
+                Legend source
+            </div>
+        </div>
+    </body>
+</html>
