@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+
+            Stylesheets for Leaflet, the mapping library.
+
+        -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+        <![endif]-->
+
+        <style>
+            
+            /*
+             * Our page's styles.
+             *
+             * Here we simply make the map take up the full width and height of
+             * the page.
+             */
+
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            #map {
+                width: 100%;
+                height: 100%;
+            }
+
+        </style>
+
+        <!--
+
+            Load all the relevant Javascript libraries.
+
+            * jQuery is an all-purpose library that is great for adding 
+              interactivity to a page:
+                http://jquery.com/ 
+
+            * Leaflet is a popular and modern open source mapping library:
+                http://leafletjs.com/
+
+        -->
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                //
+                // Create a map in the "map" div, set the view to a given place
+                // and zoom. The id of the div could be anything, but "map" is
+                // common.
+                //
+                var map = L.map('map').setView([40.6968, -73.9732], 13);
+
+                //
+                // Add a MapBox tile layer
+                //
+                // Replace 'ebrelsford.map-qexgingq' with your layer's id to
+                // change this to your layer
+                // 
+                // Find your map's layer by looking at your map's published url
+                // which might be something like this:
+                //   http://a.tiles.mapbox.com/v3/ebrelsford.map-qexgingq/page.html
+                // The id is the part after "/v3/" and before "/page.html"
+                //
+                L.tileLayer('http://{s}.tiles.mapbox.com/v3/ebrelsford.map-qexgingq/{z}/{x}/{y}.png', {
+                    attribution: 'Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | Map tiles &copy; <a href="http://mapbox.com">MapBox</a>'
+                }).addTo(map);
+
+            });
+        </script>
+    </head>
+    <body>
+        <!--
+
+            This is all the HTML it takes to make a web map with Leaflet.
+
+        -->
+        <div id="map"></div>
+    </body>
+</html>
