@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+        <![endif]-->
+        <style>
+            body {
+                background: #f3f3f3;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 0;
+                margin-bottom: 0;
+                width: 80%;
+            }
+
+            #page-wrapper {
+                background: white;
+                padding: 25px;
+            }
+
+            a {
+                color: green;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            #site-name {
+                font-size: 48px;
+                margin: 0;
+            }
+
+            #boroughs {
+                list-style: none;
+                padding: 0;
+            }
+
+            #map {
+                height: 400px;
+                width: 100%;
+            }
+        </style>
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+        <script>
+            //
+            // Variables
+            //
+
+            // Store the table name we're using in case it changes down the
+            // road.
+            var TABLE_NAME = 'vacant_596acres_20131013';
+
+            // These variables will hold the map and the lot layer
+            var map,
+                lots;
+
+
+            //
+            // Functions
+            //
+
+            //
+            // Get the WHERE conditions that we will AND together when we make
+            // the SQL queries for our data.
+            //
+            function buildWhereConditions() {
+                // An empty list were we will put any WHERE conditions we 
+                // decide to make
+                var whereConditions = [];
+
+                //
+                // Look for and list checked boroughs
+                //
+                var checkedBoroughs = [];
+
+                // This selector says 'look for any checked input within the
+                // element with id="boroughs"'.
+                $('#boroughs :input:checked').each(function () {
+                    // Each borough's name (from data-borough) is added to our
+                    // list of boroughs
+                    checkedBoroughs.push("'" + $(this).data('borough') + "'");
+                });
+                // If there are any boroughs in our list, put them in an IN
+                // SQL condition
+                if (checkedBoroughs.length > 0) {
+                    whereConditions.push('borough IN (' + checkedBoroughs.join(',') + ')');
+                }
+
+                //
+                // Look for an address in the input
+                //
+
+                // .val() will get you the current value of a text input.
+                var address = $('#address').val();
+                // If there is anything in the address input, make a WHERE 
+                // condition out of it
+                if (address.length > 0) {
+                    // For example, if the address entered is "fulton", this
+                    // puts "address ILIKE '%fulton%' in the WHERE conditions, 
+                    // which will get you any lot with "fulton" in the address.
+
+                    // The % is a wildcard meaning "match anything" in SQL.
+
+                    // We have to say %25 to make a % in a URL because % is 
+                    // used to put other things in addresses
+                    whereConditions.push("address ILIKE '%25" + address + "%25'");
+                }
+
+                return whereConditions;
+            }
+
+            //
+            // Build the SQL statement that we'll use to get GeoJSON files and
+            // add them to the map.
+            //
+            function buildGeoJsonSql() {
+                // The base SQL query--if there are no WHERE conditions, just
+                // select everything from our table
+                var sql = 'SELECT * FROM ' + TABLE_NAME;
+
+                // But if there are WHERE conditions, AND them together and 
+                // slap them onto our SQL statement
+                var whereConditions = buildWhereConditions();
+                if (whereConditions.length > 0) {
+                    sql += ' WHERE ';
+                    sql += whereConditions.join(' AND ');
+                }
+                return sql;
+            }
+
+            //
+            // Build the SQL statement that we'll use to get the number of lots
+            // on the map.
+            //
+            function buildCountSql() {
+                // Same as above, this is the base SQL query. If there are no
+                // WHERE conditions, just count everything.
+                var sql = 'SELECT COUNT(*) FROM ' + TABLE_NAME;
+
+                // Add WHERE conditions if they exist
+                var whereConditions = buildWhereConditions();
+                if (whereConditions.length > 0) {
+                    sql += ' WHERE ';
+                    sql += whereConditions.join(' AND ');
+                }
+                return sql;
+            }
+
+            //
+            // Build the URL that we'll use against CartoDB. This takes two
+            // parameters that we'll add to the URL:
+            //  - format: the format we want the data returned in (JSON or GeoJSON)
+            //  - sql: the query to make
+            //
+            function buildURL(format, sql) {
+                return 'http://eric.cartodb.com/api/v2/sql?format=' + format + '&q=' + sql;
+            }
+
+            //
+            // Update the lots that are shown on the map.
+            //
+            function updateLots() {
+                // First wipe out existing lots
+                lots.clearLayers();
+
+                // Then build our URL, get the data from CartoDB
+                $.getJSON(buildURL('GeoJSON', buildGeoJsonSql()), function(data) {
+                    // This code is only called after CartoDB responds with 
+                    // data, and all we do is add that data to the layer
+                    lots.addData(data);
+                });
+            }
+
+            //
+            // Update the count of lots as shown under the filters
+            //
+            function updateCount() {
+                // Build our URL and ask CartoDB for data. We use JSON here
+                // because we're not asking for geodata
+                $.getJSON(buildURL('JSON', buildCountSql()), function (data) {
+                    // This code is run when CartoDB responds with the answer
+                    // to our query
+
+                    // Get the count, which will be in the first row of the 
+                    // data
+                    var count = data.rows[0].count;
+
+                    // Put the count in the 'lot-count' placeholder below the
+                    // filters
+                    $('#lot-count').text(count);
+                });
+            }
+
+            $(document).ready(function () {
+                //
+                // Initialize the map and its base layer. This is exactly like
+                // the other Leaflet examples we have looked at.
+                //
+                map = L.map('map').setView([40.6968, -73.9732], 10);
+
+                L.tileLayer('http://{s}.tiles.mapbox.com/v3/ebrelsford.map-qexgingq/{z}/{x}/{y}.png', {
+                    attribution: 'Data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | Map tiles &copy; <a href="http://mapbox.com">MapBox</a>'
+                }).addTo(map);
+
+                //
+                // Create the lots layer
+                //
+                // We initially pass null for the data here since updateLots,
+                // below, will handle that for us.
+                //
+                lots = L.geoJson(null, {
+
+                    // pointToLayer takes care of creating the point for each
+                    // feature. Here you can make markers and style them.
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            color: '#3E9338',
+                            fillOpacity: 0.8,
+                            radius: 4
+                        });
+                    },
+
+                    // onEachFeature is a good place to add popups for layers.
+                    onEachFeature: function (feature, layer) {
+                        // Here we build a simple HTML popup using the 
+                        // properties of the feature. This will be run once for
+                        // each feature, so the popup will be unique to its 
+                        // feature.
+                        var f = feature.properties;
+                        var content = '<h1>' + f.bbl + '</h1>';
+                        content += '<p>' + f.address + '</p>';
+                        layer.bindPopup(content);
+                    }
+
+                }).addTo(map);
+
+                // Now that the map and the lot layer exist, update the count 
+                // and lots for the first time
+                updateCount();
+                updateLots();
+
+                // Every time a borough changes, update the count and lots
+                $('#boroughs :input').change(function () {
+                    updateCount();
+                    updateLots();
+                });
+
+                // Every time the address input changes, update the count and 
+                // lots
+                $('#address').keyup(function () {
+                    updateCount();
+                    updateLots();
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div id="page-wrapper">
+            <p id="site-name">596 Acres</p>
+            <p>This is my <a href="http://596acres.org">596 Acres</a> clone.</p>
+
+            <div id="map"></div>
+
+            <!--
+
+                Borough inputs. These were changed in the following ways:
+
+                * id attributes were added to the inputs and the borough names 
+                  were put inside <label> elements so that clicking on a borough
+                  name would check or uncheck the box
+                * data-borough attributes were used to store the name of the 
+                  borough that the checkbox refers to
+
+            -->
+            <p>Boroughs:</p>
+            <ul id="boroughs">
+                <li>
+                    <input data-borough="Bronx" id="borough-0" type="checkbox" checked="checked" />
+                    <label for="borough-0">Bronx</label>
+                </li>
+                <li>
+                    <input data-borough="Brooklyn" id="borough-1" type="checkbox" checked="checked" />
+                    <label for="borough-1">Brooklyn</label>
+                </li>
+                <li>
+                    <input data-borough="Manhattan" id="borough-2" type="checkbox" checked="checked" />
+                    <label for="borough-2">Manhattan</label>
+                </li>
+                <li>
+                    <input data-borough="Queens" id="borough-3" type="checkbox" checked="checked" />
+                    <label for="borough-3">Queens</label>
+                </li>
+            </ul>
+
+            <!--
+
+                Address input. This was given an id attribute so we could watch
+                it for changes.
+
+            -->
+            <p>Address:</p>
+            <input id="address" type="text" />
+
+            <!--
+
+                Lot count. This was given an id so we could update the text 
+                within it dynamically.
+
+            -->
+            <p>
+                You are looking at <strong id="lot-count"></strong> vacant lots
+            </p>
+        </div>
+    </body>
+</html>
