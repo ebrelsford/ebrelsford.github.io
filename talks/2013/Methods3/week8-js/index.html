@@ -238,18 +238,117 @@ L.marker([40.6968, -73.9732]).addTo(map)
         </div>
 
         <div class="slide">
-            <p>APIs</p>
+            <img class="small" src="img/exercise.png" />
         </div>
 
-        <!--
+        <div class="slide">
+            <img class="small" src="img/exercise-styled.png" />
+        </div>
 
-        A Leaflet map using GeoJSON served from CartoDB's API
+        <div class="slide">
+            <p>
+                <a href="exercise-scripted.html">A functional version</a>
+            </p>
+        </div>
 
-        Look at simple plugins for Leaflet (MarkerCluster?)
+        <div class="slide">
+            <p>
+                <a href="exercise-scripted.html">A functional version</a>
+            </p>
+            <p>
+                <a href="exercise-scripted-clustered.html">...with clustered markers</a>
+            </p>
+        </div>
 
-        Implement on-change from exercise, flesh that out
+        <div class="slide">
+            <p>
+                <a href="exercise-scripted.html">A functional version</a>
+            </p>
+            <p>
+                <a href="exercise-scripted-clustered.html">...with clustered markers</a>
+            </p>
+            <p>
+                <a href="http://leafletjs.com/plugins.html">Leaflet plugins</a>
+            </p>
+        </div>
 
-        -->
+        <div class="slide">
+            <h2>How does it work?</h2>
+            <pre>
+when someone clicks a borough checkbox,
+update the lots and count
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>How does it work?</h2>
+            <pre>
+$('#boroughs :input').change(function () {
+    updateCount();
+    updateLots();
+});</pre>
+        </div>
+
+        <div class="slide">
+            <p>(pick the borough checkboxes)</p>
+            <pre style="margin-top: 75px;">
+$(<span class="highlighted">'#boroughs :input'</span>).change(function () {
+    updateCount();
+    updateLots();
+});</pre>
+        </div>
+
+        <div class="slide">
+            <p>(when they change)</p>
+            <pre style="margin-top: 75px;">
+$('#boroughs :input').<span class="highlighted">change</span>(function () {
+    updateCount();
+    updateLots();
+});</pre>
+        </div>
+
+        <div class="slide">
+            <p>(update count and lots)</p>
+            <pre style="margin-top: 75px;">
+$('#boroughs :input').change(function () {
+    <span class="highlighted">updateCount();</span>
+    <span class="highlighted">updateLots();</span>
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>But where does the data come from?</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;">
+http://(your username).cartodb.com/api/v2/sql?
+  format=GeoJSON&
+  q=(some SQL)</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="white-space: normal;">
+http://eric.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM vacant_596acres_20131013 WHERE borough IN ('Manhattan','Queens')</pre>
+        </div>
+
+        <div class="slide">
+            <p>(from Eric's account)</p>
+            <pre style="white-space: normal; margin-top: 75px;">
+http://<span class="highlighted">eric</span>.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM vacant_596acres_20131013 WHERE borough IN ('Manhattan','Queens')</pre>
+        </div>
+
+        <div class="slide">
+            <p>(as GeoJSON)</p>
+            <pre style="white-space: normal; margin-top: 75px;">
+http://eric.cartodb.com/api/v2/sql?format=<span class="highlighted">GeoJSON</span>&q=SELECT * FROM vacant_596acres_20131013 WHERE borough IN ('Manhattan','Queens')</pre>
+        </div>
+
+        <div class="slide">
+            <p>(only select lots in Manhattan or Queens)</p>
+            <pre style="white-space: normal; margin-top: 75px;">
+http://eric.cartodb.com/api/v2/sql?format=GeoJSON&q=<span class="highlighted">SELECT * FROM vacant_596acres_20131013 WHERE borough IN ('Manhattan','Queens')</span></pre>
+        </div>
 
     </body>
 </html>
