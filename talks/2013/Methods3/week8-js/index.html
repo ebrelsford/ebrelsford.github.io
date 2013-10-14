@@ -150,11 +150,26 @@ map = { zoom: 9, place: 'New York' }
         </div>
 
         <div class="slide">
-            <p>Libaries</p>
+            <h2>Libaries</h2>
         </div>
 
         <div class="slide">
-            <p>Leaflet</p>
+            <h2>Libaries</h2>
+            <p>A bunch of code someone else wrote that you can reuse</p>
+        </div>
+
+        <div class="slide">
+            <h2>Libaries</h2>
+            <p>eg, <a href="http://underscorejs.org/">underscore</a>: <a href="http://underscorejs.org/underscore.js">underscorejs.org/underscore.js</a></p>
+        </div>
+
+        <div class="slide">
+            <h2><img class="small" style="margin: 0;" src="img/leaflet.png" /></h2>
+        </div>
+
+        <div class="slide">
+            <h2><img class="small" style="margin: 0;" src="img/leaflet.png" /></h2>
+            <p>A libary that makes maps for you</p>
         </div>
 
         <!--
@@ -171,6 +186,53 @@ map = { zoom: 9, place: 'New York' }
             <p>
                 <a href="map1.html">A simple Leaflet map</a>
             </p>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px;">
+map = L.map('map').setView([40.6968, -73.9732], 13);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+map = L.map('map').setView(CENTER, ZOOM);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 20px;">
+L.tileLayer('http://{s}.tiles.mapbox.com/v3/ebrelsford.map-qexgingq/{z}/{x}/{y}.png', {
+    attribution: '(attribution)'
+}).addTo(map);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+L.tileLayer(YOUR MAPBOX URL, {
+    attribution: ATTRIBUTION FOR LAYER
+}).addTo(map);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <p>While viewing the map, paste this into the console:</p>
+            <pre>
+map.setZoom(16)
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+map.panBy([100, 100])
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+map.panBy([_.random(-500, 500), _.random(-500, 500)])
+            </pre>
         </div>
 
         <!--
