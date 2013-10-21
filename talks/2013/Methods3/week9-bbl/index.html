@@ -141,6 +141,9 @@
             <pre>
 "0000"[0, 4-value.length()] + value
             </pre>
+            <p>
+                <a href="https://github.com/OpenRefine/OpenRefine/wiki/Recipes">via OpenRefine recipes</a>
+            </p>
         </div>
 
         <div class="slide">
@@ -160,10 +163,6 @@
         <div class="slide">
             <img class="small" src="img/qgis-join2.png" />
         </div>
-
-        <!--
-            Using the city's API with Open Refine
-        -->
 
         <div class="slide">
             <h1>Field Papers</h1>
@@ -288,6 +287,61 @@
             <a href="http://stamen.com/zero1/">
                 stamen.com/zero1
             </a>
+        </div>
+
+        <div class="slide">
+            <h1>Bonus: Using the city's API with OpenRefine</h1>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="https://developer.cityofnewyork.us/api/geoclient-api-beta">
+                <img class="small" src="img/geoclient-api-home.png" />
+            </a>
+            <p>
+                the NYC <a href="https://developer.cityofnewyork.us/api/geoclient-api-beta">Geoclient API</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <p>
+                Create a login and get API keys at <a href="https://developer.cityofnewyork.us/user/register?destination=node/182">developer.cityofnewyork.us</a>
+            </p>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="https://dev-mgmt.cityofnewyork.us/docs/geoclient/v1">
+                <img class="small" src="img/geoclient-request.png" />
+            </a>
+            <p>(You would enter your API keys here)</p>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="https://dev-mgmt.cityofnewyork.us/docs/geoclient/v1">
+                <img class="small" src="img/geoclient-response.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="https://dev-mgmt.cityofnewyork.us/docs/geoclient/v1">
+                <img class="small" src="img/geoclient-openrefine.png" />
+            </a>
+            <pre style="font-size: 20px; padding-top: 30px;">
+'https://api.cityofnewyork.us/geoclient/v1/bbl.json?borough=Bronx&amp;block='<br /> + cells['Block'].value + '&amp;lot=' + cells['Lot'].value + '&amp;app_id=YOUR_APP_ID&amp;app_key=YOUR_APP_KEY'
+            </pre>
+        </div>
+
+        <div class="slide">
+            <a href="https://dev-mgmt.cityofnewyork.us/docs/geoclient/v1">
+                <img class="small" src="img/geoclient-openrefine-response.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geoclient-openrefine-addcolumn.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geoclient-openrefine-parse.png" />
         </div>
 
     </body>
