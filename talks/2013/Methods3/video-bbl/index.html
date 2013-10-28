@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lecture 2 | Class 9 | Methods 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta charset="utf-8">
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet" type="text/css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+        <script src="js/scrollchart.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <canvas id="scroll-chart"></canvas>
+
+        <div class="slide">
+            <h1>Making BBLs with OpenRefine</h1>
+        </div>
+
+        <div class="slide">
+            <a href="https://data.cityofnewyork.us/Social-Services/Bronx-Vacant-Lots-Cleaned/nugr-jv72">
+                <img class="small" src="img/socrata-bronx-cleaned-lots.png" />
+            </a>
+            <a href="https://data.cityofnewyork.us/Social-Services/Bronx-Vacant-Lots-Cleaned/nugr-jv72">
+                https://data.cityofnewyork.us/Social-Services/Bronx-Vacant-Lots-Cleaned/nugr-jv72
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml#pluto">
+                MapPLUTO has BBLs
+            </a>
+            <a href="http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml#pluto">
+                <img class="small" src="img/mappluto-bbls.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>
+                BBL = borough, block, and lot number
+            </p>
+            <p>
+                ABBBBBCCCC
+            </p>
+            <ul>
+                <li>A: borough number</li>
+                <li>B: block number</li>
+                <li>C: lot number</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>
+                <span class="highlighted">3</span>015510102
+            </p>
+            <ul>
+                <li>3: borough number (Brooklyn)</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>
+                3<span class="highlighted">01551</span>0102
+            </p>
+            <ul>
+                <li>3: borough number (Brooklyn)</li>
+                <li>01551: block number</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>
+                301551<span class="highlighted">0102<span>
+            </p>
+            <ul>
+                <li>3: borough number (Brooklyn)</li>
+                <li>01551: block number</li>
+                <li>0102: lot number</li>
+            </ul>
+        </div>
+
+        <div class="fullscreen slide">
+            <a href="http://www.oasisnyc.net/map.aspx?zoomto=lot:3015510102">
+                <img class="small" src="img/oasis-full.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.oasisnyc.net/map.aspx?zoomto=lot:3015510102">
+                <img class="small" src="img/oasis-close.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>Borough numbers:
+            <ul style="padding-left: 50px;">
+                <li>1: Manhattan</li>
+                <li>2: Bronx</li>
+                <li>3: Brooklyn</li>
+                <li>4: Queens</li>
+                <li>5: Staten Island</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/openrefine-original.png" />
+            <p>
+                One way to fix this: <a href="http://openrefine.org/">OpenRefine</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <pre>
+"0000"[0, 4-value.length()] + value
+            </pre>
+            <p>
+                <a href="https://github.com/OpenRefine/OpenRefine/wiki/Recipes">via OpenRefine recipes</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px;">
+'2' + cells['Block'].value + cells['Lot'].value
+            </pre>
+        </div>
+
+    </body>
+</html>
