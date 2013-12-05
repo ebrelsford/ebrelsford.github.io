@@ -111,3 +111,8 @@ one more **clue** that will help us decide whether a parcel is vacant and worth
 mapping. We would not assume that all 27,653 of the lots in the "likely vacant"
 map above actually are vacant, but we would first use other indicators such as
 blight liens or recent demolitions to help make that decision.
+
+All of the code that performs these calculations and helped us to arrive at
+these conclusions is free software and is in the 
+[parcels module of noladata](https://github.com/596acres/noladata/tree/master/noladata/parcels) 
+in case you're interested in that kinda thing.
