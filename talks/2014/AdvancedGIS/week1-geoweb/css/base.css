@@ -111,6 +111,10 @@ a {
  * Slide types
  */
 
+.slide.dark-background {
+    color: white;
+}
+
 /*
  * Map
  */

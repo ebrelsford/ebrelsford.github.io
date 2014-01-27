@@ -16,11 +16,26 @@
 
         <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
         <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
         <script src="bids.geojson"></script>
         <script src="js/map.js"></script>
         <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('scroll', function () {
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="slide">
