@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 1 | Advanced GIS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+        <![endif]-->
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+        <script src="bids.geojson"></script>
+        <script src="js/map.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+        <div class="slide">
+            <h1>Refresher</h1>
+        </div>
+
+        <div class="slide">
+            <p>latitude and longitude</p>
+        </div>
+
+        <div class="slide">
+            <p>latitude and longitude</p>
+            <a href="http://www.justtrails.com/nav-skills/navigation-skills-latitude-and-longitude/">
+                <img src="img/latitude_longitude.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>projections</p>
+        </div>
+
+        <div class="slide">
+            <p>
+                <a href="http://earth.nullschool.net/" target="_blank">Earth Wind Map</a>
+            </p>
+            <a href="http://earth.nullschool.net/" target="_blank">
+                <img class="small" src="img/earth_wind_map.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>
+                <a href="http://www.macwright.org/projectityourself/" target="_blank">
+                    Project It Yourself
+                </a>
+            </p>
+            <a href="http://www.macwright.org/projectityourself/" target="_blank">
+                <img class="small" src="img/project_it_yourself.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>raster vs vector</p>
+        </div>
+
+        <div class="slide">
+            <p>raster</p>
+            <img src="img/satellite_imagery.jpg" class="small" />
+            <a href="http://en.wikipedia.org/wiki/Riga">source</a>
+        </div>
+
+        <div class="slide">
+            <p>raster</p>
+            <img src="img/map_tile.png" class="small" />
+        </div>
+
+        <div class="slide">
+            <p>raster</p>
+            <img src="img/weather_map.png" class="small" />
+            <a href="https://www.mapbox.com/blog/hi-res-temperature-map-forecast-io/">source</a>
+        </div>
+
+        <div class="slide">
+            <p>vector</p>
+            <img src="img/nola_parcels.png" class="small" />
+        </div>
+
+        <div class="slide">
+            <p>vector</p>
+            <img src="img/nola_parcels_selected.png" class="small" />
+        </div>
+
+        <div class="slide">
+            <p>GIS</p>
+        </div>
+
+        <div class="slide">
+            <p>Geographic Information System</p>
+        </div>
+
+        <div class="slide">
+            <p>Geographic Information Systems</p>
+            <img src="img/arcgis.png" class="small" />
+        </div>
+
+        <div class="slide">
+            <p>Geographic Information Systems</p>
+            <img src="img/arcgis.png" class="small" />
+            <img src="img/qgis.png" class="small" />
+        </div>
+
+        <div class="slide">
+            <p>shapefile</p>
+        </div>
+
+        <div class="slide">
+            <p>shapefile</p>
+            <img src="img/nola_parcels_shapefile.png" />
+        </div>
+
+        <div class="slide">
+            <p>clipping</p>
+        </div>
+
+        <div class="slide">
+            <p>clipping</p>
+            <img class="small" src="img/census_tracts.png" />
+        </div>
+
+        <div class="slide">
+            <p>clipping</p>
+            <img class="small" src="img/staten_island.png" />
+        </div>
+
+        <div class="slide">
+            <p>clipping</p>
+            <img class="small" src="img/si_census_tracts_clipping.png" />
+        </div>
+
+        <div class="slide">
+            <p>clipping</p>
+            <img class="small" src="img/si_census_tracts_clipped.png" />
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to the geoweb</h1>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/google.png" />
+        </div>
+
+        <!--
+
+        Stephen has given you a brief overview of the history of maps, GIS, and how latitude and longitude work.
+
+        I'm going to tell you about what happens when GIS and maps move to the web. For lack of a better term, I am going to call this the geoweb.
+
+        -->
+
+        <div class="slide">
+            <h2>How did we get here?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>First maps were static</h2>
+        </div>
+
+        <div class="slide">
+            <p>circa 1997:</p>
+            <img class="small" src="img/mapquest.png" />
+            <p>
+                <a class="source" href="http://web.archive.org/web/19971211230909/http://www.mapquest.com/">
+                    Mapquest via the Wayback Machine
+                </a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div class="right">
+                <p>click</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div class="right">
+                <p>click</p>
+                <p style="margin-top: 50px; margin-bottom: 25px;">...wait</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div class="right">
+                <p>click</p>
+                <p style="margin-top: 50px; margin-bottom: 25px;">...wait</p>
+                <p>entire page reloads,</p>
+                <p>map is panned east</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <img class="large-tall" src="img/fcwa.jpg" />
+            <a class="source" href="http://foodchainworkers.org/?page_id=2443">
+                source
+            </a>
+        </div>
+
+        <!--
+
+        The two examples above are essentially traditional, top-down GIS but in the browser.
+
+        -->
+
+        <div class="slide">
+            <h2>What has changed since 1997?</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/linux.png" />
+            <p>Linux taken seriously by Microsoft (~1998)</p>
+        </div>
+
+        <!--
+
+        Not only Linux, but open source more generally. 
+
+        And github has reduced the barriers to entry so significantly that it would not be exaggerating to call its effect revolutionary.
+
+        This quote, from a leaked Microsoft memo (the Halloween documents), acknowledges that FOSS can work just as well as Microsoft's process can. Love the internet as a whole as a case study, also that we were still capitalizing it then.
+
+        -->
+
+        <div class="slide">
+            <p class="quote">
+                "Recent case studies (the Internet) provide very dramatic evidence 
+                ... that commercial quality can be achieved / exceeded by OSS projects."
+            </p>
+            <p>leaked internal Microsoft memo</p>
+        </div>
+
+        <div class="slide">
+            <h2>GPS "selective availablility" turned off (2000)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>"Web 2.0" (~2004)</h2>
+        </div>
+
+        <!--
+
+        Okay, Web 2.0 is totally a buzzword, but it did come at a time where the technology behind websites and their design was changing significantly.
+
+        -->
+
+
+        <div class="slide">
+            <h2>"Web 2.0" (~2004)</h2>
+            <h2>AJAX (2005)</h2>
+        </div>
+
+        <!--
+
+        Most significantly is AJAX - Asynchronous Javascript and XML. This provided a unified way for websites to dynamically update portions of their pages without reloading the entire page. We take this for granted now, but at the time this was a very big and visible change for developers and users alike.
+
+        AJAX is crucial for interactive web maps (as we'll see), and Google's maps came out right around this time using AJAX. 
+
+        -->
+
+        <div class="slide">
+            <img class="small" src="img/internet_users.png" />
+            <p>
+                <a class="source" href="http://www.webpronews.com/the-internet-was-kind-of-terrible-in-2002-infographic-2012-08">
+                    source
+                </a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/internet_speeds.png" />
+            <p>
+                <a class="source" href="http://www.webpronews.com/the-internet-was-kind-of-terrible-in-2002-infographic-2012-08">
+                    source
+                </a>
+            </p>
+        </div>
+
+        <!--
+
+        AJAX without these speed increases would not have had the same effect as the two had in combination. The technology and the faster browsing speeds made it possible and user-friendly to load map images in the background, as a user pans around a map.
+
+        -->
+
+
+        <!-- Begin philosophy -->
+
+        <div class="slide">
+            <h2>Free and open source software (FOSS)</h2>
+        </div>
+
+        <!--
+
+        For those who don't know the four freedoms associated with free software, this will be a very quick introduction. Since Free and open source software - would be worth talking about the distinction between them - are crucial to the geoweb, let's think a bit about how they function.
+
+        -->
+
+        <div class="slide">
+            <h3>Freedom 0:</h3>
+            <p>The freedom to run the program for any purpose.</p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 0:</h3>
+            <p><span class="hidden-text">The freedom to run the program for</span> any purpose.</p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 1:</h3>
+            <p>
+                The freedom to study how the program works, and change it to make 
+                it do what you wish.
+            </p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 1:</h3>
+            <p>
+                <span class="hidden-text">The freedom to</span> study how the 
+                program works<span class="hidden-text">, and</span> change it 
+                <span class="hidden-text">to make it do what you wish.</span>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 2:</h3>
+            <p>
+                The freedom to redistribute copies so you can help your neighbor.
+            </p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 2:</h3>
+            <p>
+                <span class="hidden-text">The freedom to</span> redistribute
+                copies <span class="hidden-text">so you can</span> help your neighbor.
+            </p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 3:</h3>
+            <p>
+                The freedom to improve the program, and release your 
+                improvements (and modified versions in general) to the public,
+                so that the whole community benefits.
+            </p>
+        </div>
+
+        <div class="slide">
+            <h3>Freedom 3:</h3>
+            <p>
+                <span class="hidden-text">The freedom to</span> 
+                improve
+                <span class="hidden-text">the program, and</span>
+                release your improvements
+                <span class="hidden-text">(and modified versions in general) to the public,
+                so that the</span>
+                whole community benefits.
+            </p>
+        </div>
+
+        <!--
+
+        Open data is not an absolutely good concept or movement, but there have been some real wins in its name over the past few years. PLUTO, Local Law 11?
+
+        -->
+
+        <div class="slide">
+            <h2>Open data</h2>
+        </div>
+
+        <div class="slide">
+            <img class= "small" src="img/free_pluto.png" />
+            <a href="http://spatialityblog.com/2013/07/25/nycs-mappluto-is-free/">
+                source
+            </a>
+        </div>
+
+
+        <!--
+
+        This is in a similar vein to open data, but rather than work with politicians to open up data held by a government, some (such as those within OpenStreetMap) work with communities to collect the data that they will find useful.
+
+        -->
+
+        <div class="slide">
+            <h2>Greater involvement of people affected by data</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/mapkibera.png" />
+            <a class="source" href="http://mapkibera.org/">Map Kibera</a>
+        </div>
+
+        <div class="slide">
+            <img class="large" src="img/mapkibera_compare.png" />
+            <a class="source" href="http://tools.geofabrik.de/mc/?lon=36.79202&lat=-1.31329&zoom=16&num=2&mt0=mapnik&mt1=google-map">map compare</a>
+        </div>
+
+
+        <!-- Begin mechanics -->
+
+        <div id="mechanics" class="slide">
+            <h2>Anatomy of a web map</h2>
+        </div>
+
+        <div class="slide">
+            <p>1. Start with some data</p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/database.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/data.png" />
+        </div>
+
+        <div class="slide">
+            <p>2. Make or reuse base tiles</p>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <p>Street, water and land data</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <p>Street, water and land data &rarr;</p>
+            </div>
+            <div class="right">
+                <img class="small" src="img/tile.png" />
+            </div>
+        </div>
+
+        <div class="slide">
+            <p>3. Overlay data</p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/bids.png" />
+        </div>
+
+        <div class="slide">
+            <p>4. Mix with some html, css, and javascript</p>
+        </div>
+
+        <div id="map-all-together" class="slide">
+            <div id="final-map"></div>
+        </div>
+
+        <div class="slide" style="font-size: 48px;">
+            <p>1. Start with some <strong>data</strong></p>
+            <p>2. Make or reuse <strong>base tiles</strong></p>
+            <p>3. <strong>Overlay data</strong></p>
+            <p>4. Mix with some <strong>html</strong>, <strong>css</strong>,
+            and <strong>javascript</strong></p>
+        </div>
+
+
+        <!-- Begin possibilities -->
+
+        <div id="possibilities" class="slide">
+            <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://8bitcity.com/embed?New York,-73.98446,40.71451,14"></iframe>
+            <a href="http://8bitcity.com/map" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/minecraft.png" />
+            <a href="http://vimeopro.com/openstreetmapus/state-of-the-map-us-2013/video/68099566" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/localsandtourists.png" />
+            <a href="http://www.flickr.com/photos/walkingsf/4671594023/in/set-72157624209158632" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/596acres.png" />
+            <a href="http://596acres.org/" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/comparinator.png" />
+            <a class="source" href="http://www.urbanresearchmaps.org/citycouncildistricts/map.html?lat=40.75935&lon=-73.81138&zoom=14&identify=-73.805799628444%2C%2040.755706832582&popup=false&maptype=OVERLAY&districttype=UNITY1&attributelayer=Plurality2010">source</a>
+        </div>
+
+        <div class="slide">
+            <p>Haiti in OpenStreetMap before 2010 earthquake</p>
+            <img src="img/haiti1.png" />
+            <a class="source" href="http://brainoff.com/weblog/2010/01/14/1518">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>Haiti in OpenStreetMap after 2010 earthquake</p>
+            <img src="img/haiti2.png" />
+            <a class="source" href="http://brainoff.com/weblog/2010/01/14/1518">
+                source
+            </a>
+        </div>
+
+    </body>
+</html>
