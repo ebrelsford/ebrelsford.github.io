@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>January | Maptime NYC</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('scroll', function () {
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <div class="slide lonely">
+            <h1>Maptime NYC!</h1>
+            <p>January 28, 2014</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>1: internet nuts & bolts</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-data-center-streetview.png" />
+            <a href="http://www.google.com/about/datacenters/inside/streetview/">Take a walk through a Google data center</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-data-center-the-dalles.jpg" />
+            <a href="http://m.ammoth.us/blog/2010/04/a-preliminary-atlas-of-gizmo-landscapes/">via m.ammoth, via the ny times</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.dnstools.ch/visual-traceroute.html">
+                visual traceroute
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <pre>traceroute www.google.com</pre>
+            <a style="display: inline-block; margin-top: 50px;" href="http://mappinghacks.com/projects/gmaps/traceroute.html">
+                mappinghacks: traceroute
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>
+                <a href="fillerpage.html">
+                    basic page
+                </a>
+            </p>
+            <p>
+                <a href="http://cdb.io/1fbBoyg">a map on CartoDB</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>2: web map nuts & bolts</h2>
+        </div>
+
+        <div class="slide lonely">
+            Let's look at
+            <a href="http://maptime.github.io/anatomy-of-a-web-map/#45">
+                Anatomy of a web map
+            </a>
+            <p>
+                via 
+                <a href="http://www.meetup.com/Maptime-SF/">Maptime SF</a>
+                and <a href="http://lyzidiamond.com/">Lyzi Diamond</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>3: anti-eviction map</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>3: anti-eviction map</h2>
+            <div style="margin-top: 100px;">
+                <a href="http://www.antievictionmappingproject.net/combined.html">
+                    No-Fault Evictions in San Francisco, 1997 to 2013
+                </a>
+            </div>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                <a href="http://leafletjs.com/">leaflet</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                <a href="http://d3js.org/">d3</a>
+            </p>
+            <p>
+                <a href="http://www.jasondavies.com/maps/transition/">
+                    projections in d3
+                </a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>4: let's make our own</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>find some data</p>
+            <p>(eg, using <a href="https://data.cityofnewyork.us/">data.cityofnewyork.us</a>)</p>
+        </div>
+
+        <div class="slide lonely">
+            <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9">
+                311 requests from 2010 to now
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://cartodb.com/">add it to CartoDB</a>
+        </div>
+
+    </body>
+</html>
