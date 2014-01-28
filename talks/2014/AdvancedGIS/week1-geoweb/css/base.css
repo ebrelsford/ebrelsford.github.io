@@ -99,6 +99,7 @@ p {
  * Pig overrides
  */
 div.slide {
+    cursor: default;
     padding: 5%;
 }
 
@@ -113,6 +114,18 @@ a {
 
 .slide.dark-background {
     color: white;
+}
+
+.slide.lonely h1 {
+    font-size: 150px;
+}
+
+.slide.lonely h2 {
+    font-size: 125px;
+}
+
+.slide.lonely {
+    font-size: 70px;
 }
 
 /*
