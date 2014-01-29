@@ -4,7 +4,6 @@ window.addEventListener('load', function() {
     function go(n) { w.scrollTo(0, w.innerHeight * (cur = n) + 1); }
     function set() {
         style.innerHTML = '.slide {display:block;' +
-            'width:' + window.innerWidth + 'px;' +
             'height:' + window.innerHeight + 'px;}';
     }
     w.addEventListener('resize', set);
