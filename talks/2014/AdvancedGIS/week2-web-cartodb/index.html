@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 2 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('scroll', function () {
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="slide lonely">
+            <h1>Advanced GIS</h1>
+            <p>Class 2</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>What has changed since 1997?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>open source</h2>
+            <img class="small" src="img/linux.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>GPS</h2>
+            <a href="http://en.wikipedia.org/wiki/Dilution_of_precision_(GPS)">
+                <img class="small" src="img/gps_satellites_reading.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>the web has changed</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>"Web 2.0" (~2004)</h2>
+            <ul>
+                <li>Britannica Online &rarr; Wikipedia</li>
+                <li>publishing &rarr;  participation</li>
+                <li>content mgmt systems &rarr;  wikis</li>
+                <li>directories &rarr;  tagging</li>
+            </ul>
+            <div style="margin-top: 100px;">
+                <a href="http://oreilly.com/web2/archive/what-is-web-20.html">
+                    What is Web 2.0
+                </a> (2005)
+            </div>
+        </div>
+
+        <div class="slide lonely">
+            <h2>AJAX (2005)</h2>
+            <p style="text-decoration: line-through;">(Asynchronous Javascript and XML)</p>
+            <p>dynamically loading portions of webpages</p>
+        </div>
+
+        <div class="slide lonely intermission"></div>
+
+        <div class="slide lonely">
+            <h2>Anatomy of a web map</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>1. Start with some <strong>data</strong></p>
+            <p>2. Make or reuse <strong>base tiles</strong></p>
+            <p>3. <strong>Overlay data</strong></p>
+            <p>4. Mix with some <strong>html</strong>, <strong>css</strong>,
+            and <strong>javascript</strong></p>
+        </div>
+
+        <div class="slide lonely intermission"></div>
+
+        <div class="slide lonely">
+            <h2>CartoDB</h2>
+        </div>
+
+    </body>
+</html>
