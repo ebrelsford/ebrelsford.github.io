@@ -37,6 +37,24 @@
         <div class="slide intermission"></div>
 
         <div class="slide lonely">
+            <img src="img/cartodb-colorpicker.png" />
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://kuler.adobe.com">
+                <img class="small" src="img/kuler.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://mothereffinghsl.com/">
+                <img src="img/mothereffing-hsl.png" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
             <h2>CartoCSS</h2>
         </div>
 
@@ -53,8 +71,15 @@
         -->
 
         <div class="slide lonely">
-            <img class="small" src="img/osm.png" />
-            <img class="small" src="img/cartodb.png" />
+            <img src="img/mapbox.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/osm.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/cartodb.png" />
         </div>
 
         <!--
@@ -71,6 +96,10 @@
             <img class="small" src="img/mapnik.png" />
         </div>
 
+        <div class="slide lonely">
+            <h2>why?</h2>
+        </div>
+
         <!--
 
         You used to have to tell mapnik how to style your tiles through a 
@@ -79,35 +108,41 @@
 
         -->
 
+        <div class="slide lonely">
+            <h2>styling maps can be painful</h2>
+        </div>
+
         <div class="slide">
             <img src="img/mapnik-xml.png" />
         </div>
 
-
-        <!--
-
-        CSS is the styling language of the web. CartoCSS (maybe you noticed from
-        the name!) is inspired by CSS. We will explore CSS more later, but here's a
-        very quick overview...
-
-        -->
-
-        <div class="slide">
-            <h2>CSS</h2>
+        <div class="slide lonely">
+            <img class="small" src="img/qgis-styling.png" />
         </div>
 
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-car.jpg" />
-            <a href="http://www.flickr.com/photos/mrstaticvoid/4307191115/">
-                mrstaticvoid on flickr
+        <div class="slide lonely">
+            <h2>you can share it</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>you can share it</h2>
+            <p>(it's just text)</p>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://ebrelsford.github.io/nyc/maps/opendata/2013/08/26/signs.html">
+                <img src="img/cartocss-online.png" />
             </a>
         </div>
 
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane.jpg" />
-            <a href="http://www.flickr.com/photos/niklasstjerna/6636973889/">
-                niklasstjerna on flickr
+        <div class="slide lonely">
+            <a href="https://github.com/gravitystorm/openstreetmap-carto">
+                <img src="img/cartocss-osm.png" />
             </a>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/cartocss-osm-detail.png" />
         </div>
 
 
@@ -121,27 +156,150 @@
 
         -->
 
-        <div class="slide">
-            <h2><strong>Carto</strong>CSS</h2>
+        <div class="slide lonely">
+            <h2>CartoCSS</h2>
         </div>
 
+        <div class="slide lonely">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-car.jpg" />
+            <a class="source" href="http://www.flickr.com/photos/mrstaticvoid/4307191115/">
+                mrstaticvoid on flickr
+            </a>
+        </div>
 
-        <!--
-        
-        For example, here we have a layer named bids and style its features by 
-        referring to it as #bids.
+        <div class="slide lonely">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane.jpg" />
+            <a class="source" href="http://www.flickr.com/photos/niklasstjerna/6636973889/">
+                niklasstjerna on flickr
+            </a>
+        </div>
 
-        -->
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
 
-        <div class="slide">
-            <p>We have a layer named <span class="code">bids</span>. We can style the features in it like so:</p>
-            <pre>
-    #bids {
-        line-color: #ae8;
-        line-width: 0.5;
-        polygon-opacity: 1;
-        polygon-fill: #ae8;
-    }</pre>
+        <div class="slide lonely">
+            <h2>this is a <strong>statement</strong></h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>this is a <strong>statement</strong></h2>
+<pre style="font-size: 44px; line-height: 44px;">#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>statements start with a <strong>selector</strong></h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>statements start with a <strong>selector</strong></h2>
+            <pre>#earthquakes</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>statements start with a <strong>selector</strong></h2>
+            <pre>#earthquakes</pre>
+            <p>"this statement will talk about the table called <strong>earthquakes</strong>"</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>always put a <strong>{</strong> after the selector</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>always put a <strong>{</strong> after the selector</h2>
+            <pre>#earthquakes {</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>and always always remember to close it with <strong>}</strong></h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>and always always remember to close it with <strong>}</strong></h2>
+            <pre>#earthquakes {
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>and always always remember to close it with <strong>}</strong></h2>
+            <pre>#earthquakes {
+}</pre>
+            <p>otherwise your rule will never end!</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>think of the <strong>{</strong> <strong>}</strong> as bookends</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>between <strong>{</strong> <strong>}</strong>, set your properties</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>what is a <strong>property</strong>?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>they're defined in the documentation for CartoCSS</p>
+            <img src="img/cartocss-docs.png" />
+        </div>
+
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+}</pre>
+            <p>always one per line, each line ending with a <strong>;</strong></p>
+        </div>
+
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+}</pre>
+            <p>the property name and the value you're setting it to are separated by a <strong>:</strong></p>
+        </div>
+
+        <div class="slide lonely">
+            <p>property values will often be <strong>color strings</strong>, <strong>numbers</strong>, or <strong>true/false</strong></p>
+        </div>
+
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</pre>
         </div>
 
 
@@ -282,8 +440,8 @@
             </p>
         </div>
 
-        <div class="slide">
-            <img src="img/cartocss-experiment.png" />
+        <div class="slide lonely">
+            <p>don't be afraid to experiment</p>
         </div>
 
         <div class="slide">

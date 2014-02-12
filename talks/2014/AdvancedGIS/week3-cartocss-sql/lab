@@ -1,5 +1,5 @@
 simple visualization
-* what if I want a color not in the picker?
+* what if I want to use a color not in RGB hex?
  * change colors, look at the CartoCSS
  * look at color in docs: https://www.mapbox.com/carto/api/2.1.0/#color
  * HSL, color pickers
@@ -17,6 +17,7 @@ simple visualization
    * show blog post about signs?
     * http://ebrelsford.github.io/nyc/maps/opendata/2013/08/26/signs.html
    * show OSM styles https://github.com/gravitystorm/openstreetmap-carto
+  * sometimes it's just quicker to type
  * properties
   * markers
   * lines
