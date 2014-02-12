@@ -1,0 +1,47 @@
+simple visualization
+* what if I want a color not in the picker?
+ * change colors, look at the CartoCSS
+ * look at color in docs: https://www.mapbox.com/carto/api/2.1.0/#color
+ * HSL, color pickers
+* walk through other properties, one by one
+ * show where documentation is, how to find what you're looking for
+
+* take a step back: what is this CartoCSS thing?
+ * basic syntax
+ * relation to CSS
+ * why is it nice
+  * compare to alternatives
+   * QGIS
+   * ugly XML
+  * sharing!
+   * show blog post about signs?
+    * http://ebrelsford.github.io/nyc/maps/opendata/2013/08/26/signs.html
+   * show OSM styles https://github.com/gravitystorm/openstreetmap-carto
+ * properties
+  * markers
+  * lines
+  * polygons
+
+* break for hands-on basic styling exercise
+
+* conditions
+ * basic zoom condition (eg [zoom >= 8]). show it in action.
+ * basic attribute conditions
+  * number
+  * string
+ * combining conditions
+  * AND
+  * OR
+
+* break for conditional styling exercise
+
+* variables
+ * use an example with changing marker widths by zoom level
+ * syntax
+ * color example
+
+* break for variables exercise
+
+* add a text label
+ * show what happens (second rendering of the points)
+ * talk about casings: https://github.com/migurski/HighRoad

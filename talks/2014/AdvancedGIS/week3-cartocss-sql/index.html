@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 3 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('scroll', function () {
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="slide lonely">
+            <h1>Advanced GIS</h1>
+            <p>Class 3</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/carto-github.png" />
+            <a href="https://github.com/mapbox/carto">(open source)</a>
+        </div>
+
+        <!--
+
+        Open source doesn't mean much on its own, but CartoCSS is actually used by
+        other projects that we'll be talking about:
+
+        -->
+
+        <div class="slide lonely">
+            <img class="small" src="img/osm.png" />
+            <img class="small" src="img/cartodb.png" />
+        </div>
+
+        <!--
+        
+        Part of why the geoweb community is so invested in CartoCSS is that CartoCSS
+        speaks to the renderer that many geoweb projects depend on, Mapnik.
+
+        Mapnik is a piece of software that takes your data and turns it into map 
+        tiles.
+
+        -->
+
+        <div class="slide lonely">
+            <img class="small" src="img/mapnik.png" />
+        </div>
+
+        <!--
+
+        You used to have to tell mapnik how to style your tiles through a 
+        cumbersome series of XML files. Here is a very small excerpt from OSM's
+        style files. This goes on for thousands of lines.
+
+        -->
+
+        <div class="slide">
+            <img src="img/mapnik-xml.png" />
+        </div>
+
+
+        <!--
+
+        CSS is the styling language of the web. CartoCSS (maybe you noticed from
+        the name!) is inspired by CSS. We will explore CSS more later, but here's a
+        very quick overview...
+
+        -->
+
+        <div class="slide">
+            <h2>CSS</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-car.jpg" />
+            <a href="http://www.flickr.com/photos/mrstaticvoid/4307191115/">
+                mrstaticvoid on flickr
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane.jpg" />
+            <a href="http://www.flickr.com/photos/niklasstjerna/6636973889/">
+                niklasstjerna on flickr
+            </a>
+        </div>
+
+
+        <!--
+
+        Here it is easy to see the impact of the web and of programmers on the 
+        geoweb.  Since CartoCSS is supported by both TileMill and CartoDB, it's 
+        worth going into in some detail here.
+
+        Talk about map, polygon, line, markers, text.
+
+        -->
+
+        <div class="slide">
+            <h2><strong>Carto</strong>CSS</h2>
+        </div>
+
+
+        <!--
+        
+        For example, here we have a layer named bids and style its features by 
+        referring to it as #bids.
+
+        -->
+
+        <div class="slide">
+            <p>We have a layer named <span class="code">bids</span>. We can style the features in it like so:</p>
+            <pre>
+    #bids {
+        line-color: #ae8;
+        line-width: 0.5;
+        polygon-opacity: 1;
+        polygon-fill: #ae8;
+    }</pre>
+        </div>
+
+
+        <!--
+
+        Variables can save you time and make it easier to change styles later.
+        They start with @.
+
+        -->
+
+        <div class="slide">
+            <p>Use <strong>variables</strong> to remove redundancy and improve flexibility:</p>
+            <pre>
+    <span class="highlighted">@bidcolor: #ae8;</span>
+    #bids {
+        line-color: <span class="highlighted">@bidcolor</span>;
+        line-width: 0.5;
+        polygon-opacity: 1;
+        polygon-fill: <span class="highlighted">@bidcolor</span>;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>Mostly you're going to be interested in:</p>
+            <div style="margin-left: 50px;">
+                <p>
+                    <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>,
+                </p>
+                <p>
+                    <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>, and
+                </p>
+                <p>
+                    <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-markers.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-polygons.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-lines.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-qqq.jpg" />
+        </div>
+
+
+        <!-- Markers -->
+
+        <!--
+
+        Markers apply to point features.
+
+        -->
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>
+            <p>
+                marker-fill<br />
+                marker-fill-opacity
+            </p>
+            <p>
+                marker-line-color<br />
+                marker-line-opacity
+            </p>
+            <p>
+                marker-height<br /> 
+                marker-width
+            </p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cartocss-marker.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cartocss-marker.png" />
+            <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }</pre>
+        </div>
+
+
+        <!-- Lines -->
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>
+            <p>
+                line-color
+            </p>
+            <p>
+                line-width
+            </p>
+            <p>
+                line-opacity
+            </p>
+        </div>
+
+
+        <!-- Polygons -->
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>
+            <p>
+                polygon-fill
+            </p>
+            <p>
+                polygon-opacity
+            </p>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartocss-experiment.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/cartocss-experiment.png" />
+            <a href="http://www.mapbox.com/carto/api/2.1.0/">mapbox.com/carto</a>
+        </div>
+
+
+        <!--
+
+        Vary rules by attribute values.
+
+        -->
+
+        <div class="slide">
+            <p>Advanced selectors</p>
+            <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }
+    #my-points<span class="highlighted">[]</span> {
+      marker-height: 90;
+      marker-width: 90;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>Vary styling based on the map's zoom level</p>
+            <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }
+    #my-points[<span class="highlighted">zoom = 14</span>] {
+      marker-height: 90;
+      marker-width: 90;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <p>Vary styling based on the features' attributes</p>
+            <pre>
+    #my-points {
+      marker-height: 60;
+      marker-width: 60;
+      marker-fill: #f45;
+      marker-line-color: #813;
+      marker-line-width: 15;
+      marker-allow-overlap: true;
+    }
+    #my-points[<span class="highlighted">population > 300000</span>] {
+      marker-height: 90;
+      marker-width: 90;
+    }</pre>
+        </div>
+
+        <div class="slide">
+            <h2>Lab</h2>
+        </div>
+
+        <div class="slide">
+            <p>
+                This cheatsheet might help: 
+                <a href="http://bit.ly/20130903-m3a2-cheatsheet">
+                    bit.ly/20130903-m3a2-cheatsheet
+                </a>
+            </p>
+        </div>
+
+    </body>
+</html>
