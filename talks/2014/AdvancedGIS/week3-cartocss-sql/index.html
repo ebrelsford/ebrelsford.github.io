@@ -468,6 +468,21 @@
 }</pre>
         </div>
 
+        <div class="slide lonely">
+            <p>shortcut for:</p>
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5] {
+        marker-width: 8;
+    }
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
         <div class="slide">
             <pre style="font-size: 50px; line-height: 70px;">
 #earthquakes {
@@ -480,6 +495,14 @@
 }</pre>
             <p>make markers where <span class="code">mag</span> is greater than 5.5 larger</p>
             <p><strong>also</strong> make markers with <span class="code">place</span> of "Northern Mid-Atlantic Ridge" larger</p>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartocss-conditions-or.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>combine conditions <strong>without</strong> a <strong>,</strong> to set properties with <strong>both</strong> conditions</h2>
         </div>
 
         <div class="slide lonely">
@@ -503,6 +526,10 @@
     }
 }</pre>
             <p>make markers where mag is greater than 5.5 <strong>and</strong> place = "Northern Mid-Atlantic Ridge" larger</p>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartocss-conditions-and.png" />
         </div>
 
         <div class="slide lonely">
