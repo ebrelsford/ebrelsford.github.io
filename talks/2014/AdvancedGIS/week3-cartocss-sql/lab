@@ -24,6 +24,7 @@ simple visualization
   * polygons
 
 * break for hands-on basic styling exercise
+ * Set color using CartoCSS rather than color picker
 
 * conditions
  * basic zoom condition (eg [zoom >= 8]). show it in action.

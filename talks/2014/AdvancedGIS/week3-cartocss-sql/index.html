@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
         <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
         <link href="css/pig.css" rel="stylesheet" type="text/css" />
         <link href="css/base.css" rel="stylesheet" />
@@ -318,6 +319,245 @@
 
         <div class="slide intermission"></div>
 
+        <div class="slide lonely">
+            <h2>that's nice, but it gets more interesting</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>let's vary some properties by <strong>zoom level</strong></h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>let's call these <strong>conditional statements</strong></h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>"make the earthquakes markers 3 pixels wide. if the map is at zoom level 10 or higher, make the earthquakes markers 8 pixels wide."</p>
+        </div>
+
+        <div class="slide lonely">
+            <pre>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10][zoom < 16] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom >= 10][zoom < 16] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>"make the earthquakes markers 3 pixels wide. if the map is at zoom level 10 or higher <strong>and</strong> less than 16, make the earthquakes markers 8 pixels wide."</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>more likely you'll be doing something like this</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 50px; line-height: 60px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom >= 10] {
+        marker-width: 8;
+    }
+    [zoom >= 16] {
+        marker-width: 13;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>order matters!</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>the last (furthest down), most specific statement wins</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>make markers that double in width every three zoom levels</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>that's not all!</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>you can change styles based on a feature's attributes</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag >= 6.5] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>look familiar?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>conditional statements on strings need to wrap those strings in quotation marks</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>try this out: make your markers bigger or a different color when the magnitude is over 7</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>combine conditions with <strong>,</strong> to set properties with <strong>either</strong> condition</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5],
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5],
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>make markers where <span class="code">mag</span> is greater than 5.5 larger</p>
+            <p><strong>also</strong> make markers with <span class="code">place</span> of "Northern Mid-Atlantic Ridge" larger</p>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5][place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5][place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>make markers where mag is greater than 5.5 <strong>and</strong> place = "Northern Mid-Atlantic Ridge" larger</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>recap</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>conditional statements look like</h2>
+            <pre>[mag &gt;= 5.5] {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>restrict statements more by putting conditions next to each other</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>[mag &gt;= 5.5][mag < 7] {
+    ...
+}</pre>
+            <p><strong>both</strong> conditions must be true</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>include more features by separating conditions with <strong>,</strong></h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>[mag &gt;= 5.5],
+[zoom >= 10] {
+    ...
+}</pre>
+            <p><strong>either</strong> condition could be true</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>you can use as many of these as you need to</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 50px; line-height: 60px;">#earthquakes {
+    [mag >= 7] {
+        ...
+    }
+    [zoom >= 11] {
+        ...
+    }
+    [zoom >= 12] {
+        ...
+    }
+    ...
+}</pre>
+        </div>
+
         <!--
 
         Variables can save you time and make it easier to change styles later.
@@ -462,77 +702,6 @@
         <div class="slide">
             <img src="img/cartocss-experiment.png" />
             <a href="http://www.mapbox.com/carto/api/2.1.0/">mapbox.com/carto</a>
-        </div>
-
-
-        <!--
-
-        Vary rules by attribute values.
-
-        -->
-
-        <div class="slide">
-            <p>Advanced selectors</p>
-            <pre>
-    #my-points {
-      marker-height: 60;
-      marker-width: 60;
-      marker-fill: #f45;
-      marker-line-color: #813;
-      marker-line-width: 15;
-      marker-allow-overlap: true;
-    }
-    #my-points<span class="highlighted">[]</span> {
-      marker-height: 90;
-      marker-width: 90;
-    }</pre>
-        </div>
-
-        <div class="slide">
-            <p>Vary styling based on the map's zoom level</p>
-            <pre>
-    #my-points {
-      marker-height: 60;
-      marker-width: 60;
-      marker-fill: #f45;
-      marker-line-color: #813;
-      marker-line-width: 15;
-      marker-allow-overlap: true;
-    }
-    #my-points[<span class="highlighted">zoom = 14</span>] {
-      marker-height: 90;
-      marker-width: 90;
-    }</pre>
-        </div>
-
-        <div class="slide">
-            <p>Vary styling based on the features' attributes</p>
-            <pre>
-    #my-points {
-      marker-height: 60;
-      marker-width: 60;
-      marker-fill: #f45;
-      marker-line-color: #813;
-      marker-line-width: 15;
-      marker-allow-overlap: true;
-    }
-    #my-points[<span class="highlighted">population > 300000</span>] {
-      marker-height: 90;
-      marker-width: 90;
-    }</pre>
-        </div>
-
-        <div class="slide">
-            <h2>Lab</h2>
-        </div>
-
-        <div class="slide">
-            <p>
-                This cheatsheet might help: 
-                <a href="http://bit.ly/20130903-m3a2-cheatsheet">
-                    bit.ly/20130903-m3a2-cheatsheet
-                </a>
-            </p>
         </div>
 
     </body>
