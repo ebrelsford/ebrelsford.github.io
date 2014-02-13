@@ -175,6 +175,22 @@
             </a>
         </div>
 
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-markers.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-polygons.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-lines.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-qqq.jpg" />
+        </div>
+
         <div class="slide lonely">
             <pre>#earthquakes {
     marker-fill: #ff307a;
@@ -603,150 +619,161 @@
 
         <div class="slide intermission"></div>
 
-        <!--
-
-        Variables can save you time and make it easier to change styles later.
-        They start with @.
-
-        -->
-
-        <div class="slide">
-            <p>Use <strong>variables</strong> to remove redundancy and improve flexibility:</p>
-            <pre>
-    <span class="highlighted">@bidcolor: #ae8;</span>
-    #bids {
-        line-color: <span class="highlighted">@bidcolor</span>;
-        line-width: 0.5;
-        polygon-opacity: 1;
-        polygon-fill: <span class="highlighted">@bidcolor</span>;
-    }</pre>
-        </div>
-
-        <div class="slide">
-            <p>Mostly you're going to be interested in:</p>
-            <div style="margin-left: 50px;">
-                <p>
-                    <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>,
-                </p>
-                <p>
-                    <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>, and
-                </p>
-                <p>
-                    <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>.
-                </p>
-            </div>
-        </div>
-
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane.jpg" />
-        </div>
-
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-markers.jpg" />
-        </div>
-
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-polygons.jpg" />
-        </div>
-
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-lines.jpg" />
-        </div>
-
-        <div class="slide">
-            <img class="small" style="max-width: 900px;" src="img/dashboard-airplane-qqq.jpg" />
-        </div>
-
-
-        <!-- Markers -->
-
-        <!--
-
-        Markers apply to point features.
-
-        -->
-
-        <div class="slide">
-            <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>
-        </div>
-
-        <div class="slide">
-            <a href="http://www.mapbox.com/carto/api/2.1.0/#markers">markers</a>
-            <p>
-                marker-fill<br />
-                marker-fill-opacity
-            </p>
-            <p>
-                marker-line-color<br />
-                marker-line-opacity
-            </p>
-            <p>
-                marker-height<br /> 
-                marker-width
-            </p>
-        </div>
-
-        <div class="slide">
-            <img class="small" src="img/cartocss-marker.png" />
-        </div>
-
-        <div class="slide">
-            <img class="small" src="img/cartocss-marker.png" />
-            <pre>
-    #my-points {
-      marker-height: 60;
-      marker-width: 60;
-      marker-fill: #f45;
-      marker-line-color: #813;
-      marker-line-width: 15;
-      marker-allow-overlap: true;
-    }</pre>
-        </div>
-
-
-        <!-- Lines -->
-
-        <div class="slide">
-            <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>
-        </div>
-
-        <div class="slide">
-            <a href="http://www.mapbox.com/carto/api/2.1.0/#line">lines</a>
-            <p>
-                line-color
-            </p>
-            <p>
-                line-width
-            </p>
-            <p>
-                line-opacity
-            </p>
-        </div>
-
-
-        <!-- Polygons -->
-
-        <div class="slide">
-            <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>
-        </div>
-
-        <div class="slide">
-            <a href="http://www.mapbox.com/carto/api/2.1.0/#polygon">polygons</a>
-            <p>
-                polygon-fill
-            </p>
-            <p>
-                polygon-opacity
-            </p>
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;">#earthquakes {
+    marker-width: 5;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: 10;
+    }
+    [zoom >= 8] {
+        marker-width: 15;
+    }
+    [zoom >= 12] {
+        marker-width: 20;
+    }
+}</pre>
         </div>
 
         <div class="slide lonely">
-            <p>don't be afraid to experiment</p>
+            <h2>what if I want to change marker-width?</h2>
         </div>
 
-        <div class="slide">
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;">#earthquakes {
+    marker-width: 6;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: 12;
+    }
+    [zoom >= 8] {
+        marker-width: 18;
+    }
+    [zoom >= 12] {
+        marker-width: 24;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>there's a better way!</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>variables</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;"><strong>@width: 6;</strong>
+#earthquakes {
+    marker-width: <strong>@width</strong>;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: 12;
+    }
+    [zoom >= 8] {
+        marker-width: 18;
+    }
+    [zoom >= 12] {
+        marker-width: 24;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;"><strong>@width: 6;</strong>
+#earthquakes {
+    marker-width: <strong>@width</strong>;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: <strong>@width * 2</strong>;
+    }
+    [zoom >= 8] {
+        marker-width: <strong>@width * 3</strong>;
+    }
+    [zoom >= 12] {
+        marker-width: <strong>@width * 4</strong>;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>then I can change all the widths at once</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre style="font-size: 40px; line-height: 50px;"><strong>@width: 8;</strong>
+#earthquakes {
+    marker-width: @width;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: @width * 2;
+    }
+    [zoom >= 8] {
+        marker-width: @width * 3;
+    }
+    [zoom >= 12] {
+        marker-width: @width * 4;
+    }
+}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>it works with colors, too</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre><strong>@earthquakecolor: #ff307a;</strong>
+#earthquakes {
+    marker-width: @width;
+    marker-fill: <strong>@earthquakecolor</strong>;
+    marker-line-color: <strong>@earthquakecolor</strong>;
+    marker-line-opacity: 0.2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>try it: use a variable for one of your properties</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>you don't have to memorize all of this</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>use the <a href="https://www.mapbox.com/carto/api/2.1.0/">documentation</a></h2>
+            <img src="img/cartocss-docs.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>experiment with CartoDB's visualization wizards, see the code they produce</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>read <a href="https://github.com/hotosm/hdm-cartocss">other people's</a> CartoCSS</h2>
+            <a href="https://github.com/hotosm/hdm-cartocss">
+                <img src="img/cartocss-hdm.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>don't be afraid to experiment</h2>
             <img src="img/cartocss-experiment.png" />
-            <a href="http://www.mapbox.com/carto/api/2.1.0/">mapbox.com/carto</a>
         </div>
 
     </body>
