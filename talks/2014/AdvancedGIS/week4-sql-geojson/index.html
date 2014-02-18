@@ -255,6 +255,29 @@ WHERE mag &gt; 6
         </div>
 
         <div class="slide lonely">
+            <h2>or you can negate a condition with <span class="code">NOT</span></h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM earthquakes
+WHERE NOT (mag &gt; 6 
+  OR place =
+  'Northern Mid-Atlantic Ridge')</pre>
+        </div>
+
+        <div class="slide lonely">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM earthquakes
+WHERE NOT (mag &gt; 6 
+  OR place =
+  'Northern Mid-Atlantic Ridge')</pre>
+            <p>(match any rows that <strong>do not</strong> match the condition)</p>
+        </div>
+
+        <div class="slide lonely">
             <h2><span class="code">SELECT</span> does not change the table, it only changes your view of the table</h2>
         </div>
 
@@ -312,8 +335,6 @@ WHERE ...</pre>
         When you interact with a database, you need to specify a table in order to
         get what you want.
 
-        (Need a funny example of a collection of things.)
-
         Tables are a lot like spreadsheets. They have columns that have names and
         types (eg, string, number, geometry). When you ask for data from a table,
         you can get as little or as many of these columns as you want at once. You
@@ -321,8 +342,6 @@ WHERE ...</pre>
         will be faster. Think of this as showing or hiding columns in a
         spreadsheet - this makes it easier for you to look through the spreadsheet
         for what you're looking for.
-
-        (Build on example of collection of things.)
 
         When we want to pull from a table, we use the keyword FROM:
 
@@ -364,14 +383,6 @@ WHERE ...</pre>
         (Combining WHERE conditions with AND and OR.)
 
         (Negating WHERE conditions with NOT.)
-
-        All of this works great for one collection of things, but what if you want
-        to relate multiple types of things?
-
-        (This needs an example.)
-
-        We don't have time to cover this right now, but if you're curious look up
-        JOIN. (And include a reading?)
 
         -->
 
