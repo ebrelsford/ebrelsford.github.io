@@ -109,24 +109,29 @@
         <div class="slide intermission"></div>
 
         <div class="slide lonely">
-            <h1>Basic SQL</h1>
+            <img src="img/cartodb-filters.png" />
         </div>
 
         <div class="slide lonely">
-            <h1>Basic SQL</h1>
-            <p>Carto<strong>DB</strong></p>
+            <img src="img/cartodb-filters-specific.gif" />
         </div>
 
         <div class="slide lonely">
-            <p>SQL</p>
+            <h2>but I wanted <strong>6.5</strong>!</h2>
         </div>
 
         <div class="slide lonely">
-            <p>SQL = Structured Query Language</p>
+            <h2>SQL</h2>
         </div>
 
         <div class="slide lonely">
-            <p>SQL = the language databases understand</p>
+            <h2>SQL</h2>
+            <h2>Structured Query Language</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>SQL</h2>
+            <h2>the language databases understand</h2>
         </div>
 
         <div class="slide lonely">
@@ -150,10 +155,25 @@
             <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
             <div style="float: left; width: 50%;">
                 <div style="margin-left: 25px;">
-                    <p>Give me the pages that refer to properties in Brooklyn.</p>
                     <p>Give me the addresses of the properties in Brooklyn.</p>
                 </div>
             </div>
+        </div>
+
+        <div class="slide lonely">
+            <h2>databases are great at these types of questions</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>it's what they were made for</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>SQL helps you ask these questions in a way databases understand</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>Carto<strong>DB</strong></h2>
         </div>
 
         <div class="slide lonely">
@@ -169,7 +189,25 @@
         </div>
 
         <div class="slide lonely">
+            <h2><span class="code">SELECT</span>: choose columns from a table</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>just list the columns. for example:</p>
+            <pre>SELECT mag, place
+FROM earthquakes</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2><span class="code">SELECT *</span>: choose <strong>all</strong> columns</h2>
+        </div>
+
+        <div class="slide lonely">
             <img src="img/cartodb-table-where.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2><span class="code">WHERE</span>: choose rows from a table</h2>
         </div>
 
         <div class="slide lonely">
@@ -177,7 +215,87 @@
         </div>
 
         <div class="slide lonely">
-            <img src="img/cartodb-group-query.png" />
+            <p>for example:</p>
+            <pre>SELECT *
+FROM earthquakes
+WHERE mag &gt; 6 
+  AND mag &lt; 7</pre>
+        </div>
+
+        <div class="slide lonely">
+            <p>these conditions are the same as the ones in CartoCSS:</p>
+            <pre style="margin-left: 250px;">&gt;
+&lt;
+=
+!=
+&gt;=
+&lt;=</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>and you combine them with <span class="code">AND</span> / <span class="code">OR</span></h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM earthquakes
+WHERE mag &gt; 6 
+  AND place =
+  'Northern Mid-Atlantic Ridge'</pre>
+        </div>
+
+        <div class="slide lonely">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM earthquakes
+WHERE mag &gt; 6 
+  OR place =
+  'Northern Mid-Atlantic Ridge'</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2><span class="code">SELECT</span> does not change the table, it only changes your view of the table</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>you can also use <span class="code">SELECT</span> to get a better idea of what data is in your table</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>get a count of matching rows:</p>
+            <pre>SELECT COUNT(*)
+FROM earthquakes
+WHERE mag &gt; 6 
+  OR place =
+  'Northern Mid-Atlantic Ridge'</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>but you'll almost never want to use this statement for your map</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/cartodb-filters-nogeom.gif" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>you can also use SQL to quickly <span class="code">UPDATE</span> or <span class="code">DELETE</span> the data in your table</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>these <strong>will</strong> destroy data, so have a backup or test it with a table you don't need</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>UPDATE earthquakes
+SET mag_display = 'HUGE'
+WHERE mag &gt; 8</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre>DELETE FROM earthquakes
+WHERE ...</pre>
         </div>
 
         <div class="slide lonely">
