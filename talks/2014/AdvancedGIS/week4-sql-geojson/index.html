@@ -343,47 +343,6 @@ WHERE ...</pre>
         spreadsheet - this makes it easier for you to look through the spreadsheet
         for what you're looking for.
 
-        When we want to pull from a table, we use the keyword FROM:
-
-            FROM {table}
-
-        This won't do anything on its own. We have to tell the database what we
-        want to know about our things. Do this with SELECT:
-
-            SELECT {attribute1, attribute2, attribute3}
-
-        Now put it together:
-
-            SELECT {attribute1, attribute2, attribute3}
-            FROM {table}
-
-        Nice! So SELECT restricts the columns that we receive. What if we want to
-        restrict the rows that we receive? This is something spreadsheets are not
-        generally good at, so it might be a little weird to think about.
-
-        You do it with WHERE:
-
-            WHERE {attribute1} = {value1}
-
-        Put it all together:
-
-            SELECT {attribute1, attribute2, attribute3}
-            FROM {table}
-            WHERE {attribute1} = {value1}
-
-        Also:
-
-            IN
-            >
-            <
-            >=
-            <=
-            etc.
-
-        (Combining WHERE conditions with AND and OR.)
-
-        (Negating WHERE conditions with NOT.)
-
         -->
 
 
