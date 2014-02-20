@@ -397,6 +397,43 @@ WHERE ...</pre>
             <p>Much more in the SQL cheatsheet in Lore</p>
         </div>
 
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>getting data from CartoDB using SQL</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>http://eric.cartodb.com/api/v2/
+    sql?q=SELECT COUNT(*) 
+          FROM earthquakes 
+          WHERE mag &gt; 7</pre>
+            <a href="http://eric.cartodb.com/api/v2/sql?q=select%20COUNT(*)%20from%20earthquakes%20WHERE%20mag%20%3E%207">view results</a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>this should all go on one line, but then we have to make it small:</h2>
+            <pre style="font-size: 24px;">http://eric.cartodb.com/api/v2/sql?q=SELECT COUNT(*) FROM earthquakes WHERE mag &gt; 7</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre>http://eric.cartodb.com/api/v2/
+    sql?q=SELECT * 
+          FROM earthquakes 
+          WHERE mag &gt; 7</pre>
+            <a href="http://eric.cartodb.com/api/v2/sql?q=select%20*%20from%20earthquakes%20WHERE%20mag%20%3E%207">view results</a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>with public tables you can do this:</h2>
+            <pre>http://{your username}.cartodb.com
+    /api/v2/sql?q={your query}</pre>
+        </div>
+
+        <div class="slide lonely">
+            <h2>write your query in a text editor, then turn it into the URL</h2>
+        </div>
+
         <!--
 
         SQL, Structured Query Language, is a standard language used by databases
@@ -635,6 +672,28 @@ WHERE ...</pre>
         <div class="slide lonely">
             <h2>the files can get big:</h2>
             <img src="img/geojson-worstyears-raw-columns.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>getting GeoJSON files from CartoDB</h2>
+        </div>
+
+        <div class="slide lonely">
+            <pre>http://eric.cartodb.com/api/v2/
+    sql?q=SELECT * 
+          FROM earthquakes 
+          WHERE mag &gt; 7</pre>
+        </div>
+
+        <div class="slide lonely">
+            <pre>http://eric.cartodb.com/api/v2/
+    sql?q=SELECT * 
+          FROM earthquakes 
+          WHERE mag &gt; 7
+    <strong>&amp;format=geojson</strong></pre>
+            <a href="http://eric.cartodb.com/api/v2/sql?q=select%20*%20from%20earthquakes%20WHERE%20mag%20%3E%207&format=geojson">view results</a>
         </div>
 
         <div class="slide intermission"></div>
