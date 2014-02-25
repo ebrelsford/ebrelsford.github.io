@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maptime: OSM buildings</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>NYC OSM buildings import</h1>
+        </div>
+
+        <div class="slide">
+            <h2>What?</h2>
+        </div>
+
+        <div class="slide">
+            <p>
+                Importing NYC's official building and address data into OSM
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>How?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/nyc-address-points.png" />
+            <p style="font-size: 60px;">
+                <a href="https://data.cityofnewyork.us/City-Government/NYC-Address-Points/4iq4-tuhq">
+                    https://data.cityofnewyork.us/City-Government/NYC-Address-Points/4iq4-tuhq
+                </a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <img src="img/nyc-building-footprints.png" />
+            <p style="font-size: 60px;">
+                <a href="https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8">
+                    https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8
+                </a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <img src="img/nycbuildings-github.png" />
+            <p style="font-size: 60px;">
+                <a href="https://github.com/osmlab/nycbuildings/">https://github.com/osmlab/nycbuildings/</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>Why?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-buildings-tiles.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-buildings-nominatim.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-pois-buildings.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-buildings-fieldpapers.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-buildings-id.png" />
+        </div>
+
+        <div class="slide">
+            <h2>How can you get involved?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>How can you get involved?</h2>
+            <p>It's complicated.</p>
+        </div>
+
+        <div class="slide">
+            <img src="img/import-procedure.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/tasking-manager.png" />
+        </div>
+
+        <div class="slide">
+            <h2>Why should you use the OSM data?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>A ton of effort has gone into cleaning it up</h2>
+        </div>
+
+        <div class="slide">
+            <p>
+                Merged buildings with addresses
+            </p>
+        </div>
+
+        <div class="slide">
+            <p>
+                Merged buildings with addresses
+            </p>
+            <p>
+                Addresses have been made consistent
+                (street names were not uniform, ranges in addresses dropped)
+            </p>
+        </div>
+
+        <div class="slide">
+            <p>
+                Merged buildings with addresses
+            </p>
+            <p>
+                Addresses have been made consistent
+                (street names were not uniform, ranges in addresses dropped)
+            </p>
+            <p>
+                Other inconsistencies removed
+                (buildings with 0 height, weird triangular buildings, ...)
+            </p>
+        </div>
+
+        <div class="slide">
+            <p>
+                Merged buildings with addresses
+            </p>
+            <p>
+                Addresses have been made consistent
+                (street names were not uniform, ranges in addresses dropped)
+            </p>
+            <p>
+                Other inconsistencies removed
+                (buildings with 0 height, weird triangular buildings, ...)
+            </p>
+            <p><a href="https://github.com/osmlab/nycbuildings/issues?state=open">more in the GitHub issues</a></p>
+        </div>
+
+        <div class="slide">
+            <h2>How can you use the OSM data?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Metro extracts</h2>
+            <a href="http://metro.teczno.com/#new-york">metro.teczno.com/#new-york</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/metro-extracts.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/metro-extracts-shp.png" />
+        </div>
+
+        <div class="slide">
+            <h2>Overpass</h2>
+            <img src="img/overpass-turbo.png" />
+            <a href="http://overpass-turbo.eu/">overpass-turbo.eu</a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;">
+&lt;union&gt;
+  &lt;query type="way"&gt;
+    &lt;has-kv k="building"/&gt;
+    &lt;bbox-query {{bbox}}/&gt;
+  &lt;/query&gt;
+  &lt;query type="relation"&gt;
+    &lt;has-kv k="building"/&gt;
+    &lt;bbox-query {{bbox}}/&gt;
+  &lt;/query&gt;
+&lt;/union&gt;
+&lt;union&gt;
+  &lt;item/&gt;
+  &lt;recurse type="down"/&gt;
+&lt;/union&gt;
+&lt;print/&gt;
+            </pre>
+        </div>
+
+    </body>
+</html>
