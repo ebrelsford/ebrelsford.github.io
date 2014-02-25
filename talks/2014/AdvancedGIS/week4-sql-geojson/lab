@@ -1,49 +1,17 @@
-simple visualization
-* what if I want to use a color not in RGB hex?
- * change colors, look at the CartoCSS
- * look at color in docs: https://www.mapbox.com/carto/api/2.1.0/#color
- * HSL, color pickers
-* walk through other properties, one by one
- * show where documentation is, how to find what you're looking for
+Shapefile, digital preservation: http://www.digitalpreservation.gov/formats/fdd/fdd000280.shtml
 
-* take a step back: what is this CartoCSS thing?
- * basic syntax
- * relation to CSS
- * why is it nice
-  * compare to alternatives
-   * QGIS
-   * ugly XML
-  * sharing!
-   * show blog post about signs?
-    * http://ebrelsford.github.io/nyc/maps/opendata/2013/08/26/signs.html
-   * show OSM styles https://github.com/gravitystorm/openstreetmap-carto
-  * sometimes it's just quicker to type
- * properties
-  * markers
-  * lines
-  * polygons
+TODO hint at SQL spatial operations
 
-* break for hands-on basic styling exercise
- * Set color using CartoCSS rather than color picker
+TODO include some GeoJSON github examples:
+ https://github.com/smartchicago/chicago-atlas/commit/d13b9d87480bebfba5b1a491823949e643d8534d#diff-e1ae25675e1e44751c5a51e51108eeef
+ https://github.com/ebrelsford/geojson-examples/commit/9625a639450325476c01fe3197db1c1fb747974a#diff-0
+ https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5
+ https://github.com/unitedstates/districts
 
-* conditions
- * basic zoom condition (eg [zoom >= 8]). show it in action.
- * basic attribute conditions
-  * number
-  * string
- * combining conditions
-  * AND
-  * OR
+spec:
+ http://geojson.org/geojson-spec.html
 
-* break for conditional styling exercise
-
-* variables
- * use an example with changing marker widths by zoom level
- * syntax
- * color example
-
-* break for variables exercise
-
-* add a text label
- * show what happens (second rendering of the points)
- * talk about casings: https://github.com/migurski/HighRoad
+tutorial:
+ http://giscollective.org/github-bringing-geojson-to-life-since-2013/
+ https://github.com/blog/1772-diffable-more-customizable-maps
+ https://www.mapbox.com/blog/open-web-geojson/
