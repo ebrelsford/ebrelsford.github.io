@@ -679,7 +679,7 @@ FROM earthquakes</pre>
 
         <div class="slide">
             <h2>SQL can help you do analysis and interesting styling</h2>
-            <pre>
+            <pre style="font-size: 30px; line-height: 30px;">
 SELECT *, ST_Distance(the_geom, ST_GeomFromText('POINT (0 0)', 4326))
 FROM earthquakes</pre>
             <p>
@@ -688,7 +688,7 @@ FROM earthquakes</pre>
         </div>
 
         <div class="slide">
-           <p>if you need to make significant changes to your data, use a desktop GIS like <a href="http://qgis.org/en/site/">QGIS</a></p>
+           <p>if you need to consolidate a ton of data, you'll probably want to use a desktop GIS like <a href="http://qgis.org/en/site/">QGIS</a></p>
         </div>
 
         <div class="slide">
@@ -700,6 +700,9 @@ FROM earthquakes</pre>
             <h2>collaborating with data?</h2>
             <p>
                 consider using <a href="https://github.com/">GitHub</a>
+            </p>
+            <p>
+                <a href="https://github.com/ebrelsford/geojson-examples/blob/master/queens.geojson">queens</a>
             </p>
             <p>
                 <a href="https://github.com/ebrelsford/geojson-examples/commit/9625a639450325476c01fe3197db1c1fb747974a">
