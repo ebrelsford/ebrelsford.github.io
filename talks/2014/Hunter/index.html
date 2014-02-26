@@ -293,7 +293,27 @@
             <p>data that is:
                 <ul style="list-style: disc outside; padding-left: 50px;">
                     <li>accessible (online, in a widely-used format)</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
                     <li>licensed freely</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                    <li>licensed freely</li>
+                    <li>usually created by a large entity</li>
                 </ul>
             </p>
         </div>
@@ -369,6 +389,11 @@
         </div>
 
         <div class="slide">
+            <h2>source code</h2>
+            <img src="img/source-code.png" />
+        </div>
+
+        <div class="slide">
             <h2>freedoms to</h2>
             <ul style="list-style: disc outside; padding-left: 50px;">
                 <li>use,</li>
@@ -416,7 +441,9 @@
         <div class="slide">
             <p>
                 GitHub, the popular site for hosting code, much of it open source, has well over <strong>3.5 million</strong> users and <strong>10 million</strong> repositories.
-                <a href="https://github.com/blog/1724-10-million-repositories">source</a>
+            </p>
+            <p>
+                <a class="source" href="https://github.com/blog/1724-10-million-repositories">source</a>
             </p>
         </div>
 
@@ -548,6 +575,12 @@
         </div>
 
         <div class="slide">
+            <a href="http://maps.stamen.com/watercolor/#12/37.7706/-122.3782">
+                <img src="img/stamen-watercolors.png" />
+            </a>
+        </div>
+
+        <div class="slide">
             <h3>Aaron Straup Cope (@thisisaaronland)</h3>
             <a href="http://aaronland.info/">
                 <img style="max-width: 95%;" src="img/flickr-alpha-us.png" />
@@ -568,10 +601,17 @@
             </a>
         </div>
 
+        <div class="slide">
+            <h3>OpenStreetMap</h3>
+            <a href="http://stateofthemap.us/">
+                <img class="small" src="img/sotmus.png" />
+            </a>
+        </div>
+
         <div class="slide intermission"></div>
 
         <div class="slide">
-            <h2>workflow</h2>
+            <h2>examples</h2>
             <p>
                 <a href="earthquakes_since_2010_magnitude_6.csv">global earthquakes since 2010 with magnitude over 6</a>
             </p>
@@ -586,17 +626,44 @@
         </div>
 
         <div class="slide">
-            <p>if you need to do some analysis or significant changes to your data, use a desktop GIS like <a href="http://qgis.org/en/site/">QGIS</a></p>
+            <h2>if you need more interesting maps, use <a href="http://cartodb.com/">CartoDB</a></h2>
         </div>
 
         <div class="slide">
-            <h2>if you need more interesting maps, use <a href="http://cartodb.com/">CartoDB</a></h2>
+            <h2>SQL can help you do analysis and interesting styling</h2>
+            <pre style="font-size: 30px; line-height: 30px;">
+SELECT *, ST_Distance(the_geom, ST_GeomFromText('POINT (0 0)', 4326))
+FROM earthquakes</pre>
+        </div>
+
+        <div class="slide">
+            <h2>SQL can help you do analysis and interesting styling</h2>
+            <pre>
+SELECT *, ST_Distance(the_geom, ST_GeomFromText('POINT (0 0)', 4326))
+FROM earthquakes</pre>
+            <p>
+                <a href="http://postgis.net/docs/manual-dev/reference.html">more in the docs</a>
+            </p>
+        </div>
+
+        <div class="slide">
+           <p>if you need to make significant changes to your data, use a desktop GIS like <a href="http://qgis.org/en/site/">QGIS</a></p>
+        </div>
+
+        <div class="slide">
+            <h2>polygons, too</h2>
+            <a href="osm-buildings-excerpt.geojson">buildings from OSM</a>
         </div>
 
         <div class="slide">
             <h2>collaborating with data?</h2>
             <p>
                 consider using <a href="https://github.com/">GitHub</a>
+            </p>
+            <p>
+                <a href="https://github.com/ebrelsford/geojson-examples/commit/9625a639450325476c01fe3197db1c1fb747974a">
+                    diffs
+                </a>
             </p>
         </div>
 
