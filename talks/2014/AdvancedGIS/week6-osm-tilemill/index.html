@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 6 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 6</p>
+            <p>Editing OpenStreetMap</p>
+            <p>TileMill</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>editing OpenStreetMap (OSM)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what does the data look like?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>shapes</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>nodes (points)</li>
+                <li>ways (lines)</li>
+                <li>closed ways (polygons)</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>nodes, ways, closed ways</h2>
+            <p>are just shapes with <strong>no meaning</strong> until you give them attributes, as in any GIS</p>
+        </div>
+
+        <div class="slide">
+            <h2>so you have to add attributes</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/qgis-attribute-table.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-worstyears-raw.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/osm-tags-union-square.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/osm-tags-bmt-broadway.png" />
+        </div>
+
+        <div class="slide">
+            <p>a table wouldn't work because:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>there would be thousands of columns</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>a table wouldn't work because:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>there would be thousands of columns</li>
+                <li>and most of those columns would be empty (eg 'electrified')</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>a table wouldn't work because:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>there would be thousands of columns</li>
+                <li>and most of those columns would be empty (eg 'electrified')</li>
+                <li>what you could map would be predetermined</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>key-value pairs</p>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>leisure=park</p>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>name=Union Square West</p>
+        </div>
+
+        <div class="slide">
+            <h2>folksonomy</h2>
+            <p>a collaborative system of categorization</p>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.aaronland.info/weblog/2011/09/13/inodes/">
+                <img style="max-width: 85%;" src="img/spinny-equals-no.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>if you want your data to be useful (and show up on maps!), you should try to be consistent with the community</p>
+        </div>
+
+        <div class="slide">
+            <p>when you're looking for the way to tag something</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>look around you</li>
+                <li>check the <a href="http://wiki.openstreetmap.org/wiki/Main_Page">wiki</a></li>
+                <li>check <a href="http://taginfo.openstreetmap.org/">taginfo</a></li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>how does the data get there?</h2>
+        </div>
+
+        <div class="slide">
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>imports (but don't)</li>
+                <li>online editor, using aerial imagery</li>
+                <li>GPS</li>
+                <li>Field Papers</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Field Papers</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Field Papers</h2>
+            <p>"a tool to help you create a multi-page atlas of anywhere in the world"</p>
+            <p><a href="http://fieldpapers.org">fieldpapers.org</a></p>
+        </div>
+
+        <div class="slide">
+            <img src="img/fieldpapers-make-atlas.png" />
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://fieldpapers.org/atlas.php?id=ncz5lrfs#17/40.67782/-73.96397">
+                <img class="small" src="img/fieldpapers-uploaded.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://fieldpapers.org/snapshot.php?id=fw7ptb4r#18/40.67899/-73.96597">
+                <img class="small" src="img/fieldpapers-osm.png" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>how do you use the data?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>metro extracts</h2>
+            <img style="width: 60%;" src="img/metro-extracts.png" />
+            <a class="source" href="http://metro.teczno.com/">metro.teczno.com</a>
+        </div>
+
+        <div class="slide">
+            <h2>overpass</h2>
+            <p><a href="http://overpass-turbo.eu/">try it out</a></p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>TileMill</h2>
+        </div>
+
+    </body>
+</html>
