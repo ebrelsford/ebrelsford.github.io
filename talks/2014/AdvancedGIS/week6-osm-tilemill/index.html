@@ -167,6 +167,8 @@
             </ul>
         </div>
 
+        <div class="slide intermission"></div>
+
         <div class="slide">
             <h2>Field Papers</h2>
         </div>
@@ -301,9 +303,107 @@
             </ul>
         </div>
 
+        <div class="slide intermission"></div>
+
         <div class="slide">
             <h2>download some data from</h2>
             <a href="http://metro.teczno.com/">metro.teczno.com</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>a little more CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 35px; line-height: 40px;">.power-poi[type='generator'][zoom&gt;=18] {
+    marker-file: url('icons/poi/generator-18.png');
+    [source='nuclear'],
+    [source='wind'],
+    [source='solar'] {
+        marker-file: url('icons/poi/generator_[source]-18.png');
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 35px; line-height: 40px;">[source='nuclear'],
+[source='wind'],
+[source='solar'] {
+    marker-file: url('icons/poi/generator_<strong>[source]</strong>-18.png');
+}</pre>
+            <p>[source] will be replaced by the value of the source attribute on the feature</p>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 35px; line-height: 40px;">.power-poi[type='generator'][zoom&gt;=18] {
+    marker-file: url('icons/poi/generator-18.png');
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 35px; line-height: 40px;">.power-poi[type='generator'][zoom&gt;=18] {
+    marker-file: url('icons/poi/generator-18.png');
+    ...
+}</pre>
+            <p>a <strong>.</strong> in a rule refers to a <strong>class</strong>. multiple layers can have the same class.</p>
+            <p>so this is another way to style multiple layers at once.</p>
+        </div>
+
+        <div class="slide">
+            <pre>#roads {
+    line-width: 5;
+    line-color: black;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 70px;">#roads {
+    line-width: 5;
+    line-color: black;
+
+    ::inner {
+        line-width: 2;
+        line-color: blue;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 70px;">#roads {
+    line-width: 5;
+    line-color: black;
+
+    <strong>::inner</strong> {
+        line-width: 2;
+        line-color: blue;
+    }
+}</pre>
+            <p>"attachments"</p>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 70px;">#roads {
+    ...
+    <strong>::inner</strong> {
+        line-width: 2;
+        line-color: blue;
+    }
+}</pre>
+            <p>"attachments": draw the selected features again, with these properties</p>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 70px;">#roads {
+    ...
+    <strong>::inner</strong> {
+        line-width: 2;
+        line-color: blue;
+    }
+}</pre>
+            <p>replace <strong>inner</strong> with anything you want. all that matters is it starts with <strong>::</strong></p>
         </div>
 
     </body>
