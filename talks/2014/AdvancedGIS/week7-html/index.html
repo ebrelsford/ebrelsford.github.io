@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 7 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 7</p>
+            <p>HTML</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>congratulations!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>congratulations!</h2>
+            <p>you know most of the webmapping you can do without programming</p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/tilemill_html.png" />
+            <a href="http://blog.thematicmapping.org/2012/11/exploring-mapbox-stack-mbtiles-tilejson.html">
+                thematic mapping blog
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/nytimes_primaries.png" />
+            <a href="http://www.nytimes.com/projects/elections/2013/nyc-primary/mayor/map.html">
+                NYTimes Mayoral Primaries map
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>HTML</h1>
+            <p>
+                HyperText Markup Language
+            </p>
+        </div>
+
+        <div class="slide">
+            <h1>HTML</h1>
+            <p>
+                HyperText Markup Language
+            </p>
+            <p>
+                (text with links)
+            </p>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 55%;" src="img/berners_lee.jpg" />
+            <a href="http://en.wikipedia.org/wiki/Tim_Berners-Lee">
+                Tim Berners-Lee
+            </a>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 55%;" src="img/gopher.jpg" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/html_rfc1.png" />
+            <a href="http://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt">
+                The original RFC (standard) for HTML
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/html_rfc2.png" />
+            <a href="http://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt">
+                (continued)
+            </a>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 65%;" src="img/mosaic.jpg" />
+            <p>
+                Mosaic, initially released in 1993
+            </p>
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/mosaic_plaque.jpg" />
+            <a href="http://en.wikipedia.org/wiki/Mosaic_(web_browser)">
+                Mosaic
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML gives <strong>structure</strong> to web pages</h2>
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_header.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_nav.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_map.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_sidebar1.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_sidebar2.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_etc.png" />
+        </div>
+
+        <div class="slide">
+            <h2>for HTML, structure is just the regions on a page</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML isn't going to help you make things look nice</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML isn't going to help you make things look nice</h2>
+            <p>(we'll talk about <strong>CSS</strong> soon)</p>
+        </div>
+
+        <div class="slide">
+            <h2>every HTML page starts out the same way:</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">Content to show on the</span>
+        <span class="highlighted">page goes here!</span>
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;!DOCTYPE html&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;!DOCTYPE html&gt;</span>
+            <h2>tells the browser, "get ready, I'm about to start speaking HTML"</h2>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;html&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;html&gt;</span>
+            <h2>tells the browser, "okay, this is the beginning of the HTML"</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+    &lt;head&gt;
+    &lt;/head&gt;</pre>
+            <h2>things we'll get to later (styles and scripts) go between these</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+    &lt;body&gt;
+    &lt;/body&gt;</pre>
+            <h2>page content goes between these</h2>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;/html&gt;</span>
+            <h2>tells the browser, "this is the end of the HTML"</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;body&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;body&gt;</span>
+            <p>
+                the body <strong>opening tag</strong>
+            </p>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;body&gt;</span>
+            <p>
+                the body <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with 
+            </p>
+            <span class="code">&lt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;body&gt;</span>
+            <p>
+                the body <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with 
+            </p>
+            <span class="code">&lt;</span>
+            <p>and end with</p>
+            <span class="code">&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;/body&gt;</span>
+            <p>the body <strong>closing tag</strong></p>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;/body&gt;</span>
+            <p>the body <strong>closing tag</strong></p>
+            <p>closing tags always start with</p>
+            <span class="code">&lt;/</span>
+            <p>and end with</p>
+            <span class="code">&gt;</span>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Check out&lt;br /&gt;my paragraph!
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    Check out &lt;em&gt;my paragraph!
+&lt;/p&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    Check out &lt;strong&gt;my&lt;/strong&gt;
+    paragraph!
+&lt;/p&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;a&gt;
+    This should be a link
+&lt;/a&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 55px; font-size: 50px;">
+&lt;a href="<span class="highlighted">http://example.com/awesome/page</span>"&gt;
+    This should be a link
+&lt;/a&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;img src="" /&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>Looking at other people's pages</h2>
+        </div>
+
+        <div class="slide">
+            <p>View source</p>
+            <img class="small" src="img/view_source.png" />
+        </div>
+
+        <div class="slide">
+            <p>Developer tools</p>
+            <img class="small" src="img/developer_tools.png" />
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;one&lt;/li&gt;
+    &lt;li&gt;two&lt;/li&gt;
+    &lt;li&gt;three&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;ol&gt;
+    &lt;li&gt;one&lt;/li&gt;
+    &lt;li&gt;two&lt;/li&gt;
+    &lt;li&gt;three&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_sidebar1.png" />
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div <span class="highlighted">id="header"</span>&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div id="header"&gt;
+    <i>logo
+    mailing list
+    etc</i>
+&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;span&gt;&lt;/span&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;input /&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;input type="<span class="highlighted">text</span>" /&gt;
+            </pre>
+            <input style="font-size: 50px;" type="text" />
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;input type="<span class="highlighted">checkbox</span>" /&gt;
+            </pre>
+            <div>
+                <input type="checkbox" /> yes
+            </div>
+            <div>
+                <input type="checkbox" /> no
+            </div>
+            <div>
+                <input type="checkbox" /> maybe
+            </div>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;input type="<span class="highlighted">radio</span>" /&gt;
+            </pre>
+            <div>
+                <input name="radio_group" type="radio" /> yes
+            </div>
+            <div>
+                <input name="radio_group" type="radio" /> no
+            </div>
+            <div>
+                <input name="radio_group" type="radio" /> maybe
+            </div>
+        </div>
+
+        <div class="slide">
+
+            <div style="display: inline-block; width: 45%;">
+                <div class="code">html</div>
+                <div class="code">head</div>
+                <div class="code">body</div>
+                <div class="code">p</div>
+                <div class="code">br</div>
+                <div class="code">a</div>
+                <div class="code">img</div>
+            </div>
+
+            <div style="display: inline-block; width: 45%;">
+                <div class="code">em</div>
+                <div class="code">strong</div>
+                <div class="code">ul</div>
+                <div class="code">ol</div>
+                <div class="code">li</div>
+                <div class="code">div</div>
+                <div class="code">span</div>
+                <div class="code">input</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+            <h2>HTML cheatsheet is in Lore</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML in CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML in TileMill</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>elements</h2>
+        </div>
+
+        <div class="slide">
+            <h2>element:</h2>
+            <h2>an opening tag, closing tag, and all the things inside it</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            <p>"a p element"</p>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    <span class="highlighted">&lt;body&gt;
+        &lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;
+    &lt;/body&gt;</span>
+&lt;/html&gt;</pre>
+            <p>"a body element"</p>
+        </div>
+
+        <div class="slide">
+            <h2>elements go inside other elements</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            <p>"the p element is in the body element"</p>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            <p>"the p element is also in the html element"</p>
+        </div>
+
+        <div class="slide">
+            <h2>indent elements one more step than the elements they are inside</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+<span class="highlighted">    </span>&lt;head&gt;
+<span class="highlighted">    </span>&lt;/head&gt;
+<span class="highlighted">    </span>&lt;body&gt;
+<span class="highlighted">    </span>    &lt;p&gt;
+<span class="highlighted">    </span>        Check out my paragraph!
+<span class="highlighted">    </span>    &lt;/p&gt;
+<span class="highlighted">    </span>&lt;/body&gt;
+&lt;/html&gt;</pre>
+            <p>everything in the html element is indented once</p>
+        </div>
+
+        <div class="slide">
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    <span class="highlighted">    </span>&lt;p&gt;
+    <span class="highlighted">    </span>    Check out my paragraph!
+    <span class="highlighted">    </span>&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            <p>everything in the body element is indented again</p>
+        </div>
+
+        <div class="slide">
+            <h2>make sure you move an entire element</h2>
+        </div>
+
+        <div class="slide">
+            <h2>move this</h2>
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <h2>don't move this</h2>
+            <pre style="line-height: 60px; font-size: 55px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!</span>
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2><span class="code">iframe</span></h2>
+        </div>
+
+        <div class="slide">
+            <h2><span class="code">iframe</span></h2>
+            <h2>lets you embed other pages in your page</h2>
+        </div>
+
+        <div class="slide">
+            <h2><span class="code">iframe</span></h2>
+            <span class="code" style="display: block; font-size: 45px; line-height: 50px;">
+&lt;iframe width="100%" height="520" frameborder="0" src="http://eric.cartodb.com/viz/55f06d64-94e6-11e3-829a-0e625a1c94a6/embed_map?title=true&amp;description=true&amp;search=false..." allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+            </span>
+        </div>
+
+    </body>
+</html>
