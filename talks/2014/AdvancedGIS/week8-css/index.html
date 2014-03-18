@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 8 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 8</p>
+            <p>CSS</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <a href="http://a.tiles.mapbox.com/v3/skwidbreth.Portland/page.html#12/45.5328/-122.6432">
+                <img src="img/darren-tilemill-map.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://a.tiles.mapbox.com/v3/mabrc446.Detroit_Map/page.html#11/42.4285/-83.1538">
+                <img src="img/claudie-detroit-tilemill.png" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML gives <strong>structure</strong> to web pages</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/596acres_sidebar2.png" />
+        </div>
+
+        <div class="slide">
+            <h2>CSS makes HTML look nice</h2>
+        </div>
+
+        <div class="slide">
+            <h2>CSS can really transform a page</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.csszengarden.com/">
+                <img src="img/css-zen-garden.png" />
+            </a>
+            <a href="http://www.csszengarden.com/">CSS Zen Garden</a>
+        </div>
+
+        <div class="slide">
+            <h2>remember CartoCSS?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(CartoCSS)</h2>
+            <pre>
+#bids {
+    line-color: #ae8;
+    line-width: 0.5;
+    polygon-opacity: 1;
+    polygon-fill: #ae8;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <pre>
+a {
+    color: blue;
+    font-size: 20px;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+<span class="highlighted">a</span> {
+    color: blue;
+    font-size: 20px;
+}</pre>
+            <p>pick the <span class="code">a</span> elements (links)</p>
+        </div>
+
+        <div class="slide">
+            <pre>
+a {
+    <span class="highlighted">color: blue;</span>
+    font-size: 20px;
+}</pre>
+            <p>make the elements blue</p>
+        </div>
+
+        <div class="slide">
+            <pre>
+a {
+    color: blue;
+    <span class="highlighted">font-size: 20px;</span>
+}</pre>
+            <p>make the font 20 pixels large</p>
+        </div>
+
+        <div class="slide">
+            <h2>if we had HTML like this</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a href="..."&gt;Link One&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href="..."&gt;Link Two&lt;/a&gt;
+&lt;/p&gt;
+&lt;a href="..."&gt;Link Three&lt;/a&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>this</h2>
+            <pre>
+a {
+    color: blue;
+    font-size: 20px;
+}</pre>
+            <h2>would affect:</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    <span class="highlighted">&lt;a href="..."&gt;Link One&lt;/a&gt;</span>
+&lt;/p&gt;
+&lt;p&gt;
+    <span class="highlighted">&lt;a href="..."&gt;Link Two&lt;/a&gt;</span>
+&lt;/p&gt;
+<span class="highlighted">&lt;a href="..."&gt;Link Three&lt;/a&gt;</span>
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+<span class="highlighted">a</span> {
+    color: blue;
+    font-size: 20px;
+}</pre>
+            <h2>the <strong>selector</strong></h2>
+        </div>
+
+        <div class="slide">
+            <h2>selectors...select elements</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can use <strong>any</strong> tag name in a selector</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+<span class="highlighted">body</span> {
+    ...
+}</pre>
+            <h2>style the <span class="code">body</span> (the whole page)</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+<span class="highlighted">p</span> {
+    ...
+}</pre>
+            <h2>style all <span class="code">p</span> elements (paragraphs)</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+selector {
+    property: value;
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2><strong>properties</strong> are much like those in CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2><strong>properties</strong> affect the size, color, and position of elements</h2>
+        </div>
+
+        <div class="slide">
+            <h2>there are a bunch:</h2>
+        </div>
+
+        <div class="slide">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">
+                <img src="img/css-properties.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>but you'll probably only use a handful</h2>
+        </div>
+
+        <div class="slide">
+            <h2>font properties</h2>
+            <ul style="list-style: outside disc; padding-left: 50px;">
+                <li>font-family</li>
+                <li>font-size</li>
+                <li>font-weight</li>
+                <li>text-align</li>
+            </ul>
+                ...
+        </div>
+
+        <div class="slide">
+            <h2>color properties</h2>
+            <ul style="list-style: outside disc; padding-left: 50px;">
+                <li>color</li>
+                <li>background-color</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>box properties</h2>
+            <ul style="list-style: outside disc; padding-left: 50px;">
+                <li>border</li>
+                <li>margin</li>
+                <li>padding</li>
+                <li>width</li>
+                <li>height</li>
+            </ul>
+            ...
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <img style="max-width: 75%;" src="img/developer_tools.png" />
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 75%;" src="img/developer_tools_css.png" />
+        </div>
+
+        <div class="slide">
+            <h2>try this: go to a website, open developer tools, and play with the CSS</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>where does CSS go?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in the <span class="code">head</span>!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in the <span class="code">head</span>, and in a <span class="code">style</span> element</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 50px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 50px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 50px;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            p {
+                font-size: 35px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>try it out</h2>
+        </div>
+
+        <div class="slide">
+            <p>download or copy this html: <a href="tostyle.html"></a></p>
+            <p style="font-size: 60px; line-height: 70px; margin-top: 35px;">
+                use some common properties from here:
+                <a href="http://htmldog.com/reference/cssproperties/">
+                    htmldog.com/reference/cssproperties
+                </a>
+            </p>
+            <p style="margin-top: 35px;">
+                style <span class="code">h1</span>, <span class="code">p</span>, <span class="code">a</span> elements
+            </p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>workflow</h2>
+        </div>
+
+        <div class="slide">
+            <h2>workflow</h2>
+            <p>(1) try out a change in developer tools, then copy and paste it to your file</p>
+        </div>
+
+        <div class="slide">
+            <h2>workflow</h2>
+            <p>(2) comment things out rather than delete them</p>
+        </div>
+
+        <div class="slide">
+            <h2>workflow</h2>
+            <p>(2) comment things out rather than delete them:</p>
+            <pre style="font-size: 45px; line-height: 55px;">
+a {
+    /* Trying out a new color */
+    /*color: blue;*/
+    color: rgb(88, 18, 209);
+    ...
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>selectors can be more interesting than just tag names</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a <span class="highlighted">class="action-link"</span> href=""&gt;
+        Link One
+    &lt;/a&gt; 
+&lt;/p&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a class="action-link" href=""&gt;
+        Link One
+    &lt;/a&gt; 
+&lt;/p&gt;
+            </pre>
+            <pre>
+a<span class="highlighted">.action-link</span> { ... }
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a class="action-link" href=""&gt;
+        Link One
+    &lt;/a&gt; 
+&lt;/p&gt;
+            </pre>
+            <pre>
+a.action-link { ... }
+            </pre>
+            <pre>
+<span class="highlighted">.action-link</span> { ... }
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a <span class="highlighted">id="show-legend-link"</span> href=""&gt;
+        Link One
+    &lt;/a&gt; 
+&lt;/p&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a id="show-legend-link" href=""&gt;
+        Link One
+    &lt;/a&gt; 
+&lt;/p&gt;
+            </pre>
+            <pre>
+a<span class="highlighted">#show-legend-link</span> { ... }
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;p&gt;
+    &lt;a id="show-legend-link" href=""&gt;
+        Link One
+    &lt;/a&gt; 
+&lt;/p&gt;
+            </pre>
+            <pre>
+a#show-legend-link { ... }
+            </pre>
+            <pre>
+<span class="highlighted">#show-legend-link</span> { ... }
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>the box model</h2>
+            <img class="small" src="img/css_box_model.gif" />
+            <a href="http://www.technologyuk.net/the_internet/web_page_design/css_box_model.shtml">source</a>
+        </div>
+
+        <div class="fullscreen slide">
+            <img src="img/boxmodel-image-search.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cat-boxmodel.jpg" />
+            <a href="http://joshbroton.com/sessions/html-and-css-101/#/">source</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/wired-margins-annotated-2.png" />
+        </div>
+
+        <div class="slide">
+            <p>
+                <a href="tilemill-legend.html">starter TileMill legend</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;ul class="legend-labels"&gt;
+    &lt;li&gt;None&lt;/li&gt;
+    &lt;li&gt;&lt; 1&lt;/li&gt;
+    &lt;li&gt;1 - 5&lt;/li&gt;
+    &lt;li&gt;5 - 10&lt;/li&gt;
+    &lt;li&gt;10 - 50&lt;/li&gt;
+    &lt;li&gt;50+&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;ul class="legend-labels"&gt;
+    &lt;li&gt;
+        &lt;span&gt;&lt;/span&gt;
+        None
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt; 1
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <p>Style the legend boxes:</p>
+            <pre>
+.legend-labels span {
+    display: inline-block;
+    border: 1px solid black;
+    width: 25px;
+    height: 10px;
+    margin-right: 5px;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>This lets you set the width and height on elements that are not blocks (eg, <span class="code">&lt;span&gt;</span>, <span class="code">&lt;a&gt;</span>)</p>
+            <pre>
+.legend-labels span {
+    <span class="highlighted">display: inline-block;</span>
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>Give each label a color</p>
+        </div>
+
+        <div class="slide">
+            <p>Give each label a color</p>
+            <pre>
+&lt;ul class="legend-labels"&gt;
+    &lt;li&gt;
+        &lt;span&gt;&lt;/span&gt;
+        None
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt; 1
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <p>Give each label a color</p>
+            <pre>
+&lt;ul class="legend-labels"&gt;
+    &lt;li&gt;
+        &lt;span <span class="highlighted">id="legend-label-0"</span>&gt;&lt;/span&gt;
+        None
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;span id="legend-label-1"&gt;&lt;/span&gt;
+        &lt; 1
+    &lt;/li&gt;
+    ...
+&lt;/ul&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <p>Give each label a color</p>
+            <pre>
+#legend-label-0 {
+    background: white;
+}
+
+#legend-label-1 {
+    background: #FFFFE5;
+}
+
+...
+            </pre>
+        </div>
+
+
+    </body>
+</html>
