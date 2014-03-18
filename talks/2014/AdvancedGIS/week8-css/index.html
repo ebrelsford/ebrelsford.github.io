@@ -384,105 +384,133 @@ a {
         </div>
 
         <div class="slide">
-            <pre>
-&lt;p&gt;
-    &lt;a <span class="highlighted">class="action-link"</span> href=""&gt;
-        Link One
-    &lt;/a&gt; 
-&lt;/p&gt;
-            </pre>
+            <h2>you can refer to classes</h2>
         </div>
 
         <div class="slide">
             <pre>
-&lt;p&gt;
-    &lt;a class="action-link" href=""&gt;
-        Link One
-    &lt;/a&gt; 
-&lt;/p&gt;
-            </pre>
-            <pre>
-a<span class="highlighted">.action-link</span> { ... }
+&lt;span class="legend-label"&gt;
+    land use vacant
+&lt;/span&gt;
             </pre>
         </div>
 
         <div class="slide">
-            <pre>
-&lt;p&gt;
-    &lt;a class="action-link" href=""&gt;
-        Link One
-    &lt;/a&gt; 
-&lt;/p&gt;
-            </pre>
-            <pre>
-a.action-link { ... }
-            </pre>
-            <pre>
-<span class="highlighted">.action-link</span> { ... }
-            </pre>
+            <pre style="font-size: 50px; line-height: 60px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+&lt;/span&gt;</pre>
+            <p>(in your <span class="code">style</span> element) you could say:</p>
+            <pre style="margin-top: 10px;">
+<span class="highlighted">.</span>legend-label {
+    font-weight: bold;           
+}</pre>
         </div>
 
         <div class="slide">
-            <pre>
-&lt;p&gt;
-    &lt;a <span class="highlighted">id="show-legend-link"</span> href=""&gt;
-        Link One
-    &lt;/a&gt; 
-&lt;/p&gt;
-            </pre>
+            <h2>similarly with ids</h2>
         </div>
 
         <div class="slide">
-            <pre>
-&lt;p&gt;
-    &lt;a id="show-legend-link" href=""&gt;
-        Link One
-    &lt;/a&gt; 
-&lt;/p&gt;
-            </pre>
-            <pre>
-a<span class="highlighted">#show-legend-link</span> { ... }
-            </pre>
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span id="vacant-land-use-label"&gt;
+    land use vacant
+&lt;/span&gt;</pre>
         </div>
 
         <div class="slide">
-            <pre>
-&lt;p&gt;
-    &lt;a id="show-legend-link" href=""&gt;
-        Link One
-    &lt;/a&gt; 
-&lt;/p&gt;
-            </pre>
-            <pre>
-a#show-legend-link { ... }
-            </pre>
-            <pre>
-<span class="highlighted">#show-legend-link</span> { ... }
-            </pre>
+            <pre style="font-size: 50px; line-height: 60px;">
+&lt;span id="vacant-land-use-label"&gt;
+    land use vacant
+&lt;/span&gt;</pre>
+            <p>(in your <span class="code">style</span> element) you could say:</p>
+            <pre style="margin-top: 10px;">
+<span class="highlighted">#</span>vacant-land-use-label {
+    font-weight: bold;           
+}</pre>
         </div>
+
+        <div class="slide">
+            <h2>TODO: combining selectors</h2>
+        </div>
+
+        <div class="slide intermission"></div>
 
         <div class="slide">
             <h2>the box model</h2>
-            <img class="small" src="img/css_box_model.gif" />
+            <img style="max-width: 75%;" src="img/css_box_model.gif" />
             <a href="http://www.technologyuk.net/the_internet/web_page_design/css_box_model.shtml">source</a>
         </div>
 
-        <div class="fullscreen slide">
+        <div class="slide">
+            <h2>the box model describes boxes, their spacing, and borders</h2>
+        </div>
+
+        <div class="slide">
             <img src="img/boxmodel-image-search.png" />
         </div>
 
         <div class="slide">
-            <img class="small" src="img/cat-boxmodel.jpg" />
+            <img style="max-width: 75%;" src="img/cat-boxmodel.jpg" />
             <a href="http://joshbroton.com/sessions/html-and-css-101/#/">source</a>
         </div>
 
         <div class="slide">
-            <img src="img/wired-margins-annotated-2.png" />
+            <pre>
+.cat-box {
+    padding: 50px;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+.cat-box {
+    margin: 100px;
+    padding: 50px;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+.cat-box {
+    border: 1px solid red;
+    margin: 100px;
+    padding: 50px;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <a href="catbox.html">
+                <img style="max-width: 60%;" src="img/cat-boxmodel-devtools.png" />
+            </a>
+            <a class="source" href="catbox.html">catbox.html</a>
+        </div>
+
+        <div class="slide">
+            <h2>you can also just do one side at a time</h2>
+        </div>
+
+        <div class="slide">
+            <p>(use <span class="code">-left</span>, <span class="code">-bottom</span>, <span class="code">-right</span>, <span class="code">-top</span>)</p>
+            <pre>
+.cat-box {
+    margin: 100px;
+    margin-left: 200px;
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>map legend example</h2>
         </div>
 
         <div class="slide">
             <p>
-                <a href="tilemill-legend.html">starter TileMill legend</a>
+                <a href="starter-map-legend.html">
+                    <img style="max-width: 30%;" src="img/starter-map-legend.png" />
+                </a>
+                <a href="starter-map-legend.html">starter map legend</a>
             </p>
         </div>
 
@@ -588,6 +616,35 @@ a#show-legend-link { ... }
             </pre>
         </div>
 
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>inline styles example (TODO)</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>order matters (TODO)</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>get things online example (TODO)</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Bootstrap example (TODO)</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>talk about assignment (TODO)</h2>
+        </div>
 
     </body>
 </html>
