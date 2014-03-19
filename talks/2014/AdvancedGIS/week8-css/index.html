@@ -659,7 +659,46 @@ a {
         <div class="slide intermission"></div>
 
         <div class="slide">
-            <h2>order matters (TODO)</h2>
+            <h2>order matters</h2>
+        </div>
+
+        <div class="slide">
+            <h2>order matters</h2>
+            <p>if your styles aren't working, make sure they come after other styles that might be affecting your elements</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>specificity matters</h2>
+        </div>
+
+        <div class="slide">
+            <p>not very specific:</p>
+            <pre>
+div {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>more specific:</p>
+            <pre>
+.cat-box {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>even more specific:</p>
+            <pre>
+div .cat-box {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>so if your styles aren't working when you think they should be, make their selectors more specific</p>
         </div>
 
         <div class="slide intermission"></div>
