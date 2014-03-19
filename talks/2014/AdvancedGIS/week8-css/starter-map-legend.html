@@ -8,11 +8,22 @@
                 font-weight: bold;
             }
 
+            /*
+             * Make the legend-labels list not act like a bulleted list.
+             * Remove bullets and padding.
+             */
             .legend-labels {
                 list-style: none;
                 padding: 0;
             }
 
+            /*
+             * Set up our legend label color boxes.
+             *
+             * display: inline-block lets you set things like width and
+             * height without making the spans take up the entire width
+             * of the legend.
+             */
             .legend-labels span {
                 display: inline-block;
                 border: 1px solid black;
@@ -25,6 +36,11 @@
                 font-size: 12px;
             }
 
+            /*
+             * Give our legend color boxes colors. These can easily be 
+             * adapted to your map, and adding or removing legend items
+             * should be very easy.
+             */
             #legend-label-0 {
                 background: #FFFFFF;
             }
