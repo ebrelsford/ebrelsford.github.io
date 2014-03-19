@@ -449,7 +449,107 @@ a {
         <div class="slide intermission"></div>
 
         <div class="slide">
-            <h2>TODO: combining selectors</h2>
+            <h2>you can combine these selectors to say more complicated things</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;a href="..."&gt;more info&lt;/a&gt;
+&lt;/span&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;a href="..."&gt;more info&lt;/a&gt;
+&lt;/span&gt;</pre>
+            <p>what if we want to style <span class="code">a</span> elements only if they are in elements of class <span class="code">legend-label</span>?</p>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;a href="..."&gt;more info&lt;/a&gt;
+&lt;/span&gt;</pre>
+            <pre style="font-size: 60px; line-height: 70px; margin-top: 70px;">
+a {
+    ...
+}</pre>
+            <p>would style all links</p>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;a href="..."&gt;more info&lt;/a&gt;
+&lt;/span&gt;</pre>
+            <pre style="font-size: 60px; line-height: 70px; margin-top: 70px;">
+.legend-label {
+    ...
+}</pre>
+            <p>would style too much, too</p>
+        </div>
+
+        <div class="slide">
+            <h2>solution: combine selectors</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;a href="..."&gt;more info&lt;/a&gt;
+&lt;/span&gt;</pre>
+            <pre style="font-size: 60px; line-height: 70px; margin-top: 70px;">
+<span class="highlighted">.legend-label a</span> {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 60px; line-height: 70px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;a href="..."&gt;more info&lt;/a&gt;
+&lt;/span&gt;</pre>
+            <pre style="font-size: 60px; line-height: 70px; margin-top: 70px;">
+.legend-label a {
+    ...
+}</pre>
+            <p>"style the <span class="code">a</span> elements in elements with class <span class="code">legend-label</span>"</p>
+        </div>
+
+        <div class="slide">
+            <p>it doesn't matter how far inside the <span class="code">a</span> element is:</p>
+            <pre style="font-size: 40px; line-height: 50px;">
+&lt;span class="legend-label"&gt;
+    land use vacant
+    &lt;div&gt;
+        &lt;div&gt;
+            &lt;div&gt;
+                &lt;a href="..."&gt;more info&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/span&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <p>and you can combine more selectors if it makes sense</p>
+            <pre style="font-size: 60px; line-height: 70px;">
+#legend .legend-label div .source a {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it out</h2>
+            <p>give elements of class <span class="code">interesting</span> in the element with id <span class="code">story-two</span> the property <span class="code">font-style: italic</span>
         </div>
 
         <div class="slide intermission"></div>
