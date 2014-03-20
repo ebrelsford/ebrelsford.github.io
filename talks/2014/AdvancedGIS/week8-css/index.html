@@ -668,7 +668,24 @@ a {
 
         <div class="slide">
             <h2>order matters</h2>
-            <p>if your styles aren't working, make sure they come after other styles that might be affecting your elements</p>
+            <p>the last style wins</p>
+        </div>
+
+        <div class="slide">
+            <h2>order matters</h2>
+            <p>so if your styles aren't working, make sure they come <strong>after</strong> other styles that might be affecting your elements</p>
+        </div>
+
+        <div class="slide">
+            <pre>
+a {
+    color: blue;
+    font-size: 20px;
+}
+a {
+    color: red;
+}
+            </pre>
         </div>
 
         <div class="slide intermission"></div>
