@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe width='100%' height='100%' frameborder='0' src='http://eric.cartodb.com/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/embed_map?title=true&description=true&search=false&shareable=true&cartodb_logo=true&layer_selector=false&legends=false&scrollwheel=true&fullscreen=true&sublayer_options=1&sql=SELECT%20%0A%20%20%20%20house%2C%0A%20%20%20%20street_name%2C%0A%20%20%20%20MIN(cartodb_id)%20AS%20cartodb_id%2C%0A%20%20%20%20MIN(the_geom)%20AS%20the_geom%2C%20%0A%20%20%20%20MIN(the_geom_webmercator)%20AS%20the_geom_webmercator%2C%0A%20%20%20%20MIN(text_on_sign)%20AS%20text_on_sign%2C%0A%20%20%20%20MAX(text_occurrences)%20AS%20text_occurrences%2C%0A%20%20%20%20MIN(rotation)%20AS%20rotation%0AFROM%20sign_application_filings%0AWHERE%20text_on_sign%20!%3D%20''%0AGROUP%20BY%20house%2C%20street_name%2C%20text_on_sign&sw_lat=40.67360792349548&sw_lon=-74.13677215576172&ne_lat=40.849917096581976&ne_lon=-73.58745574951172' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    </body>
+</html>

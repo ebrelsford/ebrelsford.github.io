@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Load CartoDB's code so we can pull in our CartoDB maps.
+        -->
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
+        <![endif]-->
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+
+        <!--
+        Load jQuery
+        -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+        <!--
+        Make the body and map take up all of the available room in the window.
+        -->
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            #map {
+                height: 100%;
+                width: 100%;
+            }
+
+            /*
+             * Put our button in the top right of the page.
+             */
+            #just-manhattan {
+                background: white;
+                cursor: pointer;
+                font-size: 24px;
+                height: 25px;
+                width: 250px;
+                padding: 10px;
+                position: absolute;
+                right: 25px;
+                top: 25px;
+                z-index: 5000;
+            }
+            #just-manhattan:hover {
+                background: gray;
+            }
+        </style>
+
+        <script>
+            //
+            // Initializing map from CartoDB
+            //
+            $(document).ready(function () {
+                //
+                // A variable that will hold the layer we're working with
+                //
+                var dataLayer;
+
+                cartodb.createVis('map', 'http://eric.cartodb.com/api/v2/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/viz.json')
+                .done(function (vis, layers) {
+                    //
+                    // Get the layer we're working with so we can modify it
+                    // later.
+                    //
+                    dataLayer = layers[1].getSubLayer(0);     
+                });
+
+                //
+                // Add a click handler here
+                //
+                $('#just-manhattan').click(function () {
+                    //
+                    // Change the layer's SQL
+                    //
+                    dataLayer.setSQL("SELECT * FROM sign_application_filings WHERE borough = 'MANHATTAN'");
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="just-manhattan">
+            just Manhattan
+        </div>
+    </body>
+</html>

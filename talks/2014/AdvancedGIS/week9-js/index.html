@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 9 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 9</p>
+            <p>JavaScript</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>embed a CartoDB map</h2>
+        </div>
+
+        <div class="slide">
+            <a href="embed-map.html">example</a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+&lt;iframe width='100%' height='520' frameborder='0' 
+src='http://eric.cartodb.com/viz/22a36ecc-...' 
+allowfullscreen webkitallowfullscreen mozallowfullscreen
+oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>CartoDB map in JS</h2>
+        </div>
+
+        <div class="slide">
+            <a href="basic-cartodb-map.html">example</a>
+        </div>
+
+        <div class="slide">
+            <h2>3 steps:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1: load CartoDB and jQuery libraries</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 20px; line-height: 30px;">
+&lt;link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" /&gt;
+&lt;!--[if lte IE 8]&gt;
+&lt;link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" /&gt;
+&lt;![endif]--&gt;
+&lt;script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"&gt;&lt;/script&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"&gt;&lt;/script&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 20px; line-height: 30px;">
+&lt;link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" /&gt;
+&lt;!--[if lte IE 8]&gt;
+&lt;link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" /&gt;
+&lt;![endif]--&gt;
+&lt;script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"&gt;&lt;/script&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"&gt;&lt;/script&gt;</pre>
+            <h2>(you'll copy and paste this)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2: make a place for the map to go</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;body&gt;
+    &lt;div id="map"&gt;&lt;/div&gt;
+&lt;/body&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>3: tell CartoDB to create the map</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 20px; line-height: 30px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis('map', 'http://eric.cartodb.com/api/v2/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/viz.json');
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis('map', your_visualization_url);
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-api-code.png" />
+        </div>
+
+        <div class="slide">
+            <ol style="list-style-type: decimal; padding-left: 100px;">
+                <li>load CartoDB and jQuery libraries</li>
+                <li>make a place for the map to go</li>
+                <li>tell CartoDB to create the map</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>open <a href="basic-cartodb-map.html" class="code">basic-cartodb-map.html</a> and replace the visualization url with one from your own maps</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>why?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>more customization</h2>
+        </div>
+
+        <div class="slide">
+            <h2>eg, remove the logo</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis('map', your_visualization_url, {
+            cartodb_logo: false
+        });
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis('map', your_visualization_url<span class="highlighted">, {
+            cartodb_logo: false
+        }</span>);
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>remove the logo from your map</p>
+<pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis('map', your_visualization_url<span class="highlighted">, {
+            cartodb_logo: false
+        }</span>);
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>or bigger changes</h2>
+            <a href="http://cartodb.github.io/cartodb.js/examples/layer_selector.html">
+                <img src="img/cartodb-custom-layer-switcher.png" />
+            </a>
+            <a href="https://github.com/CartoDB/cartodb.js/blob/develop/examples/layer_selector.html">code</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>there are more options</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://developers.cartodb.com/documentation/cartodb-js.html#sec-3-1">
+                <img style="max-width: 60%;" src="img/cartodb-api-docs.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p style="font-size: 40px; line-height: 50px;">change another option on your map from <a href="http://developers.cartodb.com/documentation/cartodb-js.html#sec-3-1">developers.cartodb.com/documentation/cartodb-js.html#sec-3-1</a></p>
+<pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis('map', your_visualization_url, {
+            cartodb_logo: false<span class="highlighted">,
+            your_option: your_value</span>
+        });
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>we need a few other concepts before going on</h2>
+        </div>
+
+        <div class="slide">
+            <h2>function</h2>
+<pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        <span class="highlighted">cartodb.createVis</span>(your_map_id,
+                          your_visualization_url,
+                          your_options);
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>functions are small bundles of code that can be reused</h2>
+        </div>
+
+        <div class="slide">
+            <h2>your map's id, url, options are called <strong>parameters</strong></h2>
+        </div>
+
+        <div class="slide">
+            <h2>parameters</h2>
+<pre style="font-size: 40px; line-height: 50px;">
+&lt;script&gt;
+    $(document).ready(function () {
+        cartodb.createVis(<span class="highlighted">your_map_id,
+                          your_visualization_url,
+                          your_options</span>);
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>parameters affect the way a function works</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2 class="code">alert(message)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>open developer tools, go to the console tab, and type</p>
+            <p><span class="code" style="font-size: 80px;">alert('hi!')</span></p>
+        </div>
+
+        <div class="slide">
+            <pre>
+var name = 'eric';
+alert(name);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartocss-variables.png" style="max-width: 70%;" />
+        </div>
+
+        <div class="slide">
+            <pre>
+var name = 'eric';
+alert('hi ' + name);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>you can make your own functions</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+function sayHi(name) {
+    alert('hi ' + name);
+}
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>put this in your map file (where it says "Add a function here")</p>
+            <pre>
+function sayHi(name) {
+    alert('hi ' + name);
+}
+            </pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>jQuery</h2>
+        </div>
+
+        <div class="slide">
+            <h2>jQuery</h2>
+            <p>makes it easy to do some common things in JavaScript</p>
+        </div>
+
+        <div class="slide">
+            <h2 class="code">$('#map')</h2>
+        </div>
+
+        <div class="slide">
+            <h2 class="code">$('#map').hide()</h2>
+        </div>
+
+        <div class="slide">
+            <pre>$('#map').animate({ opacity: 0})</pre>
+        </div>
+
+        <div class="slide">
+            <h2>try this on your map in the console:</h2>
+            <pre>$('#map').animate({ width: 0})</pre>
+        </div>
+
+        <div class="slide">
+            <pre>$('#map').click(function () {
+    sayHi('&lt;yourname&gt;');
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>add this in your map file on the line after <span class="code">createVis</span>:</p>
+            <pre>$('#map').click(function () {
+    sayHi('&lt;yourname&gt;');
+});</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>back to CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>let's make a button that changes what's on the map</h2>
+        </div>
+
+        <div class="slide">
+            <h2>like this one</h2>
+            <a href="http://cartodb.github.io/cartodb.js/examples/layer_selector.html">
+                <img src="img/cartodb-custom-layer-switcher.png" />
+            </a>
+            <a href="https://github.com/CartoDB/cartodb.js/blob/develop/examples/layer_selector.html">code</a>
+        </div>
+
+        <div class="slide">
+            <h2>four steps:</h2>
+            <ol style="list-style-type: decimal; padding-left: 100px;">
+                <li>create a button</li>
+                <li>get the map layer</li>
+                <li>listen for a click on the button</li>
+                <li>change the layer's SQL</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>look at <a href="advanced-cartodb-map.html">advanced-cartodb-map.html</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. create a button</h2>
+<pre>&lt;div id="just-manhattan"&gt;
+    just Manhattan
+&lt;/div&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <h2>2. get the map layer</h2>
+            <pre style="font-size: 50px; line-height: 60px;">
+cartodb.createVis(...)
+.done(function (vis, layers) {
+    dataLayer = layers[1].getSubLayer(0);     
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>3. listen for a click on the button</h2>
+<pre style="font-size: 50px; line-height: 60px;">
+$('#just-manhattan').click(function () {
+    ...
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>4. change the layer's SQL</h2>
+<pre style="font-size: 30px; line-height: 40px;">
+$('#just-manhattan').click(function () {
+    var sql = "SELECT * FROM sign_application_filings WHERE borough = 'MANHATTAN'";
+    dataLayer.setSQL(sql);
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>edit <a href="advanced-cartodb-map.html">advanced-cartodb-map.html</a> to select a different borough</p>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>edit <a href="advanced-cartodb-map.html">advanced-cartodb-map.html</a> to work for one of your maps</p>
+            <p>(load your map, change SQL for your map)</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>getting things online</h2>
+        </div>
+
+        <div class="slide">
+            <h2>neocities</h2>
+            <a href="https://neocities.org/">
+                <img src="img/neocities.png" />
+            </a>
+            <a href="https://neocities.org/">neocities.org</a>
+        </div>
+
+        <div class="slide">
+            <a href="https://neocities.org/">
+                <img src="img/neocities-edit.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>github pages</h2>
+            <a href="http://pages.github.com/">
+                <img src="img/github-pages.png" />
+            </a>
+            <a href="http://pages.github.com/">
+                pages.github.com
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>wordpress</h2>
+            <a href="http://wordpress.com/">
+                <img src="img/wordpress.png" />
+            </a>
+            <a href="http://wordpress.com/">
+                wordpress.com
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>squarespace</h2>
+            <a href="http://squarespace.com/">
+                <img src="img/squarespace.png" />
+            </a>
+            <a href="http://squarespace.com/">
+                squarespace.com
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>
+                <a href="https://www.mapbox.com/mapbox.js/example/v1.0.0/">mapbox examples</a>
+            </h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>homework</h2>
+            <p>add map to page using cartodb.js, do something onclick</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>other things we could do if we have time</h2>
+        </div>
+
+        <div class="slide">
+            <h2 class="code">console.log()</h2>
+        </div>
+
+        <div class="slide">
+            <h2>$(':input').val()</h2>
+        </div>
+
+        <div class="slide">
+            <h2>generate SQL on the fly with string concatenation</h2>
+        </div>
+
+        <div class="slide">
+            <h2>generate SQL based on input values</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+    </body>
+</html>
