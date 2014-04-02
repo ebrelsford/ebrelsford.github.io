@@ -66,6 +66,10 @@
                     // Get the layer we're working with so we can modify it
                     // later.
                     //
+                    // layers[0] is the base layer, layers[1] is your first data
+                    // layer. If you had more data layers, they would be layers[2],
+                    // layers[3] and so on.
+                    //
                     dataLayer = layers[1].getSubLayer(0);     
                 });
 

@@ -65,7 +65,7 @@ oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
         </div>
 
         <div class="slide">
-            <h2>CartoDB map in JS</h2>
+            <h2>CartoDB map in JavaScript</h2>
         </div>
 
         <div class="slide">
@@ -306,6 +306,10 @@ alert(name);
         </div>
 
         <div class="slide">
+            <h2>remember <strong>variables</strong> from CartoCSS?</h2>
+        </div>
+
+        <div class="slide">
             <img src="img/cartocss-variables.png" style="max-width: 70%;" />
         </div>
 
@@ -350,6 +354,14 @@ function sayHi(name) {
         </div>
 
         <div class="slide">
+            <h2>anything starting with <strong>$</strong> is talking to jQuery</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(it's not standard JavaScript)</h2>
+        </div>
+
+        <div class="slide">
             <h2 class="code">$('#map')</h2>
         </div>
 
@@ -358,12 +370,12 @@ function sayHi(name) {
         </div>
 
         <div class="slide">
-            <pre>$('#map').animate({ opacity: 0})</pre>
+            <pre>$('#map').animate({ opacity: 0 })</pre>
         </div>
 
         <div class="slide">
             <h2>try this on your map in the console:</h2>
-            <pre>$('#map').animate({ width: 0})</pre>
+            <pre>$('#map').animate({ width: 0 })</pre>
         </div>
 
         <div class="slide">
@@ -373,8 +385,29 @@ function sayHi(name) {
         </div>
 
         <div class="slide">
+            <h2>pick the <span class="code">div</span> with <span class="code">id</span> "map"</h2>
+            <pre><span class="highlighted">$('#map')</span>.click(function () {
+    sayHi('&lt;yourname&gt;');
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>when it's clicked</h2>
+            <pre>$('#map')<span class="highlighted">.click</span>(function () {
+    sayHi('&lt;yourname&gt;');
+});</pre>
+        </div>
+
+        <div class="slide">
+            <h2>run this code</h2>
+            <pre>$('#map').click<span class="highlighted">(function () {
+    sayHi('&lt;yourname&gt;');
+});</span></pre>
+        </div>
+
+        <div class="slide">
             <h2>try it:</h2>
-            <p>add this in your map file on the line after <span class="code">createVis</span>:</p>
+            <p>add this in your map file on <strong>the line after</strong> <span class="code">createVis</span>:</p>
             <pre>$('#map').click(function () {
     sayHi('&lt;yourname&gt;');
 });</pre>
@@ -417,6 +450,10 @@ function sayHi(name) {
 <pre>&lt;div id="just-manhattan"&gt;
     just Manhattan
 &lt;/div&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/just-manhattan-button.png" />
         </div>
 
         <div class="slide">
