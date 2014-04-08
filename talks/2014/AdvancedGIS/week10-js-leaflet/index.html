@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 10 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 10</p>
+            <p>JavaScript (again)</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>let's talk about process and debugging</h2>
+        </div>
+
+        <div class="slide">
+            <h2>work on one small thing at a time</h2>
+        </div>
+
+        <div class="slide">
+            <h2>don't overwhelm yourself</h2>
+        </div>
+
+        <div class="slide">
+            <h2>do as much as you can in developer tools</h2>
+        </div>
+
+        <div class="slide">
+            <h2>make that work, paste it into your file</h2>
+        </div>
+
+        <div class="slide">
+            <h2>use <span class="code">console.log()</span></h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+var name = 'whatchama';
+console.log(name);
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+...
+console.log('well we made it this far');
+...
+            </pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Sweeten</h2>
+        </div>
+
+        <div class="slide">
+            <h2>LA Open Acres</h2>
+        </div>
+
+        <div class="slide">
+            <h2>last time:</h2>
+            <pre>
+SELECT * FROM signs WHERE borough = 'MANHATTAN'
+<pre>
+        </div>
+
+        <div class="slide">
+            <h2>you could make a button for each borough</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but sometimes you need something more flexible</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+var borough = 'MANHATTAN';
+...
+var sql = "SELECT * FROM signs WHERE borough = '";
+sql = sql + borough;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+var borough = 'MANHATTAN';
+...
+var sql = "SELECT * FROM signs WHERE borough = '";
+sql = sql + borough;
+sql = sql + "'";
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>OK, where is <span class="code">borough</span> coming from?</h2>
+        </div>
+
+        <div class="slide">
+            <h2 class="code">$('#borough').val()</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+var sql = "SELECT * FROM signs WHERE borough = '";
+sql = sql + $('#borough').val();
+sql = sql + "'";
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2 class="code">keyup, change</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(note on the door img)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>revisit Sweeten</h2>
+        </div>
+
+        <div class="slide">
+            <h2>revisit LA Open Acres</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>sometimes you're too big for CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>sometimes you're too big for (free) CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>sometimes you want to change things more than CartoDB lets you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>leaflet</h2>
+        </div>
+
+        <div class="slide">
+            <h2>TODO WTF is leaflet??</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(background)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(where is it used?)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>TODO look at http://lyzidiamond.com/leaflet/#67</h2>
+        </div>
+
+        <div class="slide">
+            <h2>load data from github?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>map events</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(note on the door img)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>customizing popup</h2>
+        </div>
+
+        <div class="slide">
+            <h2>plugins</h2>
+        </div>
+
+        <div class="slide">
+            <h2>animated marker plugin?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>clustered marker plugin?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>geocoding plugin?</h2>
+        </div>
+
+    </body>
+</html>
