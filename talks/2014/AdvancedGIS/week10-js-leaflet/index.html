@@ -100,8 +100,10 @@ console.log('well we made it this far');
         <div class="slide">
             <h2>last time:</h2>
             <pre>
-SELECT * FROM signs WHERE borough = 'MANHATTAN'
-<pre>
+SELECT * 
+FROM signs 
+WHERE borough = 'MANHATTAN'
+</pre>
         </div>
 
         <div class="slide">
@@ -109,20 +111,31 @@ SELECT * FROM signs WHERE borough = 'MANHATTAN'
         </div>
 
         <div class="slide">
+            <pre>
+SELECT * 
+FROM signs 
+WHERE borough = 'BRONX'
+
+SELECT * 
+FROM signs 
+WHERE borough = 'STATEN ISLAND'
+</pre>
+        </div>
+
+        <div class="slide">
             <h2>but sometimes you need something more flexible</h2>
         </div>
 
         <div class="slide">
-            <pre>
+            <pre style="font-size: 45px; line-height: 55px;">
 var borough = 'MANHATTAN';
-...
-var sql = "SELECT * FROM signs WHERE borough = '";
-sql = sql + borough;
-            </pre>
+var sql = "SELECT * FROM signs WHERE borough = "
+    + borough;
+</pre>
         </div>
 
         <div class="slide">
-            <pre>
+            <pre style="font-size: 45px; line-height: 55px;">
 var borough = 'MANHATTAN';
 ...
 var sql = "SELECT * FROM signs WHERE borough = '";
@@ -136,11 +149,15 @@ sql = sql + "'";
         </div>
 
         <div class="slide">
+            <img style="max-width: 40%;" src="img/borough_selector.png" />
+        </div>
+
+        <div class="slide">
             <h2 class="code">$('#borough').val()</h2>
         </div>
 
         <div class="slide">
-            <pre>
+            <pre style="font-size: 45px; line-height: 55px;">
 var sql = "SELECT * FROM signs WHERE borough = '";
 sql = sql + $('#borough').val();
 sql = sql + "'";
@@ -148,11 +165,31 @@ sql = sql + "'";
         </div>
 
         <div class="slide">
-            <h2 class="code">keyup, change</h2>
+            <img style="max-width: 80%;" src="img/deliveries.jpg" />
         </div>
 
         <div class="slide">
-            <h2>(note on the door img)</h2>
+            <img style="max-width: 80%;" src="img/just-manhattan-button.png" />
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 55px; line-height: 65px;">
+$('#just-manhattan').click(function () {
+    ...
+});
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2 class="code">change</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 55px; line-height: 65px;">
+$('#borough').change(function () {
+    ...
+});
+            </pre>
         </div>
 
         <div class="slide">
