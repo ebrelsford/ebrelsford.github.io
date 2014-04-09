@@ -310,7 +310,84 @@ $('#borough').change(function () {
         </div>
 
         <div class="slide">
-            <h2>TODO quick example of how this works</h2>
+            <h2>3 steps:</h2>
+            <p>1. load leaflet's code</p>
+            <p>2. make a <span class="code">div</span> for your map</p>
+            <p>3. tell leaflet to create the map</p>
+        </div>
+
+        <div class="slide">
+            <h2>1. load leaflet's code</h2>
+            <pre style="font-size: 30px; line-height: 40px;">
+&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /&gt;
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"&gt;&lt;/script&gt;
+</pre>
+        </div>
+
+        <div class="slide">
+            <h2>2. make a <span class="code">div</span> for your map</h2>
+            <pre>
+&lt;body&gt;
+    &lt;div id="map"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+        </div>
+
+        <div class="slide">
+            <h2>3. tell leaflet to create the map</h2>
+            <pre style="font-size: 30px; line-height: 40px;">
+var map = L.map('map').setView([40.70, -73.96], 11);
+</pre>
+        </div>
+
+        <div class="slide">
+            <h2>3. tell leaflet to create the map</h2>
+            <pre style="font-size: 30px; line-height: 40px;">
+L.tileLayer('https://{s}.tiles.mapbox.com/v3/ebrelsford.ho06j5h0/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>'
+}).addTo(map);
+</pre>
+        </div>
+
+        <div class="slide">
+            <a href="leafletmap.simple.html">
+                <img style="max-width: 70%;" src="img/leaflet-simple.png" />
+            </a>
+            <a href="leafletmap.simple.html">
+                simple leaflet map
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>3a. add some data to the map</h2>
+                <pre style="font-size: 50px; line-height: 60px;">
+$.getJSON('queens.geojson', function (data) {
+    L.geoJson(data).addTo(map);
+});
+</pre>
+        </div>
+
+        <div class="slide">
+            <h2>3b. add popups</h2>
+                <pre style="font-size: 35px; line-height: 45px;">
+$.getJSON('queens.geojson', function (data) {
+    L.geoJson(data, <span class="highlighted">{
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup('area: ' + feature.properties.area);
+        }
+    }</span>).addTo(map);
+});
+</pre>
+        </div>
+
+        <div class="slide">
+            <a href="leafletmap.data.html">
+                <img style="max-width: 70%;" src="img/leaflet-data.png" />
+            </a>
+            <a href="leafletmap.data.html">
+                leaflet map with data
+            </a>
         </div>
 
         <div class="slide">
@@ -346,7 +423,7 @@ $('#borough').change(function () {
 
         <div class="slide">
             <a href="https://github.com/openplans/Leaflet.AnimatedMarker">
-                <img style="max-width: 55%;" src="img/leaflet-animated-marker.png" />
+                <img style="max-width: 55%;" src="img/leaflet-animated-marker.gif" />
             </a>
             <a class="source" href="https://github.com/openplans/Leaflet.AnimatedMarker">
                 github.com/openplans/Leaflet.AnimatedMarker
@@ -386,7 +463,23 @@ $('#borough').change(function () {
         </div>
 
         <div class="slide">
-            <h2>customizing popup</h2>
+            <h2>customizing popups</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it's easier with leaflet</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://sweeten.com/maps">
+                <img style="max-width: 50%;" src="img/sweeten-popup.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="https://livinglotsnola.org/">
+                <img style="max-width: 50%;" src="img/llnola-popup.png" />
+            </a>
         </div>
 
     </body>

@@ -37,17 +37,6 @@
                     maxZoom: 18,
                     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>'
                 }).addTo(map);
-
-                /*
-                 * Add GeoJSON file
-                 */
-                $.getJSON('queens.geojson', function (data) {
-                    L.geoJson(data, {
-                        onEachFeature: function (feature, layer) {
-                            layer.bindPopup('area: ' + feature.properties.area);
-                        }
-                    }).addTo(map);
-                });
             });
         </script>
     </head>
