@@ -147,6 +147,19 @@ var sql = "SELECT * FROM signs WHERE borough = '"
         </div>
 
         <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+&lt;select id="borough"&gt;
+    &lt;option&gt;Pick a borough&lt;/option&gt;
+    &lt;option value="BRONX"&gt;Bronx&lt;/option&gt;
+    &lt;option value="BROOKLYN"&gt;Brooklyn&lt;/option&gt;
+    &lt;option value="MANHATTAN"&gt;Manhattan&lt;/option&gt;
+    &lt;option value="QUEENS"&gt;Queens&lt;/option&gt;
+    &lt;option value="STATEN ISLAND"&gt;Staten Island&lt;/option&gt;
+&lt;/select&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
             <h2 class="code">$('#borough').val()</h2>
         </div>
 
@@ -547,11 +560,11 @@ $.getJSON('queens.geojson', function (data) {
         </div>
 
         <div class="slide">
-            <a href="leaflet.custompopup.html">
+            <a href="leafletmap.custompopup.html">
                 <img style="max-width: 50%;" src="img/leaflet-popup.png" />
             </a>
-            <a href="leaflet.custompopup.html">
-                leaflet.custompopup.html
+            <a href="leafletmap.custompopup.html">
+                leafletmap.custompopup.html
             </a>
         </div>
 
