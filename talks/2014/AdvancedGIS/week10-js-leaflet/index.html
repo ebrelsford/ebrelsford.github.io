@@ -137,10 +137,8 @@ var sql = "SELECT * FROM signs WHERE borough = "
         <div class="slide">
             <pre style="font-size: 45px; line-height: 55px;">
 var borough = 'MANHATTAN';
-...
-var sql = "SELECT * FROM signs WHERE borough = '";
-sql = sql + borough;
-sql = sql + "'";
+var sql = "SELECT * FROM signs WHERE borough = '"
+    + borough + "'";
             </pre>
         </div>
 
