@@ -332,19 +332,28 @@ $('#borough').change(function () {
 
         <div class="slide">
             <h2>3. tell leaflet to create the map</h2>
-            <pre style="font-size: 30px; line-height: 40px;">
+            <pre style="font-size: 40px; line-height: 50px;">
 var map = L.map('map').setView([40.70, -73.96], 11);
 </pre>
         </div>
 
         <div class="slide">
-            <h2>3. tell leaflet to create the map</h2>
+            <h2>3a. add base tiles</h2>
             <pre style="font-size: 30px; line-height: 40px;">
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/ebrelsford.ho06j5h0/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>'
 }).addTo(map);
 </pre>
+        </div>
+
+        <div class="slide">
+            <p>change:</p>
+            <pre style="font-size: 30px; line-height: 40px;">
+L.tileLayer('https://{s}.tiles.mapbox.com/v3/<span class="highlighted">ebrelsford.ho06j5h0</span>/{z}/{x}/{y}.png', {
+            </pre>
+            <p>to your id to get your tiles instead</p>
+            <img src="img/mapbox-id.png" />
         </div>
 
         <div class="slide">
@@ -357,7 +366,7 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/ebrelsford.ho06j5h0/{z}/{x}/{y}.png
         </div>
 
         <div class="slide">
-            <h2>3a. add some data to the map</h2>
+            <h2>3b. add some data to the map</h2>
                 <pre style="font-size: 50px; line-height: 60px;">
 $.getJSON('queens.geojson', function (data) {
     L.geoJson(data).addTo(map);
@@ -366,7 +375,7 @@ $.getJSON('queens.geojson', function (data) {
         </div>
 
         <div class="slide">
-            <h2>3b. add popups</h2>
+            <h2>3c. add popups</h2>
                 <pre style="font-size: 35px; line-height: 45px;">
 $.getJSON('queens.geojson', function (data) {
     L.geoJson(data, <span class="highlighted">{
