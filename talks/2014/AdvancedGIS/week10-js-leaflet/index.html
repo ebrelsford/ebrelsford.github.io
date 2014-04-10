@@ -351,11 +351,19 @@ L.tileLayer('https://{s}.tiles.mapbox.com/v3/ebrelsford.ho06j5h0/{z}/{x}/{y}.png
         </div>
 
         <div class="slide">
-            <p>change:</p>
+            <h2>try it:</h2>
+            <p>open <a href="leafletmap.simple.html">leafletmap.simple.html</a>, change the initial view</p>
+            <pre style="font-size: 40px; line-height: 50px;">
+var map = L.map('map').setView(<span class="highlighted">[40.70, -73.96], 11</span>);
+</pre>
+        </div>
+
+        <div class="slide">
+            <p>you can change</p>
             <pre style="font-size: 30px; line-height: 40px;">
 L.tileLayer('https://{s}.tiles.mapbox.com/v3/<span class="highlighted">ebrelsford.ho06j5h0</span>/{z}/{x}/{y}.png', {
             </pre>
-            <p>to your id to get your tiles instead</p>
+            <p>to your mapbox map id to get your tiles instead</p>
             <img src="img/mapbox-id.png" />
         </div>
 
@@ -397,6 +405,16 @@ $.getJSON('queens.geojson', function (data) {
             <a href="leafletmap.data.html">
                 leaflet map with data
             </a>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>open <a href="leafletmap.data.html">leafletmap.data.html</a> on your computer</p>
+        </div>
+
+        <div class="slide">
+            <p><span class="highlighted code">$.getJSON</span> expects a server, and your computer isn't acting like a server</p>
+            <p>there are ways to get around this (ask me)</p>
         </div>
 
         <div class="slide">
