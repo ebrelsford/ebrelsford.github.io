@@ -29,11 +29,17 @@
         </style>
 
         <script>
+            /*
+             * Keep the map variable out here so we can access it from
+             * the console.
+             */
+            var map;
+
             $(document).ready(function () {
                 /*
                  * Create the map
                  */
-                var map = L.map('map').setView([40.70, -73.96], 11);
+                map = L.map('map').setView([40.70, -73.96], 11);
 
                 /*
                  * Add the geocoder to the map
