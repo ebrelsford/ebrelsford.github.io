@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 11 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 11</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>code style</h2>
+        </div>
+
+        <div class="slide">
+            <p>indent your code!</p>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div&gt;
+&lt;p&gt;my paragraph&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div&gt;
+<span class="highlighted">    </span>&lt;p&gt;my paragraph&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 55px;">
+$('#exciting-button').click(function () {
+    console.log('CLICCCK');
+    });
+    $('#boring-button').click(function () {
+    console.log('click.');
+});
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 55px;">
+$('#exciting-button').click(function () {
+console.log('CLICCCK'); });
+$('#boring-button').click(function () {
+console.log('click.');
+});
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 55px; line-height: 65px;">
+$('#exciting-button').click(function () {
+    console.log('CLICCCK');
+});
+$('#boring-button').click(function () {
+    console.log('click.');
+});
+            </pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>less redundant CSS</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">
+&lt;div id="exciting-button"&gt;WHOO&lt;/div&gt;
+&lt;div id="boring-button"&gt;click me&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">
+#exciting-button {
+    background: #FF00FF;
+    border: 5px dashed purple;
+    color: blue;
+    font-size: 28px;
+    top: 25px;
+}
+#boring-button {
+    background: #FF00FF;
+    border: 5px dashed purple;
+    color: blue;
+    font-size: 28px;
+    top: 50px;
+}
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 35px; line-height: 45px;">
+&lt;div id="exciting-button" <span class="highlighted">class="button"</span>&gt;WHOO&lt;/div&gt;
+&lt;div id="boring-button" <span class="highlighted">class="button"</span>&gt;click me&lt;/div&gt;
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">
+.button {
+    background: #FF00FF;
+    border: 5px dashed purple;
+    color: blue;
+    font-size: 28px;
+}
+#exciting-button {
+    top: 25px;
+}
+#boring-button {
+    top: 50px;
+}
+            </pre>
+        </div>
+
+        <div class="slide">
+            <p>it has the same effect, but it's shorter</p>
+        </div>
+
+        <div class="slide">
+            <p>and when you want to change all the buttons it's very easy</p>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">
+.button {
+    background: #FF00FF;
+    border: 5px <span class="highlighted">solid</span> purple;
+    color: blue;
+    font-size: <span class="highlighted">16</span>px;
+}
+#exciting-button {
+    top: 25px;
+}
+#boring-button {
+    top: 50px;
+}
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">
+.button {
+    background: #FF00FF;
+    border: 5px solid purple;
+    color: blue;
+    font-size: 16px;
+}
+#exciting-button {
+    <span class="highlighted">color: yellow;</span>
+    top: 25px;
+}
+#boring-button {
+    top: 50px;
+}
+            </pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CartoDB with Stamen tiles</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://maps.stamen.com">
+                <img src="img/stamen-tiles.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 75%;" src="img/cartodb-stamen-1.png" />
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 75%;" src="img/cartodb-stamen-2.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>leaflet with stamen tiles</h2>
+        </div>
+
+        <div class="slide">
+            <p>add stamen's library after loading leaflet's</p>
+            <pre style="font-size: 20px; line-height: 30px;">
+&lt;script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"&gt;&lt;/script&gt;
+</pre>
+        </div>
+
+        <div class="slide">
+            <p>add stamen's base tiles (after creating the map)</p>
+            <pre style="font-size: 45px; line-height: 55px;">
+var layer = new L.StamenTileLayer("toner");
+map.addLayer(layer);
+</pre>
+        </div>
+
+        <div class="slide">
+            <a href="leafletmap.stamen.html">full example</a>
+        </div>
+
+    </body>
+</html>
