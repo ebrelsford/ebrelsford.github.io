@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 12 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 12</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>have your CartoDB data and Leaflet, too</h2>
+        </div>
+
+        <div class="slide">
+            <a href="leafletmap.cartodb.html">
+                <img src="img/cartodb-leaflet.png" />
+            </a>
+            <a href="leafletmap.cartodb.html">
+                leafletmap.cartodb.html
+            </a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+http://eric.cartodb.com/api/v2/sql?q=
+    SELECT * FROM sign_application_filings&amp;format=GeoJSON</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+http://eric.cartodb.com/api/v2/sql?q=
+    SELECT * FROM sign_application_filings&amp;format=GeoJSON</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+http://eric.cartodb.com/api/v2/sql?q=
+    SELECT * FROM sign_application_filings&amp;format=GeoJSON</pre>
+            <h2>gets data from CartoDB in GeoJSON</h2>
+            <a href="http://eric.cartodb.com/api/v2/sql?q=SELECT * FROM sign_application_filings&format=GeoJSON">for example</a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+$.getJSON('queens.geojson', function (data) {
+    L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup('area: ' + feature.properties.area);
+        }
+    }).addTo(map);
+});
+    </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+$.getJSON('<span class="highlighted">http://eric.cartodb.com/api/v2/sql?q=
+    SELECT * FROM sign_application_filings&amp;format=GeoJSON</span>',
+function (data) {
+    L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup('area: ' + feature.properties.area);
+        }
+    }).addTo(map);
+});
+    </pre>
+        </div>
+
+        <div class="slide">
+            <h2>full implementation here:</h2>
+            <a href="leafletmap.cartodb.html">
+                leafletmap.cartodb.html
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">if you don't have too much data (1000+ features) and want to use Leaflet directly, use this approach</h2>
+        </div>
+
+        <div class="slide">
+            <h2>also not a bad way to get around not being able to load data from your computer</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-local-fail.png" />
+        </div>
+
+    </body>
+</html>
