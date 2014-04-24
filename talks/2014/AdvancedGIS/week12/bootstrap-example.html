@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Load Bootstrap's CSS -->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <style>
+            body {
+                font-size: 50px;
+            }
+            .column {
+                min-height: 300px;
+                padding: 25px;
+            }
+            .left {
+                background-color: lightblue;
+            }
+            .right {
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-3 left column">
+                <p>
+                    left
+                </p>
+            </div>
+            <div class="col-md-9 right column">
+                <p>
+                    right
+                </p>
+                <p>
+                    <a class="btn btn-default">
+                        submit
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="hidden-sm hidden-xs">
+            here for now
+        </div>
+        <div class="visible-sm">
+            small window
+        </div>
+        <div class="visible-xs">
+            extra-small window
+        </div>
+    </body>
+</html>
