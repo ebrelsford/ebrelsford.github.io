@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 13 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+
+        <script src="js/pig.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on('keydown', function (e) {
+                    if (e.keyCode !== 39) { return; }
+                    var hue = Math.random() * 360,
+                        saturation = Math.random() * 100,
+                        lightness = Math.random() * 100,
+                        color = 'hsl(' + hue + ',' + saturation + '%,' + lightness + '%)';
+                    $('.slide:onScreen')
+                        .css('background-color', color)
+                        .toggleClass('dark-background', lightness < 50);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 13</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>recap</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we've talked about ways to get maps online</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about ways to get maps online</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoDB</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about ways to get maps online</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoDB</li>
+                <li>TileMill and Mapbox</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about ways to get maps online</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoDB</li>
+                <li>TileMill and Mapbox</li>
+                <li>Leaflet</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about ways to get maps online</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoDB</li>
+                <li>TileMill and Mapbox</li>
+                <li>Leaflet</li>
+                <li>geojson.io</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about ways to get maps online</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoDB</li>
+                <li>TileMill and Mapbox</li>
+                <li>Leaflet</li>
+                <li>geojson.io</li>
+                <li>Github</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>we've talked about new ways to get data</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about new ways to get data</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>Field Papers</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about new ways to get data</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>Field Papers</li>
+                <li>OpenStreetMap</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about new ways to get data</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>Field Papers</li>
+                <li>OpenStreetMap</li>
+                <li>getting it from web pages and using OpenRefine</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>we've talked about talking to computers</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about talking to computers</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoCSS</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about talking to computers</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoCSS</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about talking to computers</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoCSS</li>
+                <li>SQL</li>
+                <li>HTML</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about talking to computers</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoCSS</li>
+                <li>SQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about talking to computers</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>CartoCSS</li>
+                <li>SQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>we've talked about web technologies</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about web technologies</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>how the web works</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about web technologies</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>how the web works</li>
+                <li>GeoJSON</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about web technologies</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>how the web works</li>
+                <li>GeoJSON</li>
+                <li>Chrome and Firefox's developer tools</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about web technologies</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>how the web works</li>
+                <li>GeoJSON</li>
+                <li>Chrome and Firefox's developer tools</li>
+                <li>Bootstrap</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 100px; line-height: 120px;">we've talked about web technologies</h2>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>how the web works</li>
+                <li>GeoJSON</li>
+                <li>Chrome and Firefox's developer tools</li>
+                <li>Bootstrap</li>
+                <li>jQuery</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>where do we go from here?</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="../">class summary</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>consider going to meetups:</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="http://www.meetup.com/geonyc/">Geo NYC</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="http://www.meetup.com/geonyc/">Geo NYC</a></h2>
+            <p>(will be having a student showcase in the next few months, let me know if you're interested)</p>
+        </div>
+
+        <div class="slide">
+            <h2><a href="http://www.meetup.com/Maptime-NYC/">Maptime NYC</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>keep making maps</h2>
+        </div>
+
+        <div class="slide">
+            <h2>keep making maps</h2>
+            <p>make projects for yourself</p>
+        </div>
+
+        <div class="slide">
+            <h2>keep making maps</h2>
+            <p>make projects for yourself</p>
+            <p>volunteer (consider <a href="http://www.giscorps.org/">GISCorps</a>)</p>
+        </div>
+
+        <div class="slide">
+            <h2>keep in touch</h2>
+        </div>
+
+        <div class="slide">
+            <h2>keep in touch</h2>
+            <p>ask me questions</p>
+        </div>
+
+        <div class="slide">
+            <h2>keep in touch</h2>
+            <p>ask me questions</p>
+            <p>sometimes I have small projects you could work on</p>
+        </div>
+
+    </body>
+</html>
