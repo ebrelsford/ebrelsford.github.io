@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Foo</title>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<style type='text/css'>
+body {
+  background:#000;
+  color:#fff;
+  font-family:'Georgia';
+  margin:0;
+}
+
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+em {
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 800ms;
+}
+
+strong {
+  font-weight:normal;
+  color:#FFF707;
+}
+
+a {
+  color:#FFF707;
+  text-decoration:none;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+</style>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0, ti;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n], t;
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        t = parseInt(e.getAttribute('time-to-next') || 0, 10);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 5) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() { go(++cur % (s.length)); };
+    function fwd() { go(Math.min(s.length - 1, ++cur)); }
+    function rev() { go(Math.max(0, --cur)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39) fwd();
+        if (e.which === 37) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div><p> .</p>
+</div>
+<div><p><img src="img/596.png" alt=""></p>
+</div>
+<div><p><img src="img/596-lot-bbl.png" alt=""></p>
+</div>
+<div><p><img src="img/596-lot-contact.png" alt=""></p>
+</div>
+<div><p><img src="img/signs-hung.jpg" alt=""></p>
+</div>
+<div><p><img src="img/goat-yard.jpg" alt=""></p>
+</div>
+<div><p> .</p>
+</div>
+<div><p><img src="img/projections_head.jpg" alt=""></p>
+</div>
+<div><p><img src="img/undersea_cables.gif" alt=""></p>
+</div>
+<div><p><img src="img/geojsonio.png" alt=""></p>
+</div>
+<div><p><img src="img/andrewhill_plutomaps.png" alt=""></p>
+</div>
+<div><p><img src="img/fieldpapers-make-atlas.png" alt=""></p>
+</div>
+<div><p> .</p>
+</div>
+<div><p><img src="img/alison-seattle-tilemill.png" alt=""></p>
+</div>
+<div><p><img src="img/restricted_streets.png" alt=""></p>
+</div>
+<div><p><img src="img/bids_pops_restricted_streets.jpg" alt=""></p>
+</div>
+<div><p><img src="img/urban_industrial.png" alt=""></p>
+</div>
+<div><p><img src="img/bonnie_bids.png" alt=""></p>
+</div>
+<div><p><img src="img/alison_community_schools.png" alt=""></p>
+</div>
+<div><p><img src="img/audubon_map.png" alt=""></p>
+</div>
+<div><p> .</p>
+</div>
+<div><p><img src="img/cloudmadestyle-editor.png" alt=""></p>
+</div>
+<div><p><img src="img/596_no_tiles.png" alt=""></p>
+</div>
+<div><p><img src="img/cloudmade_issues.png" alt=""></p>
+</div>
+<div><p><img src="img/cloudmade_code.png" alt=""></p>
+</div>
+<div><p><img src="img/internet_archive.png" alt=""></p>
+</div>
+<div><p><img src="img/parallel-flickr.png" alt=""></p>
+</div>
+<div><p><img src="img/isee.png" alt=""></p>
+</div>
