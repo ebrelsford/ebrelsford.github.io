@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 1 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+        <script src="bids.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide lonely">
+            <p>Welcome to Methods 3, Lecture 1</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide lonely">
+            <h1>Methods 3</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h1>What is a map?</h1>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.henry-davis.com/MAPS/AncientWebPages/103.html">
+                <img src="img/babylon.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.henry-davis.com/MAPS/AncientWebPages/103.html">
+                <img src="img/babylon2.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://commons.wikimedia.org/wiki/Category:T_and_O_map">
+                <img src="img/to.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.herefordcathedral.org/visit-us/mappa-mundi-1">
+                <img src="img/hereford_mappa_mundi.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.herefordcathedral.org/visit-us/mappa-mundi-1">
+                <img src="img/hereford_mappa_mundi_zoom.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.wikipedia.org/wiki/Mercator_1569_world_map">
+                <img src="img/Mercator_1569.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.wikipedia.org/wiki/Mercator_1569_world_map">
+                <img src="img/Mercator_1569_zoom.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.wikipedia.org/wiki/Mercator_1569_world_map">
+                <img src="img/Gerardus_Mercator.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://mathworld.wolfram.com/MercatorProjection.html">
+                <img class="large" src="img/mercator.gif" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://nowheremag.com/2013/09/you-are-here-cholera-map/">
+                <img class="large" src="img/miasma_cholera.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/snow_large.png" />
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.udel.edu/johnmack/frec682/cholera/cholera2.html">
+                <img class="large" src="img/snow_zoom.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.nature.com/nature/journal/v495/n7440/full/495169a.html?WT.ec_id=NATURE-20130314">
+                <img class="large" src="img/snow_death_pump.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.udel.edu/johnmack/frec682/cholera/cholera2.html">
+                <img class="large" src="img/snow_heat_map.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h1>GIS</h1>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.andywightman.com/?p=3437">
+                <img style="max-height: 80%;" src="img/mcharg.jpg" />
+            </a>
+            <p>Ian McHarg</p>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.thersablog.com/2012/11/as-north-eastern-coast-of-u.html">
+                <img class="large" src="img/mcharg_design_with_nature.jpg" />
+            </a>
+            <p>1969</p>
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/mcharg_layers.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.thersablog.com/2012/11/as-north-eastern-coast-of-u.html">
+                <img class="large" src="img/mcharg_staten_island.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.esri.com/esri-news/arcnews/spring14articles/roger-tomlinson-geographer">
+                <img class="large" style="max-height: 80%;" src="img/tomlinson.jpg" />
+            </a>
+            <p>Roger Tomlinson</p>
+        </div>
+
+        <div class="slide lonely">
+            <iframe width="640" height="480" src="http://www.youtube.com/embed/eAFG6aQTwPk" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.inc.com/magazine/201307/christine-lagorio/jack-dangermond-how-he-started-esri.html">
+                <img class="large" style="max-height: 80%;" src="img/dangermond.jpg" />
+            </a>
+            <p>Jack Dangermond</p>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.esri.com/">
+                <img class="large" style="max-height: 80%;" src="img/esri.gif" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <p>up to 15th c: maps mostly as diagrams</p>
+            <p>15th c: world maps for navigation</p>
+            <p>19th c: maps combined with data</p>
+            <p>mid 20th c: GIS</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/gis_layers.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/gis_vector_raster.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/gis_raster.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/gis_vector.jpg" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h1>latitude and longitude</h1>
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/battleship_piece.png" style="position: absolute; left: 25px;" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/battleship_piece.png" style="position: absolute; left: 25px;" />
+            <img class="large" src="img/battleship_pegs.jpg" style="position: relative; left: 75px; top: 50px;" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/battleship_piece.png" style="position: absolute; left: 25px;" />
+            <img class="large" src="img/battleship_pegs.jpg" style="position: relative; left: 75px; top: 50px;" />
+            <img class="large" src="img/battleship_board.png" style="position: relative; left: 140px; top: -150px;" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/latlng2.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/meridians.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="large" src="img/latlng_coordinates.jpg" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h1>lab</h1>
+        </div>
+
+        <div class="slide lonely" style="font-size: 80px;">
+            <p>dwtkns.com/pointplotter</p>
+        </div>
+
+        <div class="slide lonely" style="font-size: 80px;">
+            <p>dwtkns.com/pointplotter</p>
+            <p>darrinward.com/lat-long</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <a href="http://www.notbored.org/the-scp.html">
+                <img class="small" src="img/scp_les.png" />
+            </a>
+            <a href="http://www.notbored.org/the-scp.html">
+                Surveillance Camera Players
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://66.93.183.118:8080/isee/s1?zm=0&id=11885">
+                <img class="small" src="img/isee.png" />
+            </a>
+            <a href="http://www.appliedautonomy.com/isee.html">iSee</a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>maps that I've made</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://gardenmaps.org/">
+                <img class="small" src="img/garden_maps.png" />
+            </a>
+            <a href="http://gardenmaps.org/">
+                garden maps
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://londonsquatsarchive.org/">
+                <img class="small" src="img/london_squats_archive.png" />
+            </a>
+            <a href="http://londonsquatsarchive.org/">london squats archive</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://596acres.org/">
+                <img class="small" src="img/596.png" />
+            </a>
+            <a href="http://596acres.org/">596 acres</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h1>Introduction to the geoweb</h1>
+        </div>
+
+        <div class="slide lonely">
+            <h2>"geoweb", AKA:</h2>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+                <li>neogeography</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+                <li>neogeography</li>
+                <li>locative media</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+                <li>neogeography</li>
+                <li>locative media</li>
+                <li>DigiPlace</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+                <li>neogeography</li>
+                <li>locative media</li>
+                <li>DigiPlace</li>
+                <li>geocollaboration</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+                <li>neogeography</li>
+                <li>locative media</li>
+                <li>DigiPlace</li>
+                <li>geocollaboration</li>
+                <li>map hacking</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>new spatial media</li>
+                <li>neogeography</li>
+                <li>locative media</li>
+                <li>DigiPlace</li>
+                <li>geocollaboration</li>
+                <li>map hacking</li>
+            </ul>
+            <p>(<a href="https://geography.as.uky.edu/users/jcr228">Crampton</a>, <a href="http://dx.doi.org/10.1177/0309132508094074">Cartography: Maps 2.0</a>)</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>geoweb</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>geoweb</h2>
+            <p>the set of <strong>practices</strong> and <strong>software</strong> that bring maps to the web and the <strong>maps</strong> that are their outcomes</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>"practices and software"</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>platforms for working with maps and data</p>
+        </div>
+
+        <div class="slide lonely">
+            <p>(open) data</p>
+        </div>
+
+        <div class="slide lonely">
+            <p>adding spatial data to otherwise non-spatial artifacts</p>
+            <p>(eg, geotagging of pictures on a service like flickr, adding location to tweets, etc)</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>"practices and software"</h2>
+            <ul>
+                <li>platforms for working with maps and data</li>
+                <li>(open) data</li>
+                <li>adding spatial data to otherwise non-spatial artifacts</li>
+            </p>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/google.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/foursquare_pizza.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/streetview.png" />
+        </div>
+
+        <div class="slide">
+            <a href="http://www.floatingsheep.org/2012/07/church-or-beer-americans-on-twitter.html">
+                <img class="small" src="img/floatingsheep_twitterbeerchurch.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://datawovn.com/#!San_Francisco_Private_Shuttles">
+                <img class="small" src="img/datawovn_private_buses.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>How did we get here?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>first web maps were static</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>circa 1997:</p>
+            <img class="small" src="img/mapquest.png" />
+            <p>
+                <a class="source" href="http://web.archive.org/web/19971211230909/http://www.mapquest.com/">
+                    Mapquest via the Wayback Machine
+                </a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div class="right">
+                <p>click</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div class="right">
+                <p>click</p>
+                <p style="margin-top: 50px; margin-bottom: 25px;">...wait</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide">
+            <div class="left">
+                <img class="small" src="img/mapquest_map.jpg" />
+            </div>
+            <div class="right">
+                <p>click</p>
+                <p style="margin-top: 50px; margin-bottom: 25px;">...wait</p>
+                <p>entire page reloads,</p>
+                <p>map is panned east</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class="slide lonely">
+            <h2>static online maps are often indistinguishable from paper maps</h2>
+        </div>
+
+        <div class="slide">
+            <img class="large-tall" src="img/fcwa.jpg" />
+            <a class="source" href="http://foodchainworkers.org/?page_id=2443">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.motherjones.com/environment/2014/02/wheres-californias-water-going">
+                <img class="small" src="img/mother-jones-crops.gif" />
+            </a>
+            <p><a class="source" href="http://www.motherjones.com/environment/2014/02/wheres-californias-water-going">Mother Jones</a></p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>how did we get here?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>~1997 - today</h2>
+            <ol style="list-style: decimal outside; padding-left: 50px;">
+                <li>GPS</li>
+                <li>the web changed</li>
+                <li>more data became available</li>
+                <li>FOSS became mainstream</li>
+            <ol>
+        </div>
+
+        <div class="slide lonely">
+            <h2>1. GPS</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.wikipedia.org/wiki/GPS_navigation_device">
+                <img style="max-width: 80%;" src="img/gps_recievers.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.wikipedia.org/wiki/Dilution_of_precision_(GPS)">
+                <img style="max-width: 80%;" src="img/gps_satellites_reading.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>the end of Selective Availability (2000)</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.gps.gov/systems/gps/modernization/sa/data/">
+                <img style="max-width: 80%;" src="img/gps-sa-noaa.png" />
+            </a>
+            <a class="source" href="http://www.gps.gov/systems/gps/modernization/sa/data/">gps.gov</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.schlaggo.de/gps/">
+                <img style="max-width: 80%;" src="img/gps-sa-schlaggo.gif" />
+            </a>
+            <a class="source" href="http://www.schlaggo.de/gps/">schlaggo.de</a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>2. the web has changed</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>"Web 2.0" (~2004)</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/tim_oreilly.jpg" />
+            <p>Tim O'Reilly</p>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://shop.oreilly.com/category/get/data-science-kit.do">
+                <img class="small" src="img/oreilly_books.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>Britannica Online &rarr; Wikipedia</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <ul>
+                <li>Britannica Online &rarr; Wikipedia</li>
+                <li>publishing &rarr; podcasting, blogging</li>
+            </ul>
+            <div style="margin-top: 100px;">
+                <a href="http://oreilly.com/web2/archive/what-is-web-20.html">
+                    What is Web 2.0
+                </a> (2005)
+            </div>
+        </div>
+
+        <div class="slide lonely">
+            <h2>AJAX (2005)</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>AJAX (2005)</h2>
+            <p>(Asynchronous Javascript and XML)</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>AJAX (2005)</h2>
+            <p style="text-decoration: line-through;">(Asynchronous Javascript and XML)</p>
+            <p>dynamically loading portions of webpages</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>AJAX (2005)</h2>
+            <p>not really new, but newly articulated at the time</p>
+        </div>
+
+        <div class="slide lonely">
+            <img style="max-width: 65%;" src="img/ajax_grounded.gif" />
+        </div>
+
+        <div class="slide lonely">
+            <img style="max-width: 65%;" src="img/foursquare-search.gif" />
+        </div>
+
+        <div class="slide lonely">
+            <img style="max-width: 60%;" src="img/internet_users.png" />
+            <p>
+                <a class="source" href="http://www.webpronews.com/the-internet-was-kind-of-terrible-in-2002-infographic-2012-08">
+                    source
+                </a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/internet_speeds.png" />
+            <p>
+                <a class="source" href="http://www.webpronews.com/the-internet-was-kind-of-terrible-in-2002-infographic-2012-08">
+                    source
+                </a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>3. data becomes more available</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>open data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                    <li>licensed freely</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                    <li>licensed freely</li>
+                    <li>usually created by a large entity</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/open_data_ipis.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/open_data_ipis.png" />
+            <img class="small" style="margin-top: -250px; margin-left: 50px;" src="img/596acres.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/free_pluto.png" />
+            <a href="http://spatialityblog.com/2013/07/25/nycs-mappluto-is-free/">
+                source
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/free_pluto.png" />
+            <a href="http://bklynr.com/block-by-block-brooklyns-past-and-present/">
+                <img class="small" style="margin-top: -250px; margin-left: 50px;" src="img/bklynr_block_by_block.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <p>over 100 portals listed here:</p>
+            <a href="https://github.com/rebeccawilliams/opendatacities/blob/master/portals.csv">
+                <img style="max-width: 75%;" src="img/open-data-portals.png" />
+            </a>
+            <a class="source" href="https://github.com/rebeccawilliams/opendatacities/blob/master/portals.csv">github.com/rebeccawilliams/opendatacities/</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="https://data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm">
+                <img class="small" src="img/nyc-opendata-filming-locations.png" />
+            </a>
+            <a class="source" href="https://data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm">data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://596acres.org/">
+                <img class="small" src="img/596.png" />
+            </a>
+            <a class="source" href="http://596acres.org/">596 Acres</a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>collaborative data</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="https://www.mapbox.com/blog/id-for-openstreetmap-reaches-beta-1/">
+                <img src="img/osm-id.gif" />
+            </a>
+            <a class="source" href="https://www.mapbox.com/blog/id-for-openstreetmap-reaches-beta-1/">OpenStreetMap's iD editor</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://osmlab.github.io/show-me-the-way/">
+                <img style="max-width: 80%;" src="img/osm-show-me-the-way.gif" />
+            </a>
+            <a class="source" href="http://osmlab.github.io/show-me-the-way/">show me the way</a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/mapkibera.png" />
+            <a class="source" href="http://mapkibera.org/">Map Kibera</a>
+        </div>
+
+        <div class="slide">
+            <img class="large" src="img/mapkibera_compare.png" />
+            <a class="source" href="http://tools.geofabrik.de/mc/?lon=36.79202&lat=-1.31329&zoom=16&num=2&mt0=mapnik&mt1=google-map">map compare</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://foodcensus.org/survey/locations/map">
+                <img src="img/foodcensus.png" />
+            </a>
+            <a class="source" href="http://foodcensus.org/survey/locations/map">foodcensus.org</a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://aircasting.org/map#/map_crowd?tmp=%7B%22tmpSensorId%22:%22%22%7D&data=%7B%22location%22:%7B%22address%22:%22%22,%22distance%22:%2210%22,%22limit%22:false%7D,%22gridResolution%22:25,%22tags%22:%22%22,%22usernames%22:%22%22,%22time%22:%7B%22timeFrom%22:300,%22timeTo%22:1739,%22dayFrom%22:0,%22dayTo%22:365,%22yearFrom%22:2011,%22yearTo%22:2014%7D,%22heat%22:%7B%22highest%22:100,%22high%22:80,%22mid%22:70,%22low%22:60,%22lowest%22:20%7D,%22sensorId%22:%22Sound%20Level-Phone%20Microphone%22%7D&map=%7B%22zoom%22:16,%22lat%22:37.78063358106039,%22lng%22:-122.39977638423574,%22mapType%22:%22hybrid%22%7D">
+                <img src="img/aircasting.png" />
+            </a>
+            <a href="http://aircasting.org/map">aircasting.org</a>
+        </div>
+
+        <div class="slide">
+            <h2>4. FOSS comes into the mainstream</h2>
+            <img class="small" src="img/linux.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>Free / Open Source Software</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/rms.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>goal is to protect the "fundamental freedoms of software users"</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>source code</h2>
+            <img src="img/source-code.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>freedoms to</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>use,</li>
+                <li>study,</li>
+                <li>modify, and</li>
+                <li>redistribute</li>
+            </ul>
+            <p>source code</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>in exchange for</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>attribution</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <h2>in exchange for</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>attribution, and sometimes</li>
+                <li>sharing your changes under the same license</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <h2>backed by licenses</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>backed by licenses</h2>
+            <img src="img/mit-license.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>4. FOSS comes into the mainstream</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/linux.png" />
+            <p>Linux taken seriously by Microsoft (~1998)</p>
+        </div>
+
+        <div class="slide lonely">
+            <p class="quote" style="padding-top: 0;">
+                "Recent case studies (the Internet) provide very dramatic evidence 
+                ... that commercial quality can be achieved / exceeded by OSS projects."
+            </p>
+            <p>
+                <a href="http://en.wikipedia.org/wiki/Halloween_Documents">leaked internal Microsoft memo</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>~1997 - today</h2>
+            <ol style="list-style: decimal outside; padding-left: 50px;">
+                <li>GPS</li>
+                <li>the web changed</li>
+                <li>more data became available</li>
+                <li>FOSS became mainstream</li>
+            <ol>
+        </div>
+
+
+        <div class="slide lonely intermission"></div>
+
+
+        <!-- Begin mechanics -->
+
+        <div id="mechanics" class="slide lonely">
+            <h2>Anatomy of a web map</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>1. Start with some data</p>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/database.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/data.png" />
+        </div>
+
+        <div class="slide lonely">
+            <p>2. Make or reuse base <strong>tiles</strong></p>
+        </div>
+
+        <div class="slide lonely">
+            <div class="left">
+                <p>Street, water and land data</p>
+            </div>
+        </div>
+
+        <div class="slide lonely">
+            <div class="left">
+                <p>Street, water and land data &rarr;</p>
+            </div>
+            <div class="right">
+                <img class="small" src="img/tile.png" />
+            </div>
+        </div>
+
+        <div class="slide lonely">
+            <p>3. Overlay data</p>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/bids.png" />
+        </div>
+
+        <div class="slide lonely">
+            <p>4. Mix with some html, css, and javascript</p>
+        </div>
+
+        <div id="map-all-together" class="slide">
+            <div id="final-map"></div>
+        </div>
+
+        <div class="slide lonely">
+            <p>1. Start with some <strong>data</strong></p>
+            <p>2. Make or reuse <strong>base tiles</strong></p>
+            <p>3. <strong>Overlay data</strong></p>
+            <p>4. Mix with some <strong>html</strong>, <strong>css</strong>,
+            and <strong>javascript</strong></p>
+        </div>
+
+        <div class="slide lonely intermission"></div>
+
+        <div class="slide lonely">
+            <h2>geoweb maps</h2>
+        </div>
+
+        <!-- Begin possibilities -->
+
+        <!-- Fanciful things -->
+
+        <div class="slide">
+            <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://8bitcity.com/embed?New York,-73.98446,40.71451,14"></iframe>
+            <a href="http://8bitcity.com/map" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/minecraft.png" />
+            <a href="http://vimeopro.com/openstreetmapus/state-of-the-map-us-2013/video/68099566" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://graphspace.com/every-line-every-point/london.html" class="source">
+                <img class="small" src="img/osm_every_line_ever.png" />
+            </a>
+            <a href="http://graphspace.com/every-line-every-point/london.html">
+                OpenStreetMap: Every Line Ever, Every Point Ever
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="https://www.mapbox.com/blog/osm-community-visualized/">
+                <img class="small" src="img/osm_by_contributor_europe.jpg" />
+            </a>
+            <a href="https://www.mapbox.com/blog/osm-community-visualized/">
+                OpenStreetMap’s Contributor Community Visualized - Individual by Individual
+            </a>
+        </div>
+
+
+        <!-- Geocoded things -->
+
+        <div class="slide lonely">
+            <img class="small" src="img/localsandtourists.png" />
+            <a href="http://www.flickr.com/photos/walkingsf/4671594023/in/set-72157624209158632">
+                Locals and Tourists
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <iframe src="http://player.vimeo.com/video/75043121?title=0&amp;byline=0&amp;portrait=0&amp;color=0cbadf" width="700" height="525" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+            <p><a href="http://vimeo.com/75043121">Foursquare check-ins show the pulse of Chicago</a></p>
+        </div>
+
+
+        <!-- Useful things -->
+
+        <div class="slide">
+            <p>
+                <a href="http://earth.nullschool.net/" target="_blank">Earth Wind Map</a>
+            </p>
+            <a href="http://earth.nullschool.net/" target="_blank">
+                <img class="small" src="img/earth_wind_map.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/comparinator.png" />
+            <a href="http://www.urbanresearchmaps.org/citycouncildistricts/map.html?lat=40.75935&lon=-73.81138&zoom=14&identify=-73.805799628444%2C%2040.755706832582&popup=false&maptype=OVERLAY&districttype=UNITY1&attributelayer=Plurality2010">NYC City Council Districts comparison</a>
+        </div>
+
+        <div class="slide">
+            <p>Haiti in OpenStreetMap before 2010 earthquake</p>
+            <img src="img/haiti1.png" />
+            <a class="source" href="http://brainoff.com/weblog/2010/01/14/1518">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>Haiti in OpenStreetMap after 2010 earthquake</p>
+            <img src="img/haiti2.png" />
+            <a class="source" href="http://brainoff.com/weblog/2010/01/14/1518">
+                source
+            </a>
+        </div>
+
+        <div class="slide lonely intermission"></div>
+
+        <div class="slide lonely">
+            <img src="img/alison_community_schools.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/bonnie_final.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/bids_pops_restricted_streets.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/nohely_final.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/audubon_map.png" />
+        </div>
+
+        <div class="slide lonely intermission"></div>
+
+        <div class="slide lonely">
+            <h2>lab 2</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>geojson.io</h2>
+        </div>
+
+    </body>
+</html>

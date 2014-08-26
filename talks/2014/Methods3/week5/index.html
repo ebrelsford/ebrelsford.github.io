@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 1 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" />
+        <![endif]-->
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+        <script src="bids.geojson"></script>
+        <script src="js/map.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide lonely">
+            <p>Welcome to Methods 3, Lecture 5</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>what is FOSS?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>Free / Open Source Software</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/rms.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>goal is to protect the "fundamental freedoms of software users"</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>source code</h2>
+            <img src="img/source-code.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>freedoms to</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>use,</li>
+                <li>study,</li>
+                <li>modify, and</li>
+                <li>redistribute</li>
+            </ul>
+            <p>source code</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>in exchange for</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>attribution</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <h2>in exchange for</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>attribution, and sometimes</li>
+                <li>sharing your changes under the same license</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <h2>backed by licenses</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>backed by licenses</h2>
+            <img src="img/mit-license.png" />
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://codingfreedom.com/">
+                <img style="max-width: 45%;" src="img/coding_freedom.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>who would ever contribute to FOSS?</h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                GitHub, the popular site for hosting code, much of it open source, has well over <strong>3.5 million</strong> users and <strong>10 million</strong> repositories.
+            </p>
+            <p>
+                <a class="source" href="https://github.com/blog/1724-10-million-repositories">source</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+            <ul>
+        </div>
+
+        <div class="slide lonely">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+                <li>recognition</li>
+            <ul>
+        </div>
+
+        <div class="slide lonely">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+            <ul>
+        </div>
+
+        <div class="slide lonely">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+                <li>it's fun</li>
+            <ul>
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/hammer.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img class="small" src="img/replicated-hammer.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img style="max-width: 40%;" src="img/loading-indicator.gif" />
+        </div>
+
+        <div class="slide lonely">
+            <a href="https://github.com/ebrelsford/Leaflet.loading">
+                <img src="img/leaflet-loading.png" />
+            </a>
+            <p>
+                <a class="source" href="https://github.com/ebrelsford/Leaflet.loading">github.com/ebrelsford/Leaflet.loading</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <a href="https://github.com/ebrelsford/Leaflet.loading/pulls?direction=desc&page=1&sort=created&state=closed">
+                <img src="img/leaflet-loading-prs.png" />
+            </a>
+        </div>
+
+
+        <div class="slide">
+            <h2>who would ever use FOSS?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>FOSS on your desktop or laptop</h2>
+            <a href="http://en.wikipedia.org/wiki/Usage_share_of_operating_systems">
+                <img class="small" src="img/desktop-operating-systems.png" />
+            </a>
+            <a class="source" href="http://en.wikipedia.org/wiki/Usage_share_of_operating_systems">Net Applications via Wikipedia</a>
+        </div>
+
+        <div class="slide">
+            <h2>FOSS in your browser</h2>
+            <a href="http://thenextweb.com/insider/2014/01/02/ie11-triples-market-share-10-42-firefox-slips-bit-chrome-gains-back-share/#!wZeId">
+                <img class="small" src="img/browser-market-share.png" />
+            </a>
+            <a class="source" href="http://thenextweb.com/insider/2014/01/02/ie11-triples-market-share-10-42-firefox-slips-bit-chrome-gains-back-share/#!wZeId">thenextweb.com</a>
+        </div>
+
+        <div class="slide">
+            <h2>FOSS on your smartphone</h2>
+            <a href="http://en.wikipedia.org/wiki/Usage_share_of_operating_systems">
+                <img style="max-width: 75%;" src="img/android-iphone-market-share.png" />
+            </a>
+            <a class="source" href="http://en.wikipedia.org/wiki/Usage_share_of_operating_systems">Gartner via Wikipedia</a>
+        </div>
+
+        <div class="slide">
+            <h3>FOSS on supercomputers</h3>
+            <a href="http://www.zdnet.com/where-linux-rules-supercomputers-7000023591/">
+                <img style="max-width: 75%;" src="img/top-500-supercomputers-november-2013-by-os.png" />
+            </a>
+            <a class="source" href="http://www.zdnet.com/where-linux-rules-supercomputers-7000023591/">zdnet.com</a>
+        </div>
+
+        <div class="slide">
+            <h3>FOSS on servers</h3>
+            <a href="http://news.netcraft.com/archives/2014/02/03/february-2014-web-server-survey.html">
+                <img style="max-width: 70%;" src="img/server-software-market-share.png" />
+            </a>
+            <a class="source" href="http://news.netcraft.com/archives/2014/02/03/february-2014-web-server-survey.html">netcraft.com</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>FOSS in geoweb apps</h2>
+            <img style="max-width: 85%;" src="img/geoweb-application-1.png" />
+            <p>
+                <a href="http://maptime.github.io/anatomy-of-a-web-map/#45">
+                    anatomy of a web app
+                </a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>FOSS in geoweb apps</h2>
+            <img style="max-width: 60%;" src="img/geoweb-application-2.png" />
+        </div>
+
+        <div class="slide">
+            <h2>FOSS in geoweb apps</h2>
+            <img class="small" src="img/geoweb-application.png" />
+        </div>
+
+    </body>
+</html>
