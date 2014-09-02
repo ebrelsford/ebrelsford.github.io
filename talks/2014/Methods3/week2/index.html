@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 2 | Methods 3</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide lonely">
+            <p>Welcome to Methods 3, Lecture 2</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide lonely">
+            <h1>Methods 3</h1>
+            <a href="http://www.postcards-from-google-earth.com/pittsburgh_11/">
+                <img src="img/postcard_from_pittsburgh.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>(review)</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img style="max-height: 70%; float: left;" src="img/mcharg.jpg" />
+            <img class="large" style="max-height: 40%;" src="img/tomlinson.jpg" />
+            <img style="max-height: 40%; padding-top: 15px;" src="img/dangermond.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/meridians.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>what is open data?</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>Cartographic design &amp; conventions</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>think about:</h2>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>scale</li>
+                <li>hierarchy</li>
+                <li>color</li>
+                <li>symbology</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/nyc_tourist_map.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/nyc_subway_map.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/nyc_google.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/nyc_osm.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>positioning</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/eu_us_sunshine.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>figure-ground</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://makingmaps.net/2008/02/05/more-principles-of-map-design/">
+                <img src="img/islands_of_man.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>hierarchy</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://cartastrophe.wordpress.com/2012/01/02/an-unintelligible-language/">
+                <img src="img/language_map.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://cartastrophe.wordpress.com/2012/01/02/an-unintelligible-language/">
+                <img src="img/language_map_zoom.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://earthobservatory.nasa.gov/IOTD/view.php?id=6887">
+                <img src="img/mississippi_meanders.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://earthobservatory.nasa.gov/IOTD/view.php?id=6887">
+                <img src="img/mississippi_meanders_zoom.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://earthobservatory.nasa.gov/IOTD/view.php?id=6887">
+                <img src="img/mississippi_meanders_title.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.cdc.gov/vhf/ebola/resources/distribution-map-guinea-outbreak.html">
+                <img src="img/cdc_ebola.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>color</h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/amish_us.jpg" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/ny_county_legislatures.png" />
+        </div>
+
+        <div class="slide lonely">
+            <p>color brewer</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>lab: QGIS</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>download this data:</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide lonely">
+            <h2>Projections and coordinate systems</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>latitude and longitude are always in relation to a <em>datum</em></h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.cinesat.com/html/cinesat/cs/csprj.htm">
+                <img src="img/geoid.gif" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>a <em>datum</em> is the combination of a spheroid and how it's being used</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://en.wikipedia.org/wiki/Geodetic_datum">
+                <img src="img/global_local_ellipsoids.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/nad_euro.gif" />
+        </div>
+
+        <div class="slide lonely">
+            <h2>you will often see <em>NAD83</em> and <em>WGS84</em></h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/mercator.gif" />
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://csc.noaa.gov/geozone/happy-birthday-mercator/">
+                <img src="img/orange_projection.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://flowingdata.com/2014/01/13/map-projections-illustrated-with-a-face/">
+                <img src="img/projections_faces.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://catalog.flatworldknowledge.com/bookhub/reader/3798?e=campbell_1.0-ch02_s02">
+                <img src="img/projection_diagram.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://docs.qgis.org/2.0/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">
+                <img src="img/projection_families.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://sandbox.azavea.com/projection-overlays/south-america.html">
+                <img src="img/sa_projections.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://earth.nullschool.net/">
+                <img src="img/earth_wind_map.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <p>projections mainly distort</p>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>area (equivalence)</li>
+                <li>shape (conformity)</li>
+                <li>distance</li>
+            </ul>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://bramus.github.io/mercator-puzzle-redux/">
+                <img src="img/mercator_puzzle.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                <img src="img/tissot_mercator.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                <img src="img/tissot_mollweide.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                <img src="img/tissot_oblique_mercator.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>you have to pick the one(s) that make the most sense for what you're doing</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://bl.ocks.org/mbostock/3709000">
+                <img src="img/projection_distortions.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <iframe width="640" height="480" src="http://www.youtube.com/embed/n8zBC2dvERM" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://gis.tulaliptribes-nsn.gov/Home/FrequentlyAskedQuestions.aspx">
+                <img src="img/state_plane.jpg" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://spatialreference.org/ref/epsg/2263/">
+                <img src="img/epsg_2263.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://spatialreference.org/ref/epsg/2263/">
+                <img src="img/epsg_2263.png" />
+            </a>
+            <p>best for New York area, many city datasets use this</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>projections are just math</h2>
+        </div>
+
+        <div class="slide lonely">
+            <a href="http://www.progonos.com/furuti/MapProj/Normal/CartHow/HowBraunC/howBraunC.html">
+                <img src="img/projection_math.png" />
+            </a>
+        </div>
+
+        <div class="slide lonely">
+            <h2>luckily GISs are pretty good at math</h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>lab 2</h2>
+        </div>
+
+    </body>
+</html>
