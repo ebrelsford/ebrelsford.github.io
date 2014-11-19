@@ -17,7 +17,7 @@
     <body>
 
         <div class="slide">
-            <h1>PostGIS</h1>
+            <h1>Getting started with PostGIS</h1>
         </div>
 
         <div class="slide lonely">
@@ -122,6 +122,116 @@ FROM mysteries
         </div>
 
         <div class="slide lonely">
+            <h2>
+                let's get the length of the bikelanes
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT *, ST_Length(the_geom)
+FROM osm_bikelanes
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT *,
+    ST_Length(
+        ST_Transform(the_geom, 2263)
+    )
+FROM osm_bikelanes
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT *,
+    ST_Length(
+        ST_Transform(the_geom, 2263)
+    )
+FROM osm_bikelanes
+</pre>
+            </h2>
+            <p>(when dealing with lengths and areas, use ST_Transform)</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>
+                let's get the centers of the bikelane segments
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT 
+    ST_Centroid(the_geom)
+    AS the_geom 
+FROM osm_bikelanes
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT 
+    ST_Centroid(the_geom_webmercator)
+    AS the_geom_webmercator 
+FROM osm_bikelanes
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT 
+    ST_Centroid(the_geom_webmercator)
+    AS the_geom_webmercator 
+FROM osm_bikelanes
+</pre>
+            </h2>
+            <p>(if your geometries aren't showing up in CartoDB, use the_geom_webmercator)</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2>
+                where to the bike lanes overlap?
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/postgis_intersects_docs.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT osm.the_geom_webmercator 
+FROM 
+    osm_bikelanes osm,
+    dot_bikelanes dot
+WHERE 
+    ST_Intersects(osm.the_geom,
+    dot.the_geom)
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>
+                where don't they overlap?
+            </h2>
+        </div>
+
+        <div class="slide lonely">
             <h2 style="font-size: 65px; line-height: 70px;">
 <pre>
 SELECT osm.the_geom_webmercator 
@@ -131,18 +241,62 @@ LEFT JOIN dot_bikelanes dot
         osm.the_geom,
         dot.the_geom
     )
-WHERE dot.the_geom IS NULL
+WHERE dot.the_geom IS NOT NULL
 </pre>
             </h2>
         </div>
 
         <div class="slide lonely">
+            <h2>
+                weird things that aren't really useful for bikelanes
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/postgis_rotate.png" />
+        </div>
+
+        <div class="slide lonely">
+            <img src="img/postgis_rotate_docs.png" />
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 65px; line-height: 70px;">
+<pre>
+SELECT
+    ST_Rotate(
+        ST_Collect(
+            osm.the_geom_webmercator
+        ),
+        -.1,
+        ST_Centroid(
+            ST_Collect(osm.the_geom_webmercator)
+        )
+    ) AS the_geom_webmercator
+FROM osm_bikelanes osm
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>
+                onward!
+            </h2>
             <p>
-                More about setting up PostGIS:
+                More about setting up PostGIS on your own computer:
                 <a href="http://erictheise.github.io/geostack-deck/" target="_blank">
                     erictheise.github.io/geostack-deck/
                 </a>
             </p>
+            <p style="margin-top: 25px;">
+                More about PostGIS and CartoDB:
+                <a href="http://academy.cartodb.com/courses/04-sql-postgis/lesson-1.html" target="_blank">
+                    academy.cartodb.com/courses/04-sql-postgis/lesson-1.html
+                </a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
         </div>
 
     </body>
