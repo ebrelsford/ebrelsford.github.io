@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PostGIS | Maptime NYC</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>PostGIS</h1>
+        </div>
+
+        <div class="slide lonely">
+            <h2>
+                <pre>
+SELECT date_added
+FROM mysteries
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2>
+                <pre>
+SELECT date_added
+FROM mysteries
+            </h2>
+            <p>&rarr; 2014-11-18T00:00:00Z</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size:60px; line-height: 65px;">
+                <pre>
+SELECT age(
+    date_added,
+    current_date
+)
+FROM mysteries
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 60px; line-height: 65px;">
+                <pre>
+SELECT age(
+    date_added,
+    current_date
+)
+FROM mysteries
+            </h2>
+            <p>&rarr; 1 day</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 70px; line-height: 75px;">
+                <pre>
+SELECT ST_AsText(the_geom)
+FROM mysteries
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 70px; line-height: 75px;">
+                <pre>
+SELECT ST_AsText(the_geom)
+FROM mysteries
+            </h2>
+            <p>&rarr; POINT(-71.433105 &nbsp; 27.362011)</p>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 70px; line-height: 75px;">
+                <pre>
+SELECT ST_Distance(
+    the_geom,
+    ST_Point(0, 0)
+)
+FROM mysteries
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 70px; line-height: 75px;">
+                <pre>
+SELECT ST_Distance(
+    the_geom,
+    ST_Point(0, 0)
+)
+FROM mysteries
+            </h2>
+            <p>&rarr; 76.4942359652356</p>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                <a href="http://harizh.herokuapp.com/demos/bike_lanes.html" target="_blank">
+                    <img src="img/harish_bikelanes.png" />
+                </a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                bikelane data: <a href="#"></a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                PostGIS docs:
+                <a href="http://postgis.net/docs/manual-2.0/reference.html" target="_blank">postgis.net/docs/manual-2.0/reference.html</a>
+            </p>
+        </div>
+
+        <div class="slide lonely">
+            <h2 style="font-size: 70px; line-height: 80px;">
+<pre>
+SELECT osm.the_geom_webmercator 
+FROM osm_bikelanes osm
+LEFT JOIN dot_bikelanes dot 
+    ON ST_Intersects(
+        osm.the_geom,
+        dot.the_geom
+    )
+WHERE dot.the_geom IS NULL
+</pre>
+            </h2>
+        </div>
+
+        <div class="slide lonely">
+            <p>
+                More about setting up PostGIS:
+                <a href="http://erictheise.github.io/geostack-deck/" target="_blank">
+                    erictheise.github.io/geostack-deck/
+                </a>
+            </p>
+        </div>
+
+    </body>
+</html>
