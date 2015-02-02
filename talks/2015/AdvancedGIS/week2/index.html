@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 1 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" />
+        <![endif]-->
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="http://benpickles.github.io/onScreen/jquery.onscreen.min.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+        <script src="js/map.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 2</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Please download this data:</p>
+            <p style="font-family: Courier, monospace;">bit.ly/1szhu5o</p>
+            <p>or get it in Canvas</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>how the web works</h2>
+        </div>
+
+        <div class="slide">
+            <h2>how the web works</h2>
+            <p>(a very short introduction)</p>
+        </div>
+
+        <div class="slide">
+            <h2>What happens when you type google.com in your browser?</h2>
+        </div>
+
+        <div class="slide">
+            <p>let's look at it with Chrome's Developer Tools:</p>
+            <p>
+                <strong>Tools &gt; Developer Tools</strong>
+            </p>
+        </div>
+
+        <div class="slide">
+            <p>let's look at some other pages:</p>
+            <p>
+                <a href="fillerpage.html">
+                    basic page
+                </a>
+            </p>
+            <p>
+                <a href="staticmap.html">
+                    static map
+                </a>
+            </p>
+            <p>
+                <a href="https://eric.cartodb.com/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/public_map">a map in CartoDB</a>
+            </p>
+            <p>
+                <a href="leaflet.html">a map made with Leaflet</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>HTML</h2>
+            <p>defines the <strong>structure</strong> of a page, loads other bits</p>
+        </div>
+
+        <div class="slide">
+            <h2>HTML</h2>
+            <img src="img/html.png" />
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <p>adds <strong>style</strong> to parts of a page</p>
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <img src="img/css.png" />
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <p>makes web pages <strong>dynamic</strong> (eg AJAX)</p>
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <img class="small" src="img/ajax_grounded.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <img src="img/ajax_foursquare.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <img src="img/js.png" />
+        </div>
+
+        <div class="slide">
+            <p>your browser loads the <strong>HTML</strong>, which tells it which <strong>CSS</strong> and <strong>JavaScript</strong> files to get (if any)</p>
+        </div>
+
+        <div class="slide">
+            <img src="img/devtools_loading.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>but where is the browser getting the files from?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-data-center-streetview.png" />
+            <a href="http://www.google.com/about/datacenters/inside/streetview/">take a walk through a Google data center</a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/equinix-datacenter.jpg" />
+            <p>inside a Google data center, via 
+                <a href="http://www.wired.com/wiredenterprise/2012/03/google-miner-helmet/">Wired</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 80%;" src="img/google-data-center-the-dalles.jpg" />
+            <a href="http://m.ammoth.us/blog/2010/04/a-preliminary-atlas-of-gizmo-landscapes/">via m.ammoth, via the ny times</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-datacenters-official-map.png" />
+            <a href="http://www.google.com/about/datacenters/inside/locations/">Google's official data center map</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-data-centers-unofficial-map.png" />
+            <a href="http://www.wayfaring.com/maps/show/48030">unofficial Google data center map (2008)</a>
+        </div>
+
+        <div class="slide">
+            <h2>and how do the files get to you?</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/internet_tubes.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>traceroute</h2>
+            <p>can give you an idea of the route data takes to get from you to the server (and vice versa)</p>
+        </div>
+
+        <div class="slide">
+            <a class="source" href="traceroute.kml">
+                <img src="img/google_earth_traceroute.png" />
+            </a>
+            <a href="http://www.kahunaburger.com/2009/03/28/google-earth-as-a-traceroute-viewer/">
+                using Google Earth as a traceroute viewer
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.yougetsignal.com/tools/visual-tracert/">
+                <img src="img/visual_traceroute.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img src="img/ixp.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/ixp_connections.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/peering.png" />
+        </div>
+
+        <div class="slide">
+            <a href="http://www.newera.com.na/2014/03/10/namibias-ixp-step/">
+                <img src="img/ixp_namibia.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/internet-us.png" />
+            <a href="http://www.chrisharrison.net/index.php/Visualizations/InternetMap">
+                Chris Harrison
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/internet-na.png" />
+            <a href="http://www.telegeography.com/telecom-resources/map-gallery/global-internet-map-2012/index.html">
+                telegeography
+            </a>
+        </div>
+
+        <div class="slide">
+            <img src="img/internet-undersea.png" />
+            <a href="http://www.theguardian.com/business/2008/feb/01/internationalpersonalfinancebusiness.internet">The Guardian</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                 2008: an "internet blackout [...] left 75 million people with only limited access,
+                 caused by a ship that tried to moor off the coast of Egypt in bad weather"
+            </p>
+            <a href="http://www.theguardian.com/business/2008/feb/01/internationalpersonalfinancebusiness.internet">The Guardian</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                 2008: an "internet blackout [...] left 75 million people with only limited access,
+                 caused by a ship that tried to moor off the coast of Egypt in bad weather"
+            </p>
+            <a href="http://www.theguardian.com/business/2008/feb/01/internationalpersonalfinancebusiness.internet">The Guardian</a>
+        </div>
+
+        <div class="slide">
+            <img style="width: 80%;" src="img/mediterranean_break.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 60%;" src="img/shark.gif" />
+            <a style="font-size: 30px;" href="http://blogs.discovermagazine.com/d-brief/2014/08/15/sharks-chomping-underwater-fiber-optic-cables/#.VDmjZq3tn0o">Sharks Are Chomping Underwater Fiber-Optic Cables</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.submarinecablemap.com/">
+                <img src="img/undersea_cables_pacific.png" />
+            </a>
+            <a href="http://www.submarinecablemap.com/">
+                submarinecablemap.com
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://en.wikipedia.org/wiki/Submarine_communications_cable">
+                <img class="small" src="img/undersea-cable.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/undersea_cables.gif" />
+            <p>how undersea cables are laid</p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/microwave_tower.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/microwave.jpg" />
+            <a style="font-size: 35px; line-height: 40px; display: block;" href="http://www.businessweek.com/articles/2014-07-24/high-frequency-traders-find-microwaves-suit-their-need-for-speed">High-Frequency Traders Find Microwaves Suit Their Need for Speed</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/lasers_stocks.png" />
+            <a style="font-size: 35px; line-height: 40px; display: block;" href="http://online.wsj.com/news/articles/SB10001424052702303947904579340711424615716">"Market players world-wide spent about $1.5 billion in 2013 on technology to increase trading speeds"</a>
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cell_tower_roof.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cell_tower_roof_camo.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cell_tower_camo.jpg" />
+        </div>
+
+        <div class="slide">
+            <a href="http://urbanomnibus.net/2013/09/local-connections-the-red-hook-wifi-project/">
+                <img style="width: 70%;" src="img/red_hook_wifi.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://urbanomnibus.net/2013/09/local-connections-the-red-hook-wifi-project/">
+                <img style="width: 70%;" src="img/mesh.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.amazon.com/Tubes-A-Journey-Center-Internet/dp/0061994952">
+                <img style="width: 35%;" src="img/tubes.jpg" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>getting data with devtools</h2>
+            <p><a href="http://habitatmap.org/markers?colors=0&lat=40.688364&lng=-73.966838&maps=212&nogrp=1&t=terrain&z=10">Habitatmap</a></p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>so how does a web map work?</h2>
+        </div>
+
+        <div class="slide">
+            <p>(a few of these slides are adapted from these excellent <a href="http://maptime.github.io/anatomy-of-a-web-map/#45">Maptime slides</a>)</p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/tiles.gif" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 90%;" src="img/tiles-loading.gif" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/tiles-zoom0.png" />
+        </div>
+
+        <div class="slide">
+            <h2>each tile is just an image on the internet</h2>
+            <p>http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png</p>
+        </div>
+
+        <div class="slide">
+            <p>http://a.tile.stamen.com/toner/0/0/0.png</p>
+            <img style="width: 40%;" src="img/tiles-zoom0.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/tiles-zoom1.png" />
+        </div>
+
+        <div class="slide">
+            <h2>these tiles use OpenStreetMap data</h2>
+            <h2>+ CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 90%;" src="img/anatomy-of-a-web-map.png" />
+        </div>
+
+        <div class="slide">
+            <a href="https://mapzen.com/tangram#mapzen,40.71820069656462,-73.98152589797975,15,mode=windows">
+                <img style="width: 90%;" src="img/tangram.png" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML gives <strong>structure</strong> to web pages</h2>
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_header.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_nav.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_map.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_sidebar1.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_sidebar2.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img class="small" src="img/596acres_etc.png" />
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;Hi, I'm a paragraph&lt;/p&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;</span>
+            <p>
+                the paragraph <strong>opening tag</strong>
+            </p>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;</span>
+            <p>
+                the paragraph <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with 
+            </p>
+            <span class="code">&lt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;</span>
+            <p>
+                the paragraph <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with 
+            </p>
+            <span class="code">&lt;</span>
+            <p>and end with</p>
+            <span class="code">&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;/p&gt;</span>
+            <p>the paragraph <strong>closing tag</strong></p>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;/p&gt;</span>
+            <p>the paragraph <strong>closing tag</strong></p>
+            <p>closing tags always start with</p>
+            <span class="code">&lt;/</span>
+            <p>and end with</p>
+            <span class="code">&gt;</span>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;Hi, I'm a paragraph&lt;/p&gt;</span>
+        </div>
+
+        <div class="slide">
+            <h2>HTML in CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cartodb-infowindow-html.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cartodb-legend-html.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <p>makes things look nice</p>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div class='cartodb-legend choropleth'&gt; 
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+&lt;div style="background-color: blue;" 
+    class='cartodb-legend choropleth'&gt; 
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>you can do this with any part of the CartoDB legends and infowindows</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <a href="http://www.codecademy.com/tracks/web">
+                <img src="img/codecademy-html.png" />
+            </a>
+            <a href="http://www.codecademy.com/tracks/web">codecademy.com/tracks/web</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://learn.shayhowe.com/html-css">
+                <img src="img/shayhowe.png" />
+            </a>
+            <a href="http://learn.shayhowe.com/html-css">learn.shayhowe.com/html-css</a>
+        </div>
+
+    </body>
+</html>
