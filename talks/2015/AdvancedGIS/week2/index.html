@@ -489,33 +489,6 @@
         </div>
 
         <div class="slide">
-            <pre>
-#earthquakes {
-    marker-width: 3;
-    ...
-    [zoom &gt;= 10][zoom < 16] {
-        marker-width: 8;
-    }
-}</pre>
-        </div>
-
-        <div class="slide">
-            <pre style="font-size: 40px; line-height: 50px;">
-#earthquakes {
-    marker-width: 3;
-    ...
-    [zoom >= 10][zoom < 16] {
-        marker-width: 8;
-    }
-}</pre>
-            <p>"make the earthquakes markers 3 pixels wide. if the map is at zoom level 10 or higher <strong>and</strong> less than 16, make the earthquakes markers 8 pixels wide."</p>
-        </div>
-
-        <div class="slide">
-            <h2>more likely you'll be doing something like this</h2>
-        </div>
-
-        <div class="slide">
             <pre style="font-size: 50px; line-height: 60px;">
 #earthquakes {
     marker-width: 3;
