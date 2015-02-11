@@ -1,0 +1,723 @@
+<!DOCTYPE html> <html>
+    <head>
+        <title>Class 3 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 3</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Advanced CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>recap</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 600px;" src="img/statement.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 600px;" src="img/selector.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 600px;" src="img/property.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 600px;" src="img/value.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 600px;" src="img/conditional_statement.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 600px;" src="img/curlies.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>more fun with CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>more fun with CartoCSS</h2>
+            <ol style="list-style: decimal outside; padding-left: 50px;">
+                <li>Combining conditions</li>
+                <li>Variables</li>
+                <li>Attributes as values</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <pre>
+#airbnb {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+#airbnb {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10][zoom &lt; 16] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+#airbnb {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10][zoom &lt; 16] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>markers are 3 pixels wide. if the map is between zoom level 10 and 16, the markers are 8 pixels wide.</p>
+        </div>
+
+        <div class="slide">
+            <h2>you can do the same thing with attributes</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+#airbnb {
+    marker-width: 3;
+    ...
+    [price &gt;= 50] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/airbnb-greater.png" />
+        </div>
+
+        <div class="slide">
+            <pre>
+#airbnb {
+    marker-width: 3;
+    ...
+    [price &gt;= 50][price &lt;= 100] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/airbnb-and.png" />
+        </div>
+
+        <div class="slide">
+            <h2>you can do this with multiple attributes</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+#airbnb {
+    marker-width: 3;
+    ...
+    [price &gt;= 50][neighbourhood = 'Bedford-Stuyvesant'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb_and.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>combine conditions with <strong>,</strong> to set properties with <strong>either</strong> condition</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#airbnb {
+    marker-width: 3;
+    ...
+    [price &gt;= 50],
+    [neighbourhood = 'Bedford-Stuyvesant'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>shortcut for:</p>
+            <pre style="font-size: 50px; line-height: 70px;">
+#airbnb {
+    marker-width: 3;
+    ...
+    [price &gt;= 50] {
+        marker-width: 8;
+    }
+    [neighbourhood = 'Bedford-Stuyvesant'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#airbnb {
+    marker-width: 3;
+    ...
+    [price &gt;= 50],
+    [neighbourhood = 'Bedford-Stuyvesant'] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>markers with <span class="code">price</span> over 50 are larger</p>
+            <p><strong>also</strong> markers in Bed-Stuy are larger</p>
+        </div>
+
+        <div class="slide">
+            <h2>recap</h2>
+        </div>
+
+        <div class="slide">
+            <h2>conditional statements look like</h2>
+            <pre>[mag &gt;= 5.5] {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>restrict statements more by putting conditions next to each other</h2>
+        </div>
+
+        <div class="slide">
+            <pre>[price &gt;= 50][price &lt;= 100] {
+    ...
+}</pre>
+            <p><strong>both</strong> conditions must be true</p>
+        </div>
+
+        <div class="slide">
+            <h2>include more features by separating conditions with <strong>,</strong></h2>
+        </div>
+
+        <div class="slide">
+            <pre>[price &gt;= 50],
+[zoom &gt;= 10] {
+    ...
+}</pre>
+            <p><strong>either</strong> condition could be true</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">#airbnb {
+    marker-width: 5;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom &gt;= 4] {
+        marker-width: 10;
+    }
+    [zoom &gt;= 8] {
+        marker-width: 15;
+    }
+    [zoom &gt;= 12] {
+        marker-width: 20;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>what if I want to change marker-width?</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">#airbnb {
+    marker-width: 6;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom &gt;= 4] {
+        marker-width: 12;
+    }
+    [zoom &gt;= 8] {
+        marker-width: 18;
+    }
+    [zoom &gt;= 12] {
+        marker-width: 24;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>there's a better way!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>variables</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;"><strong>@width: 6;</strong>
+#airbnb {
+    marker-width: <strong>@width</strong>;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom &gt;= 4] {
+        marker-width: 12;
+    }
+    [zoom &gt;= 8] {
+        marker-width: 18;
+    }
+    [zoom &gt;= 12] {
+        marker-width: 24;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;"><strong>@width: 6;</strong>
+#airbnb {
+    marker-width: <strong>@width</strong>;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom &gt;= 4] {
+        marker-width: <strong>@width * 2</strong>;
+    }
+    [zoom &gt;= 8] {
+        marker-width: <strong>@width * 3</strong>;
+    }
+    [zoom &gt;= 12] {
+        marker-width: <strong>@width * 4</strong>;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>then I can change all the widths at once</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;"><strong>@width: 8;</strong>
+#airbnb {
+    marker-width: @width;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom &gt;= 4] {
+        marker-width: @width * 2;
+    }
+    [zoom &gt;= 8] {
+        marker-width: @width * 3;
+    }
+    [zoom &gt;= 12] {
+        marker-width: @width * 4;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>it works with colors, too</h2>
+        </div>
+
+        <div class="slide">
+            <pre><strong>@airbnbcolor: #ff307a;</strong>
+#airbnb {
+    marker-width: @width;
+    marker-fill: <strong>@airbnbcolor</strong>;
+    marker-line-color: <strong>@airbnbcolor</strong>;
+    marker-line-opacity: 0.2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide" style="font-size: 60px; line-height: 65px;">
+            <pre><strong>@airbnbcolor: #ff307a;</strong>
+#airbnb {
+    marker-width: @width;
+    marker-fill: <strong>fadeout(@airbnbcolor, 25%)</strong>;
+    marker-line-color: <strong>@airbnbcolor</strong>;
+    marker-line-opacity: 0.2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>try it: use a variable for one of your properties</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>how the web works</h2>
+        </div>
+
+        <div class="slide">
+            <h2>how the web works</h2>
+            <p>(a very short introduction)</p>
+        </div>
+
+        <div class="slide">
+            <h2>What happens when you type google.com in your browser?</h2>
+        </div>
+
+        <div class="slide">
+            <p>let's look at it with Chrome's Developer Tools:</p>
+            <p>
+                <strong>Tools &gt; Developer Tools</strong>
+            </p>
+        </div>
+
+        <div class="slide">
+            <p>let's look at some other pages:</p>
+            <p>
+                <a href="fillerpage.html">
+                    basic page
+                </a>
+            </p>
+            <p>
+                <a href="staticmap.html">
+                    static map
+                </a>
+            </p>
+            <p>
+                <a href="https://eric.cartodb.com/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/public_map">a map in CartoDB</a>
+            </p>
+            <p>
+                <a href="leaflet.html">a map made with Leaflet</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>HTML</h2>
+            <p>defines the <strong>structure</strong> of a page, loads other bits</p>
+        </div>
+
+        <div class="slide">
+            <h2>HTML</h2>
+            <img src="img/html.png" />
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <p>adds <strong>style</strong> to parts of a page</p>
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <img src="img/css.png" />
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <p>makes web pages <strong>dynamic</strong> (eg AJAX)</p>
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <img class="small" src="img/ajax_grounded.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <img src="img/ajax_foursquare.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>JavaScript</h2>
+            <img src="img/js.png" />
+        </div>
+
+        <div class="slide">
+            <p>your browser loads the <strong>HTML</strong>, which tells it which <strong>CSS</strong> and <strong>JavaScript</strong> files to get (if any)</p>
+        </div>
+
+        <div class="slide">
+            <img src="img/devtools_loading.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>but where is the browser getting the files from?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-data-center-streetview.png" />
+            <a href="http://www.google.com/about/datacenters/inside/streetview/">take a walk through a Google data center</a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/equinix-datacenter.jpg" />
+            <p>inside a Google data center, via 
+                <a href="http://www.wired.com/wiredenterprise/2012/03/google-miner-helmet/">Wired</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 80%;" src="img/google-data-center-the-dalles.jpg" />
+            <a href="http://m.ammoth.us/blog/2010/04/a-preliminary-atlas-of-gizmo-landscapes/">via m.ammoth, via the ny times</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-datacenters-official-map.png" />
+            <a href="http://www.google.com/about/datacenters/inside/locations/">Google's official data center map</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/google-data-centers-unofficial-map.png" />
+            <a href="http://www.wayfaring.com/maps/show/48030">unofficial Google data center map (2008)</a>
+        </div>
+
+        <div class="slide">
+            <h2>and how do the files get to you?</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/internet_tubes.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>traceroute</h2>
+            <p>can give you an idea of the route data takes to get from you to the server (and vice versa)</p>
+        </div>
+
+        <div class="slide">
+            <a class="source" href="traceroute.kml">
+                <img src="img/google_earth_traceroute.png" />
+            </a>
+            <a href="http://www.kahunaburger.com/2009/03/28/google-earth-as-a-traceroute-viewer/">
+                using Google Earth as a traceroute viewer
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.yougetsignal.com/tools/visual-tracert/">
+                <img src="img/visual_traceroute.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img src="img/ixp.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/ixp_connections.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/peering.png" />
+        </div>
+
+        <div class="slide">
+            <a href="http://www.newera.com.na/2014/03/10/namibias-ixp-step/">
+                <img src="img/ixp_namibia.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/internet-us.png" />
+            <a href="http://www.chrisharrison.net/index.php/Visualizations/InternetMap">
+                Chris Harrison
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/internet-na.png" />
+            <a href="http://www.telegeography.com/telecom-resources/map-gallery/global-internet-map-2012/index.html">
+                telegeography
+            </a>
+        </div>
+
+        <div class="slide">
+            <img src="img/internet-undersea.png" />
+            <a href="http://www.theguardian.com/business/2008/feb/01/internationalpersonalfinancebusiness.internet">The Guardian</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                 2008: an "internet blackout [...] left 75 million people with only limited access,
+                 caused by a ship that tried to moor off the coast of Egypt in bad weather"
+            </p>
+            <a href="http://www.theguardian.com/business/2008/feb/01/internationalpersonalfinancebusiness.internet">The Guardian</a>
+        </div>
+
+        <div class="slide">
+            <p>
+                 2008: an "internet blackout [...] left 75 million people with only limited access,
+                 caused by a ship that tried to moor off the coast of Egypt in bad weather"
+            </p>
+            <a href="http://www.theguardian.com/business/2008/feb/01/internationalpersonalfinancebusiness.internet">The Guardian</a>
+        </div>
+
+        <div class="slide">
+            <img style="width: 80%;" src="img/mediterranean_break.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 60%;" src="img/shark.gif" />
+            <a style="font-size: 30px;" href="http://blogs.discovermagazine.com/d-brief/2014/08/15/sharks-chomping-underwater-fiber-optic-cables/#.VDmjZq3tn0o">Sharks Are Chomping Underwater Fiber-Optic Cables</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.submarinecablemap.com/">
+                <img src="img/undersea_cables_pacific.png" />
+            </a>
+            <a href="http://www.submarinecablemap.com/">
+                submarinecablemap.com
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://en.wikipedia.org/wiki/Submarine_communications_cable">
+                <img class="small" src="img/undersea-cable.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/undersea_cables.gif" />
+            <p>how undersea cables are laid</p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/microwave_tower.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/microwave.jpg" />
+            <a style="font-size: 35px; line-height: 40px; display: block;" href="http://www.businessweek.com/articles/2014-07-24/high-frequency-traders-find-microwaves-suit-their-need-for-speed">High-Frequency Traders Find Microwaves Suit Their Need for Speed</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/lasers_stocks.png" />
+            <a style="font-size: 35px; line-height: 40px; display: block;" href="http://online.wsj.com/news/articles/SB10001424052702303947904579340711424615716">"Market players world-wide spent about $1.5 billion in 2013 on technology to increase trading speeds"</a>
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cell_tower_roof.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cell_tower_roof_camo.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/cell_tower_camo.jpg" />
+        </div>
+
+        <div class="slide">
+            <a href="http://urbanomnibus.net/2013/09/local-connections-the-red-hook-wifi-project/">
+                <img style="width: 70%;" src="img/red_hook_wifi.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://urbanomnibus.net/2013/09/local-connections-the-red-hook-wifi-project/">
+                <img style="width: 70%;" src="img/mesh.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.amazon.com/Tubes-A-Journey-Center-Internet/dp/0061994952">
+                <img style="width: 35%;" src="img/tubes.jpg" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>getting data with devtools</h2>
+            <p><a href="http://habitatmap.org/markers?colors=0&lat=40.688364&lng=-73.966838&maps=212&nogrp=1&t=terrain&z=10">Habitatmap</a></p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>so how does a web map work?</h2>
+        </div>
+
+        <div class="slide">
+            <p>(a few of these slides are adapted from these excellent <a href="http://maptime.github.io/anatomy-of-a-web-map/#45">Maptime slides</a>)</p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/tiles.gif" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 90%;" src="img/tiles-loading.gif" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/tiles-zoom0.png" />
+        </div>
+
+        <div class="slide">
+            <h2>each tile is just an image on the internet</h2>
+            <p>http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png</p>
+        </div>
+
+        <div class="slide">
+            <p>http://a.tile.stamen.com/toner/0/0/0.png</p>
+            <img style="width: 40%;" src="img/tiles-zoom0.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/tiles-zoom1.png" />
+        </div>
+
+        <div class="slide">
+            <h2>these tiles use OpenStreetMap data</h2>
+            <h2>+ CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 90%;" src="img/anatomy-of-a-web-map.png" />
+        </div>
+
+        <div class="slide">
+            <a href="https://mapzen.com/tangram#mapzen,40.71820069656462,-73.98152589797975,15,mode=windows">
+                <img style="width: 90%;" src="img/tangram.png" />
+            </a>
+        </div>
+
+    </body>
+</html>
