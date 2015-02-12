@@ -15,7 +15,7 @@
    version="1.1"
    inkscape:version="0.48.5 r10040"
    sodipodi:docname="airbnb.svg"
-   inkscape:export-filename="/home/eric/Documents/ebrelsford.github.io/talks/2015/AdvancedGIS/week3/img/airbnb.png"
+   inkscape:export-filename="/home/eric/Documents/ebrelsford.github.io/talks/2015/AdvancedGIS/week3/img/airbnb-greater.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="238.0573"
-     inkscape:cy="537.34089"
+     inkscape:zoom="2"
+     inkscape:cx="234.66517"
+     inkscape:cy="530.97414"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -56,7 +56,7 @@
      id="layer1">
     <path
        sodipodi:type="arc"
-       style="fill:#ffffff;stroke:#000000;stroke-opacity:1;fill-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        id="path2987"
        sodipodi:cx="289.28571"
        sodipodi:cy="439.50504"
@@ -74,16 +74,6 @@
        sodipodi:ry="115.71429"
        d="m 408.57143,608.07648 a 115.71429,115.71429 0 1 1 -231.42857,0 115.71429,115.71429 0 1 1 231.42857,0 z"
        transform="matrix(1.2704364,0,0,1.2704364,-98.342086,-210.16029)" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-opacity:1"
-       id="path3757-6"
-       sodipodi:cx="292.85715"
-       sodipodi:cy="608.07648"
-       sodipodi:rx="115.71429"
-       sodipodi:ry="115.71429"
-       d="m 408.57143,608.07648 a 115.71429,115.71429 0 1 1 -231.42857,0 115.71429,115.71429 0 1 1 231.42857,0 z"
-       transform="matrix(1.2827289,0,0,1.2827289,85.772237,-214.49226)" />
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -95,52 +85,6 @@
          id="tspan3779"
          x="226.27417"
          y="374.54984">airbnb listings</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="137.96672"
-       y="571.0799"
-       id="text3777-2"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3779-2"
-         x="137.96672"
-         y="571.0799"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Sans;-inkscape-font-specification:Sans">price &gt;= 50</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="458.76556"
-       y="571.08777"
-       id="text3777-2-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3779-2-9"
-         x="458.76556"
-         y="571.08777"
-         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Sans;-inkscape-font-specification:Sans">price &lt;= 100</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-       x="365.02283"
-       y="551.69434"
-       id="text3777-2-9-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3779-2-9-4"
-         x="365.02283"
-         y="551.69434"
-         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans">price</tspan><tspan
-         sodipodi:role="line"
-         x="365.02283"
-         y="570.44434"
-         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans"
-         id="tspan3039">between</tspan><tspan
-         sodipodi:role="line"
-         x="365.02283"
-         y="589.19434"
-         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans"
-         id="tspan3041">50 and 100</tspan></text>
     <path
        sodipodi:type="arc"
        style="fill:#ff2780;fill-opacity:1"
@@ -290,5 +234,50 @@
        sodipodi:rx="3.5355339"
        sodipodi:ry="3.2829957"
        d="m 220.71833,472.78717 a 3.5355339,3.2829957 0 1 1 -7.07106,0 3.5355339,3.2829957 0 1 1 7.07106,0 z" />
+    <path
+       style="fill:#ffe680;fill-opacity:1"
+       d="m 259.01517,707.77023 c -62.62902,-6.98155 -112.97076,-51.2023 -127.48264,-111.98219 -4.32132,-18.09891 -4.95103,-39.59542 -1.71367,-58.5 4.64832,-27.14395 17.52429,-53.11788 36.66905,-73.97031 20.31944,-22.13189 48.4096,-38.04494 77.69163,-44.01224 10.99943,-2.24154 15.93252,-2.70533 29.08563,-2.7345 15.94496,-0.0354 25.2548,1.14104 39.13492,4.94516 40.5703,11.11909 74.95194,39.91645 93.15157,78.02189 6.685,13.9967 10.67823,27.66086 13.29696,45.5 1.00752,6.86336 0.8514,28.91504 -0.25841,36.5 -3.32652,22.73499 -11.02629,43.17922 -23.09968,61.33366 -20.59552,30.96898 -51.5862,52.7396 -87.47536,61.45052 -11.60278,2.8162 -17.83777,3.54209 -32,3.72553 -7.15,0.0926 -14.8,-0.0323 -17,-0.27752 l 0,0 z m 60.63875,-48.76054 c 2.11056,-1.4783 1.23558,-4.90584 -1.49966,-5.87455 -1.37788,-0.488 -3.91546,0.65715 -4.42479,1.99681 -0.6363,1.67358 -0.60804,1.83848 0.57199,3.33866 1.20709,1.53456 3.58874,1.77443 5.35246,0.53908 l 0,0 z m -56.5,-50.5 c 2.11056,-1.4783 1.23558,-4.90584 -1.49966,-5.87455 -1.37788,-0.488 -3.91546,0.65715 -4.42479,1.99681 -0.6363,1.67358 -0.60804,1.83848 0.57199,3.33866 1.20709,1.53456 3.58874,1.77443 5.35246,0.53908 l 0,0 z m -2.88875,-74.72165 c 2.26284,-2.26284 0.55071,-5.7 -2.83929,-5.7 -3.18346,0 -4.75545,3.33637 -2.64123,5.60572 1.32422,1.42139 4.10557,1.46923 5.48052,0.0943 z m 99.34278,-1.58716 c 1.57951,-1.48387 1.51125,-3.56179 -0.16021,-4.87655 -0.72458,-0.56996 -1.85981,-1.03629 -2.52272,-1.03629 -1.48216,0 -3.65985,2.08257 -3.65985,3.5 0,1.49042 2.19334,3.5 3.82005,3.5 0.75103,0 1.88625,-0.48922 2.52273,-1.08716 l 0,0 z m -3.34278,-40.41284 c 2.26284,-2.26284 0.55071,-5.7 -2.83929,-5.7 -3.18346,0 -4.75545,3.33637 -2.64123,5.60572 1.32422,1.42139 4.10557,1.46923 5.48052,0.0943 z m -136.5,-16.5 c 2.14186,-2.14186 0.56992,-6 -2.44461,-6 -2.12108,0 -3.72205,1.50546 -3.72205,3.5 0,3.07554 3.97829,4.68837 6.16666,2.5 z m 92.56108,-4.53269 c 2.31483,-1.23886 1.97149,-4.91829 -0.55667,-5.96549 -2.61411,-1.0828 -5.00441,0.47217 -5.00441,3.25554 0,2.67742 2.94255,4.11134 5.56108,2.70995 l 0,0 z"
+       id="path4075"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="136.99902"
+       y="569.37976"
+       id="text3777-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3779-2"
+         x="136.99902"
+         y="569.37976"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Sans;-inkscape-font-specification:Sans">price &gt;= 50</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="unused"
+     style="display:none">
+    <text
+       xml:space="preserve"
+       style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="362.43118"
+       y="555.60345"
+       id="text3777-2-9-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3779-2-9-4"
+         x="362.43118"
+         y="555.60345"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans">price</tspan><tspan
+         sodipodi:role="line"
+         x="362.43118"
+         y="574.35345"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans"
+         id="tspan3039">between</tspan><tspan
+         sodipodi:role="line"
+         x="362.43118"
+         y="593.10345"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Sans;-inkscape-font-specification:Sans"
+         id="tspan3041">50 and 100</tspan></text>
   </g>
 </svg>

@@ -7,16 +7,48 @@
         <main>
             <header>
                 <a href="..">Advanced GIS</a>
-                <h1>Assignment 3: CartoDB</h1>
+                <h1>Assignment 3: CartoCSS</h1>
             </header>
 
             <section>
-                <h2>Part 1: CartoDB</h2>
+                <p>This week we talked about some advanced features of CartoCSS. Take this assignment as an opportunity to try these features, improve previous visualizations you've made, and learn a bit about <a href="http://mapkibera.org/">Map Kibera</a>'s data.</p>
+            </section>
+
+            <section>
+                <h2>Part 1: Map Kibera, watsan</h2>
+                <p>Download the <a href="http://data.mapkibera.org/mapkibera/kibera/data/shapefile/watsan-shapefile.zip">watsan (water and sanitation) shapefile</a> from Map Kibera's <a href="http://mapkibera.org/download/">download page</a> and upload it to your CartoDB account.</p>
+                <p>Make a CartoDB visualization. Start with a simple visualization wizard and edit the CartoCSS to accomplish the following:
+                    <ul>
+                        <li>Add a red outline to the markers of features representing public water points (<code>watsan</code> set to <code>water_public</code>) that have a <code>status</code> of <code>bad</code>.</li>
+                        <li><strong>Using a variable</strong>, make the markers' radius increase as you zoom in. For example, every four zoom levels make the radius increase by 5 pixels.</li>
+                        <li><strong>Using one conditional statement</strong>, style the markers of features with <code>watsan</code> set to <code>recyling</code> [sic] or <code>urban_agriculture</code> similarly.</li>
+                    </ul>
+                </p>
+                <p>Make other changes to the map as you like and provide a public link to the visualization in your submission as well as your CartoCSS.</p>
+            </section>
+
+            <section>
+                <h2>Part 2: Map Kibera, education</h2>
+                <p>Download the <a href="http://data.mapkibera.org/mapkibera/kibera/data/shapefile/education-shapefile.zip">education shapefile</a> from Map Kibera's <a href="http://mapkibera.org/download/">download page</a> and upload it to your CartoDB account.</p>
+                <p><strong>Use the <code>students</code> attribute</strong> to make schools with more students larger than schools with fewer students. Not all schools have <code>students</code> set, and that is okay. You may have to change the <strong>type</strong> of the <code>students</code> in CartoDB after you upload it.</p>
+                <p>Make other changes to the map as you like and provide a public link to the visualization in your submission as well as your CartoCSS.</p>
+            </section>
+
+            <section>
+                <h2>Part 3: Improve one of your visualizations</h2>
+                <p>Open a visualization you made for Assignment 2 and edit it to use at least one of the CartoCSS concepts covered this week:
+                    <ul>
+                        <li>combining conditions,</li>
+                        <li>variables, and</li>
+                        <li>using attributes in CartoCSS</li>
+                    </ul>
+                </p>
+                <p>Provide a public link to the visualization in your submission as well as your CartoCSS.</p>
             </section>
 
             <section>
                 <h2>Submitting your work</h2>
-                <p>Submit a link to your work from Part 1 as well as a link to your work from Part 2. You may optionally choose to include a short paragraph response or summary of your work.</p>
+                <p>Submit a link to your work and your CartoCSS for each part combined in one PDF. You may optionally choose to include a short paragraph response or summary of your work.</p>
             </section>
 
             <footer>
