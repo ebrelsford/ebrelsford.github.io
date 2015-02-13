@@ -177,3 +177,7 @@ a.source {
 .right {
     padding-left: 30px;
 }
+
+.code {
+    font-family: Courier, mono;
+}
