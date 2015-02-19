@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 4 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 4</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 4</p>
+        </div>
+
+        <div class="slide">
+            <h2>no class 2/26</h2>
+        </div>
+
+        <div class="slide">
+            <h2>3/5 guest speaker</h2>
+            <p>readings in assignment</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CartoCSS recap</h2>
+        </div>
+
+        <div class="slide">
+            <pre class="code">
+#airbnb {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10][zoom &lt; 16] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre class="code" style="font-size: 50px; line-height: 70px;">
+#airbnb {
+    marker-width: 3;
+    ...
+    [neighbourhood = 'Bedford-Stuyvesant'],
+    [neighbourhood = 'Bushwick'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre class="code" style="font-size: 40px; line-height: 50px;">@width: 8;
+#airbnb {
+    marker-width: @width;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom &gt;= 4] {
+        marker-width: @width * 2;
+    }
+    [zoom &gt;= 8] {
+        marker-width: @width * 3;
+    }
+    [zoom &gt;= 12] {
+        marker-width: @width * 4;
+    }
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 4</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CartoDB follow up</h2>
+        </div>
+
+        <div class="slide">
+            <h2>adding features</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cartodb-add-feature.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>adding columns</h2>
+        </div>
+
+        <div class="slide">
+            <h2>useful if you want to add data to your features</h2>
+        </div>
+
+        <div class="slide">
+            <h2>or, say, you have one thing in the table but want to display another</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cartodb-add-column.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>advanced legend and infowindow stuff</h2>
+        </div>
+
+        <div class="slide">
+            <h2>advanced legend and infowindow stuff</h2>
+            <p>you need HTML and CSS. we'll get there.</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <img src="img/cartodb-filters.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-filters-specific.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>but I wanted <strong>6.5</strong>!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL</h2>
+            <h2>Structured Query Language</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL</h2>
+            <h2>the language databases understand</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you'll use SQL in two ways:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. pulling data out of the database</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. changing the data in the database</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table.png" />
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the pages that refer to properties in Brooklyn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the addresses of the properties in Brooklyn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the addresses of the properties in Brooklyn that have been built on since 1950.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>databases are great at these types of questions</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it's what they were made for</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL helps you ask these questions in a way databases understand</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Carto<strong>DB</strong></h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table-select.png" />
+        </div>
+
+        <div class="slide">
+            <h2><span class="code">SELECT</span>: choose columns from a table</h2>
+        </div>
+
+        <div class="slide">
+            <p>just list the columns. for example:</p>
+            <pre>SELECT students, teachers
+FROM education</pre>
+        </div>
+
+        <div class="slide">
+            <h2><span class="code">SELECT *</span>: choose <strong>all</strong> columns</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table-where.png" />
+        </div>
+
+        <div class="slide">
+            <h2><span class="code">WHERE</span>: choose rows from a table</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table-select-and-where.png" />
+        </div>
+
+        <div class="slide">
+            <p>these conditions are the same as the ones in CartoCSS:</p>
+            <pre style="margin-left: 250px;">&gt;
+&lt;
+=
+!=
+&gt;=
+&lt;=</pre>
+        </div>
+
+        <div class="slide">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM education
+WHERE students &gt; 100</pre>
+        </div>
+
+        <div class="slide">
+            <h2>and you combine them with <span class="code">AND</span> / <span class="code">OR</span></h2>
+        </div>
+
+        <div class="slide">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM education
+WHERE students &gt; 100 
+    AND students &lt; 200</pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it yourself</h2>
+            <p>get just the education with <span class="code">students</span> between 100 and 150</p>
+        </div>
+
+        <div class="slide">
+            <h2>or you can negate a condition with <span class="code">NOT</span></h2>
+        </div>
+
+        <div class="slide">
+            <p>for example:</p>
+            <pre>SELECT *
+FROM education
+WHERE NOT (students &gt; 100 
+  OR op_type = 'religious')</pre>
+        </div>
+
+        <div class="slide">
+            <h2>try it yourself</h2>
+            <p>get just the education features with <span class="code">students</span> not between 100 and 150</p>
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/arc-query-builder.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%; margin-top: 10%;" src="img/arc-query-builder-zoom.png" />
+        </div>
+
+        <div class="slide">
+            <h2><span class="code">SELECT</span> does not change the table, it only changes your view of the table</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/playdoh-pasta.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/playdoh-smoosh.jpg" />
+        </div>
+
+        <div class="slide">
+            <h2>you can also use <span class="code">SELECT</span> to get a better idea of what data is in your table</h2>
+        </div>
+
+        <div class="slide">
+            <p>count matching rows:</p>
+            <pre>SELECT COUNT(*)
+FROM education
+WHERE students &gt; 100 
+  OR op_type = 'religious'</pre>
+        </div>
+
+        <div class="slide">
+            <h2>but you'll almost never want to use this statement for your map</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-filters-nogeom.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>try it yourself</h2>
+            <p>get the number of education features with <span class="code">students</span> between 100 and 150</p>
+        </div>
+
+        <div class="slide">
+            <h2><code>SELECT</code> trick: <strong>add "columns"</strong> to your selection</h2>
+        </div>
+
+        <div class="slide">
+            <pre>SELECT *, 5
+FROM education</pre>
+        </div>
+
+        <div class="slide">
+            <pre>SELECT *, stdnt_fem / students
+FROM education</pre>
+        </div>
+
+        <div class="slide">
+            <pre>SELECT *,
+    (stdnt_fem / students) * 100
+FROM education</pre>
+        </div>
+
+        <div class="slide">
+            <pre>SELECT *,
+    (stdnt_fem / students) * 100
+    AS stdnt_fem_per
+FROM education</pre>
+        </div>
+
+        <div class="slide">
+            <h2 style="text-decoration: line-through;">1. pulling data out of the database</h2>
+            <h2>2. changing the data in the database</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can also use SQL to quickly <span class="code">UPDATE</span> or <span class="code">DELETE</span> the data in your table</h2>
+        </div>
+
+        <div class="slide">
+            <h2>these <strong>will</strong> destroy data, so have a backup or test it with a table you don't need</h2>
+        </div>
+
+        <div class="slide">
+            <h2>this is one way to customize the way data is displayed in your infowindow</h2>
+        </div>
+
+        <div class="slide">
+            <h2>first, create a new column on your table</h2>
+        </div>
+
+        <div class="slide">
+            <h2>then put the desired data in that column, based on some condition</h2>
+        </div>
+
+        <div class="slide">
+            <pre>UPDATE education
+SET size = 'large'
+WHERE students &gt; 2500</pre>
+        </div>
+
+        <div class="slide">
+            <pre>DELETE FROM education
+WHERE ...</pre>
+        </div>
+
+        <div class="slide">
+            <h2>more in the SQL reference</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL shows up everywhere online</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/web-sql-596.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <!--
+
+        SQL, Structured Query Language, is a standard language used by databases
+        for pulling data from databases.
+
+        A database is a collection of things that may or may not be related to each
+        other. A table describes a particular type of things within a database.
+        When you interact with a database, you need to specify a table in order to
+        get what you want.
+
+        Tables are a lot like spreadsheets. They have columns that have names and
+        types (eg, string, number, geometry). When you ask for data from a table,
+        you can get as little or as many of these columns as you want at once. You
+        generally will only want to get the columns you actually need since this
+        will be faster. Think of this as showing or hiding columns in a
+        spreadsheet - this makes it easier for you to look through the spreadsheet
+        for what you're looking for.
+
+        -->
+
+
+        <!-- SQL for spatial databases -->
+
+        <!--
+
+        (Add a spatial attribute to the example we've been using.)
+
+        Geometries are often way more interesting than numbers and strings, and you
+        can do so much more with them.
+
+        (An example.)
+
+        -->
+
+        <div class="slide">
+            <h2>that's a lot, but there's a little more</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-types.png" style="width: 40%;" />
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-geometry.png" style="height: 90%;" />
+        </div>
+
+        <div class="slide">
+            <img src="img/postgis-logo.png" style="width: 40%;" />
+        </div>
+
+        <div class="slide">
+            <a href="https://twitter.com/postpostgis">
+                <img src="img/postpostgis.png" style="width: 80%;" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.postgresql.org/">
+                <img src="img/postgres.png" style="width: 80%;" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <pre>SELECT *,
+    (stdnt_fem / students) * 100
+    AS stdnt_fem_per
+FROM education</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+SELECT *, ST_area(the_geom)
+FROM kiberaboundary
+            </pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;">
+SELECT *,
+  ST_area(ST_transform(the_geom_webmercator, 21036))
+FROM kiberaboundary
+            </pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/kibera-boundaries-education.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/kibera-boundaries-filtered.png" />
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 45px;">
+SELECT education.*
+FROM education, kiberaboundary
+WHERE
+  kiberaboundary.name = 'Silanga' AND
+  <a href="http://postgis.net/docs/manual-2.0/ST_Within.html">ST_within</a>(education.the_geom, kiberaboundary.the_geom)</pre>
+        </div>
+
+        <div class="slide">
+            <img src="img/buffer.gif" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <a href="http://www.weeklyosm.eu/archives/2496">
+                <img src="img/hot-osm-mapping.jpg" style="width: 75%;" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                    <li>licensed freely</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>open data</h2>
+            <p>data that is:
+                <ul style="list-style: disc outside; padding-left: 50px;">
+                    <li>accessible (online, in a widely-used format)</li>
+                    <li>licensed freely</li>
+                    <li>usually created by a large entity</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="slide">
+            <a href="https://data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm">
+                <img class="small" src="img/nyc-opendata-filming-locations.png" />
+            </a>
+            <a class="source" href="https://data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm">data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm</a>
+        </div>
+
+        <div class="slide">
+            <h2>collaborative data</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://publiclab.org/archive">
+                <img src="img/public_lab_archive.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://habitatmap.org/">
+                <img src="img/habitat_map.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>what is OpenStreetMap (OSM)?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/osm_website.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/treasure_map.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osmcake.png" />
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 55%;" src="img/osm_cake_globe.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm_cake_nyc.jpg" />
+        </div>
+
+        <div class="slide">
+            <img src="img/equinix-datacenter.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 75%;" src="img/sotmus2014.jpg" />
+        </div>
+
+        <div class="slide">
+            <a href="http://osmlab.github.io/show-me-the-way/">
+                <img style="max-width: 80%;" src="img/osm-show-me-the-way.gif" />
+            </a>
+            <a class="source" href="http://osmlab.github.io/show-me-the-way/">show me the way</a>
+        </div>
+
+        <div class="slide">
+            <iframe width="640" height="360" src="http://www.youtube.com/embed/7sC83j6vzjo?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-draw.png" />
+        </div>
+
+        <div class="slide">
+            <h2>"the free wiki map of the world"</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.datapointed.net/visualizations/maps/enhanced-street-grids/?lat=40.791849&lon=-74.072056&z=12">
+                <img src="img/nyc_grids.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>started in 2004 in the UK</p>
+        </div>
+
+        <div class="slide">
+            <p>started in 2004 in the UK</p>
+            <p>first State of the Map conference in 2007</p>
+        </div>
+
+        <div class="slide">
+            <p>started in 2004 in the UK</p>
+            <p>first State of the Map conference in 2007</p>
+            <p>over 1 million registered users in 2013</p>
+        </div>
+
+        <div class="slide">
+            <a href="http://wiki.openstreetmap.org/wiki/Stats">
+                <img src="img/osm-users-2014.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://wiki.openstreetmap.org/wiki/Stats">
+                <img src="img/osm-db-stats-2014.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>license</h2>
+        </div>
+
+        <div class="slide">
+            <h2>license</h2>
+            <p>Open Database License (ODbL)</p>
+        </div>
+
+        <div class="slide">
+            <a href="http://opendatacommons.org/licenses/odbl/summary/">
+                <img style="max-width: 65%;" src="img/odbl.png" />
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>what does the data look like?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-shapes.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-shapes-nodes.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-shapes-ways.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-shapes-closed-ways.png" />
+        </div>
+
+        <div class="slide">
+            <h2>shapes</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>nodes (points)</li>
+                <li>ways (lines)</li>
+                <li>closed ways (polygons)</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>nodes, ways, closed ways</h2>
+            <p>are just shapes with <strong>no meaning</strong> until you give them attributes, as in any GIS</p>
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-shapes.png" />
+        </div>
+
+        <div class="slide">
+            <h2>so you have to add attributes</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/qgis-attribute-table.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/cartodb-table.png" />
+        </div>
+
+        <div class="slide">
+            <h2>less like a table, more like GeoJSON properties</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-worstyears-raw.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/osm-tags-union-square.png" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 40%;" src="img/osm-tags-bmt-broadway.png" />
+        </div>
+
+        <div class="slide">
+            <p>a table wouldn't work because:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>there would be thousands of columns</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>a table wouldn't work because:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>there would be thousands of columns</li>
+                <li>and most of those columns would be empty (eg 'electrified')</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <p>a table wouldn't work because:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>there would be thousands of columns</li>
+                <li>and most of those columns would be empty (eg 'electrified')</li>
+                <li>what you could map would be predetermined</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>key-value pairs</p>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>leisure=park</p>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>name=Union Square West</p>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>we make them up as we go.</p>
+        </div>
+
+        <div class="slide">
+            <h2>tags</h2>
+            <p>we make them up as we go. really.</p>
+        </div>
+
+        <div class="slide">
+            <h2>folksonomy</h2>
+        </div>
+
+        <div class="slide">
+            <h2>folksonomy</h2>
+            <p>a collaborative system of categorization</p>
+        </div>
+
+        <div class="slide">
+            <h2>you can tag things any way you want</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.aaronland.info/weblog/2011/09/13/inodes/">
+                <img style="max-width: 85%;" src="img/spinny-equals-no.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="https://twitter.com/professorlemeza/status/523229634755047424">
+                <img src="img/osm_weird_tags.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://taginfo.openstreetmap.org/keys/unicycle#values">
+                <img src="img/taginfo_unicycle_barely.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://overpass-turbo.eu/?w=%22unicycle%22%3D%22barely%22+global&R">
+                <img style="width: 40%;" src="img/overpass_unicycle_barely.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://wiki.openstreetmap.org/wiki/Tag:barrier%3Dkissing_gate">
+                <img src="img/wiki_barrier_kissinggate.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="https://lists.openstreetmap.org/pipermail/talk/2014-October/071000.html">
+                <img src="img/osm_ryo_cig.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>but if you want your data to be useful (and show up on maps!), you should try to be consistent with the community</p>
+        </div>
+
+        <div class="slide">
+            <h2>look around for similar features, mimic those</h2>
+        </div>
+
+        <div class="slide">
+            <h2>check the wiki</h2>
+            <p><a href="http://wiki.openstreetmap.org/wiki/Main_Page">wiki.openstreetmap.org</a></p>
+        </div>
+
+        <div class="slide">
+            <h2>check Taginfo</h2>
+            <p><a href="http://taginfo.openstreetmap.org/">taginfo.openstreetmap.org</a></p>
+        </div>
+
+        <div class="slide">
+            <p>when you're looking for the way to tag something</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>look around you</li>
+                <li>check the <a href="http://wiki.openstreetmap.org/wiki/Main_Page">wiki</a></li>
+                <li>check <a href="http://taginfo.openstreetmap.org/">taginfo</a></li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>let's look at some OSM data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>let's look at some OSM data</h2>
+            <p>mapzen.com/metro-extracts</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>how does the data get there?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>imports</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%;" src="img/tiger-import.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>editors</h2>
+        </div>
+
+        <div class="slide">
+            <img style="width: 70%;" src="img/osm-id.gif" />
+            <p>
+                <a class="source" href="https://www.mapbox.com/blog/id-for-openstreetmap-reaches-beta-1/">via mapbox</a>
+            </p>
+        </div>
+
+        <div class="slide">
+            <h2>aerial imagery</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/osm-aerial-imagery.png" />
+        </div>
+
+        <div class="slide">
+            <h2>tasking manager</h2>
+            <a href="http://tasks.hotosm.org/job/425#">
+                <img style="max-width: 80%;" src="img/osm-tasking-manager.png" />
+            </a>
+            <a class="source" href="http://tasks.hotosm.org/job/425#">tasks.hotosm.org</a>
+        </div>
+
+        <div class="slide">
+            <h2>GPS</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.extension.org/pages/9672/gps-applications-in-crop-production">
+                <img style="width: 75%;" src="img/gps-location.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.extension.org/pages/9672/gps-applications-in-crop-production">
+                <img style="width: 75%;" src="img/gps-bounce.jpg" />
+            </a>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <img style="width: 65%;" src="img/gps-trace.gif" />
+        </div>
+
+        <div class="slide">
+            <img style="width: 65%;" src="img/gps-waypoints.jpg" />
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 75%;" src="img/union-square-gps.png" />
+            <a class="source" href="https://www.mapbox.com/blog/openstreetmap-gps-layer/">9 Years of OpenStreetMap GPS Tracks Available for Mapping</a>
+        </div>
+
+        <div class="slide">
+            <h2>Field Papers</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Field Papers</h2>
+            <p>"a tool to help you create a multi-page atlas of anywhere in the world"</p>
+            <p><a href="http://fieldpapers.org">fieldpapers.org</a></p>
+        </div>
+
+        <div class="slide">
+            <a href="http://weait.com/content/look-franks-log-book">
+                <img class="small" src="img/pre-fieldpapers-logbook.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://wiki.openstreetmap.org/wiki/Walking_Papers">
+                <img src="img/walkingpapers-osm.jpg" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img src="img/fieldpapers-make-atlas.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <a href="http://fieldpapers.org/atlas.php?id=fhnp4qks#18/40.73649/-73.99715">
+                <img style="max-width: 85%;" src="img/fieldpapers-print-atlas.png" />
+            </a>
+        </div>
+
+        <div class="fullscreen slide">
+            <img style="max-width: 50%;" src="img/fieldpapers-page.png" />
+        </div>
+
+        <div class="fullscreen slide">
+            <img style="max-width: 90%;" src="img/fieldpapers-recent-atlases.png" />
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://fieldpapers.org/atlas.php?id=ncz5lrfs#17/40.67782/-73.96397">
+                <img class="small" src="img/fieldpapers-uploaded.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://fieldpapers.org/snapshot.php?id=fw7ptb4r#18/40.67899/-73.96597">
+                <img class="small" src="img/fieldpapers-adddata.png" />
+            </a>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://fieldpapers.org/snapshot.php?id=fw7ptb4r#18/40.67899/-73.96597">
+                <img class="small" src="img/fieldpapers-export.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://fieldpapers.org/snapshot.php?id=fw7ptb4r#18/40.67899/-73.96597">
+                <img class="small" src="img/fieldpapers-osm.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>get data in OSM:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>imports (but don't)</li>
+                <li>online editor, using aerial imagery</li>
+                <li>GPS</li>
+                <li>Field Papers</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <img class="small" src="img/google-bus-pinata.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/google-bus-pinata.png" />
+            <a href="http://allthingsd.com/20130506/demonstrators-smash-google-bus-pinata-in-san-francisco/">
+                Demonstrators Smash Google Bus Piñata in San Francisco
+            </a>
+        </div>
+
+        <div class="slide fullscreen" style="background: white;">
+            <a href="http://stamen.com/zero1/">
+                <img class="small" src="img/stamen-bus-final-overall.gif" />
+            </a>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://stamen.com/zero1/">
+                <img class="small" src="img/stamen-bus-final-zoom.gif" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/google-bus-foursquare.png" />
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://stamen.com/zero1/">
+                <img class="small" src="img/stamen-bus-fieldpapers.png" />
+            </a>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://stamen.com/zero1/">
+                <img class="small" src="img/stamen-bus-fieldpapers2.png" />
+            </a>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://stamen.com/zero1/">
+                <img class="small" src="img/stamen-bus-fieldpapers3.png" />
+            </a>
+        </div>
+
+        <div class="slide" style="background: white;">
+            <a href="http://stamen.com/zero1/">
+                <img class="small" src="img/stamen-bus-final-zoom.gif" />
+            </a>
+            <a href="http://stamen.com/zero1/">
+                stamen.com/zero1
+            </a>
+        </div>
+
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>how do you use the data?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>metro extracts</h2>
+            <img style="width: 60%;" src="img/metro-extracts.png" />
+            <a class="source" href="https://mapzen.com/metro-extracts">mapzen.com/metro-extracts</a>
+        </div>
+
+        <div class="slide">
+            <h2>garmin dumps</h2>
+            <img style="width: 60%;" src="img/osm-garmin.png" />
+            <a class="source" href="http://garmin.openstreetmap.nl/">garmin.openstreetmap.nl</a>
+        </div>
+
+        <div class="slide">
+            <h2>garmin dumps</h2>
+            <img style="max-width: 30%;" src="img/osm-garmin-loaded.png" />
+            <a class="source" href="http://garmin.openstreetmap.nl/">garmin.openstreetmap.nl</a>
+        </div>
+
+        <div class="slide">
+            <h2>export</h2>
+        </div>
+
+        <div class="slide">
+            <h2>export</h2>
+            <p>you'll have to do some extra work to get the data in a useful format</p>
+        </div>
+
+        <div class="slide">
+            <h2>overpass for GeoJSON</h2>
+            <p><a href="http://overpass-turbo.eu/">try it out</a></p>
+        </div>
+
+        <div class="slide">
+            <p>get data out of OSM:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li><a href="https://mapzen.com/metro-extracts">metro extracts</a></li>
+                <li><a href="http://garmin.openstreetmap.nl/">garmin dumps</a></li>
+                <li>export</li>
+                <li><a href="http://overpass-turbo.eu/">overpass</a></li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>map kibera</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://groundtruth.in/">
+                <img src="img/groundtruth.png" />
+            </a>
+            <a class="source" href="http://groundtruth.in/">Groundtruth Initiative</a>
+        </div>
+
+        <div class="slide">
+            <h2>1. trace the roads using aerial imagery</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.mapkibera.org/blog/2010/01/12/some-notes-on-map-kibera-mapping/">
+                <img style="width: 75%;" src="img/kibera-outline.jpg" />
+            </a>
+            <a class="source" href="http://www.mapkibera.org/blog/2010/01/12/some-notes-on-map-kibera-mapping/">Map Kibera Blog</a>
+        </div>
+
+        <div class="slide">
+            <h2>2. use GPS to collect point data and correct roads</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.mapkibera.org/blog/2011/08/16/help-map-kibera-turn-maps-into-action/">
+                <img src="img/kibera-gps.jpg" />
+            </a>
+            <a class="source" href="http://www.mapkibera.org/blog/2011/08/16/help-map-kibera-turn-maps-into-action/">Map Kibera Blog</a>
+        </div>
+
+        <div class="slide">
+            <p>"In the intense density of Kibera, selecting which features are 'important' is a judgment call and a matter of interest."</p>
+            <a class="source" href="http://www.mapkibera.org/blog/2010/01/12/some-notes-on-map-kibera-mapping/">Map Kibera Blog</a>
+        </div>
+
+        <div class="slide">
+            <h2>3. decide on and focus on themes</h2>
+            <p><a href="http://mapkibera.org/wiki/index.php?title=Tagging/Education">education</a></p>
+            <p><a href="http://mapkibera.org/wiki/index.php?title=Tagging/Health">health</a></p>
+            <p><a href="http://mapkibera.org/wiki/index.php?title=Tagging/Security">security</a></p>
+            <p><a href="http://mapkibera.org/wiki/index.php?title=Tagging/Watsan">water and sanitation</a></p>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.mapkibera.org/blog/2013/04/10/security-map-draws-attention-in-kibera/">
+                <img src="img/map-kibera-wall.jpg" />
+            </a>
+            <a class="source" href="http://www.mapkibera.org/blog/2013/04/10/security-map-draws-attention-in-kibera/">Map Kibera Blog</a>
+        </div>
+
+        <div class="slide">
+            <a href="http://voiceofkibera.org/">
+                <img src="img/voice-of-kibera.png" />
+            </a>
+            <a class="source" href="http://voiceofkibera.org/">Voice of Kibera</a>
+        </div>
+
+        <div class="slide">
+            <h2>typhoon haiyan</h2>
+            <a href="http://theodi.org/blog/typhoon-haiyan-and-the-humanitarian-openstreetmap-team">http://theodi.org/blog/typhoon-haiyan-and-the-humanitarian-openstreetmap-team</a>
+        </div>
+
+        <div class="slide">
+            <h2>Humanitarian OpenStreetMap Team (HOT)</h2>
+        </div>
+
+        <div class="slide">
+            <p>HOT in coordination with:</p>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li><a href="http://www.unocha.org/">UN Office for the Coordination of Humanitarian Affairs</a></li>
+                <li><a href="http://www.redcross.org/what-we-do/international-services">American Red Cross</a></li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>1. pre-typhoon (November 7), get the base map up-to-speed</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://hot.openstreetmap.org/updates/2013-11-17_openstreetmap_response_to_typhoon_haiyan_yolanda">
+                <img src="img/osm-haiyan-priority-areas.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://pierzen.dev.openstreetmap.org/hot/leaflet/OSM-Compare-before-after-philippines.html#11/11.2720/124.8050">
+                <img src="img/osm-haiyan-before-after.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://resultmaps.neis-one.org/osm-typhoon-haiyan-2013/#8/11.281/123.690">
+                <img src="img/osm-haiyan-activities.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="https://twitter.com/RedCross/status/401088520481042432">
+                <img style="max-width: 50%;" src="img/osm-haiyan-redcross.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>2. post-typhoon (November 13), use new aerial imagery to try to assess damage</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://wiki.openstreetmap.org/wiki/Damaged_buildings_crisis_mapping">
+                <img src="img/osm-haiyan-damaged-buildings.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <a href="http://www.openstreetmap.org/#map=17/11.24609/124.99752&layers=H">
+                <img src="img/osm-haiyan-damaged-buildings-map.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>using it on the ground</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>Field Papers supports humanitarian layer (so can show you damaged buildings)</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>using it on the ground</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>Field Papers supports humanitarian layer (so can show you damaged buildings)</li>
+                <li>Garmin exports for GPS receivers</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <a href="http://stateofthemap.us/">
+                <img style="max-width: 80%;" src="img/sotmus.png" />
+            </a>
+        </div>
+
+    </body>
+</html>

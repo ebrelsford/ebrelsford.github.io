@@ -54,6 +54,10 @@ ul {
     margin: 0;
 }
 
+ol > li > ol {
+    list-style: lower-alpha;
+}
+
 header {
     font-size: 14px;
     margin-left: 2%;
