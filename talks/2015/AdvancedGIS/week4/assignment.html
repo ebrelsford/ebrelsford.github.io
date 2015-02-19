@@ -50,10 +50,9 @@
                         <ol>
                             <li>Open the <code>kiberaboundaries</code> table.</li>
                             <li>In the SQL tab enter the following:
-                                <pre>
-SELECT * 
+                                <pre><code class="language-sql">SELECT * 
 FROM kiberaboundaries
-WHERE name = 'Makina'</pre>
+WHERE name = 'Makina'</code></pre>
                             </li>
                             <li>Two rows should be shown. Click the <strong>Map View</strong> button to see just those features.</li>
                             <li>Try another name from the table and see what the result is.</li>
@@ -63,31 +62,29 @@ WHERE name = 'Makina'</pre>
                         <ol>
                             <li>Open the <code>education</code> table.</li>
                             <li>In the SQL tab delete the old query and enter the following:
-                                <pre>
-SELECT *
+                                <pre><code class="language-sql">SELECT *
 FROM education
-WHERE type = 'primary'</pre>
+WHERE type = 'primary'</code></pre>
                             </li>
                             <li>Only the primary schools should show be displayed. Look at the <strong>Map View</strong>. This is not a required step, just making sure that the table is loaded correctly and SQL works.</li>
                         </ol>
                     </li>
                     <li>We're going to join the <code>education</code> table with the <code>kiberaboundaries</code> table. While looking at the <code>education</code> table, delete the old SQL query and enter the following SQL:
-                        <pre>
-SELECT education.*
+                        <pre><code class="language-sql">SELECT education.*
 FROM education, kiberaboundaries
-WHERE ST_within(education.the_geom, kiberaboundaries.the_geom)</pre>
+WHERE ST_within(education.the_geom, kiberaboundaries.the_geom)</code></pre>
                         <p>Let's look at this statement line by line:
                             <ol>
                                 <li>
-                                    <pre>SELECT education.*</pre>
+                                <pre><code class="language-sql">SELECT education.*</code></pre>
                                     Selects all the columns from <code>education</code>.
                                 </li>
                                 <li>
-                                    <pre>FROM education, kiberaboundaries</pre>
+                                <pre><code class="language-sql">FROM education, kiberaboundaries</code></pre>
                                     We want to have <code>education</code> for its columns, but we also want <code>kiberaboundaries</code> to be available for the next line.
                                 </li>
                                 <li>
-                                    <pre>WHERE ST_within(education.the_geom, kiberaboundaries.the_geom)</pre>
+                                <pre><code class="language-sql">WHERE ST_within(education.the_geom, kiberaboundaries.the_geom)</code></pre>
                                     Finally, we're only selecting the <code>education</code> rows where <code>the_geom</code> (the point for the row) is within one of the <code>kiberaboundaries</code> rows' <code>the_geom</code>.
                                 </li>
                             </ol>
@@ -95,12 +92,11 @@ WHERE ST_within(education.the_geom, kiberaboundaries.the_geom)</pre>
                     </li>
                     <li>Since we're basically saying "select all the features in Kibera" and we know all the features are in Kibera, we should still see all the features. Look at <strong>Map View</strong> and confirm.</li>
                     <li>To pick only <code>education</code> features that are within particular boundaries, now all we have to do is use conditions to pick those boundaries. Make your SQL query look like this:
-                        <pre>
-SELECT education.*
+                        <pre><code class="language-sql">SELECT education.*
 FROM education, kiberaboundaries
 WHERE ST_within(education.the_geom, kiberaboundaries.the_geom)
-AND kiberaboundaries.name = 'Makina'</pre>
-                        <p>You should be able to add the last line (<code>AND kiberaboundaries.name = 'Makina'</code>) to the SQL you already have.</p>
+AND kiberaboundaries.name = 'Makina'</code></pre>
+                        <p>You should be able to add the last line (<code class="language-sql">AND kiberaboundaries.name = 'Makina'</code>) to the SQL you already have.</p>
                         <p>The last line specifies that we only want to look at <code>kiberaboundaries</code> with the <code>name</code> attribute set to 'Makina'. So when the database is looking for <code>education</code> features to include, it only considers those that are <em>within</em> <code>kiberaboundaries</code> with this name.</p>
                     </li>
                     <li>
@@ -108,7 +104,7 @@ AND kiberaboundaries.name = 'Makina'</pre>
                     </li>
                     <li>
                     Finally, we can filter the <code>education</code> filters more by adding conditions to our query. Switch the <code>name</code> back to <code>Makina</code> and add the following line:
-                        <pre>AND education.type = 'primary'</pre>
+                    <pre><code class="language-sql">AND education.type = 'primary'</code></pre>
                         <p>Now we're only selecting <code>education</code> features in Makina that are primary schools.</p>
                     </li>
                 </ol>

@@ -79,3 +79,13 @@ footer {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+code {
+    background: #eee;
+    padding: 5px;
+}
+
+pre > code {
+    display: block;
+    padding: 15px;
+}
