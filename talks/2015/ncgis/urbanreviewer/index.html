@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Urban Reviewer</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <h1>Urban Reviewer</h1>
+        </div>
+
+        <div class="slide">
+            <h2>(Some background)</h2>
+            <h2>What is urban renewal?</h2>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 65%;" src="img/arverne-1968.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/arverne-satellite.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>(prior work)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Community Development Program Progress Report (1968)</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cdp1968.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cdp1968-map.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cdp1968-map-zoom.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/cdp1968-arverne-map.png" />
+        </div>
+
+        <div class="slide">
+            <h2>atlas of urban renewal (1984)</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/atlas1984.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/atlas1984-manhattan.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/atlas1984-e14th.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/atlas1984-e14th-zoom.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>(The data)</h2>
+        </div>
+
+        <div class="slide">
+            <ol>
+                <li>FOIL</li>
+                <li>"inspection"</li>
+                <li>spreadsheet hell</li>
+                <li>update tax lots (the merge and split)</li>
+                <li>join with MapPLUTO</li>
+                <li>join with 596 data</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/bronx-park-south-plan.JPG" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/bronx-park-south-plan-detail.JPG" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/plan-map.JPG" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/arverne-google-drive.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/crown-heights-google-drive.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>(The map)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Leaflet</h2>
+            <p>The zoom and pan.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox</h2>
+            <p>Lovely custom tiles</p>
+        </div>
+
+        <div class="slide">
+            <h2>CartoDB</h2>
+            <p>Everything else</p>
+        </div>
+
+        <div class="slide">
+            <ol>
+                <li>Create layer on top of Leaflet map</li>
+                <li>Use SQL API to enhance interactivity</li>
+                <li>Update layer's CartoCSS to select or highlight geometries</li>
+                <li>Update layer's SQL to filter it</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>We use the SQL API all over the place:</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/search.gif" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/plan_hover.gif" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/plan_name_hover.gif" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/lot_hover.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>Update layer's CartoCSS to select or highlight geometries</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/highlight.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>We filter plans using setSQL():</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/filter_date.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>Leaflet is just a box that we load our map into</h2>
+        </div>
+
+    </body>
+</html>
