@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Assignment 3 Feedback | Advanced GIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced GIS</a>
+                <h1>Assignment 3 Feedback</h1>
+            </header>
+
+            <section>
+                <p>This is some collected feedback for common problems and areas that could be improved with <a href="assignment.html">Assignment 3</a>. Collected here since I won't be in class next time to talk about them.</p>
+            </section>
+
+            <section>
+                <h2>Combining statements</h2>
+                <p>This comes up pretty often. You are selecting some features, styling them, and then you want to style them slightly different for different conditions, you might do this as:</p>
+                <pre><code>#airbnb[price &gt; 50] {
+  marker-width: 6;
+  marker-fill: red;
+  marker-fill-opacity: 0.5;
+}
+
+#airbnb[price &gt; 100] {
+  marker-width: 7;
+  marker-fill: red;
+  marker-fill-opacity: 0.5;
+}
+
+#airbnb[price &gt; 150] {
+  marker-width: 8;
+  marker-fill: red;
+  marker-fill-opacity: 0.5;
+}</code></pre>
+                <p>You can do this and it will work. <strong>For your sanity</strong>, I recommend consolidating these statements as much as you can to reduce redundancy. That means starting with the parts that won't change (in this case, <code>marker-fill</code> and <code>marker-fill-opacity</code>), then styling the properties that do change. So I'd write this as:</p>
+                <pre><code>#airbnb {
+  marker-fill: red;
+  marker-fill-opacity: 0.5;
+}
+
+#airbnb[price &gt; 50] {
+  marker-width: 6;
+}
+
+#airbnb[price &gt; 100] {
+  marker-width: 7;
+}
+
+#airbnb[price &gt; 150] {
+  marker-width: 8;
+}</code></pre>
+                <p>Now you can easily see what is changing at each level and change the <code>marker-fill</code> for all features with one change. Do a little work now to save future-you some time and aggravation.</p>
+                <p>I'd take this slightly further by <strong>nesting the conditions</strong>:</p>
+                <pre><code>#airbnb {
+  marker-fill: red;
+  marker-fill-opacity: 0.5;
+
+  [price &gt; 50] {
+    marker-width: 6;
+  }
+
+  [price &gt; 100] {
+    marker-width: 7;
+  }
+
+  [price &gt; 150] {
+    marker-width: 8;
+  }
+}</code></pre>
+                <p>Who knows, maybe you'll change the table name. Why repeat it if you don't have to?</p>
+            </section>
+
+            <section>
+                <h2>Attribute values as property values</h2>
+                <p>This is my fault, I didn't make Part 2 explicit enough. It said, "Use the students attribute to make schools with more students larger than schools with fewer students."</p>
+                <p>A lot of people understandably did something like this:</p>
+                <pre><code>#education {
+  marker-width: 5;
+  marker-fill: blue;
+
+  [students &gt; 200] {
+    marker-width: 8;
+  }
+
+  [students &gt; 400] {
+    marker-width: 11;
+  }
+}</code></pre>
+                <p>...and so on. The way I was thinking of was by using the <strong>attribute values from the table as if they were variables</strong> eg:</p>
+                <pre><code>#education {
+  marker-width: [students] / 10;
+  marker-fill: blue;
+}</code></pre>
+                <p>As you can see, this is shorter, and you get points that automatically scale with the number of students. It's not always the perfect solution, but it's a good one to know about.</p>
+            </section>
+
+            <section>
+                <h2>Conditions are case sensitive</h2>
+                <p>I don't think I explicitly said this in class. When you're writing conditions in CartoCSS and are comparing text to some text in a column, you need to make sure the capitalization matches. So if you have:</p>
+                <pre><code>#airbnb {
+  marker-width: 5;
+  marker-fill: red;
+
+  [room_type = 'private room'] {
+    marker-width: 500;
+  }
+}</code></pre>
+                <p>but the <code>room_type</code> column only has <strong>Private room</strong> in it, your condition won't work. You need to match exactly, so:</p>
+                <pre><code>#airbnb {
+  marker-width: 5;
+  marker-fill: red;
+
+  [room_type = 'Private room'] {
+    marker-width: 500;
+  }
+}</code></pre>
+            </section>
+
+            <section>
+                <h2>Requests</h2>
+                <p>Things that came up that we'll be tackling soon:</p>
+                <ul>
+                    <li>customizing legends</li>
+                    <li>labels</li>
+                    <li>geocoding</li>
+                </ul>
+                <p>Let me know if there's anything else you feel like you're missing out on.</p>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced GIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
