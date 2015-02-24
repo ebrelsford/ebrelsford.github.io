@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 5 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 5</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 5</p>
+        </div>
+
+        <div class="slide">
+            <h2>upcoming: 3/5 guest speaker</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>let's talk about this GeoJSON thing</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we all know and love shapefiles, but...</h2>
+        </div>
+
+        <div class="slide">
+            <h2>shapefiles are difficult to read</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(without proper software) shapefiles are difficult to read</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-shp-binary.png" />
+        </div>
+
+        <div class="slide">
+            <h2>(without proper software) shapefiles are difficult / impossible to write, too</h2>
+        </div>
+
+        <div class="slide">
+            <p>how to write a shapefile:</p>
+            <img src="img/geojson-shp.png" />
+        </div>
+
+        <div class="slide">
+            <h2>and the people writing that software are in for some fun</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/shapefile-oddities.png" />
+            <a class="source" href="http://gis.stackexchange.com/questions/18969/oddities-in-the-shapefile-technical-specification">gis.stackexchange.com</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/shapefile-oddities-lunatic.png" />
+        </div>
+
+        <div class="slide">
+            <h2>"It's like they had a bunch of smart developers with one lunatic thrown in."</h2>
+        </div>
+
+        <div class="slide">
+            <h2>okay, maybe you have the software already. there are some other problems:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. column names limited to ten characters</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/shapefile-column-names.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/shapefile-column-names.png" />
+            <h2>how do you pronounce "C_DIG2DESC"?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. multiple files make up a shapefile</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/shapefile-files.png" />
+        </div>
+
+        <div class="slide">
+            <h2>3. one geometry type per shapefile</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/shapefile-one-geometry-per-file.png" />
+        </div>
+
+        <div class="slide">
+            <h2>okay, back to GeoJSON</h2>
+        </div>
+
+        <div class="slide">
+            <h2>where do file formats come from?</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-mailinglist.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-cc.png" />
+        </div>
+
+        <div class="slide">
+            <h2>where does GeoJSON work?</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/geojson-qgis.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-qgis-network.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-tilemill.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-tilemill-network.png" />
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-worstyears.png" />
+            <a class="source" href="https://github.com/AnnieGitUrGun/MappingTest/blob/11bec007758702269b504ece55e09e54fa8f60fa/AnnesPOI.geojson">
+                AnnieGitUrGun on github
+            </a>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-worstyears-attribution.png" />
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON is readable</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-worstyears-raw.png" />
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    "type": "FeatureCollection",
+    "features": [ ... ]
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    "type": "FeatureCollection",
+    "features": [
+        { ... },
+        { ... },
+        { ... }
+    ]
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "Name": "My House",
+                "City": "White Hall",
+                "Comments": "It's OK"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-76.596, 39.684]
+            }
+        }
+    ]
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON allows multiple geometry types in one file</h2>
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON is easy for web apps to understand</h2>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/web-sql.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/web-geojson.png" />
+        </div>
+
+        <div class="slide">
+            <h2>it's not without its flaws</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the files can get big:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the files can get big:</h2>
+            <img src="img/geojson-worstyears-raw-columns.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>getting GeoJSON files from CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <pre>http://eric.cartodb.com/api/v2/
+    sql?q=SELECT * 
+          FROM earthquakes 
+          WHERE mag &gt; 7</pre>
+        </div>
+
+        <div class="slide">
+            <pre>http://eric.cartodb.com/api/v2/
+    sql?q=SELECT * 
+          FROM earthquakes 
+          WHERE mag &gt; 7
+    <strong>&amp;format=geojson</strong></pre>
+            <a href="http://eric.cartodb.com/api/v2/sql?q=select%20*%20from%20earthquakes%20WHERE%20mag%20%3E%207&format=geojson">view results</a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/web-sql-cartodb.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/web-geojson-cartodb.png" />
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>let's put GeoJSON files online</h2>
+        </div>
+
+        <div class="slide">
+            <p><a href="http://geojson.io/">geojson.io</a></p>
+            <img src="img/geojson.io.png" />
+        </div>
+
+        <div class="slide">
+            <h2>try it: go to <a href="http://geojson.io">geojson.io</a>, make some features, and save your map</h2>
+        </div>
+
+        <div class="slide">
+            <img src="img/geojson-github-rendered.png" />
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/github-philly-farmers-markets.png" />
+            <a class="source" href="https://github.com/CityOfPhiladelphia/phl-open-geodata/blob/master/farmers_markets/farmers_markets.geojson">Philly farmers markets</a>
+        </div>
+
+        <div class="slide">
+            <img src="img/github-nps.png" />
+            <a class="source" href="http://www.nps.gov/npmap/support/library/examples/layers-geojson-github.html?api=leaflet">National Park Service: NPMap</a>
+        </div>
+
+        <div class="slide">
+            <img class="small" src="img/github-atlantic.png" />
+            <a class="source" href="http://www.theatlantic.com/technology/archive/2014/02/catch-my-diff-githubs-new-feature-means-big-things-for-open-data/283673/">The Atlantic</a>
+        </div>
+
+        <div class="slide">
+            <h2>create a github account</h2>
+            <img class="small" src="img/github-signup.png" />
+        </div>
+
+        <div class="slide">
+            <h2>fork this repository:</h2>
+            <p><a href="https://github.com/ebrelsford/geojson-examples">github.com/ebrelsford/geojson-examples</a></p>
+            <img class="small" src="img/github-fork.png" />
+        </div>
+
+        <div class="slide">
+            <h2>login with geojson.io</h2>
+            <img class="small" src="img/geojson-io-login.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>find the repository you forked</h2>
+            <img class="small" src="img/geojson-io-find-repo.gif" />
+        </div>
+
+        <div class="slide">
+            <h2>make some changes and save them</h2>
+            <img class="small" src="img/geojson-io-save.png" />
+        </div>
+
+        <div class="slide">
+            <h2>view the commit</h2>
+            <img class="small" src="img/geojson-io-commit.png" />
+        </div>
+
+        <div class="slide">
+            <p>or through github</p>
+            <img class="small" src="img/github-find-diff.gif" />
+        </div>
+
+    </body>
+</html>

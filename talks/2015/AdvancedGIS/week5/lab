@@ -1,0 +1,17 @@
+Shapefile, digital preservation: http://www.digitalpreservation.gov/formats/fdd/fdd000280.shtml
+
+TODO hint at SQL spatial operations
+
+TODO include some GeoJSON github examples:
+ https://github.com/smartchicago/chicago-atlas/commit/d13b9d87480bebfba5b1a491823949e643d8534d#diff-e1ae25675e1e44751c5a51e51108eeef
+ https://github.com/ebrelsford/geojson-examples/commit/9625a639450325476c01fe3197db1c1fb747974a#diff-0
+ https://github.com/benbalter/congressional-districts/commit/2233c76ca5bb059582d796f053775d8859198ec5
+ https://github.com/unitedstates/districts
+
+spec:
+ http://geojson.org/geojson-spec.html
+
+tutorial:
+ http://giscollective.org/github-bringing-geojson-to-life-since-2013/
+ https://github.com/blog/1772-diffable-more-customizable-maps
+ https://www.mapbox.com/blog/open-web-geojson/
