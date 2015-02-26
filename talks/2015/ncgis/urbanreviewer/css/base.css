@@ -47,10 +47,16 @@ q:before, q:after {
 /*
  * Global
  */
+@font-face {
+    font-family: "CooperHewitt-Heavy";
+    src: url("../fonts/CooperHewitt-Heavy.woff") format('woff');
+}
+
 body {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 70px;
-    background: rgb(239, 239, 239);
+    background: black;
+    color: white;
 }
 
 b, strong { font-weight: bold }
@@ -63,39 +69,10 @@ img {
     margin-right: auto;
 }
 
-img.small {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-img.large {
-    max-width: 100%;
-}
-
-img.large-tall {
-    max-height: 95%;
-    width: auto;
-}
-
 h1, h2, h3 {
-    font-family: 'Arvo', sans-serif;
+    font-family: 'CooperHewitt-Heavy', sans-serif;
     margin-bottom: 25px;
-}
-
-h1 {
-    border-bottom: 1px dashed #A3A189;
-    font-size: 64px;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 52px;
-}
-
-h3 {
-    font-size: 40px;
+    text-shadow: black 0 4px, black -4px 0, black 0 -4px, black 4px 0, black 4px 4px, black -4px -4px, black 4px -4px, black -4px 4px;
 }
 
 p {
@@ -108,7 +85,10 @@ p {
  * Pig overrides
  */
 div.slide {
-    border-top: 15px solid #FFF0A1;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
     cursor: default;
     padding: 5%;
     width: 100%;
@@ -118,8 +98,18 @@ a {
     background: #FFCDF1;
 }
 
+h2 a {
+    color: white;
+}
+
 li {
     font-size: 70px;
+    margin-left: 100px;
+}
+
+.readable-text {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    padding: 20px;
 }
 
 
@@ -149,6 +139,7 @@ li {
 .slide {
     font-size: 70px;
     line-height: 100px;
+    position: relative;
 }
 
 .slide.intermission:after {
@@ -160,7 +151,13 @@ li {
  * Other styles
  */
 a.source {
-    font-size: 24px;
+    float: right;
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 25px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
 }
 
 .hidden-text {
@@ -177,4 +174,10 @@ a.source {
 
 .right {
     padding-left: 30px;
+}
+
+code {
+    font-family: Courier, mono;
+    font-weight: bold;
+    text-shadow: black 0 4px, black -4px 0, black 0 -4px, black 4px 0, black 4px 4px, black -4px -4px, black 4px -4px, black -4px 4px;
 }
