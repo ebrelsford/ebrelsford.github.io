@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 7 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 7</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 7</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill_html.png);">
+            <h2>
+                <a href="http://blog.thematicmapping.org/2012/11/exploring-mapbox-stack-mbtiles-tilejson.html">thematic mapping blog</a>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nytimes_primaries.png);">
+            <h2>
+                <a href="http://www.nytimes.com/projects/elections/2013/nyc-primary/mayor/map.html">NYTimes Mayoral Primaries map</a>
+            </h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>HTML</h1>
+            <h2>
+                HyperText Markup Language
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h1>HTML</h1>
+            <h2>HyperText Markup Language</h2>
+            <h2>(text with links)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arpanet-1.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/arpanet-2.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/arpanet-3.jpg);">
+            <a href="http://www.vox.com/a/internet-maps" class="source">vox</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gopher.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/gopherSelect.gif);">
+            <a href="http://web.stanford.edu/group/ritspub/Documents/MacTools/gopher.html" class="source">Stanford</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/berners_lee.jpg);">
+            <h2 style="position: absolute; bottom: 100px; left: 25px;">
+                <a href="http://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/html_rfc1.png);">
+            <h2 style="margin-top: 35%;">
+                <a href="http://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt">
+                    The original RFC (standard) for HTML
+                </a>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/html_rfc2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/berners-lee-25-years.png);">
+            <a class="source" href="http://www.independent.co.uk/life-style/gadgets-and-tech/tim-bernerslee-on-creating-the-web-i-never-expected-all-these-cats-9189946.html">
+                independent.co.uk
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/berners-lee-web-developer.png);">
+            <a class="source" href="https://twitter.com/MSalt69/status/476684833221926912/photo/1">
+                twitter
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mosaic.jpg);">
+            <h2>
+                Mosaic, initially released in 1993
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mosaic_plaque.jpg);">
+            <h2>
+                <a href="http://en.wikipedia.org/wiki/Mosaic_(web_browser)">Mosaic</a>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-4.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-5.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-6.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-7.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-8.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-9.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-10.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-11.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-12.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram-13.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/andreessen-diagram.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML gives <em>structure</em> to web pages</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_header.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_nav.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_sidebar1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_sidebar2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_etc.png);">
+        </div>
+
+        <div class="slide">
+            <h2>for HTML, structure is just the regions on a page</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML isn't going to help you make things look nice</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML isn't going to help you make things look nice</h2>
+            <p>(we'll talk about <strong>CSS</strong> soon)</p>
+        </div>
+
+        <div class="slide">
+            <h2>every HTML page starts out the same way:</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">Content to show on the</span>
+        <span class="highlighted">page goes here!</span>
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <code>&lt;!DOCTYPE html&gt;</code>
+        </div>
+
+        <div class="slide">
+            <code>&lt;!DOCTYPE html&gt;</code>
+            <h2>tells the browser, "get ready, I'm about to start speaking HTML"</h2>
+        </div>
+
+        <div class="slide">
+            <code>&lt;html&gt;</code>
+        </div>
+
+        <div class="slide">
+            <code>&lt;html&gt;</code>
+            <h2>tells the browser, "okay, this is the beginning of the HTML"</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;head&gt;
+&lt;/head&gt;</code></pre>
+            <h2>things we'll get to later (styles and scripts) go between these</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;body&gt;
+&lt;/body&gt;</code></pre>
+            <h2>page content goes between these</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;/html&gt;</code></pre>
+            <h2>tells the browser, "this is the end of the HTML"</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;body&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;body&gt;</code></pre>
+            <p>
+                the body <strong>opening tag</strong>
+            </p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;body&gt;</code></pre>
+            <p>
+                the body <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with 
+            </p>
+            <code>&lt;</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;body&gt;</code></pre>
+            <p>
+                the body <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with 
+            </p>
+            <code>&lt;</code>
+            <p>and end with</p>
+            <code>&gt;</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;/body&gt;</code></pre>
+            <p>the body <strong>closing tag</strong></p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;/body&gt;</code></pre>
+            <p>the body <strong>closing tag</strong></p>
+            <p>closing tags always start with</p>
+            <code>&lt;/</code>
+            <p>and end with</p>
+            <code>&gt;</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Check out&lt;br /&gt;
+            my paragraph!
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;
+    Check out &lt;em&gt;my paragraph!
+&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;
+    Check out &lt;strong&gt;my&lt;/strong&gt;
+    paragraph!
+&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;a&gt;
+    This should be a link
+&lt;/a&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px;"><code>&lt;a href="<span class="highlighted">http://example.com/awesome/page</span>"&gt;
+    This should be a link
+&lt;/a&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;img src="" /&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Looking at other people's pages</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/view_source.png);">
+            <h2>view source</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/developer_tools.png);">
+            <h2>developer tools</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;ul&gt;
+    &lt;li&gt;one&lt;/li&gt;
+    &lt;li&gt;two&lt;/li&gt;
+    &lt;li&gt;three&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;ol&gt;
+    &lt;li&gt;one&lt;/li&gt;
+    &lt;li&gt;two&lt;/li&gt;
+    &lt;li&gt;three&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/596acres_sidebar1.png);">
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;div <span class="highlighted">id="header"</span>&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;div id="header"&gt;
+    <i>logo
+    mailing list
+    etc</i>
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;span&gt;&lt;/span&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;input /&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;input type="<span class="highlighted">text</span>" /&gt;</code></pre>
+            <input style="font-size: 50px;" type="text" />
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;input type="<span class="highlighted">checkbox</span>" /&gt;</code></pre>
+            <div>
+                <input type="checkbox" /> yes
+            </div>
+            <div>
+                <input type="checkbox" /> no
+            </div>
+            <div>
+                <input type="checkbox" /> maybe
+            </div>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;input type="<span class="highlighted">radio</span>" /&gt;</code></pre>
+            <div>
+                <input name="radio_group" type="radio" /> yes
+            </div>
+            <div>
+                <input name="radio_group" type="radio" /> no
+            </div>
+            <div>
+                <input name="radio_group" type="radio" /> maybe
+            </div>
+        </div>
+
+        <div class="slide">
+
+            <div style="display: inline-block; width: 45%;">
+                <div class="code">html</div>
+                <div class="code">head</div>
+                <div class="code">body</div>
+                <div class="code">p</div>
+                <div class="code">br</div>
+                <div class="code">a</div>
+                <div class="code">img</div>
+            </div>
+
+            <div style="display: inline-block; width: 45%;">
+                <div class="code">em</div>
+                <div class="code">strong</div>
+                <div class="code">ul</div>
+                <div class="code">ol</div>
+                <div class="code">li</div>
+                <div class="code">div</div>
+                <div class="code">span</div>
+                <div class="code">input</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+            <h2>HTML reference on class page</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML in CartoDB</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-infowindow-html.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-legend-html.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>some notes on terminology</h2>
+        </div>
+
+        <div class="slide">
+            <h2>elements</h2>
+        </div>
+
+        <div class="slide">
+            <h2>element:</h2>
+            <h2>an opening tag, closing tag, and all the things inside it</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>"a p element"</p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    <span class="highlighted">&lt;body&gt;
+        &lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;
+    &lt;/body&gt;</span>
+&lt;/html&gt;</code></pre>
+            <p>"a body element"</p>
+        </div>
+
+        <div class="slide">
+            <h2>elements go inside other elements</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>"the p element is in the body element"</p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>"the p element is also in the html element"</p>
+        </div>
+
+        <div class="slide">
+            <h2>indent elements one more step than the elements they are inside</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+<span class="highlighted">    </span>&lt;head&gt;
+<span class="highlighted">    </span>&lt;/head&gt;
+<span class="highlighted">    </span>&lt;body&gt;
+<span class="highlighted">    </span>    &lt;p&gt;
+<span class="highlighted">    </span>        Check out my paragraph!
+<span class="highlighted">    </span>    &lt;/p&gt;
+<span class="highlighted">    </span>&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>everything in the html element is indented once</p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    <span class="highlighted">    </span>&lt;p&gt;
+    <span class="highlighted">    </span>    Check out my paragraph!
+    <span class="highlighted">    </span>&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>everything in the body element is indented again</p>
+        </div>
+
+        <div class="slide">
+            <h2>make sure you move an entire element</h2>
+        </div>
+
+        <div class="slide">
+            <h2>move this</h2>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!
+        &lt;/p&gt;</span>
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>don't move this</h2>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <span class="highlighted">&lt;p&gt;
+            Check out my paragraph!</span>
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><code>iframe</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>iframe</code></h2>
+            <h2>lets you embed other pages in your page</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px;"><code>&lt;iframe width='100%' height='520' 
+frameborder='0' src='http://eric.cartodb.com/
+viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/
+embed_map' allowfullscreen webkitallowfullscreen 
+mozallowfullscreen oallowfullscreen 
+msallowfullscreen&gt;&lt;/iframe&gt;</code>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-copy-iframe.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>this is going to take some effort</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/codecademy-html.png);">
+            <a href="http://www.codecademy.com/tracks/web">codecademy.com/tracks/web</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shayhowe.png);">
+            <a href="http://learn.shayhowe.com/html-css">learn.shayhowe.com/html-css</a>
+        </div>
+
+    </body>
+</html>
