@@ -9,6 +9,10 @@ body {
     font-size: 20px;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: Ledger, serif;
 }
@@ -82,10 +86,12 @@ footer {
 
 code {
     background: #eee;
-    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 pre > code {
     display: block;
+    overflow: auto;
     padding: 15px;
 }
