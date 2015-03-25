@@ -122,7 +122,7 @@
         </div>
 
         <div class="slide">
-            <p>just list the columns. for example:</p>
+            <h2>just list the columns:</h2>
             <pre><code>SELECT students, teachers
 FROM education</code></pre>
         </div>
@@ -142,7 +142,7 @@ FROM education</code></pre>
         </div>
 
         <div class="slide">
-            <p>these conditions are the same as the ones in CartoCSS:</p>
+            <p>these operators are the same as in most programming languages:</p>
             <pre style="margin-left: 250px;"><code>&gt;
 &lt;
 =
@@ -171,11 +171,6 @@ WHERE students &gt; 100
         </div>
 
         <div class="slide">
-            <h2>try it yourself</h2>
-            <p>get just the education with <code>students</code> between 100 and 150</p>
-        </div>
-
-        <div class="slide">
             <h2>or you can negate a condition with <code>NOT</code></h2>
         </div>
 
@@ -185,11 +180,6 @@ WHERE students &gt; 100
 FROM education
 WHERE NOT (students &gt; 100 
   OR op_type = 'religious')</code></pre>
-        </div>
-
-        <div class="slide">
-            <h2>try it yourself</h2>
-            <p>get just the education features with <code>students</code> not between 100 and 150</p>
         </div>
 
         <div class="slide" style="background-image: url(img/arc-query-builder.png);">
@@ -226,11 +216,6 @@ WHERE students &gt; 100
         </div>
 
         <div class="slide" style="background-image: url(img/cartodb-filters-nogeom.gif);">
-        </div>
-
-        <div class="slide">
-            <h2>try it yourself</h2>
-            <p>get the number of education features with <code>students</code> between 100 and 150</p>
         </div>
 
         <div class="slide">
@@ -274,18 +259,6 @@ FROM education</code></pre>
         </div>
 
         <div class="slide">
-            <h2>this is one way to customize the way data is displayed in your infowindow</h2>
-        </div>
-
-        <div class="slide">
-            <h2>first, create a new column on your table</h2>
-        </div>
-
-        <div class="slide">
-            <h2>then put the desired data in that column, based on some condition</h2>
-        </div>
-
-        <div class="slide">
             <pre><code>UPDATE education
 SET size = 'large'
 WHERE students &gt; 2500</code></pre>
@@ -305,6 +278,13 @@ WHERE ...</code></pre>
         </div>
 
         <div class="slide" style="background-image: url(img/web-sql-596.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>try in-class exercise, part 1:</h2>
+            <a href="inclass.html">bit.ly/savi800-inclass2</a>
         </div>
 
         <div class="slide intermission"></div>
@@ -351,15 +331,14 @@ FROM kiberaboundary
         <div class="slide">
             <pre style="font-size: 45px; line-height: 50px;"><code>
 SELECT *,
-  ST_area(ST_transform(the_geom_webmercator, 21036))
+  ST_area(
+    ST_transform(
+      the_geom_webmercator,
+      21036
+    )
+  )
 FROM kiberaboundary
             </code></pre>
-        </div>
-
-        <div class="slide" style="background-image: url(img/kibera-boundaries-education.png);">
-        </div>
-
-        <div class="slide" style="background-image: url(img/kibera-boundaries-filtered.png);">
         </div>
 
         <div class="slide">
@@ -368,10 +347,194 @@ SELECT education.*
 FROM education, kiberaboundary
 WHERE
   kiberaboundary.name = 'Silanga' AND
-  <a href="http://postgis.net/docs/manual-2.0/ST_Within.html">ST_within</a>(education.the_geom, kiberaboundary.the_geom)</code></pre>
+  <a href="http://postgis.net/docs/manual-2.0/ST_Within.html">ST_within</a>(
+    education.the_geom,
+    kiberaboundary.the_geom
+  )</code></pre>
         </div>
 
         <div class="slide" style="background-image: url(img/buffer.gif);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/lego-brick.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lego-brick-nubby-bits.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/legos.gif); background-size: 50% 50%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lego-brick-nubby-bits.png);">
+            <h2>APIs are the "nubby bits" of a lego<br />&mdash;Aaron Straup Cope</h2>
+            <a href="http://blog.variousbits.net/tag/mw2008/" class="source">various bits</a>
+        </div>
+
+        <div class="slide">
+            <h2>APIs let you connect to other applications</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Application<br />Programming<br />Interface</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Interface</h2>
+            <p>(the "nubby bits")</p>
+        </div>
+
+        <div class="slide">
+            <h2>Interface</h2>
+            <p>(the "nubby bits")</p>
+            <h2>for</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Application<br />Programming</h2>
+            <p>(writing applications)</p>
+        </div>
+
+        <div class="slide">
+            <h2>the interface is a common language between you and someone else</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api.png);">
+            <h2>the <a href="http://docs.cartodb.com/cartodb-platform/sql-api.html">CartoDB SQL API</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>the SQL API lets you run SQL through code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_sql_api1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_sql_api2.png);">
+        </div>
+
+        <div class="slide">
+            <h2>start with the URL "endpoint" for the API</h2>
+        </div>
+
+        <div class="slide">
+            <h2>start with the URL "endpoint" for the API</h2>
+            <pre><code>https://{account}.cartodb.com/
+ api/v2/sql</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>for me this is</h2>
+            <pre><code>https://eric.cartodb.com/
+ api/v2/sql</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>then add some parameters</h2>
+        </div>
+
+        <div class="slide">
+            <h2>these help you specify exactly what you want out of the API</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the CartoDB API has a <code>q</code> parameter that expects an SQL query</h2>
+        </div>
+
+        <div class="slide">
+            <h2>parameter=value</h2>
+            <pre><code>q=SELECT count(*)
+FROM {table_name}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>the <code>?</code> in a url lets the server know that the parameters start there</h2>
+        </div>
+
+        <div class="slide">
+            <h2>so you end up with <code>endpoint</code> + <code>?</code> + <code>parameters</code></h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>https://{account}.cartodb.com/
+ api/v2/sql?q=
+ SELECT count(*) 
+ FROM {table_name}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>more concretely</h2>
+            <pre><code>https://eric.cartodb.com/
+ api/v2/sql?q=
+ SELECT count(*) 
+ FROM graffiti_information_2015</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+            <h2>JSON</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+            <h2>basically JavaScript objects and arrays, but written to a file</h2>
+        </div>
+
+        <div class="slide">
+            <h2>try in-class exercise, part 2:</h2>
+            <a href="inclass.html">bit.ly/savi800-inclass2</a>
+        </div>
+
+        <div class="slide">
+            <h2>you can append to a document using jQuery</h2>
+        </div>
+
+        <div class="slide">
+            <h2><pre><code>$('body').append(
+    $('&lt;div&gt;&lt;/div&gt;').text('oh hi');           
+);</code></pre></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jquery-append-example.png);">
+            <h2>
+                <a href="http://jsbin.com/waveruboyi/1/edit?js,output" target="_blank">for example</a>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise, part 3:</h2>
+            <a href="inclass.html">bit.ly/savi800-inclass2</a>
+        </div>
+
+        <div class="slide">
+            <h2>
+                APIs often accept multiple parameters
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                when they do, separate parameters using <code>&amp;</code>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>http://...cartodb.com/.../sql?
+  q={query}&amp;
+  <strong>format=GeoJSON</strong></code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/api-leaflet-example.png);">
+            <h2>
+                <a href="http://jsbin.com/tubehi/1/edit?js,output" target="_blank">for example</a>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise, part 4:</h2>
+            <a href="inclass.html">bit.ly/savi800-inclass2</a>
         </div>
 
     </body>
