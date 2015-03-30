@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises: APIs</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Nominatim</h2>
+                <ol>
+                    <li>Check out the documentation for <a href="http://wiki.openstreetmap.org/wiki/Nominatim">Nominatim</a>.</li>
+                    <li>Starting with the code in <a href="http://jsbin.com/nefaga/1/edit?js,output">this JS Bin</a>, make the changes in the next few steps.</li>
+                    <li>Call Nominatim using the query as entered in the search input using <code><a href="http://api.jquery.com/jQuery.getJSON/">$.getJSON()</a></code>.</li>
+                    <li>Once you get a response, try logging out the latitude and longitude of the first result.</li>
+                    <li>Pan and zoom the Leaflet map to the point (latitude and longitude) found in the previous step by calling <code><a href="http://leafletjs.com/reference.html#map-setview">map.setView()</a></code>.</li>
+                    <li>Wouldn't it be nice to see an outline of the building or place you searched for? Nominatim can help with that! Look for a parameter called <code>polygon_geojson</code> in the <a href="http://wiki.openstreetmap.org/wiki/Nominatim">Nominatim documentation</a> and add it to your requests.</li>
+                    <li>Find the GeoJSON in the first result in the response. It's not always going to show up (eg, if Nominatim can't find a specific polygon for a query), so use "Higgins Hall Brooklyn" or "Union Square Park" as test queries.</li>
+                    <li>Finally, add that GeoJSON to the GeoJSON layer (<code>geoJsonLayer</code> in the jsbin). You should be able to call <code>geoJsonLayer.<a href="http://leafletjs.com/reference.html#geojson-adddata">addData()</a></code> with the GeoJSON from the response.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Streetview image API</h2>
+                <ol>
+                    <li>Using Google's <a href="https://developers.google.com/maps/documentation/streetview/">Street View Image API</a>, attempt to load an image in your browser using the URL bar&mdash;not in code. If you need a latitude and longitude to start with, try Higgins Hall: <pre><code>40.68802005, -73.9642238450178</code></pre>.</li>
+                    <li>Continue with your code from Part 1, and we'll add a streetview image of the search result using the <a href="https://developers.google.com/maps/documentation/streetview/">Street View Image API</a>.</li>
+                    <li>Add an <code>img</code> tag to the HTML. In the map <code>div</code> is a good place. For now it won't have a <code>src</code> attribute, so leave it out. Give it a class so you can style it and reference it in your JavaScript.</li>
+                    <li>Add some CSS to make the image show up on top of the map. This will make it appear in the bottom left of the map:
+                    <pre><code>.streetview {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 200px;
+  height: 200px;
+  z-index: 5000;
+}</code></pre>
+                        (Update the class name as necessary.) Note that we're starting with <code>display: none</code> as there will be nothing to show at first.
+                    </li>
+                    <li>Now add a new function in your JavaScript that take two parameters, <code>lat</code> and <code>lng</code>. In the function, create an image url using the <a href="https://developers.google.com/maps/documentation/streetview/">Street View Image API</a> and set your image's <code>src</code> attribute to it using jQuery's <code><a href="http://api.jquery.com/attr/">attr()</a></code>. Show the image using <code><a href="http://api.jquery.com/show/">show()</a></code>.</li>
+                    <li>Call this new function from the code that calls Nominatim and loads the result.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: OpenRefine</h2>
+                <ol>
+                    <li>Install <a href="http://openrefine.org/">OpenRefine</a> if you haven't already.</li>
+                    <li>Using your browser's developer tools, find the url used to load the markers on <a href="http://habitatmap.org/markers?colors=1_2_0&lat=40.70333&lng=-73.98599&maps=92_187_91&nogrp=1&t=terrain&z=10">this HabitatMap</a>.</li>
+                    <li>Copy the response from developer tools and paste into OpenRefine (<strong>Create Project > Clipboard</strong>), then export the data as a CSV.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
