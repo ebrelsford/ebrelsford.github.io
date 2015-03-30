@@ -27,6 +27,114 @@
             <p>Please install <a href="http://openrefine.org/" target="_blank">OpenRefine</a> (openrefine.org) while you wait for class to start.</p>
         </div>
 
+        <div class="slide" style="background-image: url(img/telescope.jpeg);">
+            <h2>Notes on scope</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/telescope.jpeg);">
+            <h2>Notes on scope</h2>
+            <h2>(what's visible when)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/telescope.jpeg);">
+            <h2>Define variables (<code>var</code>) before using them</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>var map;
+
+function goToNullIsland() {
+    map.setView([0, 0], 18);
+}
+
+goToNullIsland();
+</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>var map;
+
+function goToNullIsland() {
+    map.setView([0, 0], 18);
+}
+
+goToNullIsland(); // Works fine
+</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>function goToNullIsland() {
+    map.setView([0, 0], 18);
+}
+
+var map;
+
+goToNullIsland();
+</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>function goToNullIsland() {
+    map.setView([0, 0], 18);
+}
+
+var map;
+
+goToNullIsland(); // Will <strong>not</strong> work
+</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/wave-denied-nope.gif); background-size: 50%;">
+        </div>
+
+        <div class="slide">
+            <pre><code>function goToNullIsland() {
+    map.setView([0, 0], 18);
+}
+
+var map;
+
+goToNullIsland(); // Will <strong>not</strong> work
+</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/telescope.jpeg);">
+            <h2>So define variables first, globally, or pass them as parameters</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>function goToNullIsland(<strong>map</strong>) {
+    map.setView([0, 0], 18);
+}
+
+var map;
+
+goToNullIsland(<strong>map</strong>); // Will work
+</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/telescope.jpeg);">
+            <h2>Variables defined (<code>var</code>) in a function are not visible outside of it</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>function goToNullIsland(map) {
+    <strong>var center = [0, 0];</strong>
+    map.setView(center, 18);
+}
+
+var map;
+
+goToNullIsland(map);
+console.log(center); // <strong>NOPE</strong>
+</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/whatno.gif); background-size: 50%;">
+        </div>
+
+        <div class="slide intermission"></div>
+
         <div class="slide">
             <h2>"API" is maybe an overused term</h2>
         </div>
