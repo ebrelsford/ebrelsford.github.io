@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Load CartoDB's code so we can pull in our CartoDB maps.
+        -->
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css" />
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
+
+        <!--
+        Load jQuery
+        -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <!--
+        Make the body and map take up all of the available room in the window.
+        -->
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            #map {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+
+        <script>
+            //
+            // Add a function here
+            //
+
+            //
+            // Initializing map from CartoDB
+            //
+            $(document).ready(function () {
+                cartodb.createVis('map', 'http://eric.cartodb.com/api/v2/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/viz.json');
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+</html>
