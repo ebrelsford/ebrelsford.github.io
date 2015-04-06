@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 5 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 5</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 5</p>
+        </div>
+
+        <div class="slide">
+            <h2>Leaflet recap</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson.png);">
+            <h2>GeoJSON layers</h2>
+            <a href="http://leafletjs.com/reference.html#geojson" target="_blank" class="source">L.GeoJSON</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson.png);">
+            <h2><code>L.geoJson()</code> creates new GeoJSON layers</h2>
+            <a href="http://leafletjs.com/reference.html#geojson" target="_blank" class="source">L.GeoJSON</a>
+        </div>
+
+        <div class="slide">
+            <pre><code>var myLayer = L.geoJson(data);
+myLayer.addTo(map);</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>var myLayer = L.geoJson(data);
+myLayer.<a href="http://leafletjs.com/reference.html#layergroup-addto" target="_blank">addTo</a>(map);</code></pre>
+            <h2 style="margin: 50px;">OR</h2>
+            <pre><code>var myLayer = L.geoJson(data);
+map.<a href="http://leafletjs.com/reference.html#map-addlayer" target="_blank">addLayer</a>(myLayer);</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>removing a GeoJSON layer from your map</h2>
+            <pre><code>map.<a href="http://leafletjs.com/reference.html#map-removelayer" target="_blank">removeLayer</a>(myLayer);</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>removing data from your GeoJSON layer</h2>
+            <pre><code>myLayer.<a href="http://leafletjs.com/reference.html#layergroup-clearlayers" target="_blank">clearLayers()</a>;</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-layergroup-addto.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-layergroup-addto.png);">
+            <h2>why can use this function on a GeoJSON layer?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-extends.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-extends.png);">
+            <h2>hierarchy</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-featuregroup-extends.png);">
+            <h2>hierarchy</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-1.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-2.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-3.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/theres-more.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-4.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-5.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/theres-more-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-6.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/easy-payments.gif);">
+        </div>
+
+        <div class="slide">
+            <h2>L.GeoJson is an L.FeatureGroup is an L.LayerGroup</h2>
+        </div>
+
+        <div class="slide">
+            <h2>anything you can do to an L.FeatureGroup you can do to an L.GeoJson</h2>
+        </div>
+
+        <div class="slide">
+            <h2>styling GeoJSON layers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-style.png);">
+            <a href="http://leafletjs.com/reference.html#geojson" target="_blank" class="source">Leaflet plugins</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-geojson-options.png);">
+            <a href="http://leafletjs.com/reference.html#geojson" target="_blank" class="source">L.GeoJson options</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-path.png);">
+            <a href="http://leafletjs.com/reference.html#path" target="_blank" class="source">L.Path</a>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-1">in-class exercise</a> part 1</h2>
+        </div>
+
+        <div class="slide">
+            <h2>events</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-events.png);">
+            <h2>L.Map events</h2>
+            <a href="http://leafletjs.com/reference.html#map-click" target="_blank" class="source">L.Map</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-path-events.png);">
+            <h2>L.Path events</h2>
+            <a href="http://leafletjs.com/reference.html#path-click" target="_blank" class="source">L.Path</a>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-2">in-class exercise</a> part 2</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-controls.png);">
+            <h2>controls</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-control-zoom.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-control-zoom.png);">
+            <h2>for example</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-control-zoom-extends.png);">
+            <a href="http://leafletjs.com/reference.html#map-stuff-methods" target="_blank" class="source">Leaflet docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-controls.png);">
+            <a href="http://leafletjs.com/reference.html#map-stuff-methods" target="_blank" class="source">Leaflet docs</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/leaflet-plugins.png);">
+            <a href="http://leafletjs.com/plugins.html" target="_blank" class="source">Leaflet plugins</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-plugins.png);">
+            <h2>plugins</h2>
+            <a href="http://leafletjs.com/plugins.html" target="_blank" class="source">Leaflet plugins</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-plugins.png);">
+            <h2>they're like libraries but much smaller</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-plugins.png);">
+            <h2>but you use them like larger libraries:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. load JavaScript and (sometimes) CSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(unlike larger libraries you will likely have to download these)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/rawgit.png);">
+            <a href="http://rawgit.com" target="_blank" class="source">rawgit</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/rawgit.png);">
+            <h2>or use something like rawgit</h2>
+            <a href="http://rawgit.com" target="_blank" class="source">rawgit</a>
+        </div>
+
+        <div class="slide">
+            <h2>2. use the plugin in your code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-control-geocoder.png);">
+            <a href="https://github.com/perliedman/leaflet-control-geocoder" target="_blank" class="source">leaflet-control-geocoder</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-control-geocoder-demo.png);">
+            <a href="http://www.liedman.net/leaflet-control-geocoder/" target="_blank" class="source">leaflet-control-geocoder</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-minimap.png);">
+            <a href="https://github.com/Norkart/Leaflet-MiniMap" target="_blank" class="source">Leaflet.MiniMap</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-minimap-demo.png);">
+            <a href="http://norkart.github.io/Leaflet-MiniMap/example.html" target="_blank" class="source">Leaflet.MiniMap</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-markercluster.png);">
+            <a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank" class="source">leaflet-markercluster</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-markercluster-demo.gif);">
+            <a href="http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.388.html" target="_blank" class="source">leaflet-markercluster</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-realtime.png);">
+            <a href="https://github.com/perliedman/leaflet-realtime" target="_blank" class="source">leaflet-realtime</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-realtime-demo.gif);">
+            <a href="http://www.liedman.net/leaflet-realtime/busses.html" target="_blank" class="source">leaflet-realtime</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-draw.png);">
+            <a href="https://github.com/Leaflet/Leaflet.draw" target="_blank" class="source">Leaflet.draw</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-draw-demo.png);">
+            <a href="http://leaflet.github.io/Leaflet.draw/" target="_blank" class="source">Leaflet.draw</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-mappaint.png);">
+            <a href="https://github.com/SINTEF-9012/Leaflet.MapPaint" target="_blank" class="source">Leaflet.MapPaint</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-mappaint-demo.png);">
+            <a href="http://sintef-9012.github.io/Leaflet.MapPaint/" target="_blank" class="source">Leaflet.MapPaint</a>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-3">in-class exercise</a> part 3</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>but I want to add a plugin to a CartoDB map</h2>
+        </div>
+
+        <div class="slide">
+            <h2>no problem!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>CartoDB.js wraps Leaflet</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-leaflet.png);">
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#core-api-functionallity" target="_blank" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-leaflet.png);">
+            <h2><code>getNativeMap()</code></h2>
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#core-api-functionallity" target="_blank" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-leaflet.png);">
+            <h2>access vis in <code>createVis()<br />.done()</code></h2>
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#core-api-functionallity" target="_blank" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-leaflet.png);">
+            <h2>Please do <a href="inclass.html#part-4">in-class exercise</a> part 4</h2>
+        </div>
+
+    </body>
+</html>

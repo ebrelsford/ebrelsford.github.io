@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises: Leaflet Plugins</h1>
+            </header>
+
+            <section id="part-1">
+                <h2>Part 1: Styling Leaflet features</h2>
+                <ol>
+                    <li>Start with a Leaflet map (<strong>not made with CartoDB.js</strong>) from previous work.</li>
+                    <li>Using <a href="http://jsbin.com/migeqo/">this jsbin</a> as an example, style the features on your map. You will only use <code>pointToLayer</code> for point data.</li>
+                </ol>
+            </section>
+
+            <section id="part-1">
+                <h2>Part 2: Leaflet events</h2>
+                <ol>
+                    <li>Start with a Leaflet map (<strong>not made with CartoDB.js</strong>) from previous work. This might be the one you were working with in Part 1.</li>
+                    <li>Add an event handler to the <strong>map</strong> for one of the events listed <a href="http://leafletjs.com/reference.html#map-events">in the docs</a>.</li>
+                    <li>Add an event handler to the <strong>features</strong> for one of the events listed <a href="http://leafletjs.com/reference.html#path">in the docs</a> for paths. <a href="http://jsbin.com/heyeja/1/edit?js,output">This jsbin might be helpful</a>.</li>
+                </ol>
+            </section>
+
+            <section id="part-3">
+                <h2>Part 3: Using plugins in Leaflet</h2>
+                <ol>
+                    <li>Start with a Leaflet map (<strong>not made with CartoDB.js</strong>) from previous work. This might be the one you were working with in Parts 1 and 2.</li>
+                    <li>Pick a <a href="http://leafletjs.com/plugins.html">plugin</a> that you would like to add to the map.</li>
+                    <li>Follow the plugin's directions to add the plugin to your map. This will vary by plugin, but generally you will:
+                        <ol>
+                            <li>Add the plugin's code (JavaScript and often CSS) to your page. This entails either downloading the code into the folder you're working out of, or if you're using a service like JS Bin, using <a href="https://rawgit.com/">RawGit</a> to create hosted versions of those files.</li>
+                            <li>Invoke the plugin after creating your map.</li>
+                        </ol>
+                    </li>
+                    <li>If you run into trouble, <a href="http://jsbin.com/nebona/1/edit?html,js,output" target="_blank">here's a working example using Leaflet.MapPaint</a>. Please use it for guidance but use a different plugin.</li>
+                </ol>
+            </section>
+
+            <section id="part-4">
+                <h2>Part 4: Using Leaflet plugins through CartoDB.js</h2>
+                <ol>
+                    <li>Start with a page that loads a CartoDB visualization using CartoDB.js.</li>
+                    <li>Pick a new <a href="http://leafletjs.com/plugins.html">Leaflet plugin</a> you would like to try.</li>
+                    <li>Add the plugin to your page.</li>
+                    <li>In <code>createVis().done()</code>, use <code>vis.getNativeMap()</code> to get the Leaflet map that underlies the visualization and initialize the plugin.</li>
+                    <li>If you run into trouble, <a href="http://jsbin.com/jaqoco/2/edit?html,js,output" target="_blank">here's a working example using Leaflet.MapPaint with CartoDB.js</a>. Please use it for guidance but use a different plugin.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
