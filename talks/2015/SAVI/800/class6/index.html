@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 6 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 6</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 6</p>
+        </div>
+
+        <div class="slide">
+            <h2>code style</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. indentation</h2>
+        </div>
+
+        <div class="slide">
+            <h2>always indent the body of functions one level</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>function makeMapDoStuff(map) {
+map.setCenter([0, 0]);
+map.setZoom(4);
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>function makeMapDoStuff(map) {
+<span class="highlighted">    </span>map.setCenter([0, 0]);
+<span class="highlighted">    </span>map.setZoom(4);
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>same goes for <code>if</code> statements</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>if (allElseFails) {
+giveUp();
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>if (allElseFails) {
+<span class="highlighted">    </span>giveUp();
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>2. comments</h2>
+        </div>
+
+        <div class="slide">
+            <h2>they're like hints for your future self</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>style: function (feature) {
+  var style = {
+    fillColor: '#0f0f91',
+    fillOpacity: 0.5,
+    radius: 8,
+    stroke: false
+  };
+  if (feature.properties.price &gt; 4000) {
+    style.fillColor = 'red';
+  }
+  return style;
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>style: function (feature) {
+  <span class="highlighted">// Style based on price</span>
+  var style = {
+    fillColor: '#0f0f91',
+    fillOpacity: 0.5,
+    radius: 8,
+    stroke: false
+  };
+  if (feature.properties.price &gt; 4000) {
+    style.fillColor = 'red';
+  }
+  return style;
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>you don't have to do one for every line</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but aim to narrate your code, separating it into chunks</h2>
+        </div>
+
+        <div class="slide">
+            <h2>future self (and I) will thank you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>3. blank lines</h2>
+        </div>
+
+        <div class="slide">
+            <h2>use one blank line between logically separate chunks of code</h2>
+        </div>
+
+        <div class="slide">
+            <h2>why make yourself scroll more than necessary?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>4. variable names</h2>
+        </div>
+
+        <div class="slide">
+            <h2>longer is okay!</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>cx = ox - rd;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>centerX = offsetX - radius;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>you'll thank yourself when you have to read it later</h2>
+        </div>
+
+        <div class="slide">
+            <h2>and use camelCase</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(start lowercase, but capitalize each word within the variable name)</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>var pointsgeojsonlayer;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>var points<span class="highlighted">G</span>eo<span class="highlighted">J</span>son<span class="highlighted">L</span>ayer;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-1">in-class exercise</a> part 1</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>leaflet popups</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-bind-popup.png);">
+            <a href="http://leafletjs.com/reference.html#path-bindpopup" target="_blank" class="source"><code>bindPopup()</code></a>
+        </div>
+
+        <div class="slide">
+            <h2>these generally go in <code>L.GeoJson</code>'s <code>onEachFeature</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-bind-popup-example.png);">
+            <a href="http://jsbin.com/puxale/1/edit?js,output" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2>styling popups: use devtools to find CSS classes, override in your CSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-popup-css.png);">
+            <a href="http://jsbin.com/puxale/1/edit?js,output" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2>dynamic popups</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you'll need a click handler instead</h2>
+        </div>
+
+        <div class="slide">
+            <h2>create the HTML, bind the popup, and open it</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-popup-dynamic.png);">
+            <a href="http://jsbin.com/nofona/1/edit?js,output" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-2">in-class exercise</a> part 2</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>looping over the features in a GeoJSON layer</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-each-layer.png);">
+            <a href="http://leafletjs.com/reference.html#layergroup-eachlayer" target="_blank" class="source">eachLayer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-each-layer.png);">
+            <h2><code>eachlayer()</code></h2>
+            <a href="http://leafletjs.com/reference.html#layergroup-eachlayer" target="_blank" class="source">eachLayer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-each-layer.png);">
+            <h2><code>eachlayer()</code> is a function on L.LayerGroup</h2>
+            <a href="http://leafletjs.com/reference.html#layergroup-eachlayer" target="_blank" class="source">eachLayer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-each-layer.png);">
+            <h2>it expects a function that takes a layer</h2>
+            <a href="http://leafletjs.com/reference.html#layergroup-eachlayer" target="_blank" class="source">eachLayer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-each-layer.png);">
+            <h2>it expects a function that takes a layer</h2>
+            <h2>(like an event handler)</h2>
+            <a href="http://leafletjs.com/reference.html#layergroup-eachlayer" target="_blank" class="source">eachLayer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-each-layer.png);">
+            <h2>the function you write gets called for <em>every layer in the GeoJSON</em></h2>
+            <a href="http://leafletjs.com/reference.html#layergroup-eachlayer" target="_blank" class="source">eachLayer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-layers-loop.png);">
+            <a href="http://jsbin.com/zeqaxu/2/edit" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-github.png);">
+            <a href="https://github.com/ebrelsford/Leaflet.loading/" target="_blank" class="source">Leaflet.loading</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-pr.png);">
+            <a href="https://github.com/ebrelsford/Leaflet.loading/pull/1" target="_blank" class="source">pull request</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <a href="https://github.com/ebrelsford/Leaflet.loading/graphs/contributors" target="_blank" class="source">contributors</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <h2>why do people contribute?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <ul style="list-style: disc; padding: 25px; background-color: rgba(256, 256, 256, 0.9);">
+                <li>community</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <ul style="list-style: disc; padding: 25px; background-color: rgba(256, 256, 256, 0.9);">
+                <li>community</li>
+                <li>recognition</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <ul style="list-style: disc; padding: 25px; background-color: rgba(256, 256, 256, 0.9);">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <ul style="list-style: disc; padding: 25px; background-color: rgba(256, 256, 256, 0.9);">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+                <li>it's fun</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <ul style="list-style: disc; padding: 25px; background-color: rgba(256, 256, 256, 0.9);">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+                <li>it's fun</li>
+                <li><strong>programmers are lazy</strong></li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-contributors.png);">
+            <ul style="list-style: disc; padding: 25px; background-color: rgba(256, 256, 256, 0.9);">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+                <li>it's fun</li>
+                <li><strong>programmers are lazy</strong> (in a good way)</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-extend-basic.png);">
+            <a href="http://jsbin.com/yinizo/2/edit" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-extend.png);">
+            <a href="http://jsbin.com/yinizo/1/edit" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-3">in-class exercise</a> part 3</h2>
+        </div>
+
+    </body>
+</html>
