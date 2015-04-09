@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced GIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced GIS</a>
+                <h1>In-class Excercise: CSS</h1>
+            </header>
+
+            <section>
+                <h2>Resources</h2>
+                <ul>
+                    <li>The first three sections on <a href="http://htmldog.com/reference/cssproperties/">this HTML Dog page</a> list the more common CSS properties you'll be using.</li>
+                    <li>This <a href="http://www.lesliefranke.com/files/reference/csscheatsheet.html">CSS cheat sheet</a> is a bit more terse but you might find it useful.</li>
+                    <li>There are more exhaustive references on <a href="https://css-tricks.com/almanac/properties/">CSS-Tricks</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">Mozilla Developer Network</a>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Part 1: Add CSS to a webpage</h2>
+                <p>For this section we will use <a href="http://jsbin.com/">JS Bin</a>, which is a service that lets you see your HTML and the output of it immediately. You could do all of this with a file on your computer, but JS Bin is a bit more convenient. It's also a nice way to share code with people to show them a problem you're having (hint-hint).</p>
+                <ol>
+                    <li><p>Open <a href="http://jsbin.com/tadiqeyeti/1/edit?html,output">this JS Bin</a>.</p></li>
+                    <li><p>Change some of the HTML on the left and see that the output on the right changes.</p></li>
+                    <li><p>Now let's add some style. In the <code>style</code> element, add a line after <pre><code>/* Your styles go here */</code></pre>
+                        and paste the following:
+                            <pre><code>p {
+    margin-top: 50px;
+}</code></pre>
+                            There should now be much more room between paragraphs. We selected the paragraph elements (<code>p</code>) and set the <code>margin-top</code> property to <code>50px</code>.
+                        </p>
+                    </li>
+                    <li><p>Style all the links (<code>a</code> elements) by adding a CSS statement after the statement we just added.</p></li>
+                    <li><p>Change the font family for the entire page by modifying the <code>font-family</code> for the <code>body</code>. Read more about this and see an example at <a href="https://css-tricks.com/almanac/properties/f/font-family/">CSS-Tricks</a>.</p></li>
+                    <li>
+                        <p>CSS can do much more than select all elements of a type and style those. For example, notice that there are a few <code>span</code> elements in the HTML we're working with. They have been invisible so far because <code>span</code> elements have no style by default. Let's style some of them now by adding a new statement:</p>
+                        <pre><code>.interesting {
+    font-weight: bold;
+}</code></pre>
+                        <p>
+                        Why did we use <code>.interesting</code> for the selector instead of <code>span</code>? Because you generally don't want to style all <code>span</code> elements on a page, and in this case we only wanted to style the ones that are of class <code>interesting</code>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>There are three links (<code>a</code> elements) on this page. Let's style the one that links to a Wikipedia article differently.</p>
+                        <p>Find the link to a Wikipedia article</p>
+                        <pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sapien"&gt;sapien&lt;/a&gt;</code></pre>
+                        <p>and add a <code>style</code> attribute to it:</p>
+                        <pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sapien" <strong>style=""</strong>&gt;sapien&lt;/a&gt;</code></pre>
+                        <p>then add some CSS to the style:</p>
+                        <pre><code>&lt;a href="https://en.wikipedia.org/wiki/Sapien" style="<strong>font-weight: bold;</strong>"&gt;sapien&lt;/a&gt;</code></pre>
+                        <p>You can add as many CSS properties as you like to a <code>style</code> attribute on an element, just remember to separate them with semicolons (<code>;</code>). Add another CSS property to the link's <code>style</code> attribute now.</p>
+                    </li>
+                    <li>
+                        <p>Styling using the <code>style</code> attribute is fine for small examples, but what if we suddenly had a few more links to Wikipedia and wanted to make sure they all had the same style? This is often when classes come in handy.</p>
+                        <p>Add another link to a Wikipedia article somewhere in your HTML. For example:</p>
+                        <pre><code>&lt;a href="https://en.wikipedia.org/wiki/Lectern"&gt;lectus&lt;/a&gt;</code></pre>
+                        <p>And add a <code>class</code> attribute to both links to Wikipedia, like this:</p>
+                        <pre><code>&lt;a href="https://en.wikipedia.org/wiki/Lectern" class="wikipedia-link"&gt;lectus&lt;/a&gt;</code></pre>
+                        <p>(Class names can be any words that don't have spaces in them. When you're tempted to write a space, use a <code>-</code> between words.)</p>
+                        <p>Finally, create a new CSS statement in your <code>style</code> element, eg:</p>
+                        <pre><code>.wikipedia-link {
+}</code></pre>
+                        <p>and cut and paste the CSS from the original Wikipedia link (the one you styled using the <code>style</code> attribute) into this statement. I highly recommend putting each property on its own line. Delete the <code>style</code> attribute from the original Wikipedia link since the class styling should take care of it now.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Use developer tools to change other webpages' CSS</h2>
+                <ol>
+                    <li><p>Load a webpage in your browser (preferably Chrome for now).</p></li>
+                    <li>
+                        <p>Open developer tools:</p>
+                        <img src="img/devtools.gif" />
+                    </li>
+                    <li>
+                        <p>Using the magnifying glass tool, select an element:</p>
+                        <img src="img/devtools-mag.gif" />
+                    </li>
+                    <li>
+                        <p>On the left you should see the HTML for the element, and on the right you should see the CSS for it. The CSS will be more or less complicated, depending on the page you're looking at.</p>
+                        <img src="img/devtools-panels.png" />
+                    </li>
+                    <li>
+                        <p>Style the element by clicking to the right of <code>element.style</code> in the CSS area. Start typing a property, use the arrow keys to select it, then press tab and type a value. This has an identical effect to adding CSS to a <code>style</code> attribute in an element as we did in part 1.</p>
+                        <img src="img/devtools-style.gif" />
+                    </li>
+                    <li><p>Use the magnifying glass to find another element you would like to style. This time, instead of styling by adding properties to <code>element.style</code> add and change properties within one of the existing CSS statements that work on the element. When you do, multiple elements on the page should change.</p></li>
+                    <li><p>Continue defacing the page and get a feeling for how the CSS on the page works. In particular, look at turning properties off (using the checkboxes to the left of them) and changing colors using the built-in color picker.</p></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Add CSS to a CartoDB visualization</h2>
+                <ol>
+                    <li><p>Open a CartoDB visualization in your CartoDB account.</p></li>
+                    <li><p>Open the legend for the visualization, creating a new legend if there isn't one yet.</p></li>
+                    <li><p>Edit the code for the legend by clicking the <strong>Custom HTML</strong> button.</p></li>
+                    <li>
+                        <p>You can style legends and infowindows in a few ways. For one, you can add your own <code>style</code> element. If the original legend was:</p>
+                        <pre><code>&lt;div class='cartodb-legend custom'&gt;
+    &lt;li&gt;
+        &lt;div class="bullet" style="background:#fb9a99"&gt;&lt;/div&gt;
+        graffiti report
+    &lt;/li&gt;
+&lt;/div&gt;</code></pre>
+                        <p>then you can simply add a <code>style</code> element at the beginning:</p>
+                        <pre><code>&lt;style&gt;
+    /* CSS statements go here */
+&lt;/style&gt;
+&lt;div class='cartodb-legend custom'&gt;
+    &lt;li&gt;
+        &lt;div class="bullet" style="background:#fb9a99"&gt;&lt;/div&gt;
+        graffiti report
+    &lt;/li&gt;
+&lt;/div&gt;</code></pre>
+                        <p>You can add your own classes to the HTML and style those classes here, or you can style some of the built-in CartoDB classes to modify how your legend looks. Attempt to change the style for one of your legend's elements now, like this:</p>
+                        <pre><code>&lt;style&gt;
+    .legend-text {
+        color: black;
+        font-size: 15px;
+    }
+&lt;/style&gt;
+&lt;div class='cartodb-legend custom'&gt;
+    &lt;li&gt;
+        &lt;div class="bullet" style="background:#fb9a99"&gt;&lt;/div&gt;
+        &lt;span class="legend-text"&gt;graffiti report&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/div&gt;</code></pre>
+                    </li>
+                    <li>
+                        <p>Unfortunately, this isn't always as straightforward as it should be. Sometimes you need to find the CSS statement that is affecting the property you want to change and use the <strong>same exact selector</strong>. This is because some of the CSS CartoDB uses is <em>very specific</em> and you need to be at least as specific to override it.</p>
+                        <p>For example, changing the background color for legends isn't too easy. You might try:</p>
+                        <pre><code>&lt;style&gt;
+    .cartodb-legend {
+        background-color: lightblue;
+    }
+&lt;style&gt;</code></pre>
+                        <p>but this won't work. You need to find the element you're trying to style, find the selector CartoDB is using to style it, and use that.</p>
+                        <p>Find the element you're trying to style:</p>
+                        <img src="img/cartodb-find.gif" />
+                        <p>Find the selector CartoDB is using to style the property you want to style:</p>
+                        <img src="img/cartodb-find-selector.gif" />
+                        <p>Then use that selector:</p>
+                        <img src="img/cartodb-use-selector.gif" />
+                        <p>Try using this technique to change the border of your legend.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced GIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
