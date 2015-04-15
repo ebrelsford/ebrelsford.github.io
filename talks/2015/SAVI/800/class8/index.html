@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 8 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 8</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 8</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf.png);">
+            <h2>Turf</h2>
+            <a href="http://turfjs.org/" target="_blank" class="source">turfjs.org</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf.png);">
+            <h2>what is it?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-cdn.png);">
+            <h2>yet another library</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet.png);">
+            <h2>supplementary to mapping libraries that can use GeoJSON</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-api.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-api.png);">
+            <h2>most mapping libraries focus on getting geometries on a map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-api.png);">
+            <h2>and making them look nice</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but as soon as you need to do something GIS-like</h2>
+        </div>
+
+        <div class="slide">
+            <h2>say, buffer a point and check whether there are any other points in that range</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-api-no-gis.png);">
+            <h2>libraries such as Leaflet suddenly feel inadequate</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/sad-kitty.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/sad-kitty.gif);">
+            <h2>that's okay Leaflet, you never set out to be a GIS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Leaflet was started in 2010</h2>
+        </div>
+
+        <div class="slide">
+            <h2>computers and browsers were significantly slower then</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/equinix-datacenter.jpg);">
+            <h2>so, make the server do GIS</h2>
+            <h2>let the browser focus on displaying the data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arcgis-server.png);">
+            <a href="http://www.esri.com/software/arcgis/arcgisserver" target="_blank" class="source">arcgis server</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoserver.png);">
+            <a href="http://geoserver.org/" target="_blank" class="source">geoserver</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilestache.png);">
+            <a href="http://tilestache.org/" target="_blank" class="source">tilestache</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geodjango.png);">
+            <a href="http://geodjango.org/" target="_blank" class="source">geodjango</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-servers.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-servers.png);">
+            <h2>all ways of saying, "let's make some other computer on the internet do the GIS for us"</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb.png);">
+            <h2>with CartoDB you ask the server for the data and can add GIS operations to it</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-sql.png);">
+        </div>
+
+        <div class="slide">
+            <h2>and can get the data back in GeoJSON</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-geojson.png);">
+        </div>
+
+        <div class="slide">
+            <h2>and Leaflet will happily put the data on the map for us</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we can say Leaflet is (intentionally) dumb</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-server.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-server.png);">
+            <h2>there are a few problems with this arrangement:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-server.png);">
+            <h2>
+                <ol>
+                    <li>time to make requests</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-server.png);">
+            <h2>
+                <ol>
+                    <li>time to make requests</li>
+                    <li>software price</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-server.png);">
+            <h2>
+                <ol>
+                    <li>time to make requests</li>
+                    <li>software price</li>
+                    <li>server price</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-server.png);">
+            <h2>
+                <ol>
+                    <li>time to make requests</li>
+                    <li>software price</li>
+                    <li>server price</li>
+                    <li>now you have two pieces of software to worry about</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>okay so how's it work?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/iditarod.gif);">
+            <a href="https://www.mapbox.com/blog/playback-the-iditarod-with-turf/" class="source" target="_blank">iditarod with turf</a>
+        </div>
+
+        <div class="slide">
+            <h2>Turf provides functions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-aggregation.png); background-size: auto 75%;">
+            <a href="http://turfjs.org/static/docs/" class="source" target="_blank">turf docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-joins.png); background-size: auto 75%;">
+            <a href="http://turfjs.org/static/docs/" class="source" target="_blank">turf docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-measurement.png); background-size: auto 75%;">
+            <a href="http://turfjs.org/static/docs/" class="source" target="_blank">turf docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-transformation.png); background-size: auto 75%;">
+            <a href="http://turfjs.org/static/docs/" class="source" target="_blank">turf docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-classification.png); background-size: auto 75%;">
+            <a href="http://turfjs.org/static/docs/" class="source" target="_blank">turf docs</a>
+        </div>
+
+        <div class="slide">
+            <h2>Turf functions often take <em>GeoJSON</em> and return <em>GeoJSON</em></h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>var feature; // Assuming this exists
+var buffered = turf.buffer(feature);</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>var feature; // Assuming this exists
+var buffered = turf.buffer(feature);
+
+// Then we can treat buffered like 
+// GeoJSON we got from $.getJSON()
+<span class="highlighted">L.geoJson(buffered).addTo(map);</span></code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>var feature; // Assuming this exists
+var turfLayer = L.geoJson(null).addTo(map);
+var buffered = turf.buffer(feature);
+
+<span class="highlighted">turfLayer.addData(buffered);</span></code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-1">in-class exercise</a> part 1</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-buffer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-buffer-annotated.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-buffer-annotated.png);">
+            <h2>| means "or"</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-buffer-annotated.png);">
+            <h2>buffer() takes a Feature OR a FeatureCollection</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-buffer-annotated.png);">
+            <h2>returns a FeatureCollection of Polygons or MultiPolygons or a single Polygon or MultiPolygon</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>GeoJSON</h2>
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON objects are just JavaScript objects</h2>
+        </div>
+
+        <div class="slide">
+            <h2>point</h2>
+            <pre><code>{
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [102.0, 0.5]
+    },
+    "properties": {"prop0": "value0"}
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>line</h2>
+            <pre><code>{
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [ /* array */ ]
+    },
+    "properties": {"prop0": "value0"}
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>polygon</h2>
+            <pre><code>{
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [ /* array */ ]
+    },
+    "properties": {"prop0": "value0"}
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>each of these have Multi-flavors</h2>
+        </div>
+
+        <div class="slide">
+            <h2>MultiPoint</h2>
+            <h2>MultiLineString</h2>
+            <h2>MultiPolygon</h2>
+        </div>
+
+        <div class="slide">
+            <h2>FeatureCollection is an array of these features</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>{
+    "type": "FeatureCollection",
+    "features": [ /* features */ ]
+}</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tmcw-geojson.png);">
+            <a href="http://www.macwright.org/2015/03/23/geojson-second-bite.html" target="_blank" class="source">more than you ever wanted to know about geojson</a>
+        </div>
+
+        <div class="slide">
+            <h2>How do you get a GeoJSON object?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>How do you get a GeoJSON object?</h2>
+            <h2>
+                <ol style="line-height: 65px;">
+                    <li>load it</li>
+                    <li>get it from Leaflet objects</li>
+                    <li>create it</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. loading GeoJSON</h2>
+            <pre><code>$.getJSON(url, function (data) {
+    // If the url points to valid GeoJSON,
+    // <strong>data</strong> is a GeoJSON object           
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>2. from Leaflet objects</h2>
+            <pre><code>var dataLayer = L.geoJson(data).addTo(map);
+var geojson = dataLayer<strong>.toGeoJson()</strong>;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>3. create it</h2>
+            <pre><code>turf.point([-75.343, 39.984]);</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-2">in-class exercise</a> part 2</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 95px;">since many Turf functions return GeoJSON objects, you can run another Turf function on the returned object</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>var convex = turf.convex(points);
+var buffered = turf.buffer(convex, 150, 'feet');</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count.png);">
+            <h2>each new feature will have a <em>countField</em> property with the count</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count.png);">
+            <h2>you set countField as a parameter</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example</h2>
+            <pre style="font-size: 45px;"><code>turf.count(polygons, bodegaPoints, 'bodegaCount');</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-3">in-class exercise</a> part 3</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-4">in-class exercise</a> part 4</h2>
+        </div>
+
+    </body>
+</html>
