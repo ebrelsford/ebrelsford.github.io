@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 11 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 11</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 11</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/lego-brick.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lego-brick-nubby-bits.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/legos.gif); background-size: 50% 50%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lego-brick-nubby-bits.png);">
+            <h2>APIs are the "nubby bits" of a lego<br />&mdash;Aaron Straup Cope</h2>
+            <a href="http://blog.variousbits.net/tag/mw2008/" class="source">various bits</a>
+        </div>
+
+        <div class="slide">
+            <h2>APIs let you connect to other applications</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Application<br />Programming<br />Interface</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Interface</h2>
+            <p>(the "nubby bits")</p>
+        </div>
+
+        <div class="slide">
+            <h2>Interface</h2>
+            <p>(the "nubby bits")</p>
+            <h2>for</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Application<br />Programming</h2>
+            <p>(writing applications)</p>
+        </div>
+
+        <div class="slide">
+            <h2>the interface is a common language between you and someone else</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api.png);">
+            <h2>the <a href="http://docs.cartodb.com/cartodb-platform/sql-api.html">CartoDB SQL API</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>the SQL API lets you run SQL through code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_sql_api1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_sql_api2.png);">
+        </div>
+
+        <div class="slide">
+            <h2>start with the URL "endpoint" for the API</h2>
+        </div>
+
+        <div class="slide">
+            <h2>start with the URL "endpoint" for the API</h2>
+            <pre><code>https://{account}.cartodb.com/
+ api/v2/sql</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>for me this is</h2>
+            <pre><code>https://eric.cartodb.com/
+ api/v2/sql</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>then add some parameters</h2>
+        </div>
+
+        <div class="slide">
+            <h2>these help you specify exactly what you want out of the API</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the CartoDB API has a <code>q</code> parameter that expects an SQL query</h2>
+        </div>
+
+        <div class="slide">
+            <h2>parameter=value</h2>
+            <pre><code>q=SELECT count(*)
+FROM {table_name}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>the <code>?</code> in a url lets the server know that the parameters start there</h2>
+        </div>
+
+        <div class="slide">
+            <h2>so you end up with <code>endpoint</code> + <code>?</code> + <code>parameters</code></h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>https://{account}.cartodb.com/
+ api/v2/sql?q=
+ SELECT count(*) 
+ FROM {table_name}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>more concretely</h2>
+            <pre><code>https://eric.cartodb.com/
+ api/v2/sql?q=
+ SELECT count(*) 
+ FROM graffiti_information_2015</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+            <h2>JSON</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+            <h2>basically JavaScript objects and arrays, but written to a file</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can add HTML to a document using jQuery</h2>
+        </div>
+
+        <div class="slide">
+            <h2><pre><code>$('body').append(
+    $('&lt;div&gt;&lt;/div&gt;').text(count);           
+);</code></pre></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jquery-append-example.png);">
+            <h2>
+                <a href="http://jsbin.com/waveruboyi/1/edit?js,output" target="_blank">for example</a>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                APIs often accept multiple parameters
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                when they do, separate parameters using <code>&amp;</code>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>http://...cartodb.com/.../sql?
+  q={query}&amp;
+  <strong>format=GeoJSON</strong></code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>then you can add it to Leaflet</h2>
+            <pre style="font-size: 50px; line-height: 60px;"><code>$.getJSON(cartodbUrl, function (data) {
+    L.geoJson(data).addTo(map);
+});</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/api-leaflet-example.png);">
+            <h2>
+                <a href="http://jsbin.com/tubehi/1/edit?js,output" target="_blank">for example</a>
+            </h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/proprietary-software.png); background-size: 75%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/proprietary-software.png); background-size: 75%;">
+            <h2>proprietary software</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foss.png); background-size: 75%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/foss.png); background-size: 75%;">
+            <h2>open source software</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bees-hive.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/foss.png); background-size: 75%;">
+            <h2>software can get complicated</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bees.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/foss.png); background-size: 75%;">
+            <h2>open source software requires infrastructure</h2>
+        </div>
+
+        <div class="slide">
+            <h2>collaborators need to track changes in code</h2>
+        </div>
+
+        <div class="slide">
+            <h2>version control</h2>
+        </div>
+
+        <div class="slide">
+            <h2>version control</h2>
+            <ol>
+                <li>what changed?</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>version control</h2>
+            <ol>
+                <li>what changed?</li>
+                <li>who changed it?</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>version control</h2>
+            <ol>
+                <li>what changed?</li>
+                <li>who changed it?</li>
+                <li>how is what I have different from that version?</li>
+            </ol>
+        </div>
+
+        <div class="slide" style="background-image: url(img/svn.png); background-size: 50%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mercurial.png); background-size: 40%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/git.jpg); background-size: 40%;">
+        </div>
+
+        <div class="slide">
+            <h2>collaborators need to communicate changes in code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/linux-email-patch.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/linux-email-patch.png);">
+            <h2>linux patches sent via email</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/github.jpg);">
+            <h2>but most of us use</h2>
+        </div>
+
+        <div class="slide">
+            <h2>GitHub will host your pages for free</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you need three concepts to work with it:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-repo.png);">
+            <h2>1. repositories</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-repo.png);">
+            <h2>repositories are just folders that git knows about</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-repo.png);">
+            <h2>repositories can be shared on github</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. commits</h2>
+        </div>
+
+        <div class="slide">
+            <h2>every time you change your code in your code editor, git notices</h2>
+        </div>
+
+        <div class="slide">
+            <h2>when you commit the code you add a bookmark in your code's history</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-commits.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-commits.png);">
+            <h2>commit messages help you read the story of your code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-commits-collab.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-commits-collab.png);">
+            <h2>this becomes more important when working with others</h2>
+        </div>
+
+        <div class="slide">
+            <h2>3. pushing</h2>
+        </div>
+
+        <div class="slide">
+            <h2>"pushing" your changes puts them on a server such as GitHub's</h2>
+        </div>
+
+        <div class="slide">
+            <h2>until you push, your changes stay on your computer</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you need to commit your changes before pushing them</h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ol>
+                    <li>repositories</li>
+                    <li>commits</li>
+                    <li>push</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac.png);">
+            <a href="https://mac.github.com/" class="source" target="_blank">GitHub for Mac</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac.png);">
+            <h2>as long as you know these, GitHub for Mac is pretty usable</h2>
+            <a href="https://mac.github.com/" class="source" target="_blank">GitHub for Mac</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-repo.jpg);">
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-repo.jpg);">
+            <h2>making a repository</h2>
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-commit.jpg);">
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-commit.jpg);">
+            <h2>committing changes</h2>
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-commit.jpg);">
+            <h2>(you still make your changes in a code editor as usual)</h2>
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-push.jpg);">
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-mac-push.jpg);">
+            <h2>push</h2>
+            <a href="https://guides.github.com/introduction/getting-your-project-on-github/" class="source" target="_blank">more details</a>
+        </div>
+
+        <div class="slide">
+            <h2>getting a page on GitHub Pages</h2>
+        </div>
+
+        <div class="slide">
+            <h2>create a repository called</h2>
+            <pre><code>{your_github_username}.github.io</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>add an HTML page called</h2>
+            <pre><code>index.html</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>commit it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>push it to GitHub</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you'll then have a website at</h2>
+            <pre><code>{your_github_username}.github.io</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>you'll then have a website at</h2>
+            <pre><code>{your_github_username}.github.io</code></pre>
+            <h2>(give it a few minutes the first time)</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>did you know: you can make input to Google Forms go straight to CartoDB?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms.png);">
+            <a href="http://blog.cartodb.com/make-maps-from-data-you-collect-in-google-forms/" class="source" target="_blank">cartodb</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-2.png);">
+            <a href="http://bl.ocks.org/andrewxhill/5579335" class="source" target="_blank">cartodb</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-form.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-form.png);">
+            <h2>1. create a form</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-cartodb.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-cartodb.png);">
+            <h2>2. create a CartoDB table for the incoming data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-spreadsheet.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-spreadsheet.png);">
+            <h2>3. open the spreadsheet the form created</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-script-editor.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-script-editor.png);">
+            <h2>4. go to Tools > Script Editor</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-script-editor.png);">
+            <h2>paste code from <a href="http://bl.ocks.org/andrewxhill/5579335">here</a>, customize to your needs</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-trigger.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-trigger.png);">
+            <h2>5. add a "trigger" to run your function when the form is submitted</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/d-bird.png);">
+            <a href="http://d-bird.org/" class="source" target="_blank">d-bird</a>
+        </div>
+
+    </body>
+</html>
