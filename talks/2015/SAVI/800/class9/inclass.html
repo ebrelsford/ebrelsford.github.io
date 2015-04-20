@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises: Mapbox</h1>
+            </header>
+
+            <section id="part-1">
+                <h2>Part 1: Mapbox, basic styles</h2>
+                <ol>
+                    <li>Create an account with <a href="https://www.mapbox.com/">Mapbox</a> if you don't already have one.</li>
+                    <li>Log in to your Mapbox account.</li>
+                    <li>Once logged in, go to the <strong>Projects</strong> page and click the <strong>+ New project</strong> button.</li>
+                    <li>Under the <strong>Style</strong> tab, select a style you like, then click <strong>Save</strong>.</li>
+                    <li>Go back to your <strong>Projects</strong> page.</li>
+                    <li>In another tab open your CartoDB account and pick a visualization you would like to add the base tiles to.</li>
+                    <li>In the visualization, click the <strong>Change basemap</strong> button, click the <strong>+</strong> next to "Yours", choose the <strong>Mapbox</strong> tab and enter the correct information in the fields given.</li>
+                </ol>
+            </section>
+
+            <section id="part-2">
+                <h2>Part 2: Mapbox tiles in Leaflet</h2>
+                <ol>
+                    <li>Open a Leaflet map you have made in the past, either for in-class work or an assignment.</li>
+                    <li>Add the required CSS and JS files to your page to load <a href="https://www.mapbox.com/mapbox.js/api/v2.1.8/">Mapbox.js</a>.</li>
+                    <li>
+                        <p>Use <a href="https://www.mapbox.com/mapbox.js/api/v2.1.8/l-mapbox-tilelayer/"><code>L.mapbox.tileLayer</code></a> to add your Mapbox layer from Part 1 to your map instead of the base layer you're currently using.</p>
+                        <p>As the documentation implies, there are some options here regarding which parameters to include. I recommend loading it this way:
+                        <pre><code>L.mapbox.accessToken = '<strong>your_access_token</strong>';
+var layer = L.mapbox.tileLayer('<strong>your_map_id</strong>');</code></pre>
+                        </p>
+                    </li>
+                    <li>Once you create the <code>L.mapbox.tileLayer</code> make sure you're adding it to the map using, for example: <code>layer.addTo(map)</code>.</li>
+                </ol>
+            </section>
+
+            <section id="part-3">
+                <h2>Part 3: Mapbox Studio</h2>
+                <ol>
+                    <li>Install Mapbox Studio on your computer if you haven't already, and open it.</li>
+                    <li>Pick a style to start from.</li>
+                    <li>Work through a number of CartoCSS properties in the style. Look at:
+                        <ul>
+                            <li>changing existing variables,</li>
+                            <li>adding new variables,</li>
+                            <li>styling features based on attributes,</li>
+                            <li>styling features based on zoom level,</li>
+                            <li>styling points,</li>
+                            <li>styling lines,</li>
+                            <li>styling polygons,</li>
+                            <li>using patterns.</li>
+                        </ul>
+                    </li>
+                    <li>Upload your style to mapbox.com.</li>
+                    <li>Add it to a CartoDB or Leaflet map.</li>
+                </ol>
+            </section>
+
+            <section id="part-4">
+                <h2>Part 4: Mapbox examples</h2>
+                <ol>
+                    <li>Take a look at Mapbox's <a href="https://www.mapbox.com/mapbox.js/example/v1.0.0/">examples area</a>. Many of them have less to do with Mapbox.js and more to do with Leaflet, so this can be a handy resource.</li>
+                    <li>Pick one of the examples, copy the code, and get it running on your machine or JSBin.</li>
+                    <li>Modify the example and play around with it.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>

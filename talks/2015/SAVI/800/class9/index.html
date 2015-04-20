@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 9 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 9</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 9</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-tile.jpg); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/toner-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapquest-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide">
+            <h2>where do base tiles come from?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. bring some data: water, land, streets, etc...</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. turn the data into images</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide">
+            <h2>3. put the images on a server</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom.png);">
+            <a href="http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/geowebcache/basics.html" class="source" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <a href="http://www.intechopen.com/books/cartography-a-tool-for-spatial-analysis/web-map-tile-services-for-spatial-data-infrastructures-management-and-optimization#F3" class="source" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>tiles grow exponentially</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 0:</h2>
+            <h2>1 tile</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 1:</h2>
+            <h2>4 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 2:</h2>
+            <h2>16 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 18:</h2>
+            <h2>68,719,476,736 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>total at level 18:</h2>
+            <h2>91,625,968,981 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/maptiler.png);">
+            <a href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/" class="source" target="_blank">maptiler.org</a>
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox is a popular platform for making base tiles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we've mentioned Mapbox's involvement with</h2>
+            <h2>CartoCSS, geojson.io, turf</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but now we're talking about the services actually available on mapbox.com</h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ol>
+                    <li>basic styles</li>
+                    <li>Mapbox studio</li>
+                    <li>Mapbox.js</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>mostly these help you make custom base tiles for your maps</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the simplest way to use Mapbox tiles is to pick one of their styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-styles.png);">
+        </div>
+
+        <div class="slide">
+            <h2>then you can add them to CartoDB</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-add-mapbox.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-1">in-class exercise</a> part 1</h2>
+        </div>
+
+        <div class="slide">
+            <h2>or you can use the tiles in Leaflet</h2>
+        </div>
+
+        <div class="slide">
+            <h2>using a library called <a href="https://www.mapbox.com/mapbox.js/api/v2.1.8/" target="_blank">Mapbox.js</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-js.png);">
+            <a href="https://www.mapbox.com/mapbox.js/api/v2.1.8/" class="source" target="_blank">Mapbox.js</a>
+        </div>
+
+        <div class="slide">
+            <h2>as with most libraries, you need to include some code, then invoke it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>why use mapbox.js rather than point to the tiles directly?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-toner.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-tilelayer.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox.js takes care of attribution for you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox.js takes care of access tokens for you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>more importantly, Mapbox.js automatically loads higher-res tiles for retina devices</h2>
+        </div>
+
+        <div class="slide">
+            <h2>since Mapbox.js wraps Leaflet, you only have to include Mapbox.js</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-2">in-class exercise</a> part 2</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>you don't have to use the styles Mapbox gives you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can make very customized base layers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+            <a href="https://www.mapbox.com/mapbox-studio/" class="source" target="_blank">mapbox.com/mapbox-studio</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+            <h2>TileMill</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill-discontinued.png);">
+        </div>
+
+        <div class="slide">
+            <h2>how TileMill works / worked</h2>
+            <h2>
+                <ol>
+                    <li>add data</li>
+                    <li>style the data</li>
+                    <li>generate and upload tiles</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-4.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-5.png);">
+        </div>
+
+        <div class="slide">
+            <h2>there are some downsides to this approach</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you have to add the data yourself</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox would charge you by the amount of memory you take up</h2>
+        </div>
+
+        <div class="slide">
+            <h2>tiles increase exponentially by zoom level</h2>
+        </div>
+
+        <div class="slide">
+            <h2>if one tile is 25 KB, all tiles up to and including zoom 18 would be around 2 TB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>unless you're paying a ton, you're not going to have worldwide tiles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>and even if you did, you need to bring the data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>are you going to download all of OpenStreetMap?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-planet.png);">
+            <a href="http://wiki.openstreetmap.org/wiki/Planet.osm" class="source" target="_blank">OSM planet</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-planet-diff.png);">
+            <h2>and keep it up to date?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+        </div>
+
+        <div class="slide">
+            <h2>based on vector data sources, eg OSM</h2>
+        </div>
+
+        <div class="slide">
+            <h2>vector data sources: you load just the data for the tiles you're viewing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>like base map tiles but vectors rather than rasters</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you might need to (re-)learn CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-process-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-process-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-process-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-process-4.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-process-5.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-process-6.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-3">in-class exercise</a> part 3</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-upload-data.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-upload-data.png);">
+            <h2>you can upload data to Mapbox</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-uploaded-data.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-uploaded-data.png);">
+            <h2>this is really limited compared to making your own map or using CartoDB</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-add-data-source.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-add-data-source.gif);">
+            <h2>more interestingly, you can add your own data source</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data-source-uploaded.png);">
+            <h2>these show up under data in your account</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-add-data-source-pick.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-add-data-source-pick.gif);">
+            <h2>then you change your data source to include the one you uploaded</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(yes you have to run through that entire process each time your data changes)</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-canvas-print.jpg);">
+            <a href="https://www.mapbox.com/blog/web-to-canvas-print/" class="source" target="_blank">Mapbox: web to canvas print</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-canvas-print.jpg);">
+            <h2>printing with Mapbox Studio</h2>
+            <a href="https://www.mapbox.com/blog/web-to-canvas-print/" class="source" target="_blank">Mapbox: web to canvas print</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-print.gif);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl.png);">
+            <a href="https://www.mapbox.com/mapbox-gl/" class="source" target="_blank">mapbox.com/mapbox-gl</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl.gif);">
+            <a href="https://www.mapbox.com/mapbox-gl-js/examples/" class="source" target="_blank">Mapbox GL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl-toggle.gif);">
+            <a href="https://www.mapbox.com/mapbox-gl-js/example/toggle-styles/" class="source" target="_blank">Mapbox GL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl-navigation.gif);">
+            <a href="https://www.mapbox.com/mapbox-gl-js/example/navigation/" class="source" target="_blank">Mapbox GL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/webgl-caniuse.png);">
+            <a href="http://caniuse.com/#search=webgl" class="source" target="_blank">caniuse.com</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-examples.png);">
+            <a href="https://www.mapbox.com/mapbox.js/example/v1.0.0/" class="source" target="_blank">Mapbox examples</a>
+        </div>
+
+    </body>
+</html>
