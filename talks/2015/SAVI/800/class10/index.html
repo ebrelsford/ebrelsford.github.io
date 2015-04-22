@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 10 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 10</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 10</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bagitnyc.png);">
+            <a href="http://bagitnyc.org/map/" target="_blank" class="source">bagitnyc</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dbird.png);">
+            <a href="http://www.d-bird.org/" target="_blank" class="source">d-bird</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/schoolsmap.png);">
+            <a href="http://alisonjoymiller.github.io/communityschools/" target="_blank" class="source">community schools initiative</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/taxi.gif);">
+            <a href="http://nyctaxi.herokuapp.com/" target="_blank" class="source">taxis day in the life</a>
+        </div>
+
+        <div class="slide">
+            <h2>projects</h2>
+        </div>
+
+        <div class="slide">
+            <h2>do something substantial</h2>
+        </div>
+
+        <div class="slide">
+            <h2>do something substantial</h2>
+            <h2>(2 or 3 assignments worth of work)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>code in github, host the page in github pages</h2>
+        </div>
+
+        <div class="slide">
+            <h2>make sure the code is clean</h2>
+        </div>
+
+        <div class="slide">
+            <h2>include a methodology</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>as in CSS, statements start with a <strong>selector</strong></h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>CartoCSS selectors can do interesting things</h2>
+        </div>
+
+        <div class="slide">
+            <h2>eg, let's vary some properties by <strong>zoom level</strong></h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-width: 3;
+    ...
+    <span class="highlighted">[zoom &gt;= 10]</span> {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>we call these <strong>conditional statements</strong></h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can also change styles based on a feature's attributes</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-width: 3;
+    ...
+    <span class="highlighted">[mag &gt;= 6.5]</span> {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>in either case, we're nesting selectors</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt;= 6.5] {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt;= 6.5] {
+        marker-width: 8;
+    }
+}</code></pre>
+            <h2 style="font-size: 60px; line-height: 70px;">style features on the earthquake layer with mag &gt;= 6.5</h2>
+        </div>
+
+        <div class="slide">
+            <h2>equivalent to:</h2>
+            <pre><code>#earthquakes {
+    marker-width: 3;
+}
+#earthquakes[mag &gt;= 6.5] {
+    marker-width: 8;
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>CartoCSS has functions that work on colors</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-color.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>collecting data using Google Forms</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms.png);">
+            <a href="http://blog.cartodb.com/make-maps-from-data-you-collect-in-google-forms/" class="source" target="_blank">cartodb</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-2.png);">
+            <a href="http://bl.ocks.org/andrewxhill/5579335" class="source" target="_blank">cartodb</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-form.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-form.png);">
+            <h2>1. create a form</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-cartodb.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-cartodb.png);">
+            <h2>2. create a CartoDB table for the incoming data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-spreadsheet.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-spreadsheet.png);">
+            <h2>3. open the spreadsheet the form created</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-script-editor.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-script-editor.png);">
+            <h2>4. go to Tools > Script Editor</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-script-editor.png);">
+            <h2>paste code from <a href="http://bl.ocks.org/andrewxhill/5579335">here</a>, customize to your needs</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-trigger.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-google-forms-trigger.png);">
+            <h2>5. add a "trigger" to run your function when the form is submitted</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>synching with an API such as Instagram</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/instagram.png);">
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ol>
+                    <li>get new items from API</li>
+                    <li>add items to CartoDB</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/instagram-cartodb-process-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/instagram-cartodb-process-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/instagram-cartodb-process-3.png);">
+        </div>
+
+        <div class="slide">
+            <h2>the script might run every hour, using a tool called <code>cron</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>there are some tricky bits:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you need a server to run the script on</h2>
+        </div>
+
+        <div class="slide">
+            <h2>making sure you don't add duplicates to CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>many APIs have a way to ask for things add after a certain time</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>templates</h2>
+        </div>
+
+        <div class="slide">
+            <h2>templates take something that looks like HTML and create HTML for you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>templates replace parts of the HTML with variables from your code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jquery-append.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mustache.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mustache.png);">
+            <h2><a href="http://mustache.github.io/" target="_blank">Mustache</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mustache.png);">
+            <h2>CartoDB uses <a href="http://mustache.github.io/" target="_blank">Mustache</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mustache.png);">
+            <h2>so can you!</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mustache-docs.png);">
+            <h2><a href="http://mustache.github.io/mustache.5.html" target="_blank" class="source">Mustache docs</a></h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>&lt;p&gt;
+    &lt;span class="name"&gt;{{name}}&lt;/span&gt;:
+    &lt;span class="job"&gt;{{job}}&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>&lt;p&gt;
+    &lt;span class="name"&gt;{{name}}&lt;/span&gt;:
+    &lt;span class="job"&gt;{{job}}&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+            <h2>anything in {{}} gets replaced by Mustache</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>&lt;p&gt;
+    &lt;span class="name"&gt;{{name}}&lt;/span&gt;:
+    &lt;span class="job"&gt;{{job}}&lt;/span&gt;
+&lt;/p&gt;
+            
+...
+
+var context = {
+    name: "Frank",
+    job: "milkman"
+};</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>&lt;p&gt;
+    &lt;span class="name"&gt;Frank&lt;/span&gt;:
+    &lt;span class="job"&gt;milkman&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-1">in-class exercise</a> part 1</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it can get ugly having all that HTML-ish code in a string in JavaScript</h2>
+        </div>
+
+        <div class="slide">
+            <h2>most people put it in the HTML</h2>
+        </div>
+
+        <div class="slide">
+            <h2>most people put it in the HTML in a <code>script</code> tag</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mustache-html.png);">
+        </div>
+
+        <div class="slide">
+            <h2>this is so common that HTML5 supports a new <code>template</code> tag</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/html5-template.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/caniuse-templates.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/caniuse-templates.png);">
+            <h2>but until IE supports it we're stuck with our hack
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-2">in-class exercise</a> part 2</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can loop over arrays in a context</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>{{#rows}}
+    &lt;li&gt;{{name}}&lt;/li&gt;
+{{/rows}}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>{{#rows}}
+    &lt;li&gt;{{name}}&lt;/li&gt;
+{{/rows}}</code></pre>
+            <h2>would work with</h2>
+            <pre style="font-size: 45px;"><code>var context = {
+    rows: [
+        { name: 'Frank' },
+        { name: 'Jane' }
+    ]           
+};</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Please do <a href="inclass.html#part-3">in-class exercise</a> part 3</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/handlebars.png);">
+            <a href="http://handlebarsjs.com/" target="_blank" class="source">handlebars</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/handlebars.png);">
+            <h2>if you need a little more power</h2>
+        </div>
+
+    </body>
+</html>
