@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 11 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 11</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 11</p>
+        </div>
+
+        <div class="slide">
+            <h2>some <a href="data.zip">data</a> for playing with SQL</h2>
+        </div>
+
+        <div class="slide">
+            <h2>area</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT *, ST_area(the_geom)
+FROM nycc</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;"><code>SELECT *, ST_area(ST_transform(the_geom, 2263))
+FROM nycc</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;"><code>SELECT *, ST_area(<span class="highlighted">ST_transform(the_geom, 2263)</span>)
+FROM nycc</code></pre>
+            <h2>calculates area in the units of the projection, feet here</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;"><code>SELECT *, ST_area(the_geom::geography)
+FROM nycc</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;"><code>SELECT *, ST_area(the_geom<span class="highlighted">::geography</span>)
+FROM nycc</code></pre>
+            <h2>forces the geometry to be a geography</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;"><code>SELECT *, ST_area(the_geom<span class="highlighted">::geography</span>)
+FROM nycc</code></pre>
+            <h2>transforms to lat/lng, then does calculations in meters</h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>the_geom</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>the_geom</code></h2>
+            <h2>(in CartoDB) the geometry as you uploaded it, same projection etc</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 80px;"><code>the_geom_webmercator</code></h2>
+            <h2>CartoDB-specific</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 80px;"><code>the_geom_webmercator</code></h2>
+            <h2><code>the_geom</code>, but transformed to web mercator</h2>
+        </div>
+
+        <div class="slide">
+            <h2 style="font-size: 80px;"><code>the_geom_webmercator</code></h2>
+            <h2>has to be present for maps to happen</h2>
+        </div>
+
+        <div class="slide">
+            <h2>attribute join</h2>
+            <pre><code>SELECT a.*, b.field
+FROM a, b
+WHERE a.common_field = b.common_field</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>spatial join</h2>
+            <pre><code>SELECT a.*, b.field
+FROM a, b
+WHERE ST_within(a.the_geom, b.the_geom)</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>you can use just about any boolean function for this kind of join</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>SELECT brooklyn_libraries.* 
+FROM brooklyn_libraries, bikelanes
+WHERE ST_Intersects(
+ ST_transform(brooklyn_libraries.the_geom, 2263),
+ ST_buffer(ST_transform(bikelanes.the_geom, 2263), 500)
+)</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>update table based on other table</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>UPDATE name_of_polygon_table SET new_column_name = (
+  SELECT count(*) 
+  FROM name_of_point_table 
+  WHERE 
+  ST_Intersects(
+    name_of_point_table.the_geom, 
+    name_of_polygon_table.the_geom 
+  )
+)</code></pre>
+            <a href="https://github.com/csvsoundsystem/nicar-cartodb-postgis" class="source" target="_blank">CartoDB PostGIS workshop</a>
+        </div>
+
+        <div class="slide">
+            <h2><code>&lt;-&gt;</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>&lt;-&gt;</code></h2>
+            <h2>the distance operator</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>SELECT *
+FROM brooklyn_libraries
+ORDER BY the_geom &lt;-&gt; CDB_LatLng(40.687868,-73.964255)</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>SELECT *
+FROM brooklyn_libraries
+ORDER BY the_geom &lt;-&gt; CDB_LatLng(40.687868,-73.964255)
+LIMIT 1</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>PostGIS functions help you:
+                <ul style="line-height: 70px;">
+                    <li>make,</li>
+                    <li>get information from,</li>
+                    <li>change,</li>
+                    <li>output, and</li>
+                    <li>compare</li>
+                </ul>
+                geometries
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-constructors.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-constructors.png);">
+            <h2>geometry constructors</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-constructors.png);">
+            <h2>make new geometries from other geometries or some other input</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-constructors.png);">
+            <h2>eg, <code>ST_makepoint</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-constructors.png);">
+            <h2>eg, <code>ST_makepoint</code></h2>
+            <pre style="background: white;"><code>ST_makepoint(40.687868, -73.964255)</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+            <h2>geometry accessors</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+            <h2>get something out of a geometry</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+            <h2>eg, <code>ST_x</code> and <code>ST_y</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+            <h2>eg, <code>ST_x</code> and <code>ST_y</code></h2>
+            <pre style="background: white;"><code>ST_x(the_geom)</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+            <h2>or <code>ST_srid</code></h2>
+            <pre style="background: white;"><code>ST_srid(the_geom)</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-accessors.png);">
+            <pre style="background: white;"><code>ST_srid(the_geom)</code></pre>
+            <h2>returns the SRID of the geometry</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-editors.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-editors.png);">
+            <h2>geometry editors</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-editors.png);">
+            <h2>change the shapes of geometries</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-editors.png);">
+            <h2>I don't use these often, but <code>ST_setsrid</code> and <code>ST_transform</code> are quite handy</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-outputs.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-outputs.png);">
+            <h2>geometry outputs</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-outputs.png);">
+            <h2>get the entire geometry in another format</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-relationships.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-relationships.png);">
+            <h2>spatial relationships</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-relationships.png);">
+            <h2>help you learn something about a geometry</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-relationships.png);">
+            <h2>and comparing geometries to each other</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-relationships.png);">
+            <h2>this is where you'll find useful functions for creating spatial joins</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-relationships.png);">
+            <h2>eg, <code>ST_within</code>, <code>ST_intersects</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-processing.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-processing.png);">
+            <h2>geometry processing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-processing.png);">
+            <h2>get new geometries from other geometries</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-processing.png);">
+            <h2><code>ST_collect</code>: get a Multi- geometry from a bunch of other geometries</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-geometry-processing.png);">
+            <h2><code>ST_union</code>: turn a set of geometries into one, dissolving borders between them</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>SELECT ST_makeline(the_geom_webmercator) as the_geom_webmercator
+FROM brooklyn_libraries
+</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>SELECT ST_makeline(the_geom_webmercator) as the_geom_webmercator
+FROM (
+  SELECT the_geom_webmercator
+  FROM brooklyn_libraries
+  ORDER BY ST_y(the_geom_webmercator)
+) as byy</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>SELECT ST_makeline(the_geom_webmercator) as the_geom_webmercator
+FROM (
+  SELECT the_geom_webmercator
+  FROM brooklyn_libraries
+  ORDER BY the_geom &lt;-&gt; CDB_LatLng(40.687868,-73.964255)
+) as by_distance</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>Other potential resources</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-examples.png);">
+            <a href="http://postgis.net/docs/manual-1.5/ch04.html#id362084" class="source" target="_blank">PostGIS spatial SQL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-tips-and-tricks.png);">
+            <a href="http://docs.cartodb.com/tips-and-tricks.html" class="source" target="_blank">CartoDB Tips and Tricks</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/boundless-postgis.png);">
+            <a href="http://workshops.boundlessgeo.com/postgis-intro/" class="source" target="_blank">Boundless Introduction to PostGIS</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-nicar.png);">
+            <a href="https://github.com/csvsoundsystem/nicar-cartodb-postgis" class="source" target="_blank">CartoDB PostGIS workshop</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-academy.png);">
+            <a href="http://academy.cartodb.com/courses/04-sql-postgis/lesson-1.html" class="source" target="_blank">CartoDB Map Academy</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>web backends / frameworks</h2>
+        </div>
+
+        <div class="slide">
+            <h2>"server side"</h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ul>
+                    <li>database (models)</li>
+                </ul>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ul>
+                    <li>database (models)</li>
+                    <li>views</li>
+                </ul>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ul>
+                    <li>database (models)</li>
+                    <li>views</li>
+                    <li>templates</li>
+                </ul>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>
+                <ul>
+                    <li>database (models)</li>
+                    <li>views</li>
+                    <li>templates</li>
+                    <li>URL routing</li>
+                </ul>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>some also provide</h2>
+            <h2>
+                <ul>
+                    <li>authentication</li>
+                    <li>translation</li>
+                    <li>caching</li>
+                </ul>
+            </h2>
+        </div>
+
+        <div class="slide">
+            <h2>some frameworks are opinionated&mdash;they are particular about where files are, what they're named, etc</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/django.png);">
+            <h2>Django</h2>
+            <a href="http://djangoproject.com/" class="source" target="_blank">django</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/django.png);">
+            <h2>Django</h2>
+            <h2>Python web framework</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/livinglotsnyc.png);">
+            <a href="https://github.com/596acres/livinglots-nyc" class="source" target="_blank">livinglots-nyc</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc-files.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc-usercontent.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc-urls.png);">
+        </div>
+
+        <div class="slide">
+            <pre><code>url(r'^(?P<pk>\d+)/json/$',
+ LotDetailViewJSON.as_view(),
+ name='lot_detail_json')</pre</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>url(r'^(?P<pk>\d+)/
+</pre</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>url(r'^(?P<pk>\d+)/json/$',
+</pre</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>url(r'^(?P<pk>\d+)/json/$',
+ LotDetailViewJSON.as_view(),
+</pre</code>
+        </div>
+
+        <div class="slide">
+            <pre><code>url(r'^(?P<pk>\d+)/json/$',
+ LotDetailViewJSON.as_view(),
+ name='lot_detail_json')</pre</code>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geodjango.png);">
+            <h2>GeoDjango</h2>
+            <a href="http://geodjango.org/" class="source" target="_blank">geodjango</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geodjango.png);">
+            <h2>GeoDjango</h2>
+            <h2>just adds geo-enabled models to Django</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geodjango.png);">
+            <h2>GeoDjango</h2>
+            <h2>talks to PostGIS for you</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/django-gis-filter.png);">
+        </div>
+
+        <div class="slide">
+            <pre><code>qs.filter(
+ centroid__distance_lte=
+  (lot.centroid, D(mi=miles))
+)</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>qs.filter(
+ centroid__distance_lte=
+  (lot.centroid, D(mi=miles))
+)</code></pre>
+            <h2>kinda like</h2>
+            <pre><code>SELECT *
+FROM lots
+WHERE ST_dwithin(the_geom,
+ lot.centroid,
+ .5)</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/living_lots_stack1.png);">
+            <img style="max-width: 25%; position: absolute; bottom: 25px; left: 25px;" src="img/postgis-logo.png" />
+        </div>
+
+        <div class="slide" style="background-image: url(img/living_lots_stack2.png);">
+            <img style="max-width: 25%; position: absolute; bottom: 25px; left: 25px;" src="img/postgis-logo.png" />
+            <img style="max-width: 25%; position: absolute; bottom: 75px; right: 25px;" src="img/django-transparent.png" />
+            <img style="max-width: 25%; position: absolute; bottom: 300px; right: 25px;" src="img/geodjango-logo.jpg" />
+        </div>
+
+        <div class="slide" style="background-image: url(img/living_lots_stack3.png);">
+            <img style="max-width: 25%; position: absolute; bottom: 25px; left: 25px;" src="img/postgis-logo.png" />
+            <img style="max-width: 25%; position: absolute; bottom: 75px; right: 25px;" src="img/django-transparent.png" />
+            <img style="max-width: 25%; position: absolute; bottom: 300px; right: 25px;" src="img/geodjango-logo.jpg" />
+            <img style="max-width: 25%; position: absolute; top: 25px; left: 25px; background-color: white; padding: 5px;" src="img/livinglots-logo.png" />
+        </div>
+
+        <div class="slide" style="background-image: url(img/living_lots_stack.png);">
+            <img style="max-width: 25%; position: absolute; bottom: 25px; left: 25px;" src="img/postgis-logo.png" />
+            <img style="max-width: 25%; position: absolute; bottom: 75px; right: 25px;" src="img/django-transparent.png" />
+            <img style="max-width: 25%; position: absolute; bottom: 300px; right: 25px;" src="img/geodjango-logo.jpg" />
+            <img style="max-width: 25%; position: absolute; top: 25px; left: 25px; background-color: white; padding: 5px;" src="img/livinglots-logo.png" />
+        </div>
+
+
+        <div class="slide" style="background-image: url(img/node.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/node.png);">
+            <h2>Node</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/node.png);">
+            <h2>Node</h2>
+            <h2>server-side JavaScript</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/node.png);">
+            <h2>Node</h2>
+            <h2>has web frameworks, too</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/node-express.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/node-express.png);">
+            <h2>Express</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf.png);">
+            <h2>turf (along with most JavaScript libraries) work on the server, too</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis-node-video.png);">
+            <h2>Other potential resources:
+                <ul>
+                    <li><a href="https://vimeo.com/107474130">calvin metcalf on node + gis</a></li>
+                </ul>
+            </h2>
+        </div>
+
+    </body>
+</html>
