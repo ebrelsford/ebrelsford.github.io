@@ -11,9 +11,19 @@
             }
 
             body {
-                background: rgb(239, 239, 239);
+                background-image: url(bg.jpg);
                 font-family: 'Alegreya Sans', sans-serif;
                 font-size: 20px;
+            }
+
+            .container {
+                background: rgba(255,255,255,0.85);
+                margin: 75px;
+                padding: 10px;
+            }
+
+            .container > section {
+                margin: 50px;
             }
 
             h1, h2, h3, h4, h5 {
@@ -23,23 +33,11 @@
             h1 {
                 font-size: 60px;
                 margin-bottom: 0;
-                margin-top: 15px;
             }
 
             h2 {
                 font-size: 45px;
                 margin-bottom: 1px;
-                margin-left: -3%;
-            }
-
-            h3 {
-                margin: 0;
-            }
-
-            body > section {
-                margin-left: 5%;
-                margin-right: 5%;
-                margin-bottom: 50px;
             }
 
             a {
@@ -78,32 +76,33 @@
     </head>
     <body>
 
-        <header>
-            <h1>Methods 3</h1>
-            <p>Fall 2015</p>
-            <p>
-                <a href="/">Eric Brelsford</a>
-            </p>
-            <p>
-                <a href="http://www.newschool.edu/parsons/ms-design-urban-ecology/">Design and Urban Ecologies</a>
-            </p>
-            <p>
-                <a href="http://www.newschool.edu/">The New School</a>
-            </p>
-        </header>
+        <div class="container">
+            <header>
+                <h1>Methods 3</h1>
+                <p>Fall 2015</p>
+                <p>
+                    <a href="/">Eric Brelsford</a>
+                </p>
+                <p>
+                    <a href="http://www.newschool.edu/parsons/ms-design-urban-ecology/">Design and Urban Ecologies</a>
+                </p>
+                <p>
+                    <a href="http://www.newschool.edu/">The New School</a>
+                </p>
+            </header>
 
-        <section>
-            <h2>Week 1: Introduction to GIS and the Geoweb</h2>
-            <section class="slides">
-                <h3>
-                    <a href="week1/index.html">slides</a>
-                </h3>
-                <ul>
-                    <li><a href="week1-geoweb/index.html#3">Introduction to GIS</a></li>
-                    <li><a href="week1-geoweb/index.html#53">Introduction to the geoweb</a></li>
-                </ul>
+            <section>
+                <h2>Week 1: Introduction to GIS and the Geoweb</h2>
+                <section class="slides">
+                    <h3>
+                        <a href="week1/index.html">slides</a>
+                    </h3>
+                    <ul>
+                        <li><a href="week1-geoweb/index.html#3">Introduction to GIS</a></li>
+                        <li><a href="week1-geoweb/index.html#53">Introduction to the geoweb</a></li>
+                    </ul>
+                </section>
             </section>
-        </section>
         <!--
         <section>
             <h2>Week 2: Cartographic design and conventions</h2>
@@ -303,9 +302,10 @@
         </section>
         -->
 
-        <footer>
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced GIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        </footer>
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced GIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
 
+        </div>
     </body>
 </html>
