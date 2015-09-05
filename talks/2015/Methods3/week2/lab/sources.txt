@@ -1,0 +1,14 @@
+nybb_14b_av
+===========
+
+NYC borough shapes via NYC Open Data: 
+
+https://data.cityofnewyork.us/City-Government/Borough-Boundaries/tqmj-j8zm
+
+
+uber_2014_04_01
+===============
+
+Uber ride pickups in the NYC area via a FOIL request made by fivethirtyeight:
+
+https://github.com/fivethirtyeight/uber-tlc-foil-response
