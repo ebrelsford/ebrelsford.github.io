@@ -1,0 +1,42 @@
+ACS_12_5YR_DP04
+===============
+
+ACS census data on household occupancy in NYC. Downloaded from American FactFinder:
+
+http://factfinder.census.gov/
+
+
+ACS_13_5YR_B11001
+=================
+
+ACS census data on household types in NYC. Downloaded from American FactFinder:
+
+http://factfinder.census.gov/
+
+
+nyc_census_tracts
+=================
+
+NYC census tracts via Bytes of the Big Apple:
+
+http://www.nyc.gov/html/dcp/html/bytes/districts_download_metadata.shtml
+
+
+uber_2014_04_01
+===============
+
+Uber ride pickups in the NYC area via a FOIL request made by fivethirtyeight:
+
+https://github.com/fivethirtyeight/uber-tlc-foil-response
+
+
+uber_by_census_tract
+====================
+
+Uber pickups counted by census tract, created using QGIS.
+
+
+uber_by_council_district
+========================
+
+Uber pickups counted by council district, created using QGIS.
