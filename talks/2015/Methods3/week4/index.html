@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 4 | Methods 3</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Methods 3, Lecture 4</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Methods 3</h1>
+            <p>Please download this data:</p>
+            <p style="font-family: Courier, monospace;">TODO</p>
+        </div>
+
+        <div class="slide">
+            <h2>TODO submissions</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(review)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Choropleth?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/smoking_rates.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/new_boot.jpeg);">
+            <a class="source" href="https://medium.com/matter/louisiana-loses-its-boot-b55b3bd52d1e">
+                source
+            </a>
+            <h2>Louisiana Loses Its Boot</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/la_all_land.png);">
+        </div>
+
+        <div class="slide">
+            <p>"Using publicly available data, [we] created a map on which areas that commonly appear as land on government issued maps—woody wetlands, emergent herbaceous wetlands and barren land—were re-<strong>categorized</strong> to appear as water."</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/la_walkable_land.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/new_boot.jpeg);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Opening CSVs</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/csv.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Adding base layers a map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/openlayers_plugin.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Start thinking about <strong>methodology</strong></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_taxi.png);">
+            <a class="source" href="http://nyctaxi.herokuapp.com/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_taxi_about.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_taxi_asterisks.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/syrian_refugees.png);">
+            <a class="source" href="http://projects.aljazeera.com/2013/syrias-refugees/#41.14281187285864/-78.0622561275959">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/syrian_refugees_source.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Spatial data formats</h1>
+        </div>
+
+        <div class="slide">
+            <h2>mostly you'll see</h2>
+            <p>shp</p>
+            <p>csv</p>
+            <p>geojson</p>
+            <p>kml</p>
+        </div>
+
+        <div class="slide">
+            <h2>why isn't everything just a shapefile?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>shapefiles are difficult to read</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(without proper software) shapefiles are difficult to read</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-shp-binary.png);">
+        </div>
+
+        <div class="slide">
+            <h2>1. column names limited to ten characters</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-column-names.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-column-names.png);">
+            <h2>how do you pronounce "C_DIG2DESC"?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. multiple files make up a shapefile</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files-dbf.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files-prj.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files-index.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files-shp.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files-shp-xml.png);">
+        </div>
+
+        <div class="slide">
+            <h2>3. one geometry type per shapefile</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-one-geometry-per-file.png);">
+        </div>
+
+        <div class="slide">
+            <h2>where do file formats come from?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-mailinglist.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-cc.png);">
+        </div>
+
+        <div class="slide">
+            <h2>where does GeoJSON work?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-qgis.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-qgis-network.png);">
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON is readable</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-worstyears-raw.png);">
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    "type": "FeatureCollection",
+    "features": [ ... ]
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    "type": "FeatureCollection",
+    "features": [
+        { ... },
+        { ... },
+        { ... }
+    ]
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "Name": "My House",
+                "City": "White Hall",
+                "Comments": "It's OK"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-76.596, 39.684]
+            }
+        }
+    ]
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON allows multiple geometry types in one file</h2>
+        </div>
+
+        <div class="slide">
+            <h2>GeoJSON is easy for web apps to understand</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it's not without its flaws</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the files can get big:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson-worstyears-raw-columns.png);">
+            <h2>the files can get big:</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>joins &amp; spatial joins</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/grafting.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/grafting.jpg);">
+            <h1>joins relate two datasets to each other</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_results.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_results.png);">
+            <h1>"I have this spreadsheet I want to map..."</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_tracts.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_tracts.png);">
+            <h1>you need a file with relatable geographies</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_ids.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_ids.png);">
+            <h1>and a column in each file that relates the two</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/taxis_celebrities_medallion.png);">
+            <a class="source" href="http://gawker.com/the-public-nyc-taxicab-database-that-accidentally-track-1646724546">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>Spatial Joins</h2>
+            <p>When you have layers that both have geographic features</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/spatial_join.png);">
+        </div>
+
+        <div class="slide">
+            <p>Works best when you have:</p>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>polygons that don't overlap and</li>
+                <li>points or smaller polygons that fall within them</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>What is a GIS for?</h2>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>Viewing geodata</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>What is a GIS for?</h2>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>Viewing geodata</li>
+                <li>Styling geodata</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>What is a GIS for?</h2>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>Viewing geodata</li>
+                <li>Styling geodata</li>
+                <li>Modifying geodata</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>What is a GIS for?</h2>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>Viewing geodata</li>
+                <li>Styling geodata</li>
+                <li>Modifying geodata</li>
+                <li>Understanding / analyzing geodata</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>Geoprocessing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/set_operations.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_menu.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/intersect.gif);">
+            <h2>Intersect</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/union.png);">
+            <h2>Union</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-38.gif);">
+        </div>
+
+    </body>
+</html>
