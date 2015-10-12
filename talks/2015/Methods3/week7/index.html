@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 7 | Methods 3</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Methods 3, Lecture 7</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Methods 3</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Georeferencing?</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>preparing data for the web</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what if your data takes up too much space?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you either have to reduce the <em>number</em> of features or make the features <em>smaller</em></h2>
+        </div>
+
+        <div class="slide">
+            <p>1. clip if you can</p>
+            <p>2. delete attributes</p>
+            <p>3. simplify polygons</p>
+        </div>
+
+        <div class="slide">
+            <h2>2. delete attributes you don't need</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/delete1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/delete2.png);">
+        </div>
+
+        <div class="slide">
+            <h2>3. simplify polygons: QGIS or mapshaper.org</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapshaper.gif);">
+            <a class="source" href="http://mapshaper.org">source</a>
+        </div>
+
+        <div class="slide">
+            <p>1. clip if you can</p>
+            <p>2. delete attributes</p>
+            <p>3. simplify polygons</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>infowindows</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_georeference.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_merge.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb_elements.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-github.png);">
+            <a href="https://github.com/mapbox/carto">(open source)</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapnik.png);">
+        </div>
+
+        <div class="slide">
+            <h2>why?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapnik-xml.png);">
+            <h2>styling maps can be painful</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-styling.png);">
+        </div>
+
+        <div class="slide">
+            <h2>you can share it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can share it</h2>
+            <p>(it's just text)</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-online.png);">
+            <a class="source" href="http://ebrelsford.github.io/nyc/maps/opendata/2013/08/26/signs.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-osm.png);">
+            <a class="source" href="https://github.com/gravitystorm/openstreetmap-carto">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-osm-detail.png);">
+        </div>
+
+        <div class="slide">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-car.jpg);">
+            <a class="source" href="http://www.flickr.com/photos/mrstaticvoid/4307191115/">
+                mrstaticvoid on flickr
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane.jpg);">
+            <a class="source" href="http://www.flickr.com/photos/niklasstjerna/6636973889/">
+                niklasstjerna on flickr
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-markers.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-polygons.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-lines.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-qqq.jpg);">
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>this is a <em>statement</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>this is a <em>statement</em></h2>
+<pre style="font-size: 44px; line-height: 44px;">#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>statements start with a <em>selector</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>statements start with a <em>selector</em></h2>
+            <pre>#earthquakes</pre>
+        </div>
+
+        <div class="slide">
+            <h2>statements start with a <em>selector</em></h2>
+            <pre>#earthquakes</pre>
+            <p>"this statement will talk about the table called <em>earthquakes</em>"</p>
+        </div>
+
+        <div class="slide">
+            <h2>always put a <em>{</em> after the selector</h2>
+        </div>
+
+        <div class="slide">
+            <h2>always put a <em>{</em> after the selector</h2>
+            <pre>#earthquakes {</pre>
+        </div>
+
+        <div class="slide">
+            <h2>and always always remember to close it with <em>}</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>and always always remember to close it with <em>}</em></h2>
+            <pre>#earthquakes {
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>and always always remember to close it with <em>}</em></h2>
+            <pre>#earthquakes {
+}</pre>
+            <p>otherwise your statement will never end!</p>
+        </div>
+
+        <div class="slide">
+            <h2>think of the <em>{</em> <em>}</em> as bookends</h2>
+        </div>
+
+        <div class="slide">
+            <h2>between <em>{</em> <em>}</em>, set your properties</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is a <em>property</em>?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-docs.png);">
+            <h2>they're defined in the <a href="https://www.mapbox.com/carto/api/2.1.0/">documentation</a> for CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+}</pre>
+            <h2>always one per line, each line ending with a <em>;</em></h2>
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+}</pre>
+            <h2>the property name and the value you're setting it to are separated by a <em>:</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>property values will often be <em>color strings</em>, <em>numbers</em>, or <em>true/false</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>always check the <a href="https://github.com/mapbox/carto/blob/master/docs/latest.md">documentation</a> if you have any doubts</h2>
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <p>use the visualization wizard to give your markers a Simple style, then:</p>
+            <ul style="list-style: disc; padding-left: 100px;">
+                <li>make the markers 5 pixels wide,</li>
+                <li>outlined by a 2 pixel-wide line, and</li>
+                <li>give the fill and stroke of the markers different colors</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>that's nice, but it gets more interesting</h2>
+        </div>
+
+        <div class="slide">
+            <h2>let's vary some properties by <em>zoom level</em></h2>
+        </div>
+
+        <div class="slide">
+            <pre>#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>let's call these <em>conditional statements</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>conditional statements</em> are only used if some condition is met</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>"make the earthquakes markers 3 pixels wide. if the map is at zoom level 10 or higher, make the earthquakes markers 8 pixels wide."</p>
+        </div>
+
+        <div class="slide">
+            <pre>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10][zoom < 16] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom >= 10][zoom < 16] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>"make the earthquakes markers 3 pixels wide. if the map is at zoom level 10 or higher <em>and</em> less than 16, make the earthquakes markers 8 pixels wide."</p>
+        </div>
+
+        <div class="slide">
+            <h2>more likely you'll be doing something like this</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom >= 10] {
+        marker-width: 8;
+    }
+    [zoom >= 16] {
+        marker-width: 13;
+    }
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>make your markers double in width at zoom level 12 and above</h2>
+        </div>
+
+        <div class="slide">
+            <h2>make your markers half their width below zoom level 8</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>that's not all!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can change styles based on a feature's attributes</h2>
+        </div>
+
+        <div class="slide">
+            <pre>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag >= 6.5] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>look familiar?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>conditional statements on strings need to wrap those strings in quotation marks</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>make your markers a different color when the magnitude is over 7</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>combine conditions with <em>,</em> to set properties with <em>either</em> condition</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5],
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <p>shortcut for:</p>
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5] {
+        marker-width: 8;
+    }
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5],
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>make markers where <span class="code">mag</span> is greater than 5.5 larger</p>
+            <p><em>also</em> make markers with <span class="code">place</span> of "Northern Mid-Atlantic Ridge" larger</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-conditions-or.png);">
+        </div>
+
+        <div class="slide">
+            <h2>combine conditions <em>without</em> a <em>,</em> to set properties with <em>both</em> conditions</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5][place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 70px;">
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt; 5.5][place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</pre>
+            <p>make markers where mag is greater than 5.5 <em>and</em> place = "Northern Mid-Atlantic Ridge" larger</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-conditions-and.png);">
+        </div>
+
+        <div class="slide">
+            <h2>recap</h2>
+        </div>
+
+        <div class="slide">
+            <h2>conditional statements look like</h2>
+            <pre>[mag &gt;= 5.5] {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>restrict statements more by putting conditions next to each other</h2>
+        </div>
+
+        <div class="slide">
+            <pre>[mag &gt;= 5.5][mag < 7] {
+    ...
+}</pre>
+            <p><em>both</em> conditions must be true</p>
+        </div>
+
+        <div class="slide">
+            <h2>include more features by separating conditions with <em>,</em></h2>
+        </div>
+
+        <div class="slide">
+            <pre>[mag &gt;= 5.5],
+[zoom >= 10] {
+    ...
+}</pre>
+            <p><em>either</em> condition could be true</p>
+        </div>
+
+        <div class="slide">
+            <h2>you can use as many of these as you need to</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">#earthquakes {
+    [mag >= 7] {
+        ...
+    }
+    [zoom >= 11] {
+        ...
+    }
+    [zoom >= 12] {
+        ...
+    }
+    ...
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>you can split them up more if you prefer</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;">#earthquakes[mag >= 7] {
+    ...
+}
+#earthquakes[zoom >= 11] {
+    ...
+}
+#earthquakes[zoom >= 12] {
+    ...
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">#earthquakes {
+    marker-width: 5;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: 10;
+    }
+    [zoom >= 8] {
+        marker-width: 15;
+    }
+    [zoom >= 12] {
+        marker-width: 20;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>what if I want to change marker-width?</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;">#earthquakes {
+    marker-width: 6;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: 12;
+    }
+    [zoom >= 8] {
+        marker-width: 18;
+    }
+    [zoom >= 12] {
+        marker-width: 24;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>there's a better way!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>variables</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;"><em>@width: 6;</em>
+#earthquakes {
+    marker-width: <em>@width</em>;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: 12;
+    }
+    [zoom >= 8] {
+        marker-width: 18;
+    }
+    [zoom >= 12] {
+        marker-width: 24;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;"><em>@width: 6;</em>
+#earthquakes {
+    marker-width: <em>@width</em>;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: <em>@width * 2</em>;
+    }
+    [zoom >= 8] {
+        marker-width: <em>@width * 3</em>;
+    }
+    [zoom >= 12] {
+        marker-width: <em>@width * 4</em>;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>then I can change all the widths at once</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 50px;"><em>@width: 8;</em>
+#earthquakes {
+    marker-width: @width;
+    marker-fill: #ff307a;
+    marker-allow-overlap: true;
+    
+    [zoom >= 4] {
+        marker-width: @width * 2;
+    }
+    [zoom >= 8] {
+        marker-width: @width * 3;
+    }
+    [zoom >= 12] {
+        marker-width: @width * 4;
+    }
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h2>it works with colors, too</h2>
+        </div>
+
+        <div class="slide">
+            <pre><em>@earthquakecolor: #ff307a;</em>
+#earthquakes {
+    marker-width: @width;
+    marker-fill: <em>@earthquakecolor</em>;
+    marker-line-color: <em>@earthquakecolor</em>;
+    marker-line-opacity: 0.2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide" style="font-size: 60px; line-height: 65px;">
+            <pre><em>@earthquakecolor: #ff307a;</em>
+#earthquakes {
+    marker-width: @width;
+    marker-fill: <em>fadeout(@earthquakecolor, 25%)</em>;
+    marker-line-color: <em>@earthquakecolor</em>;
+    marker-line-opacity: 0.2;
+    marker-allow-overlap: true;
+}</pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>try it: use a variable for one of your properties</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>you don't have to memorize all of this</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-reference.png);">
+            <a class="source" href="materials/cartocss-reference.pdf">cartocss reference</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-docs.png);">
+            <h2>use the <a href="https://github.com/mapbox/carto/blob/master/docs/latest.md">documentation</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>experiment with CartoDB's visualization wizards, see the code they produce</h2>
+        </div>
+
+        <div class="slide">
+            <h2>read other people's CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-hdm.png);">
+            <a class="source" href="https://github.com/hotosm/hdm-cartocss">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/toner-github.png);">
+            <a class="source" href="https://github.com/stamen/toner-carto/">
+                source
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/google-bus-pinata.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/google-bus-pinata.png);">
+            <a href="http://allthingsd.com/20130506/demonstrators-smash-google-bus-pinata-in-san-francisco/">
+                Demonstrators Smash Google Bus Piñata in San Francisco
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-final-overall.gif);">
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-final-zoom.gif);">
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/datawovn0.png);">
+            <a class="source" href="http://www.datawovn.com/#!San_Francisco_Private_Shuttles">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/google-bus-foursquare.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-fieldpapers.png);">
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-fieldpapers2.png);">
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-fieldpapers2.png);">
+            <p style="background: rgba(255, 255, 255, 0.8);">"We enlisted people to go to stops, measure traffic and count people getting off and on and we hired bike messengers to see where the buses went..."</p>
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-fieldpapers3.png);">
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-fieldpapers3.png);">
+            <p style="background: rgba(255, 255, 255, 0.8);">"... The cyclists used Field Papers to transcribe the various routes and what they found out, which we recompiled back into a database of trips, stops, companies and frequency."</p>
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-bus-final-zoom.gif);">
+            <a class="source" href="http://stamen.com/zero1/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-make-atlas.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-print-atlas.png);">
+            <a class="source" href="http://fieldpapers.org/atlas.php?id=fhnp4qks#18/40.73649/-73.99715">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-page.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-recent-atlases.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/walkingpapers-osm.jpg);">
+            <a class="source" href="http://wiki.openstreetmap.org/wiki/Walking_Papers">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fieldpapers-uploaded.png);">
+            <a class="source" href="http://fieldpapers.org/atlas.php?id=ncz5lrfs#17/40.67782/-73.96397">
+                source
+            </a>
+        </div>
+
+    </body>
+</html>
