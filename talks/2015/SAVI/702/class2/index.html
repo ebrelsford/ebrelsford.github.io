@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 2 | Introduction to GIS Software: QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Introduction to GIS Software: QGIS, Class 2</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to GIS Software: QGIS</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/Gerardus_Mercator.jpg);">
+            <a class="source" href="http://en.wikipedia.org/wiki/Mercator_1569_world_map">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/snow_large.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dangermond.jpg);">
+            <a class="source" href="http://www.inc.com/magazine/201307/christine-lagorio/jack-dangermond-how-he-started-esri.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/meridians.jpg);">
+        </div>
+
+        <div class="slide">
+            <h2>what is open data?</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Cartographic design &amp; conventions</h2>
+        </div>
+
+        <div class="slide">
+            <h2>think about:</h2>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>scale</li>
+                <li>hierarchy</li>
+                <li>color</li>
+                <li>symbology</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/scale.jpg);">
+            <h2>scale</h2>
+        </div>
+
+        <div class="slide">
+            <h2>hierarchy</h2>
+            <p>"Important things must look important, and the most important thing should look the most important."</p>
+            <a class="source" href="http://books.google.com/books?id=vF0Chp0YZn0C">
+                Understanding Different Geographies
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>color</h2>
+            <p>Think about what the colors you are using mean to the viewer.</p>
+            <p>Use contrast to your advantage.</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/symbols.png);">
+            <h2>symbology</h2>
+            <a class="source" href="http://www.svgopen.org/2008/papers/41-MapViewSVG__an_extension_for_ESRI_GIS_and_Mapping_Software/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_tourist_map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_subway_map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_google.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_osm.png);">
+        </div>
+
+        <div class="slide">
+            <h2>hierarchy</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/language_map.png);">
+            <a class="source" href="http://cartastrophe.wordpress.com/2012/01/02/an-unintelligible-language/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/language_map_zoom.png);">
+            <a class="source" href="http://cartastrophe.wordpress.com/2012/01/02/an-unintelligible-language/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/hydro_sites.png);">
+            <a class="source" href="https://cartastrophe.wordpress.com/2009/08/14/way-over-in-british-columbia/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/hydro_sites_zoom.png);">
+            <a class="source" href="https://cartastrophe.wordpress.com/2009/08/14/way-over-in-british-columbia/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/selectivity.png);">
+            <a class="source" href="https://cartastrophe.wordpress.com/2009/08/14/way-over-in-british-columbia/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mississippi_meanders.png);">
+            <a class="source" href="http://earthobservatory.nasa.gov/IOTD/view.php?id=6887">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mississippi_meanders_zoom.png);">
+            <a class="source" href="http://earthobservatory.nasa.gov/IOTD/view.php?id=6887">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mississippi_meanders_title.png);">
+            <a class="source" href="http://earthobservatory.nasa.gov/IOTD/view.php?id=6887">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdc_ebola.jpg);">
+            <a class="source" href="http://www.cdc.gov/vhf/ebola/resources/distribution-map-guinea-outbreak.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>color</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/amish_us_no_legend.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/amish_us.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/amish_us_zoom.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/ny_county_legislatures_no_legend.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/ny_county_legislatures.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/color_brewer.png);">
+            <a class="source" href="http://colorbrewer2.org/">Color Brewer</a>
+        </div>
+
+        <div class="slide">
+            <h2>positioning</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/eu_us_sunshine.png);">
+        </div>
+
+        <div class="slide">
+            <h2>the "island effect"</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/france_island.png);">
+            <a class="source" href="http://www.foodtourist.com/French_Wine/Cairanne.htm">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>in-class excercise, part 1</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Projections and coordinate systems</h2>
+        </div>
+
+        <div class="slide">
+            <h2>latitude and longitude are always in relation to a <em>datum</em></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoid.gif);">
+            <a class="source" href="http://www.cinesat.com/html/cinesat/cs/csprj.htm">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/earth-shapes.jpg);">
+            <a class="source" href="http://mapschool.io/">
+                mapschool.io
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>a <em>datum</em> is the combination of a spheroid and how it's being used</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/global_local_ellipsoids.png);">
+            <a class="source" href="http://en.wikipedia.org/wiki/Geodetic_datum">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nad_euro.gif);">
+        </div>
+
+        <div class="slide">
+            <h2>you will often see <em>NAD83</em> and <em>WGS84</em></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mercator.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/orange_projection.jpg);">
+            <a class="source" href="http://csc.noaa.gov/geozone/happy-birthday-mercator/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projections_faces.png);">
+            <a class="source" href="http://flowingdata.com/2014/01/13/map-projections-illustrated-with-a-face/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_diagram.jpg);">
+            <a class="source" href="http://catalog.flatworldknowledge.com/bookhub/reader/3798?e=campbell_1.0-ch02_s02">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_families.png);">
+            <a class="source" href="http://docs.qgis.org/2.0/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/sa_projections.png);">
+            <a class="source" href="http://sandbox.azavea.com/projection-overlays/south-america.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/earth_wind_map.png);">
+            <a class="source" href="http://earth.nullschool.net/">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>projections mainly distort</p>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>area (equivalence)</li>
+                <li>shape (conformity)</li>
+                <li>distance</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mercator_puzzle.png);">
+            <a class="source" href="http://bramus.github.io/mercator-puzzle-redux/">
+                mercator puzzle
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tissot_mercator.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tissot_mollweide.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tissot_oblique_mercator.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>every projection distorts some aspect of the geography</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you have to pick the one(s) that make the most sense for what you're doing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_distortions.png);">
+            <a class="source" href="http://bl.ocks.org/mbostock/3709000">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/state_plane.jpg);">
+            <a class="source" href="http://gis.tulaliptribes-nsn.gov/Home/FrequentlyAskedQuestions.aspx">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/epsg_2263.png);">
+            <a class="source" href="http://spatialreference.org/ref/epsg/2263/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/epsg_2263.png);">
+            <a class="source" href="http://spatialreference.org/ref/epsg/2263/">
+                source
+            </a>
+            <p>best for New York area, many city datasets use this</p>
+        </div>
+
+        <div class="slide">
+            <h2>projections are just math</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_math.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartHow/HowBraunC/howBraunC.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_math.png);">
+            <h2>luckily GISs are pretty good at math</h2>
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartHow/HowBraunC/howBraunC.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>in-class excercise, part 2</h2>
+        </div>
+
+        <div class="slide">
+            <h2>handling projections in QGIS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-project.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-project.png);">
+            <h2>sometimes change your project's projection</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer.png);">
+            <h2>often save layers with a new projection</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer-change.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer-change.png);">
+            <h2><em>almost never</em> change a layer's projection without saving as a new layer</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in-class excercise, part 3</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/wikipedia_uneven.png);">
+            <a class="source" href="http://geonet.oii.ox.ac.uk/blog/the-geographically-uneven-coverage-of-wikipedia-2/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/taxi_map.gif);">
+            <a class="source" href="http://nyctaxi.herokuapp.com/">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>design choices</h2>
+            <p>Is it effective?</p>
+            <p>Does it follow cartographic principles?</p>
+            <p>How could it be improved?</p>
+        </div>
+
+        <div class="slide">
+            <h2>data</h2>
+            <p>Are data sources listed?</p>
+            <p>If the data was modified, is this described?</p>
+        </div>
+
+        <div class="slide">
+            <h2>point of view</h2>
+            <p>Does the map make a statement?</p>
+            <p>Could it make the statement more effectively?</p>
+        </div>
+
+
+    </body>
+</html>
