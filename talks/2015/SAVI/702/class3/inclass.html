@@ -11,12 +11,31 @@
             </header>
 
             <section>
-                <h2>Part 1: Styling with QGIS</h2>
+                <h2>Part 1: MapPLUTO metadata</h2>
                 <ol>
-                    <li>Download <a href="data/data.zip">this data</a>.</li>
-                    <li>Open the data in QGIS.</li>
-                    <li>Experiment with styling both polygons and points in QGIS.</li>
-                    <li>Create a PDF of your map using Print Composer.</li>
+                    <li>Download the <a href="http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml#pluto">MapPLUTO metadata</a>.</li>
+                    <li>Download <a href="http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml#pluto">MapPLUTO data</a> for one borough.</li>
+                    <li>Unzip the data.</li>
+                    <li>Find and open the "data dictionary" in the unzipped folder, which should have a name like <code>PLUTODD15v1.pdf</code>. This is a slightly more detailed version of MapPLUTO's metadata.</li>
+                    <li>Read through the metadata and the data dictionary to find a column you can make a <strong>categorized</strong> map out of.</li>
+                    <li>Open the shapefile. If the data disappears as you zoom in, save the layer as a new one and open that.</li>
+                    <li>Make a categorized map using the column you found.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Selecting and Saving Data</h2>
+                <ol>
+                    <li>Using the map you made in Part 1, select the data for one of the categories using <strong>Select by expression</strong>.</li>
+                    <li>Save the selection as a new layer.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Filtering data with expressions</h2>
+                <ol>
+                    <li>Start with the same data from Part 1.</li>
+                    <li>Style your data with a <strong>Rule-based</strong> style to accomplish the same effect as you did in Part 2.</li>
                 </ol>
             </section>
 
