@@ -8,18 +8,15 @@
         <header>
             <a href="..">Introduction to GIS Software: QGIS</a>
             <h1>Assignment 2</h1>
-            <p>Due <strong>Wednesday, October 21st at noon</strong></p>
+            <p>Due <strong>Wednesday, October 28th at noon</strong></p>
         </header>
 
         <section>
             <h2>Recommended readings and resources</h2>
             <ul>
-                <li><a href="http://giscommons.org/introduction-concepts/">GIS Commons: Introduction</a></li>
-                <li><a href="http://2012books.lardbucket.org/books/geographic-information-system-basics/">Geographic Information System Basics, Chapters 1 and 2</a></li>
-                <li><a href="https://www.youtube.com/watch?v=sQ8ytFJE_Wk">QGIS 2.0</a>, a video about QGIS 2.0 that goes into the history of the software a bit</li>
-                <li>the <a href="http://docs.qgis.org/2.2/en/docs/user_manual/">QGIS User Guide</a></li>
-                <li><a href="https://www.packtpub.com/hardware-and-creative/learning-qgis-20">Learning QGIS 2.0</a></li>
-                <li><a href="http://gis.stackexchange.com/">GIS Stack Exchange</a>, a Q&amp;A site where people with GIS questions ask for help and people in the community answer their questions</li>
+                <li><a href="http://giscommons.org/chapter-2-input/">GIS Commons: Input</a></li>
+                <li><a href="http://2012books.lardbucket.org/books/geographic-information-system-basics/">Geographic Information System Basics, Chapter 3</a></li>
+                <li><a href="http://www.saylor.org/site/textbooks/Essentials%20of%20Geographic%20Information%20Systems.pdf">Essentials of Geographic Information Systems</a>, chapters 6 (more on selecting data, though not with QGIS) and 9 (more on cartographic principles)</li>
             </ul>
         </section>
 
@@ -31,16 +28,30 @@
         </section>
 
         <section>
-            <h2>Part 1: A Small Scale Map</h2>
-            <p>Pick a part of the world that you like or want to know more about. Download Natural Earth data to make a map of the region you chose. <a href="http://www.naturalearthdata.com/">Natural Earth</a> is a free-to-use and accurate data set for the whole world, and it is the go-to data for this type of task. You should be working at a smaller scale (that is, zoomed out), so you will likely be interested in the <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors">10m cultural</a> and <a href="http://www.naturalearthdata.com/downloads/10m-physical-vectors">10m physical</a> vector files, but feel free to use any that make sense for your map. All of the files are available on the <a href="http://www.naturalearthdata.com/downloads/">Natural Earth downloads page</a>.</p>
+            <h2>A Small Scale Thematic Map</h2>
+            <p>Pick a part of the world that you like or want to know more about and try your hand at making a thematic map of that area.</p>
+            <ol>
+                <li>Download Natural Earth data to make a map of the region you chose. <a href="http://www.naturalearthdata.com/">Natural Earth</a> is a free-to-use and accurate data set for the whole world, and it is the go-to data for this type of task. You will likely be interested in the <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors">10m cultural</a> and <a href="http://www.naturalearthdata.com/downloads/10m-physical-vectors">10m physical</a> vector files, but feel free to use any that make sense for your map. All of the files are available on the <a href="http://www.naturalearthdata.com/downloads/">Natural Earth downloads page</a>.</li>
+                <li>Open the data in QGIS.</li>
+                <li>Using the techniques described in the video above and discussed in class this week, layer the data in such a way that your <strong>theme</strong> is furthered. Example themes might be: disputed territory, Antarctic claims, and transportation infrastructure. You are free to find and incorporate other data, but it will be fine to stick with Natural Earth data for this assignment.</li>
+                <li>While working on this map, use <strong>expressions</strong> in at least one way. Recall the parts of QGIS that allow you to use expressions:
+                    <ul>
+                        <li>Select by expression, to select features that you want to pull out to another layer</li>
+                        <li>Rule-based styles, to hide features or style specific features in a certain way</li>
+                        <li>Data defined overrides, which let you specify a style using data from a shapefile (eg to make a marker larger based on a number in the shapefile)</li>
+                    </ul>
+                </li>
+                <li>Change your project properties to a <strong>projection</strong> that makes sense for the region you are looking at, and justify this in your submission. If you need help finding a good one, try <a href="http://projectionwizard.org/">Projection Wizard</a>.</li>
+                <li>Export your map using the QGIS print composer and submit it via email along with an example of an expression you used while working on the map.</li>
+            </ol>
         </section>
 
         <section>
             <h2>Submitting your work</h2>
-            <p>This work is due Wednesday, October 21st, at noon.</p>
-            <p>Use the QGIS <strong>Print Composer</strong> to create <strong>one PDF</strong>. Make sure to add map accessories such as legends, titles, and scale bars as appropriate.</p>
+            <p>This work is due Wednesday, October 28th, at noon.</p>
+            <p>Use the QGIS <strong>Print Composer</strong> to create <strong>one PDF</strong>. Make sure to add map accessories such as legends, titles, cite data sources, and scale bars as appropriate.</p>
             <p>Finally, include a <strong>short summary</strong> (1/2 page is fine) of what you did for this assignment. Explain what you created and how you did so. What did you have problems with? What did you enjoy? What would you like to know how to do next?</p>
-            <p>I want to see that you are thinking about cartographic concepts as we discussed in class and that you are exploring QGIS's ability to make maps exported as PDFs.</p>
+            <p>Don't forget to include the <strong>expression</strong>(s) you used and the <strong>projection</strong> you chose.</p>
             <p>Please email me your summary and attach the PDF.</p>
         </section>
 
