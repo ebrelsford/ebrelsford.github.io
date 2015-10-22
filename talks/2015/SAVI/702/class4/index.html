@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 4 | Introduction to GIS Software: QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Introduction to GIS Software: QGIS, Class 4</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to GIS Software: QGIS</h1>
+        </div>
+
+        <div class="slide">
+            <h2>(review)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is metadata?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is a qualitative thematic map?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what are expressions good for in QGIS?</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/maren.png);">
+            <a href="#" class="source">(Maren)</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/sara.png);">
+            <a href="#" class="source">(Sara)</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/steve.png);">
+            <a href="#" class="source">(Steve)</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>opening CSVs</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the CSV must have coordinates</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mean_streets_coordinates.png);">
+            <a href="https://github.com/datanews/mean-streets/blob/master/traffic-deaths.csv" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv.png);">
+            <h2>Layer > Add Layer > Add Delimited Text Layer</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv1.png);">
+            <h2>tell QGIS which fields store your coordinates</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv2.png);">
+            <h2>your file should show up here</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_csv3.png);">
+            <h2>finally, you need to select a projection</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise 1</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Quantitative thematic maps</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/designed_maps_1.jpg);">
+            <a class="source" href="http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=132&moduleID=0">Designed Maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/designed_maps_1_legend.jpg);">
+            <a class="source" href="http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=132&moduleID=0">Designed Maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/designed_maps_2.jpg);">
+            <a class="source" href="http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=132&moduleID=0">Designed Maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/designed_maps_2_zoom.jpg);">
+            <a class="source" href="http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=132&moduleID=0">Designed Maps</a>
+        </div>
+
+        <div class="slide">
+            <h1>Quantitative thematic maps</h1>
+            <p>often: choropleth maps</p>
+        </div>
+
+        <div class="slide">
+            <h1>choropleth</h1>
+            <p><strong>choro</strong>: region</p>
+            <p><strong>pleth</strong>: multitude</p>
+        </div>
+
+        <div class="slide">
+            <h1>choropleth</h1>
+            <p>a map of <strong>numbers</strong> by region</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bachelors_degree.jpg);">
+            <a class="source" href="http://rkpjrhist615.wordpress.com/page/6/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/population_growth.jpg);">
+            <a class="source" href="http://www.osmmc.ca/gallery.php">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/smoking_rates.png);">
+            <a class="source" href="http://www.nytimes.com/interactive/2014/03/25/us/smoking-rate-map.html?_r=0">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/points_in_polygons.png);">
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise 2</h2>
+        </div>
+
+        <div class="slide">
+            <h2>categorizing quantitative data can be rather arbitrary</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-15.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-16.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-17.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-18.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/incarcerated_population.jpg);">
+            <a class="source" href="http://personal.frostburg.edu/ingarvie0/Maps.htm">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth_multiethnic.jpg);">
+            <a class="source" href="http://uxblog.idvsolutions.com/2011/10/telling-truth.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth_multiethnic_histogram.jpg);">
+            <a class="source" href="http://uxblog.idvsolutions.com/2011/10/telling-truth.html">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise 3</h2>
+        </div>
+
+        <div class="slide">
+            <h1>the Modifiable Areal Unit Problem</h1>
+        </div>
+
+        <div class="slide">
+            <h2>the Modifiable Areal Unit Problem</h2>
+            <p>the boundaries you create can influence the way your data looks without changing the data</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/maup_rate_numbers.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdc_ebola.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/gerrymander.png);">
+            <a class="source" href="https://en.wikipedia.org/wiki/Gerrymandering">
+                the gerrymander
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/post_2012.png);">
+            <a class="source" href="http://giscollective.org/geographic-data-assumptions-maup-and-ecological-fallacies/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/post_2012_counties.png);">
+            <a class="source" href="http://giscollective.org/geographic-data-assumptions-maup-and-ecological-fallacies/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/countymap_purple.png);">
+            <a class="source" href="http://www-personal.umich.edu/~mejn/election/2012/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/countycartogram_purple.png);">
+            <a class="source" href="http://www-personal.umich.edu/~mejn/election/2012/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>one way to deal with MAUP is to normalize your data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(almost) never map counts</h2>
+        </div>
+
+        <div class="slide">
+            <h2>(almost) always divide counts by some common factor</h2>
+        </div>
+
+        <div class="slide">
+            <h2>think "incidents per 100,000 people"</h2>
+        </div>
+
+        <div class="slide">
+            <h2>think "crashes per square mile"</h2>
+        </div>
+
+        <div class="slide">
+            <h2>normalize data with expressions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/normalize.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/normalize1.png);">
+        </div>
+
+        <div class="slide">
+            <h2>choropleth legends can be tricky</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth_legend_ugly.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth_legend_cleaner.png);">
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise 4</h2>
+        </div>
+
+    </body>
+</html>
