@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Joining data in QGIS</h2>
+                <ol>
+                    <li>Download <a href="data/data.zip">this data</a>.</li>
+                    <li>Open the shapefile <code>Public_School_Locations</code>.</li>
+                    <li>Open the spreadsheet <code>SAT_Results</code> in QGIS. This has no spatial data associated with it currently, so drag and drop it into your layers list.</li>
+                    <li>Open the Layer Properties for the public schools layer and click on the <strong>Joins</strong> tab on the left.</li>
+                    <li>Add a new join (<strong>+</strong>) with the <code>SAT_Results</code> layer. You will need to select <strong>Join</strong> and <strong>Target fields</strong> appropriately.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Look at census data</h2>
+                <ol>
+                    <li>Familiarize yourself with the data available through the census using the following:
+                        <ul>
+                            <li>
+                                <a href="http://censusreporter.org/">census reporter</a>
+                            </li>
+                            <li>
+                                <a href="http://www.socialexplorer.com/">social explorer</a>
+                            </li>
+                            <li>
+                                <a href="http://gis.nyc.gov/census/">NYC Census FactFinder</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>How is uncertainty / margin of error handled by each?</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Download census data</h2>
+                <ol>
+                    <li>Go to <a href="http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">American FactFinder</a>.</li>
+                    <li>Select <strong>Guided Search</strong>, then click <strong>get me started</strong>.</li>
+                    <li>Download data counting owners and renters:
+                        <ol>
+                            <li>Select <strong>I'm looking for information about housing</strong>.</li>
+                            <li>Expand <strong>Occupancy Characteristic</strong>.</li>
+                            <li>Click <strong>Owner/Renter (Tenure in Occupied Units) </strong>.</li>
+                            <li>Under <strong>Select a geographic type</strong> select <strong>Census Tract</strong>.</li>
+                            <li>Select <strong>New York</strong> and then <strong>Kings County</strong>.</li>
+                            <li>Select <strong>All Census Tracts within Kings County New York</strong>.</li>
+                            <li>Click <strong>Add To Your Selection</strong>.</li>
+                            <li>Click <strong>Next</strong>.</li>
+                            <li>When asked if you're looking for data for a race or ethnic group, click <strong>Skip This Step</strong>.</li>
+                            <li>Now you should see a list of available tables. Select <strong>Tenure</strong> up at the top of the list.</li>
+                            <li>Now you should see the data you selected. Click <strong>Modify Table</strong> and <strong>Transpose Rows/Columns</strong>, which should flip the table vertically and give you more rows than columns.</li>
+                            <li>Finally, click <strong>Download</strong> and <strong>OK</strong> without changing any options.</li>
+                        </ol>
+                    </li>
+                    <li>Do the above again, this time picking something other than owners and renters.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Join census data</h2>
+                <ol>
+                    <li>First, prepare your data:
+                        <ol>
+                            <li>Open the owners and renters CSV downloaded in the previous part.</li>
+                            <li>Rename <code>HD01_VD01</code> to <code>total_households</code>.</li>
+                            <li>Rename <code>HD01_VD02</code> to <code>total_owners</code>.</li>
+                            <li>Rename <code>HD01_VD03</code> to <code>total_renters</code>.</li>
+                            <li>Delete row 2, which should contain <code>Id</code>, <code>Id2</code>, <code>Geography</code>, etc.</li>
+                            <li>Delete all columns that do not have headers that start with <code>GEO</code> and that we did not rename.</li>
+                        </ol>
+                    </li>
+                    <li>Now download the census tracts for New York using the Census Bureau's <a href="https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html">Cartography Boundary Shapefiles</a>.</li>
+                    <li>Finally, open both in QGIS (as you did with public schools and SAT results in Part 1) and join them.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
