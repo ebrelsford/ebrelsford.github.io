@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 6 | Introduction to GIS Software: QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Introduction to GIS Software: QGIS, Class 6</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to GIS Software: QGIS</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/angelo.png);">
+            <a href="#" class="source">Angelo</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jen.png);">
+            <a href="#" class="source">Jen</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/rich.png);">
+            <a href="#" class="source">Rich</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>what do you need to <em>join</em> two datasets?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is the difference between the decennial census and ACS?</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>let's finish census work from last time</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>you have options when joining data:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/join_select_fields.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/join_select_fields.png);">
+            <h2>select fields to bring from the spreadsheet</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/join_select_prefix.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/join_select_prefix.png);">
+            <h2>change the field prefix</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/join_selected_prefixed.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>converting joined data to numbers</h2>
+        </div>
+
+        <div class="slide">
+            <code>to_int( [field_name] )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_int( [field_name] )</code>
+            <h2>converts text to integers</h2>
+        </div>
+
+        <div class="slide">
+            <code>to_real( [field_name] )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_real( [field_name] )</code>
+            <h2>converts text to decimal numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail_message.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail_message.png);">
+            <h2>the comma is breaking it!</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_replace.png);">
+        </div>
+
+        <div class="slide">
+            <pre><code>replace(
+    [field_name],
+    [search_text],
+    [replace_text] 
+)</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>replace(
+    "nta_Total Households",
+    ',',
+    '' 
+)</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>replace(
+    "nta_Total Households",
+    ',',
+    '' 
+)</code></pre>
+            <h2>replace commas with nothing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_success.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/format_csv.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/format_csv.png);">
+            <h2>or format the numbers in your spreadsheet program</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise part 1</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/print_composer_lock.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/basic_stats.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/custom_crs.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>attribute joins join based on a common column</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we can also join based on a common <em>geography</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>this will help us to summarize data for points in a polygon</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in-class exercise part 2</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>projects</h2>
+        </div>
+
+        <div class="slide">
+            <h2>pick a part of the city or the world</h2>
+        </div>
+
+        <div class="slide">
+            <h2>pick a theme</h2>
+        </div>
+
+        <div class="slide">
+            <h2>map that area and theme ten different ways</h2>
+        </div>
+
+        <div class="slide">
+            <h2>more details <a href="../assignments/finalproject.html">here</a></h2>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Joining NTA data in QGIS</h2>
+                <ol>
+                    <li>Download <a href="http://www.nyc.gov/html/dcp/html/bytes/dwn_nynta.shtml">the NTA shapefile</a>.</li>
+                    <li>Download the <strong>Total Households by Household and Family Type, 2010</strong> Excel file <a href="http://www.nyc.gov/html/dcp/html/census/demo_tables_2010.shtml">here</a>.</li>
+                    <li>Clean the Excel file. Remove extra, unnecessary rows. With an eye toward mapping the <strong>percentage of households with married couples and chilrden under 18</strong>, delete unnecessary columns and rename column headers.</li>
+                    <li>In QGIS, join the cleaned Excel file with the shapefile and style the NTAs with a <strong>graduated</strong> style.
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Spatial Joins, points to polygons</h2>
+                <ol>
+                    <li>Download today's data <a href="data/data.zip">here</a>.</li>
+                    <li>Open the shapefile in the folder called <code>Schools_SAT_clean</code>. This is the schools joined with the SAT data we looked at last time. Examine the attribute table.</li>
+                    <li>Download the shapefile for <a href="https://data.cityofnewyork.us/Education/School-Districts/r8nu-ymqj">NYC School Districts</a>.</li>
+                    <li>Join by location by going to <strong>Vector &gt; Data Management Tools &gt; Join Attributes By Location</strong>:
+                        <ol>
+                            <li>Make the school districts the <strong>Target vector layer</strong>.</li>
+                            <li>Make the schools with SAT scores the <strong>Join vector layer</strong>.</li>
+                            <li>Under <strong>Attribute Summary</strong>, select <strong>Take summary of intersecting features</strong> and leave <strong>Mean</strong> selected.</li>
+                            <li>Select a place to save the results and click <strong>OK</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>Examine the resulting shapefile's attribute table.</li>
+                    <li>Style the data using a graduated style.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Spatial Join, polygons to points</h2>
+                <ol>
+                    <li>Clear the layers from the previous part.</li>
+                    <li>Open the shapefile in <code>Public_School_Locations</code> and the school districts shapefile.</li>
+                    <li>Join by location by going to <strong>Vector &gt; Data Management Tools &gt; Join Attributes By Location</strong>:
+                        <ol>
+                            <li>This time make the schools the <strong>Target vector layer</strong>.</li>
+                            <li>And this time make the school districts the <strong>Join vector layer</strong>.</li>
+                            <li>Under <strong>Attribute Summary</strong>, select <strong>Take attributes of the first located feature</strong>.</li>
+                            <li>Select a place to save the results and click <strong>OK</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>Examine the resulting shapefile's attribute table.</li>
+                    <li>Style the data using a categorized style on school district number.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
