@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Hexbins</h2>
+                <ol>
+                    <li>Open <code>Oil_Gas_Well_Historical_Production_Report.csv</code>.</li>
+                    <li>Save the wells as a new layer and convert to projection <code>3650</code>.</li>
+                    <li>Ensure your project is also in projection <code>3650</code>.</li>
+                    <li>Install the <strong>MMQGIS</strong> QGIS plugin if you have not.</li>
+                    <li>Create a hexagon layer using MMQGIS, <strong>MMQGIS &gt; Create &gt; Create Grid Lines Layer</strong>:
+                        <ol>
+                            <li>Browse for a location for the new shapefile.</li>
+                            <li>Change the dropdown at the bottom to <strong>Hexagon</strong>.</li>
+                            <li>Adjust the size of the hexagons by changing <strong>H Spacing</strong> to <code>52800</code>.</li>
+                        </ol>
+                    </li>
+                    <li>Count the wells in the resulting hexagons using <strong>Points in polygon</strong>.</li>
+                    <li>Make a choropleth with the resulting layer.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Heatmaps</h2>
+                <ol>
+                    <li>Install (or enable) the <strong>Heatmap</strong> QGIS plugin if you have not already done so.</li>
+                    <li>Open the wells file from the previous part.</li>
+                    <li>Create a heatmap by going to <strong>Raster &gt; Heatmap &gt; Heatmap</strong>:
+                        <ol>
+                            <li>Select an output raster location.</li>
+                            <li>Set the <strong>Radius</strong> field to <code>10560</code>.</li>
+                        </ol>
+                    </li>
+                    <li>Style the output raster.</li>
+                    <li>Make more heatmaps, adjusting:
+                        <ul>
+                            <li>the resolution of the raster (<strong>rows</strong> and <strong>columns</strong>)</li>
+                            <li>kernel shape</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Creating Shapefiles</h2>
+                <ol>
+                    <li>Open QGIS, clear all existing layers.</li>
+                    <li>Using the OpenLayers plugin, load a satellite layer and zoom to an area of interest.</li>
+                    <li>Create a shapefile: <strong>Layer &gt; Create Layer &gt; New Shapefile Layer</strong>.</li>
+                    <li>In the <strong>New Vector Layer</strong> dialog:
+                        <ol>
+                            <li>select <strong>Point</strong> for <strong>Type</strong>,</li>
+                            <li>leave <strong>File encoding</strong> as it is,</li>
+                            <li>pick a projection, and</li>
+                            <li>add a few attributes, with a few different <strong>Types</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>Turn on <strong>Editing Mode</strong> for the new layer (<strong>Layer &gt; Toggle Editing</strong>).</li>
+                    <li>With the <strong>Add Feature</strong> tool and the satellite layer as a reference, add a few points and add data to the points when prompted.</li>
+                    <li>Use the <strong>Move Feature</strong> tool to move one of your points.</li>
+                    <li>Create a shapefile of <strong>lines</strong>. Use the satellite imagery to trace and create some roads and/or waterways. Right-click to finish each line.</li>
+                    <li>Create a shapefile of <strong>polygons</strong>. Use the satellite imagery to trace and create features for buildings, areas, and/or larger waterways. Right-click to finish each polygon.</li>
+                    <li>Experiment with other edit functions available under the <strong>Edit</strong> menu.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
