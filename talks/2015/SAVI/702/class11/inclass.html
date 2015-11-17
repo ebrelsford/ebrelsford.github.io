@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Georeferencing</h2>
+                <ol>
+                    <li>Go to <a href="http://www.urbanreviewer.org/">Urban Reviewer</a>.</li>
+                    <li>Find an urban renewal plan with a map image on the right when you select it.</li>
+                    <li>Click on the image to make it larger, then right click on it and <strong>save as</strong> to save it to your computer.</li>
+                    <li>Open QGIS.</li>
+                    <li>Use the OpenLayers plugin to add a Google Hybrid layer.</li>
+                    <li>Zoom to the general area your image should be in.</li>
+                    <li>Install or enable <strong>Georeferencer GDAL</strong> in the plugins area of QGIS.</li>
+                    <li>Go to <strong>Raster &gt; Georeferencer &gt; Georeferencer</strong> to open the Georeferencer window.</li>
+                    <li>Go to <strong>File &gt; Open Raster</strong> and select the image you downloaded from Urban Reviewer.</li>
+                    <li>Add 3 or 4 ground control points:
+                        <ol>
+                            <li>Switch between the Georeferencer and map windows and find a common point between the two (generally a street corner will be best).</li>
+                            <li>Click the <strong>Add point</strong> button in the Georeferencer window.</li>
+                            <li>Click on the common point in the Georeferencer window.</li>
+                            <li>When prompted to <strong>Enter map coordinates</strong>, select the <strong>From map canvas</strong> button.</li>
+                            <li>Click on the common point on the map.</li>
+                        </ol>
+                    </li>
+                    <li>Once you are happy with the ground control points, click the <strong>Settings</strong> icon in the Georeferencer window.</li>
+                    <li>Set <strong>Transformation type</strong> to <strong>Thin plate spline</strong>.</li>
+                    <li>Set <strong>Target SRS</strong> to <strong>3857</strong> (the projection the reference map is in).</li>
+                    <li>Select a location to save to.</li>
+                    <li>Check <strong>Load in QGIS when done</strong>.</li>
+                    <li>Click <strong>Start Georeferencing</strong> in the Georeferencer window (looks like a play button).</li>
+                    <li>The Georeferenced image should show up on your map.</li>
+                    <li>Find a ground control point that doesn't line up as much as you would like.</li>
+                    <li>Delete the ground control point in the Georeferencer window.</li>
+                    <li>Add a replacement ground control point.</li>
+                    <li>Georeference it again&mdash;by default your georeferenced image will be overwritten, so change the destination in the georeferencer settings if you want to make a new file.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Landsat imagery</h2>
+                <ol>
+                    <li>Open QGIS.</li>
+                    <li>Add an OpenLayers reference layer and zoom to a part of the world you're interested in.</li>
+                    <li>Install or enable the <strong>Semi-Automatic Classification Plugin</strong>.</li>
+                    <li>Go to <strong>SCP &gt; Tools &gt; Download Landsat</strong>.</li>
+                    <li>Find and click the <strong>Update Database</strong> button. This may take a few minutes, and you should see a status bar in the main QGIS window (not the plugin window).</li>
+                    <li>Set the <strong>Area coordinates</strong>:
+                        <ol>
+                            <li>Under <strong>UL</strong>, click <strong>+</strong> and click the upper left point of thearea you'd like to map on your map view.</li>
+                            <li>Do the same for <strong>LR</strong>, but for the lower right point.</li>
+                        </ol>
+                    </li>
+                    <li>Update the <strong>Aquisition date</strong> to only look for images from this year.</li>
+                    <li>Make the <strong>Max cloud cover</strong> 10%.</li>
+                    <li>Under <strong>Satellites</strong>, only select <strong>8 OLI</strong> (Landsat 8).</li>
+                    <li>Click <strong>Find images</strong>. This may take a few minutes, and the main map view should have a progress bar while it works.</li>
+                    <li>Select one of the more recent images and click <strong>Display image preview</strong> to see a low-res preview of the image.</li>
+                    <li>Click on <strong>Download Options</strong> and select only bands <strong>2, 3, 4, 5, 6, and 7</strong>.</li>
+                    <li>Ensure that <strong>only if preview in layers</strong> is checked and click <strong>Download images from list</strong>. Select a location for your downloads and wait a few minutes while it goes. You may want to grab a coffee.</li>
+                    <li>In the <strong>Semi-Automatic Classification Plugin</strong> toolbar, find a field that has <strong>RGB=</strong> before it. This sets which bands are represented in red, green, and blue on the screen.</li>
+                    <li>Set the RGB field to <strong>3-2-1</strong>. This should be true color (red, green, and blue are set to red, green, and blue).</li>
+                    <li>Try setting the RGB field to <strong>4-3-2</strong>. This makes infrared show up as red, so vegetation should be red.</li>
+                    <li>Find the <strong>Common Landsat 8 band combinations</strong> table on <a href="http://satsummit.github.io/landscape/#analysis">this page</a> and try some out. You will need to subtract 1 from each band number as we did not load band 1.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: LiDAR imagery</h2>
+                <ol>
+                    <li>Download <a href="data/class11.zip">today's data</a>.</li>
+                    <li>Open <strong>landcover.tif</strong> in QGIS. This is an extract of the city-wide landcover data available on the <a href="https://data.cityofnewyork.us/Environment/Landcover-Raster-Data-2010-/9auy-76zt">open data portal</a>.</li>
+                    <li>Experiment with using the <strong>Sieve</strong> function: <strong>Raster &gt; Analysis &gt; Sieve</strong>, select a place to save and a threshold (say 100). This will make smaller clumps of pixels become part of their neighboring clumps of pixels.</li>
+                    <li>Right click on the original image, select <strong>Styles &gt; Copy Styles</strong>, then paste them into the sieved layer (right click, <strong>Styles &gt; Paste Styles</strong>).</li>
+                    <li>Build vectors out of the resulting raster. Go to <strong>Raster &gt; Conversion &gt; Polygonize</strong> and select a location to save to.</li>
+                    <li>In the vector layer use an expression to select only the paved areas (gray in the raster).</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Public Lab imagery</h2>
+                <ol>
+                    <li>Go to the <a href="https://publiclab.org/archive">Public Lab Archive</a>.</li>
+                    <li>Find imagery in a part of the world you're interested in.</li>
+                    <li>Download the <strong>GeoTiff</strong> of that imagery.</li>
+                    <li>Open the GeoTiff in QGIS and compare it to satellite imagery available through the OpenLayers plugin.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
