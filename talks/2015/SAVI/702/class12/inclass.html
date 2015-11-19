@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Public Lab imagery</h2>
+                <ol>
+                    <li>Go to the <a href="https://publiclab.org/archive">Public Lab Archive</a>.</li>
+                    <li>Find imagery in a part of the world you're interested in.</li>
+                    <li>Download the <strong>GeoTiff</strong> of that imagery.</li>
+                    <li>Open the GeoTiff in QGIS and compare it to satellite imagery available through the OpenLayers plugin.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Downloading OpenStreetMap Data: Metro Extracts</h2>
+                <ol>
+                    <li>Go to the <a href="https://mapzen.com/data/metro-extracts/">Mapzen's Metro Extracts</a> of OSM.</li>
+                    <li>Find a city you want to download data for.</li>
+                    <li>Download both the <strong>OSM2PGSQL SHP</strong> and <strong>IMPOSM SHP</strong> files for the city you picked.</li>
+                    <li>Open shapefiles from both files in QGIS and examine the geometries and attributes.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Downloading OpenStreetMap Data: OSM Downloader</h2>
+                <ol>
+                    <li>In QGIS, optionally remove the layers from the previous part.</li>
+                    <li>Install or enable the <strong>OSMDownloader</strong> QGIS plugin.</li>
+                    <li>Use the OpenLayers plugin to add a reference layer to QGIS.</li>
+                    <li>Zoom to an area you would like to download OSM data for. Zoom in far as the plugin will download all data for the area you are viewing.</li>
+                    <li>Go to <strong>Vector &gt; OpenStreetMap &gt; Download Data</strong> and pick a place to save the data. Ensure that your filename ends with <strong>.osm</strong>.</li>
+                    <li>Drag your resulting file into QGIS.</li>
+                    <li>In the <strong>Select vector layers to add</strong> dialog, select all of the layers and click <strong>OK</strong>.</li>
+                    <li>You should now have all of the OSM data for the area you were viewing.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Editing OpenStreetMap</h2>
+                <ol>
+                    <li>Go to the <a href="http://www.openstreetmap.org/">openstreetmap.org</a> and register for an account if you don't have one already.</li>
+                    <li>Go to <a href="http://tasks.hotosm.org/">tasks.hotosm.org</a> and log in with your new OSM account.</li>
+                    <li>Search for <strong>missing maps</strong> and find a <a href="http://tasks.hotosm.org/project/1343">project in Northern Tete, Mozambique</a>.</li>
+                    <li>Click on the link to that project to open it.</li>
+                    <li>Read the instructions under the <strong>Instructions</strong> tab.</li>
+                    <li>Click <strong>Start contributing</strong> on the <strong>Instructions</strong> tab.</li>
+                    <li>Click <strong>Take a task at random</strong>.</li>
+                    <li>Click <strong>Start mapping</strong>.</li>
+                    <li>Click <strong>Start mapping</strong>.</li>
+                    <li>Click <strong>Edit with iD editor</strong>.</li>
+                    <li>A new tab should open with the OpenStreetMap editor, centered on the area your task is in. There should be a purple box showing you the area you should work on.</li>
+                    <li>As per the project's instructions, pan and zoom to try to find clusters of buildings. Map them using the <strong>area</strong> tool, then search for <strong>residential area</strong> to tag it as one.</li>
+                    <li>Also map roads as <strong>unclassified roads</strong>, but only if they link residential areas.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
