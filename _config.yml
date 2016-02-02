@@ -1,4 +1,4 @@
 name: Eric Brelsford
 highlighter: rouge
-gems: 
+gems:
   - jekyll-gist
