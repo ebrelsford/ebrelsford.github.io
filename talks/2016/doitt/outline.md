@@ -1,6 +1,6 @@
 # DoITT QGIS Training
 
-Presented by [Eric Brelsford](http://ebrelsford.github.io/portfolio)
+Presented by [Eric Brelsford](http://ebrelsford.github.io/)
 
 ## Day 1
 
