@@ -1,3 +1,4 @@
 name: Eric Brelsford
-highlighter: true
-gems: [jekyll-gist]
+highlighter: rouge
+gems: 
+  - jekyll-gist
