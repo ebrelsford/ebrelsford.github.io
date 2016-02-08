@@ -5,17 +5,18 @@ Presented by [Eric Brelsford](http://ebrelsford.github.io/)
 ## Day 1
 
 ### Morning (9am to 1pm)
- * Introductions (30 minutes)
+ * Introductions (20 minutes)
  * What is QGIS? (15 minutes)
    * History. Current state.
- * Installing QGIS (15 minutes)
- * What is open source software? (30 minutes)
+ * Installing QGIS (5 minutes)
+ * What is open source software? (15 minutes)
    * History. Who uses it?
- * Working with vector data (2 hours)
+ * Working with vector data (2.5 hours)
    * Opening vector data of various types
      * Shapefile
      * CSV
      * GeoJSON
+     * Connecting to databases
    * Exporting vector data
    * Selecting vector data
    * Layers
@@ -25,14 +26,12 @@ Presented by [Eric Brelsford](http://ebrelsford.github.io/)
  * Managing projects (30 minutes)
 
 ### Afternoon (2pm to 5pm)
- * Styling vector data (1 hour)
+ * Styling vector data (1.5 hour)
    * Basic styles
    * Sharing styles between layers
    * Styling based on expressions
+ * Mapping density with heatmaps (30 minutes)
  * Print composer (1 hour)
- * Mapping density (1 hour)
-   * Hexbins
-   * Heatmaps
 
 ## Day 2
 
@@ -41,6 +40,7 @@ Presented by [Eric Brelsford](http://ebrelsford.github.io/)
  * Geoprocessing (1 hour)
    * Clipping
    * Buffering
+   * Writing Python scripts
  * Combining data (2 hours)
    * Attribute joins
    * Spatial joins
@@ -50,17 +50,20 @@ Presented by [Eric Brelsford](http://ebrelsford.github.io/)
 
 ### Afternoon (2pm to 5pm)
  * Georeferencing (30 minutes)
- * Working with raster data (1.5 hours)
+ * Working with raster data (1 hour)
    * Opening
    * Exporting
    * Vectorizing
    * Field calculator
- * 3D mapping with the qgis2threejs plugin (30 minutes)
+ * Plugin ecosystem (1 hour)
+   * 3D mapping with the qgis2threejs plugin
+   * Other plugins as time and interest allow
  * Resources moving forward (30 minutes)
    * Asking for help online
    * Book recommendations
    * Blog and social media recommendations
 
+---
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
