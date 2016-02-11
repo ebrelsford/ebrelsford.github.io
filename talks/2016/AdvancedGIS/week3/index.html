@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Class 3 | Advanced GIS</title>
-        <meta charset="utf-8"> 
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
         <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
@@ -26,6 +26,28 @@
         <div class="slide">
             <h1>Advanced GIS</h1>
             <p>Class 3</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leah.png);">
+            <a href="https://aykal055.cartodb.com/viz/8a68e816-cf93-11e5-87b6-0e5db1731f59/public_map">
+                Leah
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/evan.png);">
+            <a href="https://eiacoboni.cartodb.com/viz/97fa1a20-cf7c-11e5-8f54-0ecfd53eb7d3/public_map">
+                Evan
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/cartodb-layers.png);">
+            <h2>layers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-georeferencing.png);">
+            <h2>georeferencing</h2>
         </div>
 
         <div class="slide intermission"></div>
@@ -189,6 +211,49 @@
     ...
 }
 #earthquakes[zoom &gt;= 12] {
+    ...
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>matching text within an attribute</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>[place =~ ".*Africa.*"] {
+     marker-width: 15;
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>[place =~ ".*Africa.*"] {
+     marker-width: 15;
+}</code></pre>
+            <p>style features with "Africa" anywhere in the <code>place</code> field</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shibani1.png);">
+            <a class="source" href="https://shibani.cartodb.com/viz/d83e3d2e-ce09-11e5-a1d6-0ecfd53eb7d3/public_map">
+                Shibani
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shibani2.png);">
+            <a class="source" href="https://shibani.cartodb.com/viz/d83e3d2e-ce09-11e5-a1d6-0ecfd53eb7d3/public_map">
+                Shibani
+            </a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 15px; line-height: 25px;"><code>[zoom >=6][name ='Salt Lake City'],[name ='Las Vegas'],[name ='Los Angeles'],[name ='San Luis Obispo'],[name ='San Francisco']{
+    marker-fill: #FFCC00;
+    ...
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 25px; line-height: 35px;"><code>[zoom >=6][name ='Salt Lake City'],[name ='Las Vegas'] {
+    marker-fill: #FFCC00;
     ...
 }</code></pre>
         </div>
@@ -482,7 +547,7 @@ WHERE students &gt; 100</code></pre>
             <p>for example:</p>
             <pre><code>SELECT *
 FROM education
-WHERE students &gt; 100 
+WHERE students &gt; 100
     AND students &lt; 200</code></pre>
         </div>
 
@@ -498,7 +563,7 @@ WHERE students &gt; 100
             <p>for example:</p>
             <pre><code>SELECT *
 FROM education
-WHERE NOT (students &gt; 100 
+WHERE NOT (students &gt; 100
   OR op_type = 'religious')</code></pre>
         </div>
 
@@ -532,7 +597,7 @@ WHERE NOT (students &gt; 100
             <p>count matching rows:</p>
             <pre><code>SELECT COUNT(*)
 FROM education
-WHERE students &gt; 100 
+WHERE students &gt; 100
   OR op_type = 'religious'</code></pre>
         </div>
 
