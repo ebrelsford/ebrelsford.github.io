@@ -54,7 +54,7 @@ Presented by [Eric Brelsford](http://ebrelsford.github.io/)
    * Opening
    * Exporting
    * Vectorizing
-   * Field calculator
+   * Raster calculator
  * Plugin ecosystem (1 hour)
    * 3D mapping with the qgis2threejs plugin
    * Other plugins as time and interest allow
