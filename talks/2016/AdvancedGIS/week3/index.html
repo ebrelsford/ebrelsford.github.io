@@ -736,5 +736,16 @@ FROM kiberaboundary</code></pre>
         <div class="slide" style="background-image: url(img/buffer.gif);">
         </div>
 
+        <div class="slide" style="background-image: url(img/other-projections.png);">
+            <a class="source" href="http://www.geopoliticalmapping.com/arctic-maps/">source</a>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT cartodb_id,
+  ST_Transform(the_geom, 3573) 
+    AS the_geom_webmercator 
+FROM my_table</code></pre>  
+        </div>
+
     </body>
 </html>
