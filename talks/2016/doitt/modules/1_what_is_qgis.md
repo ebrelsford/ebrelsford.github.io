@@ -35,9 +35,10 @@ Unfortunately, installing QGIS on Mac OS X is slightly more complicated than ins
 
 Rest assured that while the above may sound complicated, you will be successful as long as you download each of the above in order and install them in order. You can always start over if you need to.
 
-<div style="page-break-after: always;"></div>
-
 ## Resources
 
  * [The QGIS Download page](http://qgis.org/en/site/forusers/download.html)
  * [KyngChaos QGIS OS X installer](http://www.kyngchaos.com/software/qgis)
+
+<div style="page-break-after: always;"></div>
+
