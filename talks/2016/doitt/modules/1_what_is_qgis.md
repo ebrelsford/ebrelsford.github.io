@@ -37,3 +37,7 @@ Rest assured that while the above may sound complicated, you will be successful 
 
 <div style="page-break-after: always;"></div>
 
+## Resources
+
+ * [The QGIS Download page](http://qgis.org/en/site/forusers/download.html)
+ * [KyngChaos QGIS OS X installer](http://www.kyngchaos.com/software/qgis)
