@@ -7,53 +7,63 @@
         <main>
             <header>
                 <a href="..">Advanced GIS</a>
-                <h1>Assignment 4: HTML</h1>
+                <h1>Assignment 4</h1>
             </header>
 
             <section>
-                <p>We talked about HTML this week, and we'll exercise some of our new knowledge around it by using HTML to customize CartoDB visualizations and make our own pages. <strong>Please do not use CSS (styles) for now. Focus on HTML for this assignment.</strong></p>
+                <h2>Readings</h2>
+                <p>We are going to be getting into making web pages in the next few weeks. Here are some recommended readings to prepare you:</p>
+                <ul>
+                    <li><a href="http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">What is Code?</a> This is a long, at times hilarious, article that was in Bloomberg Businessweek last summer. As such, it's meant for a general audience and does an interesting job of introducing readers to programming and programmers. I strongly recommend at least reading a bit of it.</li>
+                    <li>Start to get used to HTML by reading <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction">Mozilla's Introduction to HTML</a>. It's okay if you're not completely comfortable with this material yet, we will talk about it more next week.</li>
+                    <li>If you're interested in working ahead a bit, start working on <a href="https://www.codecademy.com/learn/web">Codecademy's HTML &amp; CSS course</a>.</li>
+                </ul>
             </section>
 
             <section>
-                <h2>Resources</h2>
-                <ol>
-                    <li>My <a href="materials/html_cheatsheet.pdf">HTML Reference</a> should get you started.</li>
-                    <li>If you're looking to learn HTML from another angle, <a href="http://www.codecademy.com/tracks/web">codecademy</a> has a course in HTML that is usable and interactive.</li>
-                    <li>The <a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a> is a great resource for HTML and other web documentation.</li>
-                    <li><a href="https://css-tricks.com/">css-tricks</a> has good beginner-to-intermediate tutorials, and you might appreciate <a href="https://css-tricks.com/video-screencasts/58-html-css-the-very-basics/">HTML & CSS -- The VERY Basics</a>. As stated earlier, please stick to HTML for now and we'll cover CSS next week.</li>
-                </ol>
+<h2>Part 1: Spatial SQL</h2>
+<p>Let's take another look at SQL:</p>
+<ol>
+<li>Download <a href="http://data.insideairbnb.com/united-states/ny/new-york-city/2016-02-02/visualisations/listings.csv">the most recent Airbnb data</a> for NYC from Inside Airbnb. Upload it to your CartoDB account.</li>
+<li>Download the <a href="https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi">City Council Districts</a> from the NYC OpenData portal. Upload it to your CartoDB account.</li>
+<li>Write an SQL query that selects only the Airbnb listings in a City Council District of your choosing and maps them.</li>
+</ol>
             </section>
 
             <section>
-                <h2>Part 1: Add some HTML to a CartoDB visualization</h2>
-                <p>Open a CartoDB visualization from a previous assignment and:
-                    <ol>
-                        <li>Edit the legend to add a link (or links) to your datasource(s).</li>
-                        <li>Make a change to the HTML for the infowindows for your visualization. This can be as simple as adding <code>&lt;strong&gt;</code> elements to emphasize some text, or you could link to other pages or show images.</li>
-                    </ol>
-                </p>
+<h2>Part 2: Putting things online (Neocities)</h2>
+<p>We are going to be putting web pages online starting next week. Let's create a few accounts that will lay the groundwork for that:</p>
+<ol>
+<li>Create a free account at <a href="https://neocities.org/">Neocities</a>.</li>
+<li>Create a simple site. You <strong>do not need to touch the HTML for now</strong>.</li>
+<li>Upload an image that you don't mind making public to your site.</li>
+<li>Find the public link to the image by clicking on it.</li>
+</ol>
             </section>
 
             <section>
-                <h2>Part 2: HTML pages with embedded CartoDB visualizations</h2>
-                <p>Now we'll create an HTML page from scratch and add a CartoDB map to it.</p> 
-                <ol>
-                    <li>Create an HTML page.</li>
-                    <li>Edit the HTML page:
-                        <ul>
-                            <li>embed the CartoDB visualization from Part 1 in the page as an <code>iframe</code></li>
-                            <li>add some text</li>
-                            <li>add at least one image</li>
-                            <li>add at least one link</li>
-                        </ul>
-                    </li>
-                    <li>Put the HTML page online using any method you like. The simplest way to do this is through <a href="https://neocities.org/">Neocities</a>&mdash;create an account and upload your page. If you're feeling adventurous, why not give <a href="https://pages.github.com/">GitHub Pages</a> a go?</li>
-                </ol>
+<h2>Part 3: Putting things online (GitHub Pages)</h2>
+<p>GitHub is another free way to host pages online. Learn a bit more about them with <a href="http://readwrite.com/2013/11/27/github-pages-explained">this tutorial</a>. Specifically follow along starting at the heading <strong>Setting Up Your First Page</strong>:</p>
+<ol>
+<li>Create an account at <a href="https://github.com/">GitHub</a>.</li>
+<li>Create a repository as specified in the tutorial. The name should be <strong>yourusername</strong>.github.io.</li>
+<li>In the tutorial, the location of the <strong>Settings</strong> button has changed to be near the top of the page.</li>
+<li>Pick a layout.</li>
+<li>You can stop when you get to the heading <strong>Editing Your First Page</strong>.</li>
+</ol>
+            </section>
+
+            <section>
+<h2>Part 4: Make a map related to your project</h2>
+<p>In CartoDB, make a map that is related to one of your project ideas. Spend some time looking for data. Focus specifically on <strong>layering data</strong> and potential <strong>SQL queries</strong> that make interesting visualizations of the data. Don't forget <strong>legends</strong>, <strong>titles</strong>, and <strong>attribution</strong> where appropriate.</p>
             </section>
 
             <section>
                 <h2>Submitting your work</h2>
-                <p>Submit a link to the visualization you edited in Part 1 and a link to the page you posted online for Part 2.</p>
+                <p>Part 1: Submit your SQL query and a screenshot of the result.</p>
+                <p>Part 2: Submit the public link to the image.</p>
+                <p>Part 3: Submit the public link to your page (<strong>yourusername</strong>.github.io).</p>
+                <p>Part 4: Submit a link to your map.</p>
                 <p>You may optionally choose to include a short paragraph response or summary of your work.</p>
             </section>
 
