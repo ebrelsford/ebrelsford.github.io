@@ -61,7 +61,7 @@ Boundless released the **GeoServer Explorer** plugin [a few months ago](http://b
  3. Add an example GeoServer catalog:
     1. Right-click on **Catalogs** in the **GeoServer Explorer** panel.
     2. Give the catalog a name (eg **Eric's GeoServer**).
-    3. Set **URL** to **http://ec2-54-200-146-153.us-west-2.compute.amazonaws.com/geoserver/**.
+    3. Set **URL** to the url provided to you.
     4. Set **User name** to **admin** and **Password** to **geoserver**.
     5. Press **OK**.
     6. In a moment the new catalog should appear. Please note that this is an example catalog that will not be accessible after this workshop.
@@ -97,6 +97,7 @@ CartoDB is another handy way to share maps and map data online. This plugin allo
 ## Resources
 
  * [qgis2threejs video](https://www.youtube.com/watch?v=edPiNvZJScM)
+ * [qgis2threejs documentation](http://qgis2threejs.readthedocs.org/en/docs-release/)
  * [GeoServer plugin documentation](http://boundlessgeo.github.io/qgis-geoserver-plugin/)
 
 <div style="page-break-after: always;"></div>
