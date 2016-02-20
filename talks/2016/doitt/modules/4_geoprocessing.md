@@ -29,9 +29,15 @@ Here we use buffer to get shapes representing the area within 50 feet of a road:
     5. Leave **Dissolve buffer results** unchecked.
     6. Press **OK**.
 
+
+### Exercise 4-2: Overlay and geometry operations
+
+ 1. Open two polygon files of your choosing.
+ 2. Experiment with a few of the functions provided under **Vector > Geoprocessing Tools** and **Vector > Geometry Tools**.
+
 ## Building models
 
-### Exercise 4-2: A simple model
+### Exercise 4-3: A simple model
 
 Here we automate some of the work covered in the previous exercise--taking an input vector layer, reprojecting it to CRS 2263, and buffering it by 50 feet:
  1. Go to **Processing > Graphical Modeler**.
@@ -53,14 +59,14 @@ Here we automate some of the work covered in the previous exercise--taking an in
     2. Press the **Edit model help** button.
     3. On the left select items to edit (such as the description of the model) and enter your text on the right.
 
-### Exercise 4-3: Building your own model
+### Exercise 4-4: Building your own model
 
 With a partner, create a workflow that uses multiple geoprocessing algorithms and create a model for it:
  1. Explore the available geoprocessing algorithms in QGIS available through the GUI. For the most part, these will be under **Vector > Geoprocessing Tools** and **Vector > Geometry Tools**.
  2. Using data of your choosing, create a multi-step geoprocessing workflow given the functions available through the GUI and confirm that the output data is as you expected.
  3. Create a model with **Processing > Graphical Modeler** that performs the same workflow as you created in the previous step, save it, and run it on another file. Confirm that it functions as expected.
 
-### Exercise 4-4: Using the python console
+### Exercise 4-5: Using the python console
 
  1. Go to **Plugins > Python Console**.
  2. The **Python Console** should appear at the bottom of the screen.
