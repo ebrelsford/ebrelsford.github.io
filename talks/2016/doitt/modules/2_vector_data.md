@@ -78,7 +78,7 @@ We will connect to a publicly accessible PostGIS database that was set up for th
  1. Go to **Layers > Add Layer > Add PostGIS Layers**.
  2. Create a new connection:
    * host: qgisworkshop.cwxs47o7ilc1.us-west-2.rds.amazonaws.com
-   * database: qgisworkshop
+   * database: workshop
    * username and password will be provided to you
    * For the purposes of this workshop I recommend saving the username and password for your convenience.
  3. Connect to your new connection and find the available tables by expanding the **public** schema.
@@ -155,7 +155,7 @@ In this section we will use expressions in two ways:
  * Select by expression
  * Field calculator
 
-### Exercise 2-8: Selecting by expression
+### Exercise 2-7: Selecting by expression
 
  1. Re-open the [NYPD Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open.
  2. With the collisions layer selected in the **layers panel**, find and click the **Select by expression** button.
@@ -194,8 +194,9 @@ In this section we will use expressions in two ways:
     6. Type **= '07'** to compare the output of **left** to **07**.
     7. Your expression should look like **left("DATE", 2) = '07'**.
     8. Press **Select**.
+    9. Use **Save As...** and save only the selected features. We will be using this in future exercises.
 
-### Exercise 2-7: Using the field calculator
+### Exercise 2-8: Using the field calculator
 
 We will add simple columns to a file.
  1. Re-open the [NYPD Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open and select the layer in the **layers panel**.
@@ -215,7 +216,7 @@ We will look at three ways of dealing with coordinate reference systems:
  * Setting the layer's projection, and
  * Changing the layer's projection
 
-### Exercise 2-8: Changing a layer's coordinate reference system
+### Exercise 2-9: Changing a layer's coordinate reference system
 
  1. Re-open the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file in QGIS if it is not open. The layer is currently in **EPSG:4326**. We want the layer to be in **State Plane Long Island** (**2263**) to do some geoprocessing with another layer.
  2. Right-click on the layer in the **layers panel**.
@@ -227,7 +228,7 @@ We will look at three ways of dealing with coordinate reference systems:
  8. Press **OK** back in the **Save vector layer as...** dialog.
  9. A new layer with the selected CRS should be added to your **layers panel** in addition to the old layer.
 
-### Exercise 2-9: Correcting a layer's coordinate reference system
+### Exercise 2-10: Correcting a layer's coordinate reference system
 
 Here we intentionally load a layer in the wrong coordinate reference system and fix it:
  1. Download [NYPD 7 Major Felony Incidents](https://data.cityofnewyork.us/Public-Safety/NYPD-7-Major-Felony-Incidents/hyij-8hr7).
@@ -249,7 +250,7 @@ Here we intentionally load a layer in the wrong coordinate reference system and 
 
 ## Managing projects
 
-### Exercise 2-10: Handling lost data
+### Exercise 2-11: Handling lost data
 
  1. Open a layer in QGIS if you do not have any open currently.
  2. Save the project by going to **Project > Save**.
