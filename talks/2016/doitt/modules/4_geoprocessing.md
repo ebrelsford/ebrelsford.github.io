@@ -65,6 +65,7 @@ With a partner, create a workflow that uses multiple geoprocessing algorithms an
  * [A Desktop Analyst's Guide to QGIS, Part 2](http://boundlessgeo.com/2015/07/desktop-analysts-guide-qgis-part-2-beyond-basics/) has some good examples of model / script building
  * [The Graphical Modeler](http://docs.qgis.org/2.0/en/docs/user_manual/processing/modeler.html) in the QGIS documentation.
  * [Automating Complex Workflows using Processing Modeler](http://www.qgistutorials.com/en/docs/processing_graphical_modeler.html) in the QGIS documentation.
+ * [QGIS Graphical Modeler Example](https://www.youtube.com/watch?v=6QmA-eZtnog) video
 
 <div style="page-break-after: always;"></div>
 
