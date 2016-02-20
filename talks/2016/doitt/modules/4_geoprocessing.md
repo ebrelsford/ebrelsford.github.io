@@ -60,12 +60,29 @@ With a partner, create a workflow that uses multiple geoprocessing algorithms an
  2. Using data of your choosing, create a multi-step geoprocessing workflow given the functions available through the GUI and confirm that the output data is as you expected.
  3. Create a model with **Processing > Graphical Modeler** that performs the same workflow as you created in the previous step, save it, and run it on another file. Confirm that it functions as expected.
 
+### Exercise 4-4: Using the python console
+
+ 1. Go to **Plugins > Python Console**.
+ 2. The **Python Console** should appear at the bottom of the screen.
+ 3. Type **iface.getActiveLayer().name()** and press **Enter**. The name of the active layer should print in the console.
+ 4. If you would like to know more about the python interface to QGIS, you can type **help(iface)** in the console and press **Enter**.
+ 5. Let's do some simple geoprocessing in python:
+    1. Enter **import processing** in the terminal and press **Enter**.
+    2. Enter **processing.alglist()** in the terminal and press **Enter**. All of the processing algorithm will be printed.
+    3. Let's focus on an algorithm we would like to use: enter **processing.alglist('hull')** to see only the algorithms with **hull** in their names.
+    4. We'll use the convex hull algorithm. To learn how to use it, enter **processing.alghelp('qgis:convexhull')**. We are told that there are four parameters: **INPUT**, **FIELD** (if we were making multiple convex hulls based on a field), **METHOD**, and **OUTPUT**.
+    5. Enter **processing.runalg('qgis:convexhull', <LAYER NAME>, None, 0, <FULL PATH TO OUTPUT FILE>')**, but replace **<LAYER NAME>** with a layer you would like to calculate the convex hull of, and **<FULL PATH TO OUTPUT FILE>** with the path you would like to save to.
+    6. Open the folder you saved to and you should have a new shapefile--add that to your layers panel.
+    7. Click the **Show editor** button on the python console's toolbar. To the right you should have an editor pane. Enter **import processing** on the first line and your command from step 5 on the second line. Click the **Run script** button to run your script again.
+
 ## Resources
 
  * [A Desktop Analyst's Guide to QGIS, Part 2](http://boundlessgeo.com/2015/07/desktop-analysts-guide-qgis-part-2-beyond-basics/) has some good examples of model / script building
  * [The Graphical Modeler](http://docs.qgis.org/2.0/en/docs/user_manual/processing/modeler.html) in the QGIS documentation.
  * [Automating Complex Workflows using Processing Modeler](http://www.qgistutorials.com/en/docs/processing_graphical_modeler.html) in the QGIS documentation.
  * [QGIS Graphical Modeler Example](https://www.youtube.com/watch?v=6QmA-eZtnog) video
+ * [PyQGIS Developer Cookbook](http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/index.html)
+ * [Getting Started with PyQGIS](http://www.qgistutorials.com/en/docs/getting_started_with_pyqgis.html)
 
 <div style="page-break-after: always;"></div>
 
