@@ -39,6 +39,9 @@ Rest assured that while the above may sound complicated, you will be successful 
 
  * [The QGIS Download page](http://qgis.org/en/site/forusers/download.html)
  * [KyngChaos QGIS OS X installer](http://www.kyngchaos.com/software/qgis)
+ * [27 Differences Between ArcGIS and QGIS](http://gisgeography.com/qgis-arcgis-differences/)
+ * [QGIS 2.0](https://www.youtube.com/watch?v=sQ8ytFJE_Wk) (This video isn't very high quality, but it contains a version of the history of the project if you're interested.)
+ * [The Unknowns: A Manager's Guide to Open Source](https://www.youtube.com/watch?v=jUgiG6eaYtI) (Paul Ramsey's excellent talk about the benefits of open source software.)
 
 <div style="page-break-after: always;"></div>
 
