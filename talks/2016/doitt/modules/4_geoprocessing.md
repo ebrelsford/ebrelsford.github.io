@@ -43,7 +43,7 @@ Here we automate some of the work covered in the previous exercise--taking an in
     5. Above the right pane, set the **Name** to **Buffer by 50 feet** and **Group** to **Common geoprocessing**.
     6. Press the **Save** button and save the model in an appropriate location.
  3. Now let's run the model:
-    1. Close the model for the moment and open the [borough boundaries](https://data.cityofnewyork.us/City-Government/Borough-Boundaries/tqmj-j8zm) data in QGIS.
+    1. Close the model for the moment and open the [Borough Boundaries](https://data.cityofnewyork.us/City-Government/Borough-Boundaries/tqmj-j8zm) data in QGIS.
     2. Open the model again by going to **Processing > Graphical Modeler** and opening the file you just saved.
     3. Click the **Run model** button.
     4. Select the appropriate input layer and an appropriate output file location and press **Run**.
