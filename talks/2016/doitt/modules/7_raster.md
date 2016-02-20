@@ -2,7 +2,7 @@
 
 ## Exercise 7-1: Opening raster data
 
- 1. Open the [landcover data](https://data.cityofnewyork.us/Environment/Landcover-Raster-Data-2010-/9auy-76zt) data in QGIS.
+ 1. Open [Land Cover](https://data.cityofnewyork.us/Environment/Landcover-Raster-Data-2010-/9auy-76zt) in QGIS.
  2. In QGIS, open the data. You should be able to do so as you have with vector data (double-click and drag-and-drop), and if you want to do it through a menu go to **Layer > Add Layer > Add Raster Layer**.
  3. Let's make the file a bit more manageable:
     1. Zoom and pan your map to a section of the city you'd like to work with.
