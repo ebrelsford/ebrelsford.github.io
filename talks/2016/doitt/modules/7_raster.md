@@ -29,5 +29,34 @@ Now we will turn the features we selected from the raster into vectors.
  3. Select the clipped layer for the **Input file**.
  4. Browse to select a proper location for your shapefile and press **OK**.
 
+## Exercise 7-4: Georeferencing images
+
+Let's turn an image with no geodata into a GeoTIFF:
+
+ 1. Download an image to georeference:
+    1. Find a plate at the [NYPL's public domain digital collection](http://digitalcollections.nypl.org/collections/de1dcfb0-c5f6-012f-1dfc-58d385a7bc34#/?tab=navigation) of an area of the city you will be able to georeference.
+    2. Click on the plate, on the new page under **Download options** click on one of the larger sizes (eg **2560px**) and save the file somewhere accessible.
+ 2. Add the image to QGIS to georeference:
+    1. In QGIS, ensure that the **Georeferencer GDAL** plugin is installed and enabled.
+    2. Go to **Raster > Georeferencer > Georeferencer**.
+    3. Click the **Open Raster** button, find the image you just downloaded it, and open it.
+ 3. Leave the Georeferencer open but go back to your map canvas. Add a reference layer (**Web > OpenLayers Plugin > ...**. We will use OpenStreetMap, but anything with labels should suffice.
+ 4. Back in the Georeferencer, add ground control points:
+    1. Pan and zoom both the raster and the map canvas to a recognizable landmark such as a street corner.
+    2. In the Georeferencer, select the **Add Point** tool.
+    3. Click on the landmark you chose in step 1.
+    4. The **Enter map coordinates** dialog opens.
+    5. Click **From map canvas**.
+    6. The Georeferencer disappears. Click the landmark in your map canvas. Keep in mind that the image you downloaded shows property outlines.
+    7. Switch back to the Georeferencer and repeat until you have three or four ground control points.
+ 5. Set your georeferencing settings:
+    1. In the Georeferencer, click the **Transformation Settings** button on the toolbar.
+    2. Set **Transformation type** to **Thin Plate Spline**. This should suffice unless your image is very distorted.
+    3. Set **Output raster** to somewhere accessible.
+    4. Set **Target CRS** to **EPSG:3857** as this is the CRS of the reference layer we are using. You can reproject the result later if you need to.
+    4. Check **Load in QGIS when done**.
+ 6. Click **Run** in the Georeferencer toolbar. You should see a progress indicator and your GeoTIFF should appear on your map canvas.
+ 7. If you are unhappy with the results, you can delete ground control points and repeat the above (steps 4 - 6).
+
 <div style="page-break-after: always;"></div>
 
