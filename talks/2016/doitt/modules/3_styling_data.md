@@ -114,17 +114,28 @@ Here we create a heat map by creating a raster of the heat map and styling that.
 ### Exercise 3-6
 
 Here we create a PDF of a map using QGIS's built-in Print Composer:
- 1. Load one of the projects from the previous exercises.
- 2. Go to **Project > Print Composer**.
- 3. Use the **Add new map** tool and draw a rectangle for the viewport of the map.
- 4. Add a title using the **Add new label** tool.
- 5. Add a legend using the **Add new legend** tool. Go back to your project and rename layers as required to make the legend useful. If it doesn't make sense to change names or properties on the project itself, find the **Item properties** tab and edit the legend there.
- 6. Add a scale bar and customize it.
- 7. Add other accessories as you find necessary.
- 8. When you are done, press the **Export as PDF** button and save the PDF somewhere accessible.
- 9. If you save this project you can always get back to your print composer under **Project > Print Composers**.
-
-TODO grouping layers / showing and hiding layers by map ("locking")
+ 1. Load one of the multi-layered projects from the previous exercises (eg Exercise 3-1).
+ 3. Make your first print composer:
+    1. Go to **Project > New Print Composer**.
+    2. Use the **Add new map** tool and draw a rectangle for the viewport of the map.
+    3. Add a title using the **Add new label** tool.
+    4. Add a legend using the **Add new legend** tool. Go back to your project and rename layers as required to make the legend useful. If it doesn't make sense to change names or properties on the project itself, find the **Item properties** tab and edit the legend there.
+    5. Add a scale bar and customize it.
+    6. Add other accessories as you find necessary.
+    7. When you are done, press the **Export as PDF** button and save the PDF somewhere accessible.
+ 4. Make a print composer with an inset map:
+    1. In your map canvas, zoom out to the layer's extent (eg, all of NYC).
+    2. Go to **Project > New Print Composer**.
+    3. Use the **Add new map** tool and draw a rectangle for the viewport of the map. This will be the overview map.
+    4. Leaving the print composer open, go back to your map canvas and zoom in to an area you wish to use as an inset.
+    5. Go back to the print composer and use the **Add new map** tool to add another map alongside or on top of the overview map. This will be the inset map.
+    6. Add a frame around the inset map under **Item properties**.
+    7. Add an overview to the overview map: select the overview map, go to **Item properties**, scroll down to **Overviews**, add new one (**+**), and select **Map 1** next to **Map frame**.
+    8. Style the overview as you like.
+ 5. With the print composer you used in the previous step, experiment with locking layers and styles:
+    1. Select the inset map and check **Lock layers for map item** under **Item properties**.
+    2. With the print composer open, go back to your map canvas and hide the more detailed layers such as streets.
+    3. Go back to your print composer and press the **Refresh view** button in the toolbar. The overview map should be refreshed with your map as it looks in your map canvas.
 
 <div style="page-break-after: always;"></div>
 
