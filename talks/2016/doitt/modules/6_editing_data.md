@@ -9,7 +9,7 @@ In this section we will cover:
 
 ### Exercise 6-1: Editing data
 
- 1. Open the [building footprint data](https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8) in QGIS.
+ 1. Open the [Building Footprints](https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8) in QGIS.
  2. Pick a building to edit. Zoom and pan your map to it.
  3. Enter edit mode:
     1. Ensure the layer you want to edit is selected in the layers panel, and
