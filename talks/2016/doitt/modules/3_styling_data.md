@@ -18,6 +18,11 @@ Layer and style a map of some part of the NYC coastline using the following data
     1. Double-click the layer in the **layers panel**.
     2. Select the **Style** tab on the left.
     3. Change the settings for the layer's styles. As you do, experiment with overlaying multiple **symbol layers** and look at the **blending modes**. Explore a bit.
+ 3. Add labels to the street centerlines:
+    1. Double-click the layer in the **layers panel**.
+    2. Select the **Labels** tab on the left.
+    3. Change the dropdown at the top of the dialog to **Show labels for this layer** and select a column next to **Label with**.
+    4. Style the labels as you like.
  3. Let's categorize the collision data by the type of vehicle involved:
     1. Double-click the collision data layer and open its **Style** tab.
     2. Change **Single Symbol** in the top left to **Categorized**.
@@ -118,6 +123,8 @@ Here we create a PDF of a map using QGIS's built-in Print Composer:
  7. Add other accessories as you find necessary.
  8. When you are done, press the **Export as PDF** button and save the PDF somewhere accessible.
  9. If you save this project you can always get back to your print composer under **Project > Print Composers**.
+
+TODO grouping layers / showing and hiding layers by map ("locking")
 
 <div style="page-break-after: always;"></div>
 
