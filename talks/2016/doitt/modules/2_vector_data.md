@@ -37,7 +37,7 @@ We recommend adding folders that you commonly use to your favorites in the **bro
 
 Let's open a shapefile from NYC Open Data:
 
- 1. Download the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file,
+ 1. Open the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file,
  2. unzip the file, and
  3. open it by going to **Layer > Add Layer > Add Vector Layer**.
 
@@ -47,7 +47,7 @@ Remove the layer from the **Layers Panel** and try opening the file using the ot
 
 Here we open a CSV with geographic data in it. When you're opening a CSV with geographic data in its columns, you need to use the **Add Delimited Text Layer** menu. All other methods will ignore the geographic data in the file.
 
- 1. Download this [crash data from 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki), which is a CSV of motor vehicle crashes.
+ 1. Open [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki), which is a CSV of motor vehicle crashes.
  2. In QGIS go to **Layer > Add Layer > Add Delimited Text Layer**.
  3. Browse for the file and ensure that a valid preview of the file shows up in the bottom of your window, then press **OK**.
 
@@ -119,7 +119,7 @@ Here we cover common attribute-related tasks:
 
 ### Exercise 2-6: Filtering and selecting data
 
- 1. Re-open the [NYPD Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open.
+ 1. Re-open the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open.
  2. With the collisions layer selected in the **layers panel**, find the attribute table icon to open the attribute table. There are two other ways you can do this: right-click the layer and select **Open Attribute Table** or select the layer and go to **Layers > Open Attribute Table**.
  3. With the attribute table open, filter the data:
     1. Click the button at the bottom left that reads **Show All Features**.
@@ -157,7 +157,7 @@ In this section we will use expressions in two ways:
 
 ### Exercise 2-7: Selecting by expression
 
- 1. Re-open the [NYPD Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open.
+ 1. Re-open the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open.
  2. With the collisions layer selected in the **layers panel**, find and click the **Select by expression** button.
  3. Let's recreate the selection from the previous exercise:
     1. In the middle panel, expand **Fields and Values**.
@@ -199,7 +199,7 @@ In this section we will use expressions in two ways:
 ### Exercise 2-8: Using the field calculator
 
 We will add simple columns to a file.
- 1. Re-open the [NYPD Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open and select the layer in the **layers panel**.
+ 1. Re-open the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file in QGIS if it is not open and select the layer in the **layers panel**.
  2. Find the **Open Field Calculator** button and click it.
  3. Create a new field:
     1. Set **Output field name** to **injuries**.
@@ -231,7 +231,7 @@ We will look at three ways of dealing with coordinate reference systems:
 ### Exercise 2-10: Correcting a layer's coordinate reference system
 
 Here we intentionally load a layer in the wrong coordinate reference system and fix it:
- 1. Download [NYPD 7 Major Felony Incidents](https://data.cityofnewyork.us/Public-Safety/NYPD-7-Major-Felony-Incidents/hyij-8hr7).
+ 1. Open [7 Major Felony Incidents](https://data.cityofnewyork.us/Public-Safety/NYPD-7-Major-Felony-Incidents/hyij-8hr7).
  2. Using the **Add a Delimited Text Layer** dialog, browse for the felonies file.
  3. Confirm that:
     1. **Geometry definition** is set to **Point coordinates**.
