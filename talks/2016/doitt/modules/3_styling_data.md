@@ -10,8 +10,7 @@ Layer and style a map of some part of the NYC coastline using the following data
 
  * [Street Centerlines](https://data.cityofnewyork.us/City-Government/NYC-Street-Centerline-CSCL-/exjm-f27b)
  * [Hydrography](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd)
- * [Hydrography Structures](https://data.cityofnewyork.us/City-Government/DoITT-Hydrography-Structures/53au-zf7x)
- * [Collision data from 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki)
+ * [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki)
 
  1. Add each of the above to your **layers panel**. You may replace any of these with other data layers as you choose a long as you have a **point** layer, a **line** layer, and a **polygon** layer.
  2. Style each layer in turn:
@@ -35,7 +34,7 @@ Layer and style a map of some part of the NYC coastline using the following data
 ### Exercise 3-2: Graduated styles
 
 Let's undo the categorization and style the collision data based on the number of injuries:
- 1. Load the [Collision data from 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
+ 1. Load the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
  2. Double-click the collision data layer and open its **Style** tab.
  3. Change **Single Symbol** in the top left to **Graduated**.
  4. Use the **Column** dropdown to select **NUMBER OF PERSONS INJURED**.
@@ -55,7 +54,7 @@ Let's undo the categorization and style the collision data based on the number o
 ### Exercise 3-3
 
 Many style attributes in QGIS can be styled using expressions. Let's use this function to make the collision markers larger where more injuries were inflicted:
- 1. Load the [Collision data from 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
+ 1. Load the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
  2. Double-click the collision data layer and open its **Style** tab.
  3. Use **Single Symbol** rather than **Categorized** or **Graduated**.
  4. Style the markers as you like.
@@ -76,7 +75,7 @@ There are a few ways to make heat maps in QGIS. Here we cover both:
 ### Exercise 3-4: The heat map style
 
 This is the simple way to make heat maps:
- 1. Load the [Collision data from 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
+ 1. Load the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
  2. Double-click the collision data layer and open its **Style** tab.
  3. Use **Heatmap** rather than **Categorized** or **Graduated**.
  4. Select a color ramp and press **Apply**.
@@ -85,7 +84,7 @@ This is the simple way to make heat maps:
 ### Exercise 3-5: The heat map plugin
 
 Here we create a heat map by creating a raster of the heat map and styling that.
- 1. Load the [Collision data from 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
+ 1. Load the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
  2. Prepare the data. We will work with a smaller dataset here and change the CRS:
     1. Select some subset of the data using an expression (eg **"BOROUGH" = 'BRONX'**). Make it small enough that it's still very dense but has fewer points to work with. Shoot for 20k to 50k points.
     2. Right-click on the layer, select **Save As...**. In the **Save As** dialog, select **2263** for the CRS. Ensure that **Save only selected features** is checked.
