@@ -13,21 +13,28 @@ QGIS's plugin ecosystem is open and relatively large. In this section we will co
 qgis2threejs creates a 3D visualization of your data that is accessible from a web browser. This can be useful because you can then host the visualization online and people can view and interact with the visualization without having QGIS installed.
 
  1. Clear any existing layers from your **layers panel**.
- 2. Open one borough's buildings (from Exercise 5-1).
+ 2. Open [Building Footprints](https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8).
  3. Zoom in to some smaller portion of the layer (eg 5 x 5 blocks).
- 4. Let's make a 3D map with all buildings the same height:
+ 4. Make a 3D map with all buildings the same height:
     1. Go to **Web > Qgis2threejs > Qgis2threejs**.
     2. Under **Polygon**, check the checkbox next to your buildings layer.
     3. Don't change anything else, the defaults will do for now.
     4. Press **Run**.
     5. A browser window should open with your 3D visualization running.
     6. You can rotate the map by clicking and dragging, zoom by scrolling.
- 5. Let's make the buildings have heights based on the number of floors in each:
+ 5. Make the buildings have heights based on the number of floors in each:
     1. Go to **Web > Qgis2threejs > Qgis2threejs**.
     2. Under **Polygon**, check the checkbox next to your buildings layer.
     3. Set **Height** to **NUM_FLOORS** and **Mulitplier** to **6**.
     4. Press **Run**.
  6. Add a point layer to your **layers panel** and experiment with it in qgis2threejs.
+ 7. Add a DEM to your visualization:
+    1. Open NYC DEM Uptown (an excerpt of [NYC DEM](https://data.cityofnewyork.us/City-Government/1-foot-Digital-Elevation-Model-DEM-/dpc8-z3jc)) in QGIS along with your other layers.
+    2. Add an aerial layer using **Web > OpenLayers plugin** and move the aerial layer so that it is above the DEM but below your vector layers.
+    3. Go to **Web > Qgis2threejs > Qgis2threejs**.
+    4. Ensure the DEM you added is selected as the **DEM Layer**.
+    5. Under your buildings layer, ensure that **Mode** is set to **Relative to DEM**.
+    6. Press **Run**.
  7. Save your qgis2threejs visualization to an HTML file--this is a file that could be shared online.
 
 ## Exercise 8-2: qgis2leaf
