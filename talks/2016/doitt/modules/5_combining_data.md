@@ -13,7 +13,7 @@ Here we combine data across layers based on a field that overlaps.
 ### Exercise 5-1
 
  1. Open [Building Footprints](https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8) in QGIS and reduce the number of buildings we're working with:
-    1. Select only the building footprints in Manhattan and save as a new layer, which you should be able to do in **Select by expression** with an expression like **left("BBL", 1) = '1'**.
+    1. Select only the building footprints in Manhattan. You should be able to do so with **Select by expression** and an expression like **left("BBL", 1) = '1'**.
     2. **Save As...** and save only the selected features.
     3. Then close the original building footprints file.
  2. Open [Buildings Subject to HPD Jurisdiction](https://data.cityofnewyork.us/Housing-Development/Buildings-Subject-to-HPD-Jurisdiction/kj4p-ruqc) in QGIS without using the **Add Delimited Text Layer** functionality. You can simply drag-and-drop the file into the **layers panel** since it does not have any geographic data within it.
@@ -37,9 +37,17 @@ Here we combine data across layers based on a field that overlaps.
  6. Use **Save As...** to save only the features that joined.
  7. Confirm that the new file has the columns from the HPD Buildings file that you selected.
 
+### Exercise 5-2
+
+Perform another attribute join between two other layers:
+
+ 1. Open [MapPLUTO for Queens](http://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page#mappluto) and [Oil Boilers](https://data.cityofnewyork.us/Housing-Development/Oil-Boilers-Detailed-Fuel-Consumption-and-Building/jfzu-yy6n).
+ 2. Join the two layers by **BBL**.
+ 3. Select only the matching parcels in MapPLUTO and save them to a new file.
+
 ## Spatial joins
 
-### Exercise 5-2: Selecting by location
+### Exercise 5-3: Selecting by location
 
  1. Open [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) and the HPD buildings in Manhattan as created in the previous exercise.
  2. Confirm that the layers are in the same CRS or use **Save As...** on one of the layers to make them match.
@@ -50,9 +58,9 @@ Here we combine data across layers based on a field that overlaps.
     3. Press **OK**.
     4. Only the buildings in the city council district you selected should be selected.
 
-### Exercise 5-3: Points in Polygon
+### Exercise 5-4: Points in Polygon
 
- 1. Open [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) and collisions in July 2015 as created in Exercise 2-6.
+ 1. Open [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) and vehicle collisions in July 2015 as created in Exercise 2-6.
  2. Confirm that the layers are in the same CRS or use **Save As...** on one of the layers to make them match.
  3. Go to **Vector > Analysis Tools > Points in Polygon**:
     1. Select the appropriate layers for **Input polygon vector layer** (city council districts) and **Input point vector layer** (collisions in July 2015).
@@ -67,9 +75,16 @@ Here we combine data across layers based on a field that overlaps.
     6. Apply the style.
     7. If council districts are missing, you may need to change the boundaries of the classes (make the first's **Lower value** smaller, the last's **Upper value** higher). This happens sometimes when using expressions. I recommend using this method to experiment with expressions and styles, then use the **Field Calculator** to add a column with the expression you choose and style based on that column.
 
-### Exercise 5-4: Join attributes by location
+### Exercise 5-5: Points in Polygon
 
- 1. Open HPD buildings in Manhattan (from Exercise 5-1) and [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi).
+ 1. Open [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) and Airbnb Listings.
+ 2. Confirm that the layers are in the same CRS or use **Save As...** on one of the layers to make them match.
+ 3. Perform a **Points in Polygon** analysis and find the mean price in each council district as you do.
+ 4. Visualize the data however you like.
+
+### Exercise 5-6: Join attributes by location
+
+ 1. Open Buildings Subject to HPD Jurisdiction in Manhattan (from Exercise 5-1) and [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi).
  2. Confirm that the layers are in the same CRS or use **Save As...** on one of the layers to make them match.
  3. Go to **Vector > Data Management Tools > Join Attributes by Location**:
     1. Select the appropriate layers for **Target vector layer** (city council districts) and **Join vector layer** (HPD buildings in Manhattan).
@@ -80,6 +95,11 @@ Here we combine data across layers based on a field that overlaps.
     6. This may take a minute or two. When QGIS is done it will ask you if you want to add the new layer to your TOC (**layers panel**). Do so.
     7. Your resulting layer should include the mean and sum of each numeric field in the buildings file.
  4. Create a choropleth using one of the fields in the new layer..
+
+### Exercise 5-7: Join attributes by location
+
+ 1. Open Buildings Subject to HPD Jurisdiction in Manhattan (from Exercise 5-1) and [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) again if you closed them.
+ 2. **Join Attributes by location** again, but this time in the other direction: to each building add it's city council district's data.
 
 <div style="page-break-after: always;"></div>
 
