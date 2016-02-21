@@ -15,7 +15,7 @@ Here we use buffer to get shapes representing the area within 50 feet of a road:
  1. Open the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) and [Borough Boundaries](https://data.cityofnewyork.us/City-Government/Borough-Boundaries/tqmj-j8zm) data in QGIS.
  2. Ensure that both files are in the same CRS by opening the **Layer Properties** and looking in the **General** tab for both. If they do not match, use **Save As...** to re-project one of the layers.
  3. Using the layers that are in the same CRS, select one borough in the borough boundaries layer.
- 4. Let's make our file a bit smaller so it's more manageable by clipping the roadbed layer to the selected borough:
+ 4. Let's make our file a bit smaller and more manageable by clipping the roadbed layer to the selected borough:
     1. Go to **Vector > Geoprocessing Tools > Clip**.
     2. Set **Input vector layer** to the roadbed layer (the layer you want to clip).
     3. Set **Clip layer** to the borough boundaries layer (the layer you want to clip to).
@@ -45,7 +45,7 @@ Here we automate some of the work covered in the previous exercise--taking an in
     1. Drag a **vector layer** input from the left panel to the right. Set **Parameter name** to **Input**.
     2. Switch to the **Algorithms** tab in the left panel.
     3. Under **Geoalgorithms > Vector > General tools** find **Reproject layer** and drag it over to the right. Change **Target CRS** to **2263** and set the description to **Reproject layer to 2263**.
-    4. Under **Geoalgorithms > Vector > Geometry operations** find **Fixed distance buffer** and drag it over to the right. Change **Input layer** to the output from the previous (**'Reprojected' from algorithm 'Reproject layer to 2263'** step) and set the **Distance** to **50**. Then set the **Description** to **Buffer by 50 feet** and **Buffer<OutputVector>** to **Output**. The last is the name we give the output layer.
+    4. Under **Geoalgorithms > Vector > Geometry operations** find **Fixed distance buffer** and drag it over to the right. Change **Input layer** to the output from the previous (**'Reprojected' from algorithm 'Reproject layer to 2263'** step) and set the **Distance** to **50**. Then set the **Description** to **Buffer by 50 feet** and **Buffer\<OutputVector\>** to **Output**. The last is the name we give the output layer.
     5. Above the right pane, set the **Name** to **Buffer by 50 feet** and **Group** to **Common geoprocessing**.
     6. Press the **Save** button and save the model in an appropriate location.
  3. Now let's run the model:
@@ -77,9 +77,13 @@ With a partner, create a workflow that uses multiple geoprocessing algorithms an
     2. Enter **processing.alglist()** in the terminal and press **Enter**. All of the processing algorithm will be printed.
     3. Let's focus on an algorithm we would like to use: enter **processing.alglist('hull')** to see only the algorithms with **hull** in their names.
     4. We'll use the convex hull algorithm. To learn how to use it, enter **processing.alghelp('qgis:convexhull')**. We are told that there are four parameters: **INPUT**, **FIELD** (if we were making multiple convex hulls based on a field), **METHOD**, and **OUTPUT**.
-    5. Enter **processing.runalg('qgis:convexhull', <LAYER NAME>, None, 0, <FULL PATH TO OUTPUT FILE>')**, but replace **<LAYER NAME>** with a layer you would like to calculate the convex hull of, and **<FULL PATH TO OUTPUT FILE>** with the path you would like to save to.
+    5. Enter **processing.runalg('qgis:convexhull', \<LAYER NAME\>, None, 0, \<FULL PATH TO OUTPUT FILE\>)**, but replace **\<LAYER NAME\>** with a layer you would like to calculate the convex hull of, and **\<FULL PATH TO OUTPUT FILE\>** with the path you would like to save to.
     6. Open the folder you saved to and you should have a new shapefile--add that to your layers panel.
-    7. Click the **Show editor** button on the python console's toolbar. To the right you should have an editor pane. Enter **import processing** on the first line and your command from step 5 on the second line. Click the **Run script** button to run your script again.
+ 6. Let's save our command to a script:
+    1. Click the **Show editor** button on the python console's toolbar. To the right you should now have an editor pane.
+    2. Enter **import processing** on the first line and your final command from step 5 on the second line.
+    3. Click the **Run script** button to run your script again.
+    4. Save the script somewhere accessible.
 
 ## Resources
 

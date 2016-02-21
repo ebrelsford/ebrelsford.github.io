@@ -56,7 +56,7 @@ Let's undo the categorization and style the collision data based on the number o
 Many style attributes in QGIS can be styled using expressions. Let's use this function to make the collision markers larger where more injuries were inflicted:
  1. Load the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) if it's not already open.
  2. Double-click the collision data layer and open its **Style** tab.
- 3. Use **Single Symbol** rather than **Categorized** or **Graduated**.
+ 3. Use **Single Symbol** rather than **Categorized** or **Graduated** styles.
  4. Style the markers as you like.
  5. Next to **Size**, to the right of the input field, click the **Data defined override** button and select **Field type > NUMBER OF PERSONS INJURED**.
  6. Click **Apply** to see the result: the point diameters should vary by the number of injuries.
@@ -97,7 +97,7 @@ Here we create a heat map by creating a raster of the heat map and styling that.
     1. **Input point layer**: the collisions layer that we just created.
     2. **Output raster**: a valid location to save to.
     3. **Output format**: GeoTIFF.
-    4. **Radius**: 2000 layer units. As the layer is in CRS 2263, we know that this is feet.
+    4. **Radius**: 2000 layer units. As the layer is in CRS 2263 we know that this is feet.
  5. Press **OK**.
  6. When the raster layer loads, let's style it:
     1. Double-click the raster layer in the **layers panel**.
@@ -126,7 +126,7 @@ Here we create a PDF of a map using QGIS's built-in Print Composer:
     1. In your map canvas, zoom out to the layer's extent (eg, all of NYC).
     2. Go to **Project > New Print Composer**.
     3. Use the **Add new map** tool and draw a rectangle for the viewport of the map. This will be the overview map.
-    4. Leaving the print composer open, go back to your map canvas and zoom in to an area you wish to use as an inset.
+    4. Leaving the print composer open, switch to your map canvas and zoom in to an area you wish to use as an inset.
     5. Go back to the print composer and use the **Add new map** tool to add another map alongside or on top of the overview map. This will be the inset map.
     6. Add a frame around the inset map under **Item properties**.
     7. Add an overview to the overview map: select the overview map, go to **Item properties**, scroll down to **Overviews**, add new one (**+**), and select **Map 1** next to **Map frame**.

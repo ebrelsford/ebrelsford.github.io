@@ -12,24 +12,25 @@ In this section we will cover:
  1. Open the [Building Footprints](https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8) in QGIS.
  2. Pick a building to edit. Zoom and pan your map to it.
  3. Enter edit mode:
-    1. Ensure the layer you want to edit is selected in the layers panel, and
-    2. Find and the edit button in the edit toolbar.
+    1. Ensure the layer you want to edit is selected in the layers panel.
+    2. Find and press the edit button in the edit toolbar.
  4. Using the **Move Feature(s)** tool, move the building you want to edit.
  5. Using the **Node Tool**:
     1. Move one or more nodes, and
     2. Add a new node by double-clicking somewhere on one of the edges of the building.
- 6. Press the edit button again to exit edit mode and save your file. Until you save you are in danger of losing your edits.
- 7. Let's add a ring to a building:
+ 6. Let's add a ring to a building:
     1. Select a building with the **Select Features** tool
     2. Go to **Edit > Add Ring**
     3. Draw the hole you want to remove from the inside of the building, right-clicking when you're done.
+ 7. Experiment with other editing tools.
+ 8. Press the edit button again to exit edit mode and save your file. Until you save you are in danger of losing your edits.
 
 ### Exercise 6-2: Creating data
 
  1. Remove all layers from your **layers panel**.
  2. Add an OpenLayers aerial imagery layer:
-    1. Go to **Web > OpenLayers plugin > Google Maps > Google Hybrid**.
-    2. If **Web** is not available, open **Plugins > Manage and Install Plugins...**, search for OpenLayers, and enable the plugin.
+    1. Go to **Web > OpenLayers plugin > Bing Maps > Bing Aerial with labels**.
+    2. If **OpenLayers** is not available, open **Plugins > Manage and Install Plugins...**, search for OpenLayers, and enable the plugin.
  3. Create a new polygon shapefile:
     1. Go to **Layer > Create Layer > New Shapefile Layer**.
     2. Set **Type** to **Polygon**.

@@ -37,9 +37,8 @@ We recommend adding folders that you commonly use to your favorites in the **bro
 
 Let's open a shapefile from NYC Open Data:
 
- 1. Open the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file,
- 2. unzip the file, and
- 3. open it by going to **Layer > Add Layer > Add Vector Layer**.
+ 1. Ensure that you have the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file on your hard drive.
+ 2. Open it by going to **Layer > Add Layer > Add Vector Layer** and browsing for it.
 
 Remove the layer from the **Layers Panel** and try opening the file using the other three methods mentioned above (Browser Panel, double-clicking, and drag-and-drop).
 
@@ -47,9 +46,8 @@ Remove the layer from the **Layers Panel** and try opening the file using the ot
 
 Here we open a CSV with geographic data in it. When you're opening a CSV with geographic data in its columns, you need to use the **Add Delimited Text Layer** menu. All other methods will ignore the geographic data in the file.
 
- 1. Open [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki), which is a CSV of motor vehicle crashes.
- 2. In QGIS go to **Layer > Add Layer > Add Delimited Text Layer**.
- 3. Browse for the file and ensure that a valid preview of the file shows up in the bottom of your window, then press **OK**.
+ 1. In QGIS go to **Layer > Add Layer > Add Delimited Text Layer**.
+ 2. Browse for the [Motor Vehicle Collisions 2015](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions-2015/kref-x3ki) file and ensure that a valid preview of the file shows up in the bottom of your window, then press **OK**.
 
 ![Opening a CSV](img/open-csv.png)
 **The Add Delimited Text Layer dialog box**
@@ -63,7 +61,7 @@ Finally, let's load a WFS layer using one of the USGS's public WFS server. The U
  3. In QGIS, go to **Layer > Add Layer > Add WFS Layer**.
  4. Create a new connection and paste the WFS link into the URL field.
  5. Select your new connection and press **Connect**.
- 6. Select one of the available connections and press **Add**.
+ 6. Select one of the available layers and press **Add**.
 
 ![Adding a new WFS connection](img/wfs.png)
 **Adding a new WFS connection**
@@ -125,8 +123,8 @@ Here we cover common attribute-related tasks:
     1. Click the button at the bottom left that reads **Show All Features**.
     2. Go to **Column Filter > BOROUGH**.
     3. Enter a borough name in all caps (eg *BRONX*).
-    4. Press [enter] or the **Apply** button.
- 4. The filter only reduces the number of features that appear in the attribute table. Let's select these:
+    4. Press **[Enter]** or the **Apply** button.
+ 4. The filter only reduces the number of features that appear in the attribute table, not on the map canvas. Let's select features we have filtered to:
     1. Right-click on one of the features in the attribute table.
     2. Select **Select All**.
     3. All of the features in the borough you picked should be highlighted.
@@ -143,7 +141,7 @@ Here we cover common attribute-related tasks:
     5. Browse for a valid location to save the file to.
     6. Ensure **Save only selected features** is checked.
     7. Press **OK**.
-    8. A new layer with just your select features should be added to your **layers panel**.
+    8. A new layer with just your selected features should be added to your **layers panel**.
  9. Now that we are done filtering and selecting, unselect the features:
     1. Select the original layer in the **layers panel**.
     2. Open the attribute table.
@@ -218,7 +216,7 @@ We will look at three ways of dealing with coordinate reference systems:
 
 ### Exercise 2-9: Changing a layer's coordinate reference system
 
- 1. Re-open the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file in QGIS if it is not open. The layer is currently in **EPSG:4326**. We want the layer to be in **State Plane Long Island** (**2263**) to do some geoprocessing with another layer.
+ 1. Re-open the [Roadbed](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd) file in QGIS if it is not open. The layer is currently in **EPSG:4326**. We want the layer to be in **State Plane Long Island** (**EPSG:2263**) to do some geoprocessing with another layer.
  2. Right-click on the layer in the **layers panel**.
  3. Choose **Save As...**.
  4. Select **ESRI Shapefile** for the format.
@@ -238,8 +236,8 @@ Here we intentionally load a layer in the wrong coordinate reference system and 
     2. **X field** is set to **Xcoordinate**.
     3. **Y field** is set to **Ycoordinate**.
  4. Press **OK**.
- 5. If prompted to select a CRS choose **EPSG 4326**. QGIS should default to this.
- 6. The file is actually in **State Plane Long Island** (**2263**). You can confirm this by opening another layer in NYC and zooming to the layer's extents--they will not overlap correctly.
+ 5. If prompted to select a CRS choose **EPSG:4326**. QGIS should default to this.
+ 6. The file is actually in **State Plane Long Island** (**EPSG:2263**). You can confirm this by opening another layer in NYC and zooming to the layer's extents--they will not overlap correctly.
  7. Let's fix the felonies layer's CRS:
     1. Double-click on the layer in the **layers panel**.
     2. Go to the **General** tab.
@@ -255,7 +253,7 @@ Here we intentionally load a layer in the wrong coordinate reference system and 
  1. Open a layer in QGIS if you do not have any open currently.
  2. Save the project by going to **Project > Save**.
  3. Close QGIS.
- 4. Open the project by double-clicking it. Here we ensure that the project works as expected.
+ 4. Open the project by double-clicking it. Ensure that the project loads as expected.
  5. Close QGIS again.
  6. Move one of the project's data files on your computer to another folder on your computer. For example, if one of the project's layers is a shapefile, move all of the files in that shapefile (or the folder they are in) somewhere else.
  7. Open the project again by double-clicking it.

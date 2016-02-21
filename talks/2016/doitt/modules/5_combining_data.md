@@ -49,9 +49,9 @@ Perform another attribute join between two other layers:
 
 ### Exercise 5-3: Selecting by location
 
- 1. Open [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) and the HPD buildings in Manhattan as created in the previous exercise.
+ 1. Open [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) and the HPD buildings in Manhattan as created in Exercise 5-1.
  2. Confirm that the layers are in the same CRS or use **Save As...** on one of the layers to make them match.
- 3. Select one city council district.
+ 3. Select one city council district in Manhattan.
  4. Go to **Vector > Research Tools > Select by Location**:
     1. Select the appropriate layers for **Select features in** (the buildings layer) and **that intersect features in** (the city council districts layer).
     2. Check **Only selected features** to only select buildings in the selected city council district.
@@ -65,7 +65,7 @@ Perform another attribute join between two other layers:
  3. Go to **Vector > Analysis Tools > Points in Polygon**:
     1. Select the appropriate layers for **Input polygon vector layer** (city council districts) and **Input point vector layer** (collisions in July 2015).
     2. Choose an appropriate location to save the output shapefile.
- 4. Create a choropleth with the resulting layer (using the **Graduated** style with **Column** set to **PNTCNT**.
+ 4. Create a choropleth with the resulting layer (using the **Graduated** style with **Column** set to **PNTCNT**).
  5. Choropleths by count are generally a bad idea, so let's make a choropleth by density instead:
     1. Open the **Style** tab for the layer.
     2. Next to the **Column** dropdown press the **Expression** button.
@@ -73,7 +73,8 @@ Perform another attribute join between two other layers:
     4. Press **OK** to exit the **Expression** dialog.
     5. Press **Classify** to re-classify the layer after changing the column or expression.
     6. Apply the style.
-    7. If council districts are missing, you may need to change the boundaries of the classes (make the first's **Lower value** smaller, the last's **Upper value** higher). This happens sometimes when using expressions. I recommend using this method to experiment with expressions and styles, then use the **Field Calculator** to add a column with the expression you choose and style based on that column.
+    7. If council districts are missing, you may need to change the boundaries of the classes (make the first's **Lower value** smaller, the last's **Upper value** higher). This happens sometimes when using expressions. I recommend using this method to experiment with expressions and styles, then use the **Field Calculator** to add a column with the expression you choose and style based on that column (as you will in the next step).
+ 6. Add a column with the density expression to the layer using the **Field Calculator** and style the layer using your new column.
 
 ### Exercise 5-5: Points in Polygon
 
@@ -93,13 +94,13 @@ Perform another attribute join between two other layers:
     4. Choose an appropriate location to save the output shapefile.
     5. Press **OK**.
     6. This may take a minute or two. When QGIS is done it will ask you if you want to add the new layer to your TOC (**layers panel**). Do so.
-    7. Your resulting layer should include the mean and sum of each numeric field in the buildings file.
- 4. Create a choropleth using one of the fields in the new layer..
+    7. Confirm that the resulting layer includes the mean and sum of each numeric field in the buildings file.
+ 4. Create a choropleth using one of the fields in the new layer.
 
 ### Exercise 5-7: Join attributes by location
 
  1. Open Buildings Subject to HPD Jurisdiction in Manhattan (from Exercise 5-1) and [City Council Districts](https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi) again if you closed them.
- 2. **Join Attributes by location** again, but this time in the other direction: to each building add it's city council district's data.
+ 2. **Join Attributes by location** again, but this time in the other direction: to each building add its city council district's data.
 
 <div style="page-break-after: always;"></div>
 
