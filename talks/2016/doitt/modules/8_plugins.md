@@ -7,8 +7,9 @@ QGIS's plugin ecosystem is open and relatively large. In this section we will co
  * CartoDB
  * qgis2threejs
  * qgis2leaf
+ * TimeManager
 
-## Exercise 8-1 qgis2threejs
+## Exercise 8-1: qgis2threejs
 
 qgis2threejs creates a 3D visualization of your data that is accessible from a web browser. This can be useful because you can then host the visualization online and people can view and interact with the visualization without having QGIS installed.
 
@@ -100,6 +101,27 @@ CartoDB is another handy way to share maps and map data online. This plugin allo
     4. Give the map a **Name** and **Description** as you see fit.
     5. Press **Create**.
     6. Confirm that the map was created in CartoDB, styles and all, in your account under **Maps**.
+
+## Exercise 8-4: TimeManager
+
+[TimeManager](https://github.com/anitagraser/TimeManager) can animate your map data by date and time, providing that you give it a proper date field. Let's try this with the building data.
+
+ 1. Ensure the TimeManager plugin is installed.
+ 2. Add the Building Footprints file for one borough to your **layers panel**.
+ 3. Let's create a proper date field for the year each building was built:
+    1. Enter edit mode on the buildings layer.
+    2. Using the **Field calculator** add a new **date** field.
+    3. The expression you use should be something like **concat("CNSTRCT_YR", '-01-01')**, which should give you dates such as **1760-01-01**.
+    4. Add the column and exit edit mode, saving your changes.
+ 4. Enable the **TimeManager** panel by going to **Plugins > TimeManager > Toggle visibility**.
+ 5. In the **TimeManager** panel, enter these **Settings**:
+    1. **Add Layer** with your building layer.
+    2. Select your layer.
+    3. Select the field you just created for **Start Time**.
+    4. Press **OK**, then scroll to the right and check **Accumulate Features** for the layer.
+    5. Press **OK** to exit the settings dialog.
+ 6. Change **Time frame size** to **5 years**.
+ 7. Press the **Play** button, and the buildings should fill in as they are built.
 
 ## Resources
 
