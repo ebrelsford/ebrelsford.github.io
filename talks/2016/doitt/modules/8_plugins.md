@@ -101,7 +101,7 @@ CartoDB is another handy way to share maps and map data online. This plugin allo
     5. Press **Create**.
     6. Confirm that the map was created in CartoDB, styles and all, in your account under **Maps**.
 
-## Exercise 8-4: TimeManager
+## Exercise 8-5: TimeManager
 
 [TimeManager](https://github.com/anitagraser/TimeManager) can animate your map data by date and time, providing that you give it a proper date field. Let's try this with the building data.
 
