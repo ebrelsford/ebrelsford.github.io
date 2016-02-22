@@ -136,5 +136,9 @@ Here we create a PDF of a map using QGIS's built-in Print Composer:
     2. With the print composer open, go back to your map canvas and hide the more detailed layers such as streets.
     3. Go back to your print composer and press the **Refresh view** button in the toolbar. The overview map should be refreshed with your map as it looks in your map canvas.
 
+## Resources
+
+ * [More about layer and feature blending](https://docs.qgis.org/2.2/en/docs/user_manual/working_with_vector/vector_properties.html#layer-rendering).
+
 <div style="page-break-after: always;"></div>
 
