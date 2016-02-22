@@ -818,7 +818,7 @@ qgis2threejs creates a 3D visualization of your data that is accessible from a w
 
  1. Clear any existing layers from your **layers panel**.
  2. Open [Building Footprints](https://data.cityofnewyork.us/Housing-Development/Building-Footprints/tb92-6tj8).
- 3. Zoom in to some smaller portion of the layer (eg 5 x 5 blocks).
+ 3. Zoom in to some smaller portion of the layer (eg 10 x 10 blocks).
  4. Make a 3D map with all buildings the same height:
     1. Go to **Web > Qgis2threejs > Qgis2threejs**.
     2. Under **Polygon**, check the checkbox next to your buildings layer.
@@ -837,7 +837,7 @@ qgis2threejs creates a 3D visualization of your data that is accessible from a w
     2. Add an aerial layer using **Web > OpenLayers plugin** and move the aerial layer so that it is above the DEM but below your vector layers.
     3. Go to **Web > Qgis2threejs > Qgis2threejs**.
     4. Ensure the DEM you added is selected as the **DEM Layer**.
-    5. Under your buildings layer, ensure that **Mode** is set to **Relative to DEM**.
+    5. In the options for your buildings layer, ensure that **Mode** is set to **Relative to DEM**.
     6. Press **Run**.
  7. Save your qgis2threejs visualization to an HTML file--this is a file that could be shared online.
 
@@ -847,7 +847,7 @@ Similarly to qgis2threejs, qgis2leaf creates a visualization of your data that i
 
  1. Clear any existing layers from your **layers panel**.
  2. Open one borough's buildings (from Exercise 5-1).
- 3. Zoom in to some smaller portion of the layer (eg 5 x 5 blocks) and **select** some of the buildings with the rectangle tool.
+ 3. Zoom in to some smaller portion of the layer (eg 10 x 10 blocks) and **select** some of the buildings with the rectangle tool.
  4. Make the web map:
     1. Go to **Web > qgis2leaf > Exports a QGIS project...**.
     2. Click **Get Layers** and select your buildings layer.
@@ -889,16 +889,15 @@ CartoDB is another handy way to share maps and map data online. This plugin allo
  3. Add the CartoDB account to QGIS:
     1. Find the **Add Connection** button in your toolbars and click it.
     2. Click **New**.
-    2. Click **New**.
-    4. Enter your username and **API Key**. In CartoDB, click on your account and go to **Your API Keys** to find your key.
-    5. Click **Connect**.
+    3. Enter your username and **API Key**. In CartoDB, click on your account and go to **Your API Keys** to find your key.
+    4. Click **Connect**.
  4. Add data to CartoDB:
     1. Open a relatively small layer in your **layers panel**. Buildings for one borough should be okay. 
     2. Go to **Web > CartoDB plugin > Upload layers to CartoDB**.
     3. Select your layer and click **Upload**.
     4. Go back to your CartoDB account and confirm that your data is in CartoDB under **Datasets**.
  5. Add a map to CartoDB:
-    1. If the data you uploaded to CartoDB was not added to you **layers panel**, do that now (**Web > CartoDB plugin > Add CartoDB Layer**).
+    1. If the data you uploaded to CartoDB was not added to your **layers panel**, do that now (**Web > CartoDB plugin > Add CartoDB Layer**).
     2. Style the layer however you like.
     3. Go to **Web > CartoDB plugin > Create New Map**.
     4. Give the map a **Name** and **Description** as you see fit.
