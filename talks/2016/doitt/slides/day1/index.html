@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href="http://fonts.googleapis.com/css?family=Arvo|Alegreya+Sans" rel="stylesheet" type="text/css">
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to QGIS background</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>QGIS</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/garden_maps.png);">
+            <a class="source" href="http://gardenmaps.org/">garden maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc.png);">
+            <a class="source" href="http://596acres.org/">Living Lots NYC (596 Acres)</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/curb-your-litter.png);">
+            <a class="source" href="http://map.curbyourlitter.org/">Curb Your Litter</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/due.png);">
+            <a class="source" href="http://www.newschool.edu/parsons/ms-design-urban-ecology/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/savi.png);">
+            <a class="source" href="https://www.pratt.edu/pratt-research-and-centers/spatial-analysis-visualization-initiative/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/maptime.png);">
+            <a class="source" href="http://www.meetup.com/maptime-nyc/">source</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>schedule:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>this morning: vector data, managing projects</h2>
+        </div>
+
+        <div class="slide">
+            <h2>this afternoon: styling maps, exporting maps</h2>
+        </div>
+
+        <div class="slide">
+            <h2>tomorrow morning: geoprocessing, joining, editing</h2>
+        </div>
+
+        <div class="slide">
+            <h2>tomorrow afternoon: rasters, plugins</h2>
+        </div>
+
+        <div class="slide">
+            <h2>QGIS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-quantum.png);">
+            <h2>formerly Quantum GIS</h2>
+            <a class="source" href="http://www.qgis.org/en/site/forusers/visualchangelog200/index.html?highlight=quantum#feature-quantum-gis-is-now-known-only-as-qgis">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-pronounciation.png);">
+            <h2>How do you say "QGIS"?</h2>
+            <a class="source" href="https://twitter.com/kgjenkins/status/382880224523739136">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arc-vs-q.png);">
+            <a class="source" href="http://gisgeography.com/qgis-arcgis-differences/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-start.png);">
+            <a class="source" href="https://www.youtube.com/watch?v=sQ8ytFJE_Wk">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-start.png);">
+            <h2>"I'd like to see data from PostGIS...but there's nothing on Linux to do that."</h2>
+            <a class="source" href="https://www.youtube.com/watch?v=sQ8ytFJE_Wk">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>Linux?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Linux?</h2>
+            <img style="max-height: 50%; width: auto;" src="img/linux.png" />
+        </div>
+
+        <div class="slide">
+            <h2>Free / Open Source Software</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/rms.jpg);">
+        </div>
+
+        <div class="slide">
+            <h2>goal is to protect the "fundamental freedoms of software users"</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/source-code.png);">
+            <h2>by opening source code</h2>
+        </div>
+
+        <div class="slide">
+            <h2>freedoms to</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>use,</li>
+                <li>study,</li>
+                <li>modify, and</li>
+                <li>redistribute</li>
+            </ul>
+            <p>this source code</p>
+        </div>
+
+        <div class="slide">
+            <h2>in exchange for</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>attribution</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>in exchange for</h2>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>attribution, and sometimes</li>
+                <li>sharing your changes under the same license</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mit-license.png);">
+            <h2>backed by licenses</h2>
+        </div>
+
+        <div class="slide">
+            <h2>who would ever contribute to FOSS?</h2>
+        </div>
+
+        <div class="slide">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+            <ul>
+        </div>
+
+        <div class="slide">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+                <li>recognition</li>
+            <ul>
+        </div>
+
+        <div class="slide">
+            <h3>reasons people contribute to FOSS projects</h3>
+            <ul style="list-style: disc outside; padding-left: 50px;">
+                <li>community</li>
+                <li>recognition</li>
+                <li>it's educational</li>
+            <ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/hammer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/replicated-hammer.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/loading-indicator.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading.png);">
+            <a class="source" href="https://github.com/ebrelsford/Leaflet.loading">github.com/ebrelsford/Leaflet.loading</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-loading-prs.png);">
+            <a class="source" href="https://github.com/ebrelsford/Leaflet.loading/pulls?direction=desc&page=1&sort=created&state=closed">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/coding_freedom.png);">
+            <a class="source" href="http://codingfreedom.com/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/ramsey-unknowns.png);">
+            <a class="source" href="https://www.youtube.com/watch?v=jUgiG6eaYtI">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-github.png);">
+            <a class="source" href="https://github.com/qgis/QGIS">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-committers.png);">
+            <a class="source" href="http://spatialgalaxy.net/2011/09/23/history-of-qgis-committers/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-core-maintainers.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-financials.png);">
+            <a class="source" href="http://www.qgis.org/en/_downloads/PublicQGISfinancialreport2014.pdf">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-sponsorships.png);">
+            <a class="source" href="http://www.qgis.org/en/_downloads/PublicQGISfinancialreport2014.pdf">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gdal.png);">
+            <a class="source" href="http://www.gdal.org/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/grass.png);">
+            <a class="source" href="https://grass.osgeo.org/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/saga.png);">
+            <a class="source" href="http://www.saga-gis.org/en/index.html">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>Installing QGIS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-versions.png);">
+            <h2>Pick a version:</h2>
+            <a class="source" href="https://www.qgis.org/en/site/forusers/download.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-versions.png);">
+            <h2>Long term release (LTR) is guaranteed to be supported for a full year</h2>
+            <a class="source" href="https://www.qgis.org/en/site/forusers/download.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-install-windows.png);">
+            <h2>Windows</h2>
+            <a class="source" href="https://www.qgis.org/en/site/forusers/download.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-install-os-x.png);">
+            <h2>Mac OS X</h2>
+            <a class="source" href="http://www.kyngchaos.com/software/qgis">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/os-x-gdal.png);">
+            <a class="source" href="http://www.kyngchaos.com/software/frameworks#gdal_complete">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/os-x-matplotlib.png);">
+            <a class="source" href="http://www.kyngchaos.com/software/python">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/os-x-numpy.png);">
+            <a class="source" href="http://www.kyngchaos.com/software/python">source</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Let's take a look at QGIS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-map-canvas.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-map-canvas.png);">
+            <h2>map canvas</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-toolbars.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-toolbars.png);">
+            <h2>toolbars</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-panels.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-panels.png);">
+            <h2>panels</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-status-bar.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layout-status-bar.png);">
+            <h2>status bar</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>QGIS: Working with Vector Data</h1>
+        </div>
+
+        <div class="slide">
+            <ul style="list-style: disc outside;">
+                <li>Opening vector data</li>
+                <li>Layers</li>
+                <li>Exporting data</li>
+                <li>The attribute table</li>
+                <li>Expressions</li>
+                <li>Coordinate Reference Systems</li>
+                <li>Managing projects</li>
+            </ul>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Opening vector data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Opening common types of vector data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>For example, shapefiles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Four ways:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-layer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-layer.png);">
+            <h2>1. the Layer menu</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-browser.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-browser.png);">
+            <h2>2. the Browser Panel</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-file-browser.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-file-browser.png);">
+            <h2>3. double-click</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-drag-drop.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-drag-drop.gif);">
+            <h2>4. drag-and-drop</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geojson.png);">
+            <h2>Also works for other file types like GeoJSON</h2>
+            <a class="source" href="https://github.com/datanews/amtrak-geojson/blob/master/amtrak-track.geojson">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/ogr-formats.png);">
+            <a class="source" href="http://www.gdal.org/ogr_formats.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/ogr-formats.png);">
+            <h2>or most of these</h2>
+            <a class="source" href="http://www.gdal.org/ogr_formats.html">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-1</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Opening CSV files</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-csv.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-2</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Opening WFS layers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-wfs.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-3</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Opening database layers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/add-postgis.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-4</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Exporting data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/export.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-5</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/select-by-rectangle.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/select-by-rectangle.png);">
+            <h2>Select features by shape</h2>
+        </div>
+
+        <div class="slide">
+            <h2>The attribute table</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/illustrator.jpg);">
+            <a class="source" href="https://www.youtube.com/watch?v=WPP7Nh_waNs">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/excel.png);">
+            <a class="source" href="http://www.cognossource.com/excel-odbc-data-advisor/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/attribute-table.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/attribute-table-filters.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/attribute-table-toolbar.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/query-tool.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/query-tool.png);">
+            <h2>Use the <em>Query Tool</em> to find attributes of specific features</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-6</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Expressions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/select-by-expression.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-7</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Field Calculator</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-calculator.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-8</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Coordinate reference systems</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/project-crs.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/project-crs.png);">
+            <h2>Project-wide</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/layer-crs.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/layer-crs.png);">
+            <h2>Setting the layer's projection</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/save-as.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/save-as-crs.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/save-as-crs.png);">
+            <h2>Changing the layer's projection</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-9</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-10</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Managing projects</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 2-11</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Styling with QGIS</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>Basic styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-dialog.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-compositing.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/comp-op-descriptions.png);">
+            <a class="source" href="https://docs.qgis.org/2.2/en/docs/user_manual/working_with_vector/vector_properties.html#layer-rendering">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/comp-op-normal.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/comp-op-screen.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/comp-op-dodge.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/comp-op-multiply.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/comp-op-burn.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/labels.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Categorized styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-categorized.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 3-1</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Graduated styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-graduated.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-graduated-histogram.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 3-2</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Styling with expressions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-expression.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 3-3</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Heat maps</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Heat maps using the style dialog</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-heatmap.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 3-4</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Heat maps with the plugin</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-heatmap-plugin.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/style-heatmap-plugin-raster.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 3-5</h2>
+        </div>
+
+        <div class="slide">
+            <h2>The print composer</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-map.png);">
+            <h2>Add map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-image.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-image.png);">
+            <h2>Add image</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-text.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-text.png);">
+            <h2>Add text</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-legend.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/print-composer-add-legend.png);">
+            <h2>Add legend</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Exercise 3-6</h2>
+        </div>
+
+    </body>
+</html>
