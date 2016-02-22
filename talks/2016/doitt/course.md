@@ -465,6 +465,10 @@ Here we create a PDF of a map using QGIS's built-in Print Composer:
     2. With the print composer open, go back to your map canvas and hide the more detailed layers such as streets.
     3. Go back to your print composer and press the **Refresh view** button in the toolbar. The overview map should be refreshed with your map as it looks in your map canvas.
 
+## Resources
+
+ * [More about layer and feature blending](https://docs.qgis.org/2.2/en/docs/user_manual/working_with_vector/vector_properties.html#layer-rendering).
+
 <div style="page-break-after: always;"></div>
 
 # 4. Geoprocessing
@@ -904,7 +908,7 @@ CartoDB is another handy way to share maps and map data online. This plugin allo
     5. Press **Create**.
     6. Confirm that the map was created in CartoDB, styles and all, in your account under **Maps**.
 
-## Exercise 8-4: TimeManager
+## Exercise 8-5: TimeManager
 
 [TimeManager](https://github.com/anitagraser/TimeManager) can animate your map data by date and time, providing that you give it a proper date field. Let's try this with the building data.
 
