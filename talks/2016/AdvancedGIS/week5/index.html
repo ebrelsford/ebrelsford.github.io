@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Class 4 | Advanced GIS</title>
+        <title>Class 5 | Advanced GIS</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
@@ -15,7 +15,7 @@
     <body>
 
         <div class="slide">
-            <p>Welcome to Advanced GIS, Lecture 4</p>
+            <p>Welcome to Advanced GIS, Lecture 5</p>
             <p>This is a web page that can be viewed as slides.</p>
             <p>→ to move forward</p>
             <p>← to go back</p>
@@ -23,7 +23,7 @@
 
         <div class="slide">
             <h1>Advanced GIS</h1>
-            <p>Class 4</p>
+            <p>Class 5</p>
         </div>
 
         <div class="slide">
@@ -145,28 +145,34 @@
         <div class="slide intermission"></div>
 
         <div class="slide">
-            <h2>HTML gives <em>structure</em> to web pages</h2>
+            <h2>HTML gives <em>content</em> and <em>structure</em> to web pages</h2>
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres.png);">
+        <div class="slide" style="background-image: url(img/html-structure-header.png);">
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_header.png);">
+        <div class="slide" style="background-image: url(img/html-structure-nav.png);">
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_nav.png);">
+        <div class="slide" style="background-image: url(img/html-structure-title.png);">
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_map.png);">
+        <div class="slide" style="background-image: url(img/html-structure-left.png);">
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_sidebar1.png);">
+        <div class="slide" style="background-image: url(img/html-structure-content.png);">
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_sidebar2.png);">
+        <div class="slide" style="background-image: url(img/html-structure-content-1.png);">
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_etc.png);">
+        <div class="slide" style="background-image: url(img/html-structure-content-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/html-structure-content-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/html-structure-content-4.png);">
         </div>
 
         <div class="slide">
@@ -313,6 +319,35 @@
         </div>
 
         <div class="slide">
+            <h2>let's make an html file</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-copy-iframe.png);">
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px;"><code>&lt;iframe width='100%' height='520'
+frameborder='0' src='http://eric.cartodb.com/
+viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/
+embed_map' allowfullscreen webkitallowfullscreen
+mozallowfullscreen oallowfullscreen
+msallowfullscreen&gt;&lt;/iframe&gt;</code>
+        </div>
+
+        <div class="slide">
+            <h2><code>iframe</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>iframe</code></h2>
+            <h2>lets you embed other pages in your page</h2>
+        </div>
+
+        <div class="slide">
+            <h2>let's add a CartoDB map to our html file</h2>
+        </div>
+
+        <div class="slide">
             <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -382,10 +417,23 @@
 
         <div class="slide">
             <pre><code>&lt;ul&gt;
-    &lt;li&gt;one&lt;/li&gt;
-    &lt;li&gt;two&lt;/li&gt;
-    &lt;li&gt;three&lt;/li&gt;
+    &lt;li&gt;something&lt;/li&gt;
+    &lt;li&gt;something else&lt;/li&gt;
+    &lt;li&gt;oh and another thing&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;ul&gt;
+    &lt;li&gt;something&lt;/li&gt;
+    &lt;li&gt;something else&lt;/li&gt;
+    &lt;li&gt;oh and another thing&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <ul style="list-style: disc outside;">
+                <li>something</li>
+                <li>something else</li>
+                <li>oh and another thing</li>
+            </ul>
         </div>
 
         <div class="slide">
@@ -397,11 +445,24 @@
         </div>
 
         <div class="slide">
+            <pre><code>&lt;ol&gt;
+    &lt;li&gt;one&lt;/li&gt;
+    &lt;li&gt;two&lt;/li&gt;
+    &lt;li&gt;three&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            <ol style="list-style: number outside;">
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ol>
+        </div>
+
+        <div class="slide">
             <pre><code>&lt;div&gt;
 &lt;/div&gt;</code></pre>
         </div>
 
-        <div class="slide" style="background-image: url(img/596acres_sidebar1.png);">
+        <div class="slide" style="background-image: url(img/html-structure-header.png);">
         </div>
 
         <div class="slide">
@@ -412,7 +473,6 @@
         <div class="slide">
             <pre><code>&lt;div id="header"&gt;
     <i>logo
-    mailing list
     etc</i>
 &lt;/div&gt;</code></pre>
         </div>
@@ -636,25 +696,22 @@
 &lt;/html&gt;</code></pre>
         </div>
 
+        <div class="slide intermission"></div>
+
         <div class="slide">
-            <h2><code>iframe</code></h2>
+            <h2>when sharing code with me it's helpful to put it online</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/codepen.png);">
+            <a class="source" href="http://codepen.io/ebrelsford/pen/rxXgdp/?editors=1000">codepen.io</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin.png);">
+            <a class="source" href="http://jsbin.com/kitiqivesa/edit?html,output">jsbin.com</a>
         </div>
 
         <div class="slide">
-            <h2><code>iframe</code></h2>
-            <h2>lets you embed other pages in your page</h2>
-        </div>
-
-        <div class="slide">
-            <pre style="font-size: 40px;"><code>&lt;iframe width='100%' height='520'
-frameborder='0' src='http://eric.cartodb.com/
-viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/
-embed_map' allowfullscreen webkitallowfullscreen
-mozallowfullscreen oallowfullscreen
-msallowfullscreen&gt;&lt;/iframe&gt;</code>
-        </div>
-
-        <div class="slide" style="background-image: url(img/cartodb-copy-iframe.png);">
+            <h2>neither of these is suitable for publishing a page, just for sharing snippets</h2>
         </div>
 
         <div class="slide intermission"></div>
@@ -697,20 +754,6 @@ msallowfullscreen&gt;&lt;/iframe&gt;</code>
         <div class="slide" style="background-image: url(img/css-tricks.png);">
             <h2 style="margin-top: 275px;">recommended</h2>
             <a href="https://css-tricks.com/" class="source">css-tricks.com</a>
-        </div>
-
-        <div class="slide" style="background-image: url(img/lmgtfy.gif);">
-            <h2>google it</h2>
-        </div>
-
-        <div class="slide intermission"></div>
-
-        <div class="slide" style="background-image: url(img/neocities.png);">
-            <h2>neocities.org</h2>
-        </div>
-
-        <div class="slide" style="background-image: url(img/github-pages.png);">
-            <h2 style="margin-top: 350px;">pages.github.com</h2>
         </div>
 
     </body>
