@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 8 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href="http://fonts.googleapis.com/css?family=Arvo|Alegreya+Sans" rel="stylesheet" type="text/css">
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 8</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 8</p>
+        </div>
+
+        <div class="slide">
+            <h2>NO CLASS NEXT WEEK</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/map-no-work.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/map-no-work.png);">
+            <h2>"hey where's my map?!"</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-1.png);">
+            <h2>open Developer Tools, go to the Console</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-1.png);">
+            <h2><a href="http://jsbin.com/nirodoh/edit?html,output">broken code 1</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-1.png);">
+            <h2><code>$ is not defined</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-1.png);">
+            <h2>the browser expected something that doesn't exist</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-1.png);">
+            <h2>in this case, CartoDB.js is not included at the top</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-2.png);">
+            <h2><a href="http://jsbin.com/xufudi/edit?html,output">broken code 2</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-2.png);">
+            <h2><code>Cannot read property ... of undefined</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-2.png);">
+            <h2>you tried to say <code>dataLayer.setSQL()</code>, but <code>dataLayer</code> isn't defined</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-3.png);">
+            <h2><a href="http://jsbin.com/roduwil/edit?html,output">broken code 3</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-3.png);">
+            <h2>the map doesn't change when I change the dropdown...</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-3.png);">
+            <h2>...and no error in the console?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-3.png);">
+            <h2>probably an SQL error</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bad-code-3.png);">
+            <h2>use <code>console.log()</code> to check</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>last time:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. create a button</h2>
+            <pre><code>&lt;button class="queens-button"&gt;
+    just Queens
+&lt;/button&gt;</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/just-queens-button.png);">
+        </div>
+
+        <div class="slide">
+            <h2>2. get the map layer</h2>
+            <pre style="font-size: 50px; line-height: 60px;"><code>
+cartodb.createVis(...)
+.done(function (vis, layers) {
+    dataLayer = layers[1].getSubLayer(0);     
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>3. listen for a click on the button</h2>
+            <pre style="font-size: 50px; line-height: 60px;"><code>$('.queens-button').click(function () {
+    ...
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>4. change the layer's SQL</h2>
+            <pre style="font-size: 30px; line-height: 40px;"><code>$('.queens-button').click(function () {
+    var sql = "SELECT * FROM crashes WHERE borough = 'QUEENS'";
+    dataLayer.setSQL(sql);
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>you <strong>could</strong> make a button for each borough</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT * 
+FROM crashes 
+WHERE borough = 'BRONX'
+
+SELECT * 
+FROM crashes 
+WHERE borough = 'STATEN ISLAND'</code></pre>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 40%;" src="img/borough_selector.png" />
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>var borough = 'MANHATTAN';
+var sql = "SELECT * FROM crashes WHERE borough = " + borough;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 30px; line-height: 40px;"><code>var borough = 'MANHATTAN';
+var sql = "SELECT * FROM crashes WHERE borough = <span class="highlighted">'</span>" + borough + "<span class="highlighted">'</span>";</code></pre>
+        </div>
+
+        <div class="slide">
+            <img style="max-width: 40%;" src="img/borough_selector.png" />
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 35px; line-height: 45px;"><code>&lt;select class="borough-picker"&gt;
+    &lt;option&gt;Pick a borough&lt;/option&gt;
+    &lt;option value="BRONX"&gt;Bronx&lt;/option&gt;
+    &lt;option value="BROOKLYN"&gt;Brooklyn&lt;/option&gt;
+    &lt;option value="MANHATTAN"&gt;Manhattan&lt;/option&gt;
+    &lt;option value="QUEENS"&gt;Queens&lt;/option&gt;
+    &lt;option value="STATEN ISLAND"&gt;Staten Island&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <code>$('.borough-picker').val()</code>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 55px;"><code>var sql = "SELECT * FROM signs WHERE borough = '"
+    + $('#borough').val() + "'";</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/deliveries.jpg);">
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 55px; line-height: 65px;"><code>$('#borough').change(function () {
+    ...
+});</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc.png);">
+            <a href="http://livinglotsnyc.org/">livinglotsnyc.org</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2><a href="http://output.jsbin.com/gamigez">working with arrays</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="http://output.jsbin.com/zurepup">working with objects</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="http://output.jsbin.com/qudeke">getting data from CartoDB</a></h2>
+        </div>
+
+    </body>
+</html>
