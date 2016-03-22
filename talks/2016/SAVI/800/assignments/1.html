@@ -12,22 +12,20 @@
             </header>
 
             <section>
-                <h2>Make a dynamic page using CartoDB's SQL API</h2>
-
-                <p>Using the CartoDB SQL API create a webpage that:
+                <h2>Use CartoCSS and SQL to customize a CartoDB map</h2>
                 <ol>
-                    <li>Loads data as GeoJSON and displays it on a Leaflet map.</li>
-                    <li>
-                        <p>Displays the output of an SQL query in some way other than a map.</p>
-                        <p>For example, this could be a list next to the map showing details of the points displayed. Or it could populate a dropdown or series of buttons for Part 3.</p>
-                        <p>The <a href="../class2/inclass.html">in-class exercises from class 2</a> might prove useful here.</p>
+                    <li>Find some data you would like to map. This could be data you have used before, data that might be useful for your final project, or just something you find interesting right now. If you're stuck, consider getting the data from <a href="https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc">Urban Reviewer</a>, <a href="https://github.com/datanews/mean-streets/blob/master/traffic-deaths.csv">WNYC's Mean Streets</a>, or <a href="https://github.com/fivethirtyeight/uber-tlc-foil-response">538's FOILed uber data</a>.</li>
+                    <li>Using CartoDB and this data, make a map:
+                        <ol>
+                            <li>Customize the CartoCSS using conditional statements: at least one statement that looks at an attribute on the table and at least one that depends on the map's zoom level.</li>
+                            <li>Filter the data using SQL.</li>
+                            <li>Cite your data sources.</li>
+                            <li>Add a meaningful title.</li>
+                            <li>Add useful infowindows if applicable.</li>
+                        </ol>
                     </li>
-                    <li>
-                        <p>Dynamically lets the user change some aspect of one of the SQL queries being used.</p>
-                        <p>This could be a form input where you enter a number that is added to your SQL query or a dropdown that lets you pick a value that is added to the SQL query.</p>
-                        <p>The <a href="../class1/inclass.html">in-class exercises from class 1</a> might prove useful here.</p>
-                    </li>
-                    <li>Post the to <a href="https://pages.github.com/">GitHub Pages</a>.</li>
+                    <li>Embed the map on an HTML page using the <strong>Embed it</strong> function of CartoDB (<code>iframe</code>).
+                    <li>Post the page to <a href="https://pages.github.com/">GitHub Pages</a>.</li>
                 </ol>
             </section>
 
