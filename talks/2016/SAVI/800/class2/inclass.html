@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: CartoCSS</h2>
+                <ol>
+                    <li>Open the <a href="../materials/cartocss-reference.pdf" target="_blank">class CartoCSS reference</a> and <a href="http://docs.cartodb.com/cartodb-platform/cartocss/properties/" target="_blank">CartoDB's CartoCSS documentation</a>. These will be useful in the next few steps.</li>
+                    <li>Download the Airbnb listings from <a href="http://insideairbnb.com/get-the-data.html">Inside Airbnb</a> for the city of your choosing. The filename should be <strong>listings.csv</strong>.</li>
+                    <li>Load the data in your CartoDB account.</li>
+                    <li>Using <strong>CartoCSS</strong>, style the map. Do at least the following:
+                        <ol>
+                            <li>Change the markers' fill color to <code>hsl(284, 39%, 50%)</code></li>
+                            <li>Change the markers' width to <code>5</code></li>
+                            <li>Remove the line around the markers</li>
+                            <li>Make the markers more transparent</li>
+                            <li>What does the <code>marker-comp-op</code> property do? Try setting it to <code>multiply</code> for the markers.</li>
+                        </ol>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: CartoCSS conditional statements</h2>
+                <ol>
+                    <li>Open your map from Part 1 if you closed it.</li>
+                    <li>Using <strong>conditional statements</strong> in your <strong>CartoCSS</strong>, do the following:
+                        <ol>
+                            <li>Give markers that have <code>room_type</code> set to <code>Entire home/apt</code> a fill of <code>#d13838</code></li>
+                            <li>Give markers that have <code>price</code> over <code>500</code> a width of <code>20</code>. If the city you picked doesn't have many rooms over 500, feel free to pick a smaller value.</li>
+                            <li>Over zoom <code>12</code> make the markers less transparent</li>
+                        </ol>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: SQL</h2>
+                <ol>
+                    <li>Open your map from Part 2 if you closed it.</li>
+                    <li>Open the <a href="../materials/sql-cheatsheet.pdf" target="_blank">SQL cheatsheet</a>.</li>
+                    <li>Go to the <strong>Data View</strong> for your map and execute a few SQL queries using the patterns outlined in the cheatsheet:
+                        <ul>
+                            <li>Count the rows</li>
+                            <li>Select rows in a particular <code>neighbourhood</code> (eg <code>Astoria</code>)</li>
+                            <li>Select rows where <code>price</code> is under <code>50</code></li>
+                            <li>Count the rows where <code>price</code> is under <code>50</code></li>
+                            <li>Find the minimum <code>price</code></li>
+                            <li>Find the average <code>price</code> for listings in the <code>neighbourhood</code> you picked earlier</li>
+                        </ul>
+                        Keep track of the queries you run in a text file.
+                    </li>
+                    <li>Which of the above work in <strong>Map View</strong>, too?</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Embedding CartoDB maps</h2>
+                <ol>
+                    <li>Create an empty HTML page.</li>
+                    <li>Using the CartoDB map you made in the previous parts, press the <strong>Publish</strong> button.</li>
+                    <li>Copy the code under <strong>Embed it</strong>.</li>
+                    <li>Paste the embed code into your page.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 2 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 2</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 2</p>
+        </div>
+
+        <div class="slide">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-github.png);">
+            <a href="https://github.com/mapbox/carto">(open source)</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapnik.png);">
+        </div>
+
+        <div class="slide">
+            <h2>why?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>styling maps can be painful</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapnik-xml.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-styling.png);">
+        </div>
+
+        <div class="slide">
+            <h2>you can share it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can share it</h2>
+            <p>(it's just text)</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-online.png);">
+            <a href="http://ebrelsford.github.io/nyc/maps/opendata/2013/08/26/signs.html" class="source">
+                signs
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-osm.png);">
+            <a href="https://github.com/gravitystorm/openstreetmap-carto">
+                openstreetmap-carto
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-osm-detail.png);">
+        </div>
+
+        <div class="slide">
+            <h2>CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-car.jpg);">
+            <a class="source" href="http://www.flickr.com/photos/mrstaticvoid/4307191115/">
+                mrstaticvoid on flickr
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane.jpg);">
+            <a class="source" href="http://www.flickr.com/photos/niklasstjerna/6636973889/">
+                niklasstjerna on flickr
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-markers.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-polygons.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-lines.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/dashboard-airplane-qqq.jpg);">
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 44px; line-height: 44px;"><code>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <p>property values will often be <strong>color strings</strong>, <strong>numbers</strong>, or boolean (<strong>true/false</strong>)</p>
+        </div>
+
+        <div class="slide">
+            <h2>always check the <a href="https://github.com/mapbox/carto/blob/master/docs/latest.md">documentation</a> if you have any doubts</h2>
+        </div>
+
+        <div class="slide">
+            <h2>try <a href="inclass.html">in-class exercise, part 1</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>that's nice, but it gets more interesting</h2>
+        </div>
+
+        <div class="slide">
+            <h2>let's vary some properties by zoom level</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>let's call these conditional statements</h2>
+        </div>
+
+        <div class="slide">
+            <h2>conditional statements are only used if some condition is met</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 50px; line-height: 60px;"><code>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10] {
+        marker-width: 8;
+    }
+    [zoom &gt;= 16] {
+        marker-width: 13;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>that's not all!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can change styles based on a feature's attributes</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [mag &gt;= 6.5] {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>look familiar?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>conditional statements containing text need to wrap those strings in quotation marks</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 55px;"><code>
+#earthquakes {
+    marker-width: 3;
+    ...
+    [place = 'Northern Mid-Atlantic Ridge'] {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>you don't have to memorize all of this</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-docs.png);">
+            <h2>use the <a href="http://docs.cartodb.com/cartodb-platform/cartocss/properties/">documentation</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-wizard-cartocss.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-wizard-cartocss.gif);">
+            <h2>experiment with CartoDB's visualization wizards, see the code they produce</h2>
+        </div>
+
+        <div class="slide">
+            <h2>read other people's CartoCSS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartocss-hdm.png);">
+            <a href="https://github.com/hotosm/hdm-cartocss" class="source">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/toner-github.png);">
+            <a href="https://github.com/stamen/toner-carto/" class="source">
+                toner-github
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>try <a href="inclass.html">in-class exercise, part 2</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/cartodb-filters.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-filters-specific.gif);">
+        </div>
+
+        <div class="slide">
+            <h2>but I wanted <strong>6.5</strong>!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL</h2>
+            <h2>Structured Query Language</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL</h2>
+            <h2>the language databases understand</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you'll use SQL in two ways:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. pulling data out of the database</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. changing the data in the database</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-table.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/paper.jpg);">
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the pages that refer to properties in Brooklyn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the addresses of the properties in Brooklyn.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img style="float: left; max-width: 50%;" src="img/paper.jpg" />
+            <div style="float: left; width: 50%;">
+                <div style="margin-left: 25px;">
+                    <p>Give me the addresses of the properties in Brooklyn that have been built on since 1950.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>databases are great at these types of questions</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it's what they were made for</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL helps you ask these questions in a way databases understand</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Carto<em>DB</em></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-table.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-table-select.png);">
+        </div>
+
+        <div class="slide">
+            <h2><code>SELECT</code>: choose columns from a table</h2>
+        </div>
+
+        <div class="slide">
+            <h2>just list the columns:</h2>
+            <pre><code>SELECT students, teachers
+FROM education</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><code>SELECT *</code>: choose <strong>all</strong> columns</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-table-where.png);">
+        </div>
+
+        <div class="slide">
+            <h2><code>WHERE</code>: choose rows from a table</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-table-select-and-where.png);">
+        </div>
+
+        <div class="slide">
+            <p>these operators are the same as in most programming languages:</p>
+            <pre style="margin-left: 250px;"><code>&gt;
+&lt;
+=
+!=
+&gt;=
+&lt;=</code></pre>
+        </div>
+
+        <div class="slide">
+            <p>for example:</p>
+            <pre><code>SELECT *
+FROM education
+WHERE students &gt; 100</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>and you combine them with <code>AND</code> / <code>OR</code></h2>
+        </div>
+
+        <div class="slide">
+            <p>for example:</p>
+            <pre><code>SELECT *
+FROM education
+WHERE students &gt; 100 
+    AND students &lt; 200</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>or you can negate a condition with <code>NOT</code></h2>
+        </div>
+
+        <div class="slide">
+            <p>for example:</p>
+            <pre><code>SELECT *
+FROM education
+WHERE NOT (students &gt; 100 
+  OR op_type = 'religious')</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arc-query-builder.png);">
+        </div>
+
+        <div class="slide">
+            <img style="width: 50%; margin-top: 10%;" src="img/arc-query-builder-zoom.png" />
+        </div>
+
+        <div class="slide">
+            <h2><code>SELECT</code> does not change the table, it only changes your view of the table</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/playdoh-pasta.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/playdoh-smoosh.jpg);">
+        </div>
+
+        <div class="slide">
+            <h2>you can also use <code>SELECT</code> to get a better idea of what data is in your table</h2>
+        </div>
+
+        <div class="slide">
+            <p>count matching rows:</p>
+            <pre><code>SELECT COUNT(*)
+FROM education
+WHERE students &gt; 100 
+  OR op_type = 'religious'</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>but you'll almost never want to use this statement for your map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-filters-nogeom.gif);">
+        </div>
+
+        <div class="slide">
+            <h2><code>SELECT</code> trick: add "columns" to your selection</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT *, 5
+FROM education</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT *, stdnt_fem / students
+FROM education</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT *,
+    (stdnt_fem / students) * 100
+FROM education</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT *,
+    (stdnt_fem / students) * 100
+    AS stdnt_fem_per
+FROM education</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2 style="text-decoration: line-through;">1. pulling data out of the database</h2>
+            <h2>2. changing the data in the database</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can also use SQL to quickly <code>UPDATE</code> or <code>DELETE</code> the data in your table</h2>
+        </div>
+
+        <div class="slide">
+            <h2>these <strong>will</strong> destroy data, so have a backup or test it with a table you don't need</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>UPDATE education
+SET size = 'large'
+WHERE students &gt; 2500</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>DELETE FROM education
+WHERE ...</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>more in the SQL reference</h2>
+        </div>
+
+        <div class="slide">
+            <h2>SQL shows up everywhere online</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnyc-sql.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>try <a href="inclass.html">in-class exercise, part 3</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>that's a lot, but there's a little more</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-types.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-geometry.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-logo.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postpostgis.png);">
+            <a href="https://twitter.com/postpostgis" class="source">
+                postpostgis
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgres.png);">
+            <a href="http://www.postgresql.org/" class="source">
+                postgres
+            </a>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT *,
+    (stdnt_fem / students) * 100
+    AS stdnt_fem_per
+FROM education</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>
+SELECT *, ST_area(the_geom)
+FROM kiberaboundary
+            </code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px; line-height: 50px;"><code>
+SELECT *,
+  ST_area(
+    ST_transform(
+      the_geom_webmercator,
+      21036
+    )
+  )
+FROM kiberaboundary
+            </code></pre>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 40px; line-height: 45px;"><code>
+SELECT education.*
+FROM education, kiberaboundary
+WHERE
+  kiberaboundary.name = 'Silanga' AND
+  <a href="http://postgis.net/docs/manual-2.0/ST_Within.html">ST_within</a>(
+    education.the_geom,
+    kiberaboundary.the_geom
+  )</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/buffer.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-result.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>embedding CartoDB maps using <code>iframe</code>s</h2>
+        </div>
+
+        <div class="slide">
+            <h2>try <a href="inclass.html">in-class exercise, part 4</a></h2>
+        </div>
+
+    </body>
+</html>
