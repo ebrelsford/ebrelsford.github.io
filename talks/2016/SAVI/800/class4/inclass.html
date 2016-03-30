@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises: APIs continued</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Adding data to your page</h2>
+                <ol>
+                    <li>Write an SQL query that selects the distinct neighborhood names from the Airbnb listings you have loaded in CartoDB.</li>
+                    <li>Test the SQL query in CartoDB to confirm that it works.</li>
+                    <li>Using <a href="http://jsbin.com/maqasu/edit?js,output">this jsbin</a> as an example, use the CartoDB SQL API and jQuery to add the neighborhood names as <code>option</code> elements in a <code>select</code> element.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Dynamic data on Leaflet</h2>
+                <ol>
+                    <li>Check out the documentation for <a href="http://leafletjs.com/reference.html#geojson">Leaflet GeoJSON layers</a>.</li>
+                    <li>Starting with <a href="http://jsbin.com/lixidi/edit?js,output">this example</a>, load data from your table of Airbnb data in CartoDB on the map.</li>
+                    <li>When you are done, you should still be able to change the dropdown to change how much data appears.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Mapzen Search and Leaflet</h2>
+                <ol>
+                    <li>Go to <a href="https://mapzen.com/developers">Mapzen Developers</a> and get an API key for Mapzen Search.</li>
+                    <li>Open the <a href="https://mapzen.com/documentation/search/search/">API documentation for Mapzen Search</a>.</li>
+                    <li>Using your browser or <a href="https://www.getpostman.com/">Postman</a>, test your knowledge of the API to search for a few places such as your address.</li>
+                    <li>Using <a href="http://jsbin.com/qeleyeb/edit?js,output">this template</a> as a starting point, call the Mapzen Search API with one of the queries from the previous step and show the results on the map.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Streetview image API</h2>
+                <ol>
+                    <li>Using Google's <a href="https://developers.google.com/maps/documentation/streetview/">Street View Image API</a>, attempt to load an image in your browser. If you need a latitude and longitude to start with, try the ISC Building (where we meet): <pre><code>40.691694, -73.965046</code></pre>.</li>
+                    <li>Continue with your code from Part 3, and we'll add a streetview image of the search result using the <a href="https://developers.google.com/maps/documentation/streetview/">Street View Image API</a>.</li>
+                    <li>Add an <code>img</code> tag to the HTML. After the map <code>div</code> is a good place. For now it won't have a <code>src</code> attribute, so leave it out. Give it a class (for example, <code>streetview</code>) so you can style it and reference it in your JavaScript.</li>
+                    <li>Add some CSS to make the image show up on top of the map. This will make it appear in the bottom left of the map:
+                    <pre><code>.streetview {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 200px;
+  height: 200px;
+  z-index: 5000;
+}</code></pre>
+                        (Update the class name as necessary.)
+                    </li>
+                    <li>
+                        Now in your <code>done</code> callback (where you display the results), create an image url with the first result's latitude and longitude using the <a href="https://developers.google.com/maps/documentation/streetview/">Street View Image API</a> and set your image's <code>src</code> attribute to it using jQuery's <code><a href="http://api.jquery.com/attr/">attr()</a></code>.
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 5: PostGIS SQL and Leaflet</h2>
+                <ol>
+                    <li>Create two SQL queries on your data that retrieve <strong>modified</strong> or <strong>new</strong> geometry from your Airbnb listings data. Think <a href="http://postgis.net/docs/manual-2.0/ST_ConvexHull.html">convex hulls</a>, <a href="http://postgis.net/docs/manual-2.0/ST_Buffer.html">buffers</a>, and other <a href="http://postgis.net/docs/manual-2.0/reference.html#Geometry_Processing">geoprocessing methods</a>.</li>
+                    <li>Test your SQL queries in CartoDB to confirm that they work.</li>
+                    <li>Add the result of one of your new queries to a Leaflet map.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
