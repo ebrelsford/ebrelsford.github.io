@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 9 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 9</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 9</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geonyc.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geonyc.png);">
+            <h2>GeoNYC on Monday HERE</h2>
+            <a href="http://www.meetup.com/geonyc/events/229788326/" class="source">meetup.com/geonyc</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>adding a button that changes your map:</h2>
+            <ol>
+                <li>create a button</li>
+                <li>get the map layer</li>
+                <li>listen for a click on the button</li>
+                <li>change the layer's SQL</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>adding anything that changes your map:</h2>
+            <ol>
+                <li>create it in HTML</li>
+                <li>get the map layer</li>
+                <li>listen for the event on the HTML element</li>
+                <li>change the layer's SQL</li>
+            </ol>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>sometimes you need more control than CartoDB gives you</h2>
+        </div>
+
+        <div class="slide">
+            <h2>or your data is coming from somewhere other than CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <a href="http://leafletjs.com/">
+                <img style="max-width: 40%; background: white; margin-top: 20%;" src="img/leaflet.png" />
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>a few things leaflet does:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-tiles.gif);">
+            <h2>tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-popups.gif);">
+            <h2>popups</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-zoom-and-pan.gif);">
+            <h2>zoom and pan</h2>
+        </div>
+
+        <div class="slide">
+            <h2>a very brief history of web mapping libraries</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/google-maps.jpg);">
+            <h2>2005: Google Maps API</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/openlayers.png);">
+            <h2>2006: <a href="http://openlayers.org/">OpenLayers</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map.png);">
+            <h2>2010: <a href="http://leafletjs.com/">Leaflet</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>2016: ???</h2>
+        </div>
+
+        <div class="slide">
+            <h2>how do you use leaflet?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you already are!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>leaflet is used all over the place</h2>
+        </div>
+
+        <div class="slide">
+            <h2>leaflet is used all over the place</h2>
+            <img style="float: left; max-width: 25%;" src="img/cartodb.png" />
+        </div>
+
+        <div class="slide">
+            <h2>leaflet is used all over the place</h2>
+            <img style="float: left; max-width: 25%;" src="img/cartodb.png" />
+            <img style="float: left; max-width: 25%; background: white;" src="img/mapbox.png" />
+        </div>
+
+        <div class="slide">
+            <h2>leaflet is used all over the place</h2>
+            <img style="float: left; max-width: 25%;" src="img/cartodb.png" />
+            <img style="float: left; max-width: 25%; background: white;" src="img/mapbox.png" />
+            <img style="float: left; max-width: 25%; background: white;" src="img/osm.svg" />
+        </div>
+
+        <div class="slide">
+            <h2>leaflet is used all over the place</h2>
+            <img style="float: left; max-width: 25%;" src="img/cartodb.png" />
+            <img style="float: left; max-width: 25%; background: white;" src="img/mapbox.png" />
+            <img style="float: left; max-width: 25%; background: white;" src="img/osm.svg" />
+            <p style="clear: both;">+ tons of other sites with maps on them</p>
+        </div>
+
+        <div class="slide">
+            <h2>3 steps:</h2>
+            <p>1. load leaflet's code</p>
+            <p>2. make a <code>div</code> for your map</p>
+            <p>3. tell leaflet to create the map</p>
+        </div>
+
+        <div class="slide">
+            <h2>1. load leaflet's code</h2>
+            <pre style="font-size: 30px; line-height: 40px;"><code>&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>2. make a <code>div</code> for your map</h2>
+            <pre><code>&lt;body&gt;
+    &lt;div id="map"&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>3. tell leaflet to create the map</h2>
+            <pre style="font-size: 40px; line-height: 50px;"><code>var map = L.map('map').setView([40.70, -73.96], 11);</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>3a. add base tiles</h2>
+            <pre style="font-size: 25px; line-height: 35px;"><code>
+L.tileLayer('https://{s}.tiles.mapbox.com/v3/ebrelsford.ho06j5h0/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>'
+}).addTo(map);</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-simple.png);">
+            <a href="http://jsbin.com/fiyumu/1/edit?html,output">
+                simple leaflet map
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>open <a href="http://jsbin.com/fiyumu/1/edit?html,output">jsbin.com/fiyumu</a>, change the initial view</p>
+            <pre style="font-size: 40px; line-height: 50px;"><code>var map = L.map('map').setView(<span class="highlighted">[40.70, -73.96], 11</span>);</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/stamen-tiles.png);">
+            <h2>you can also use any other base tiles</h2>
+            <a href="http://maps.stamen.com/" class="source">
+                stamen maps
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>leaflet can give you tons of information about your map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-get-state.png);">
+            <a href="http://leafletjs.com/reference.html#map-get-methods" class="source" target="_blank">
+                leaflet documentation
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>with <a href="http://jsbin.com/fiyumu/1" target="_blank">jsbin.com/fiyumu/1</a> open in your browser, run the following in the console:</p>
+            <pre><code>map.getZoom()
+map.getCenter()</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>and leaflet lets you change your map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-set-state.png);">
+            <a href="http://leafletjs.com/reference.html#map-set-methods" class="source" target="_blank">
+                leaflet documentation
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>with <a href="http://jsbin.com/fiyumu/1" target="_blank">jsbin.com/fiyumu/1</a> open in your browser, run the following in the console:</p>
+            <pre><code>map.setZoom(12)
+map.panBy([150, 150])</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>3b. add some data to the map</h2>
+            <pre style="font-size: 50px; line-height: 60px;"><code>$.getJSON(url, function (data) {
+    L.geoJson(data).addTo(map);
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>3c. add popups</h2>
+            <pre style="font-size: 35px; line-height: 45px;"><code>$.getJSON(url, function (data) {
+    L.geoJson(data, <span class="highlighted">{
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup("hi I'm a popup");
+        }
+    }</span>).addTo(map);
+});</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-with-geojson.png);">
+            <a href="http://jsbin.com/yafake/1/edit?html,output" class="source" target="_blank">
+                leaflet map with data
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>try it:</h2>
+            <p>open <a href="http://jsbin.com/yafake/1/edit?html,output">jsbin.com/yafake/1/edit</a> and change what goes in the popups from <strong>name</strong> to <strong>url</strong></p>
+        </div>
+
+        <div class="slide">
+            <h2>when you're loading data this way you need it to be on a server somewhere</h2>
+        </div>
+
+        <div class="slide">
+            <h2>just like with images</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-home.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/github-home.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-cartodb.png);">
+            <a href="http://jsbin.com/tubehi/1/edit?js,output">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2>plugins</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-plugins.png);">
+            <a href="http://leafletjs.com/plugins.html" class="source" target="_blank">
+                leafletjs.com/plugins.html
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-magnifying-glass.png);">
+            <a href="https://github.com/bbecquet/Leaflet.MagnifyingGlass" class="source" target="_blank">
+                github.com/bbecquet/Leaflet.MagnifyingGlass
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-opacity-controls.png);">
+            <a href="https://github.com/lizardtechblog/Leaflet.OpacityControls" class="source" target="_blank">
+                github.com/lizardtechblog/Leaflet.OpacityControls
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-animated-marker.gif);">
+            <a class="source" href="https://github.com/openplans/Leaflet.AnimatedMarker" target="_blank">
+                github.com/openplans/Leaflet.AnimatedMarker
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cluster-plugin.png);">
+            <a class="source" href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">
+                github.com/Leaflet/Leaflet.markercluster
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-marker-cluster.gif);">
+            <a class="source" href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">
+                github.com/Leaflet/Leaflet.markercluster
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-control-geocoder.gif);">
+            <a href="https://github.com/perliedman/leaflet-control-geocoder" class="source" target="_blank">
+                leaflet-control-geocoder
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/leaflet-events.png);">
+            <a href="http://leafletjs.com/reference.html#map-events" class="source" target="_blank">
+                leaflet documentation
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2><code>click, zoomend, popupopen, popupclose</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/deliveries.jpg);">
+        </div>
+
+        <div class="slide">
+            <h2>customizing popups</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it's easier with leaflet</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/sweeten-popup.png);">
+            <a href="http://sweeten.com/maps" class="source" target="_blank">
+                sweeten.com/maps
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/llnola-popup.png);">
+            <a href="https://livinglotsnola.org/" class="source" target="_blank">
+                livinglotsnola.org
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-custom-popup.png);">
+            <a href="http://jsbin.com/garesu/1/edit?html,css" class="source" target="_blank">
+                jsbin.com/garesu/1/edit
+            </a>
+        </div>
+
+    </body>
+</html>

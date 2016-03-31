@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Load CartoDB's code so we can pull in our CartoDB maps.
+        -->
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.ie.css" />
+        <![endif]-->
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+
+        <!--
+        Load jQuery
+        -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+        <!--
+        Make the body and map take up all of the available room in the window.
+        -->
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            #map {
+                height: 100%;
+                width: 100%;
+            }
+
+            /*
+             * Put our borough selector in the top right of the page.
+             */
+            #borough {
+                background: white;
+                cursor: pointer;
+                font-size: 24px;
+                width: 250px;
+                padding: 10px;
+                position: absolute;
+                right: 25px;
+                top: 25px;
+                z-index: 5000;
+            }
+        </style>
+
+        <script>
+            //
+            // Initializing map from CartoDB
+            //
+            $(document).ready(function () {
+                //
+                // A variable that will hold the layer we're working with
+                //
+                var dataLayer;
+
+                cartodb.createVis('map', 'http://eric.cartodb.com/api/v2/viz/22a36ecc-0eb6-11e3-8f2f-5404a6a69006/viz.json')
+                .done(function (vis, layers) {
+                    //
+                    // Get the layer we're working with so we can modify it
+                    // later.
+                    //
+                    // layers[0] is the base layer, layers[1] is your first data
+                    // layer. If you had more data layers, they would be layers[2],
+                    // layers[3] and so on.
+                    //
+                    dataLayer = layers[1].getSubLayer(0);     
+                });
+
+                //
+                // This is a "change" handler. When the input changes, this function
+                // will run.
+                //
+                $('#borough').change(function () {
+                    var sql = "SELECT * FROM sign_application_filings WHERE borough = '";
+                    sql = sql + $('#borough').val();
+                    sql = sql + "'";
+                    dataLayer.setSQL(sql);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="map"></div>
+        <select id="borough">
+            <option>Pick a borough</option>
+            <option value="BRONX">Bronx</option>
+            <option value="BROOKLYN">Brooklyn</option>
+            <option value="MANHATTAN">Manhattan</option>
+            <option value="QUEENS">Queens</option>
+            <option value="STATEN ISLAND">Staten Island</option>
+        </select>
+    </body>
+</html>
