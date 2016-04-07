@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 10 | Advanced GIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced GIS, Lecture 10</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Advanced GIS</h1>
+            <p>Class 10</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin-timeline.png);">
+            <a href="http://jsbin.com/fanutu/2/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin-timeline.png);">
+            <h2>custom timelines in Leaflet</h2>
+            <a href="http://jsbin.com/fanutu/2/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin-fitbounds.png);">
+            <a href="http://jsbin.com/fodaze/edit?js,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin-fitbounds.png);">
+            <h2>zooming to your data with Leaflet</h2>
+            <a href="http://jsbin.com/fodaze/edit?js,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin-cartodb-leaflet.png);">
+            <a href="http://jsbin.com/qivolog/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jsbin-cartodb-leaflet.png);">
+            <h2>layering other data on a CartoDB map</h2>
+            <a href="http://jsbin.com/qivolog/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>raster vs vector tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles.gif);">
+            <a href="http://maptimeboston.github.io/web-maps-101/#17" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles.gif);">
+            <h2>as we said last week, raster tiles are 256 x 256 pixel images</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles.gif);">
+            <h2>they use the same <em>zoom</em>, <em>x</em>, and <em>y</em> values, so they're interchangeable</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/openwhatevermap.png);">
+            <a href="http://www.openwhatevermap.org/" class="source">openwhatevermap.org</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-2.jpg);">
+            <a href="http://maptimeboston.github.io/web-maps-101/#17" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-3.jpg);">
+            <a href="http://maptimeboston.github.io/web-maps-101/#17" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-3.jpg);">
+            <h2>as you zoom in, the number of tiles quadruples</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-3.jpg);">
+            <h2>if you made tiles for all of zoom 18 you'd have nearly 69 <em>billion</em> images</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-loading.gif);">
+            <h2>that's why browsers only load what you need to see</h2>
+            <a href="http://maptimeboston.github.io/web-maps-101/#17" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>and also part of what makes it hard to make raster tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-3.jpg);">
+            <h2>with vector tiles, all the map data is split into the same exact grid pattern</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-simplify.gif);">
+            <h2>and the data is filtered and simplified for the zoom level you're at</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the data is sent to the browser for each tile, then the <em>browser</em> styles it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>this opens up possibilities:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-dynamic-style.gif);">
+            <h2>1. dynamic styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-fractional-zoom.gif);">
+            <h2>2. fractional zoom levels (eg 3.5 rather than 3 or 4)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-perspective.gif);">
+            <h2>3. dynamic perspective</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-projections.gif);">
+            <h2>4. more projections</h2>
+            <a href="https://mapzen.com/blog/escape-from-mercator/" class="source">source</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>so how do you <em>make</em> raster or vector tiles?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it depends!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in theory you can make tiles on your own</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/openstreetmap.png);">
+            <h2>there is a free global data source</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapnik.png);">
+            <h2>and the software for making tiles is open source</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but keeping your global OpenStreetMap data up to date can be difficult</h2>
+        </div>
+
+        <div class="slide">
+            <h2>and configuring tile-making software isn't the easiest</h2>
+        </div>
+
+        <div class="slide">
+            <h2>there are small companies and freelancers that do this kind of thing</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but many mapmakers turn to Mapbox</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+            <a href="https://www.mapbox.com/tilemill/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+            <h2>bring your own data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+            <h2>bring your own data</h2>
+            <h2>raster only</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic.png);">
+            <a href="https://www.mapbox.com/mapbox-studio-classic/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic.png);">
+            <h2>Mapbox provides modified OpenStreetMap data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic.png);">
+            <h2>Mapbox provides modified OpenStreetMap data</h2>
+            <h2>raster and vector</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+            <a href="https://www.mapbox.com/mapbox-studio/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+            <h2>Mapbox provides modified OpenStreetMap data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+            <h2>Mapbox provides modified OpenStreetMap data</h2>
+            <h2>raster and vector, but emphasis on vector</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+            <h2>biggest difference is you are more locked in to Mapbox</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-classic.png);">
+            <h2>sometimes you'll see references to "studio classic" or other "classic" things</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-classic.png);">
+            <h2>we're going to avoid those and stick to the latest Mapbox Studio</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>creating styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-home.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-feature-layer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-color.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-color-zoom.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-field.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-filter-data.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-publish.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>using Mapbox tiles in CartoDB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>slightly complicated since Mapbox Studio emphasizes <em>vector</em> tiles but CartoDB only supports <em>raster</em></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap-no-mapbox.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap-no-mapbox.png);">
+            <h2>only for Mapbox "classic" styles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you need three things:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you need three things:</h2>
+            <ol>
+                <li>your Mapbox username</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>you need three things:</h2>
+            <ol>
+                <li>your Mapbox username</li>
+                <li>your Mapbox access token</li>
+            </ol>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-access-token.png);">
+        </div>
+
+        <div class="slide">
+            <h2>you need three things:</h2>
+            <ol>
+                <li>your Mapbox username</li>
+                <li>your Mapbox access token</li>
+                <li>your Mapbox style id</li>
+            </ol>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-style-id.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/almost-there.gif);">
+            <h2>ok we're close now:</h2>
+            <a href="http://gifsec.com/funny/funny-gif-almost-there/" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>make this url:</h2>
+            <pre><code class="wrapped">https://api.mapbox.com/styles/v1/[username]/[map-id]/tiles/{z}/{x}/{y}?access_token=[access-token]</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>make this url:</h2>
+            <pre><code class="wrapped">https://api.mapbox.com/styles/v1/[username]/[map-id]/tiles/{z}/{x}/{y}?access_token=[access-token]</code></pre>
+            <p>(replace <code>[username]</code>, <code>[map-id]</code>, <code>[access-token]</code>)</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap-no-mapbox.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data.png);">
+            <h2>adding your own data to a Mapbox style</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data-add.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data-style.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl.png);">
+            <a href="http://jsbin.com/jijugi/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl.png);">
+            <h2>Mapbox GL</h2>
+            <a href="http://jsbin.com/yawajuz/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-geojson-data.png);">
+            <a href="http://jsbin.com/jijugi/edit?html,output" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-geojson-data.png);">
+            <h2>you can add GeoJSON to the map on a page if you prefer</h2>
+            <a href="http://jsbin.com/jijugi/edit?html,output" class="source">source</a>
+        </div>
+
+    </body>
+</html>

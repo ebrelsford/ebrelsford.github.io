@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geoweb software comparison</title>
+
+        <link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+
+        <style>
+            body {
+                font-family: 'Cutive Mono';
+                padding: 5%;
+                padding-top: 2%;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            th {
+                border-bottom: 1px solid black;
+                font-size: 20px;
+                padding: 15px;
+                vertical-align: bottom;
+            }
+            td {
+                padding: 5px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+            thead th {
+                width: 30%;
+            }
+            thead th:first-child {
+                width: 10%;
+            }
+
+            tbody td {
+                border-right: 1px solid #E0E0E0;
+                border-top: 1px solid #E0E0E0;
+            }
+            tbody tr td:first-child {
+                border-right: 1px solid black;
+                font-weight: bold;
+                padding-right: 5px;
+            }
+            tbody tr td:last-child {
+                border-right: none;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        <img style="max-width: 75px;" src="img/cartodb.png" />
+                        <div>CartoDB</div>
+                    </th>
+                    <th>
+                        <img style="max-width: 75px;" src="img/mapbox.png" />
+                        <div>Mapbox</div>
+                    </th>
+                    <th>
+                        <img style="max-width: 150px;" src="img/leaflet.png" />
+                        <div>Leaflet</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>best for</td>
+                    <td>overlaying data on a map</td>
+                    <td>base tiles</td>
+                    <td>overlaying data on a map</td>
+                </tr>
+                <tr>
+                    <td>cost</td>
+                    <td>$$</td>
+                    <td>$</td>
+                    <td>free (assuming you have space)</td>
+                </tr>
+                <tr>
+                    <td>requires server space</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>programming</td>
+                    <td>not required</td>
+                    <td>CartoCSS required</td>
+                    <td>required</td>
+                </tr>
+                <tr>
+                    <td>good for large datasets</td>
+                    <td>yes</td>
+                    <td>yes</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>file formats supported</td>
+                    <td>pretty much anything with a lat/long</td>
+                    <td>pretty much anything with a lat/long</td>
+                    <td>GeoJSON, others with plugins</td>
+                </tr>
+                <tr>
+                    <td>uses Leaflet</td>
+                    <td>yes, except with Google Maps tiles</td>
+                    <td>yes, always</td>
+                    <td>is Leaflet :)</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
