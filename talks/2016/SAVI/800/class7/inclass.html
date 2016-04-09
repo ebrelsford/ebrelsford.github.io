@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises: Git and GitHub</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Leaflet map events</h2>
+                <ol>
+                    <li>Open this <a href="http://jsbin.com/jemuveb/edit?js,output">Leaflet map</a> that searches using Mapzen Search.</li>
+                    <li>Add an event handler to the <strong>map</strong> for one of the events listed <a href="http://leafletjs.com/reference.html#map-events">in the docs</a>. You can do whatever you like when the event occurs. At the very least, use <code>console.log()</code> to prove that the event listener worked.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Leaflet path events</h2>
+                <ol>
+                    <li>Leave the map open from part 1.</li>
+                    <li>Add a click handler to the <strong>features</strong> for one of the events listed <a href="http://leafletjs.com/reference.html#path-click">in the docs</a> for paths. <a href="http://jsbin.com/bojadi/edit?js,output">This jsbin might be helpful</a>. When the feature is clicked, try calling the <code>getStreetview</code> function with the latitude and longitude to show streetview for that point.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: PostGIS SQL and Leaflet: buffers</h2>
+                <ol>
+                    <li>Create an SQL query that buffers your Airbnb listings data by 100 meters. The <a href="http://postgis.net/docs/manual-2.0/ST_Buffer.html">documentation for ST_Buffer</a> might be of use.</li>
+                    <li>Test your SQL query in CartoDB to confirm that it works.</li>
+                    <li>Use the CartoDB SQL API to add the buffered data to a Leaflet map.</li>
+                    <li>Style the features.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: PostGIS SQL and Leaflet: convex hulls</h2>
+                <ol>
+                    <li>Create an SQL query that finds the convex hull of your Airbnb listings data (or some subset of them). You will need to use <a href="http://postgis.net/docs/manual-2.0/ST_Collect.html">ST_Collect</a> and <a href="http://postgis.net/docs/manual-2.0/ST_ConvexHull.html">ST_ConvexHull</a>.</li>
+                    <li>Test your SQL query in CartoDB to confirm that it works.</li>
+                    <li>Use the CartoDB SQL API to add the convex hull to a Leaflet map.</li>
+                    <li>Style the feature.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 5: CartoDB.js</h2>
+                <ol>
+                    <li>Start a new HTML file, either on your computer or on <a href="http://jsbin.com/">JS Bin</a>.</li>
+                    <li>Load the CartoDB.js library by copying the two lines from <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#using-the-library" target="_blank">the documentation</a> under "Linking cartodb.js on your html file" and pasting those into the <code>head</code> of your HTML file.</li>
+                    <li>As with Leaflet, add a <code>div</code> with <code>id</code> "map" to the body of your HTML file.</li>
+                    <li>Use CSS to give the map <code>div</code> some dimensions.</li>
+                    <li>Open your CartoDB account, find a visualization you've created.</li>
+                    <li>Open the visualization, go to <strong>Share</strong>, and copy the <strong>CartoDB.js</strong> URL.</li>
+                    <li>Finally, load the CartoDB visualization. Add the following to your JavaScript:
+                        <pre><code>$(document).ready(function () {
+    cartodb.createVis('map', /* Your CartoDB visualization's CartoDB.js URL */);
+});</code></pre>
+                    </li>
+                    <li>If you run into trouble, <a href="http://jsbin.com/dulezu/4/edit" target="_blank">here's a working example</a>.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 6: CartoDB.js options</h2>
+                <ol>
+                    <li>Start with the code from Part 1.</li>
+                    <li>Add at least three <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcreatevismapid-vizjsonurl-options--callback" target="_blank">options</a> to your call to <code>createVis()</code>.</li>
+                    <li>This will look something like:
+                        <pre><code>$(document).ready(function () {
+    cartodb.createVis('map', /* Your CartoDB visualization's CartoDB.js URL */, <strong>{
+        option1: option1-value,
+        option2: option2-value,
+        option3: option3-value
+    }</strong>);
+});</code></pre>
+                    </li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>

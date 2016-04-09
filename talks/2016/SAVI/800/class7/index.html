@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 7 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 7</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 7</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-timeline.png);">
+            <a href="https://github.com/skeate/Leaflet.timeline" target="_blank" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-timeline-example.png);">
+            <a href="http://jsbin.com/sokahew/edit?js,output" target="_blank" class="source">example</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>events</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-events.png);">
+            <h2>L.Map events</h2>
+            <a href="http://leafletjs.com/reference.html#map-click" target="_blank" class="source">L.Map</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-map-events.png);">
+            <h2>You add these to a map and handle them like any other event</h2>
+            <a href="http://leafletjs.com/reference.html#map-click" target="_blank" class="source">L.Map</a>
+        </div>
+
+        <div class="slide">
+            <pre><code>var map = L.map('map');
+map.on('mouseover', function () {
+    console.log('mouseover!');
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 1</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-path-events.png);">
+            <h2>L.Path events</h2>
+            <a href="http://leafletjs.com/reference.html#path-click" target="_blank" class="source">L.Path</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-path-events.png);">
+            <h2>Add these to layers and markers from a GeoJSON layer</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet-path-events.png);">
+            <h2>in the <code>onEachFeature</code> option</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>L.geoJson(data, {
+  onEachFeature: function (feature, layer) {
+    layer.on('click', function () {
+      console.log('click.');
+    };
+  }
+};</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>L.geoJson(data, {
+  onEachFeature: function (feature, layer) {
+    <span class="highlighted">layer.on('click', function () {
+      console.log('click.');
+    };</span>
+  }
+};</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 2</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>spatial SQL</h2>
+        </div>
+
+        <div class="slide">
+            <h2>spatial SQL with CartoDB / PostGIS will let you do most GIS-y things you would want to do</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-buffer.png);">
+            <a href="http://postgis.net/docs/manual-2.2/ST_Buffer.html" class="source" target="_blank">ST_Buffer</a>
+        </div>
+
+        <div class="slide">
+            <h2><code>the_geom</code> vs <code>the_geom_webmercator</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>the_geom</code> is always in <em>WGS84</em> (latitude and longitude)</h2>
+        </div>
+
+        <div class="slide">
+            <h2><code>the_geom_webmercator</code> is always in <em>web mercator</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>web mercator is the projection that map tiles are in</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/epsg-3857.png);">
+            <a class="source" href="http://epsg.io/3857">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-buffer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-buffer.png);">
+            <h2>you need to have a column called <code>the_geom_webmercator</code> if you want it mapped</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-buffer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-buffer.png);">
+            <h2>we know web mercator is in <em>meters</em>, so our buffer is 500 meters</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 3</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>sometimes you want to use a spatial function on all your features at once</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convexhull-fail.png);">
+        </div>
+
+        <div class="slide">
+            <h2>in this case you can use <code>ST_Collect()</code></h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT AVG(price)
+FROM airbnb</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>SELECT AVG(price)
+FROM airbnb</code></pre>
+            <h2>finds the average over all prices</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code class="wrapped">SELECT ST_Collect(the_geom_webmercator) AS the_geom_webmercator
+FROM airbnb</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code class="wrapped">SELECT ST_Collect(the_geom_webmercator) AS the_geom_webmercator
+FROM airbnb</code></pre>
+            <h2>makes one geometry out of all geometries</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convexhull-success.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 4</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>making a point in latitude and longitude is unnecessarily difficult in PostGIS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-latlng.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdb-latlng.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdb-latlng.png);">
+            <h2>CartoDB has a nice helper function for that</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-dwithin.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-dwithin.png);">
+            <h2><code>ST_DWithin</code><h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-dwithin.png);">
+            <h2><code>ST_DWithin</code><h2>
+            <h2>get features within a certain distance of another feature</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-dwithin.png);">
+            <h2>in this case, within 5 km of a point we chose</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code class="wrapped">SELECT * 
+FROM crashes
+WHERE ST_DWithin(the_geom_webmercator, ST_Transform(CDB_LatLng(40.582931, -74.150677), 3857), 5000)<code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code class="wrapped">SELECT * 
+FROM crashes
+WHERE ST_DWithin(<span class="highlighted">the_geom_webmercator</span>, ST_Transform(CDB_LatLng(40.582931, -74.150677), 3857), 5000)<code></pre>
+            <h2>the row's geom</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code class="wrapped">SELECT * 
+FROM crashes
+WHERE ST_DWithin(the_geom_webmercator, <span class="highlighted">ST_Transform(CDB_LatLng(40.582931, -74.150677), 3857)</span>, 5000)<code></pre>
+            <h2>a point we made up, in latlng, then converted to web mercator</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-xy.png);">
+            <a href="http://postgis.net/docs/manual-2.2/ST_X.html" class="source" target="_blank">ST_X</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/postgis-examples.png);">
+            <a href="http://postgis.net/docs/manual-2.2/using_postgis_dbmanagement.html#examples_spatial_sql" class="source" target="_blank">PostGIS spatial SQL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-tips-and-tricks.png);">
+            <a href="http://docs.cartodb.com/tips-and-tricks.html" class="source" target="_blank">CartoDB Tips and Tricks</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/boundless-postgis.png);">
+            <a href="http://workshops.boundlessgeo.com/postgis-intro/" class="source" target="_blank">Boundless Introduction to PostGIS</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-nicar.png);">
+            <a href="https://github.com/csvsoundsystem/nicar-cartodb-postgis" class="source" target="_blank">CartoDB PostGIS workshop</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-academy.png);">
+            <a href="http://academy.cartodb.com/courses/04-sql-postgis/lesson-1.html" class="source" target="_blank">CartoDB Map Academy</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>cartodb.js</h2>
+        </div>
+
+        <div class="slide">
+            <h2>It's an API that adds functionality to your page (rather than data)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>I'll call this a <em>library</em> from now on</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Since it adds functionality, you need to load some code</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Just like Leaflet and jQuery</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-html.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-html.png);">
+            <h2>(you'll copy and paste this)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-js.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-js.png);">
+            <h2>Then invoke it in your JavaScript</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-js-arrow.png);">
+            <h2>Wait where'd this come from?!</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-string.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-api-string.png);">
+            <h2><a href="http://jsbin.com/dulezu/2/edit?js,output" target="_blank">here's an example</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 5</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-jsbin.png);">
+            <h2>OK but that seems like a lot of effort to embed a map from CartoDB</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/christian-bale-kermit-the-frog.gif); background-size: 50%;">
+            <h2>true</h2>
+        </div>
+
+        <div class="slide">
+            <h2>But there's more!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Now you can customize everything</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-createvis.png);">
+            <a class="source" href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcreatevismapid-vizjsonurl-options--callback" target="_blank">createVis</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-createvis.png);">
+            <h2>createVis() takes an object of options</h2>
+            <a class="source" href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcreatevismapid-vizjsonurl-options--callback" target="_blank">createVis</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-createvis-options.png);">
+            <a class="source" href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcreatevismapid-vizjsonurl-options--callback" target="_blank">createVis</a>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 6</a></h2>
+        </div>
+
+    </body>
+</html>
