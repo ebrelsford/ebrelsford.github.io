@@ -65,38 +65,6 @@
                 </ol>
             </section>
 
-
-            <section>
-                <h2>Part 5: Add a <code>done</code> handler</h2>
-                <ol>
-                    <li>Start with the code from Part 2.</li>
-                    <li>Add a <code>done</code> handler to <code>createVis()</code> and hide the layer containing your visualization's layers.</li>
-                    <li>Here's a start, building from the last part:
-                        <pre><code>$(document).ready(function () {
-    cartodb.createVis('map', /* Your CartoDB visualization's CartoDB.js URL */, {
-        option1: option1-value,
-        option2: option2-value,
-        option3: option3-value
-    })
-        <strong>.done(function (vis, layers) {
-            // layers[1] contains the visualization's layers
-        });</strong>
-});</code></pre>
-                    </li>
-                    <li>All of the methods you can call on layers are in the <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcartodblayer">documentation</a>.</li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>Part 6: Get and set a sublayer's SQL</h2>
-                <ol>
-                    <li>Start with the code from Part 3.</li>
-                    <li>Use <code><a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#layergetsublayerlayerindex">getSubLayer()</a></code> to get a visualization layer from your visualization.</li>
-                    <li>Once you do, use <code>console.log()</code> to print out the results of <code>getSQL()</code> on the layer.</li>
-                    <li>Then try <code><a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#sublayergetsql">setSQL()</a></code> on the layer.</li>
-                </ol>
-            </section>
-
             <footer>
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
             </footer>
