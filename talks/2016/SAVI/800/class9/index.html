@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 9 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 9</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 9</p>
+        </div>
+
+        <div class="slide">
+            <h2>As with <code>$.getJSON()</code>, you can add a <code>done</code> callback</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-done.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-done.png);">
+            <h2><pre><code>cartodb.createVis(...)
+    .done(function (vis, layers) {
+        console.log('vis loaded!');
+    });</code></pre></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-done.png);">
+            <h2><code>layers</code> is an array of layers, the first one is the base map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-layer.png);">
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js/api-methods/#cartodbcartodblayer" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-layer-hide.png);">
+            <a href="http://jsbin.com/temahu/1/edit?js,output" class="source">jsbin</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-layer-hide.png);">
+            <h2 style="background: rgba(256, 256, 256, 0.95);"><pre><code>cartodb.createVis(...)
+    .done(function (vis, layers) {
+        layers[1].hide();
+    });</code></pre></h2>
+            <a href="http://jsbin.com/temahu/1/edit?js,output" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2><code>layers[1]</code> is all the visualization layers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-layers.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 1</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>if you want to get one of those layers, use <code>getSubLayer()</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-getsublayer.png);">
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js/api-methods/#layergetsublayerlayerindex" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide">
+            <h2>sublayers are cool!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>they give you access to everything you have in the CartoDB UI</h2>
+        </div>
+
+        <div class="slide">
+            <h2>they give you access to everything you have in the CartoDB UI</h2>
+            <h2>SQL, CartoCSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>and you can change those dynamically</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-sublayer.gif);">
+            <a href="http://jsbin.com/jaqoco/1/edit?js,output" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 2</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>scope! <code>layers</code> won't be available outside of <code>createVis().done()</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>if you want to use a sublayer when reacting to a user's input, you need to save the sublayer to a variable</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-save-sublayer.png);">
+            <a href="http://jsbin.com/nesoxa/2/edit?js,output" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-js-save-sublayer.png);">
+            <h2>put <code>var &lt;your_sublayer_name&gt;</code> somewhere before <code>createVis().done()</code></h2>
+            <a href="http://jsbin.com/nesoxa/2/edit?js,output" target="_blank" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 3</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>but I want to add a plugin to a CartoDB map</h2>
+        </div>
+
+        <div class="slide">
+            <h2>no problem!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>CartoDB.js wraps Leaflet</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-getnativemap.png);">
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js/api-methods/#visgetnativemap" target="_blank" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-getnativemap.png);">
+            <h2><code>getNativeMap()</code></h2>
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js/api-methods/#visgetnativemap" target="_blank" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-getnativemap.png);">
+            <h2>access vis in <code>createVis()<br />.done()</code></h2>
+            <a href="http://docs.cartodb.com/cartodb-platform/cartodb-js.html#core-api-functionallity" target="_blank" class="source">CartoDB.js docs</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodbjs-getnativemap.png);">
+            <h2><a href="inclass.html">in-class exercise, part 4</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/smelly-maps.png);">
+            <a href="http://goodcitylife.org/smellymaps/index.html" target="_blank" class="source">Smelly Maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/canada-refugees.png);">
+            <a href="http://www.macleans.ca/news/canada/true-north-refugees-where-25000-syrians-have-settled-in-canada/" target="_blank" class="source">True North refugees</a>
+        </div>
+
+    </body>
+</html>
