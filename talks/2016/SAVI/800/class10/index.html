@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 10 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 10</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 10</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/smelly-maps.png);">
+            <a href="http://goodcitylife.org/smellymaps/index.html" target="_blank" class="source">Smelly Maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/canada-refugees.png);">
+            <a href="http://www.macleans.ca/news/canada/true-north-refugees-where-25000-syrians-have-settled-in-canada/" target="_blank" class="source">True North refugees</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/stamen-tile.jpg); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/toner-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapquest-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide">
+            <h2>where do base tiles come from?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>traditional base tiles, as we've been using, work like this:</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. bring some data: water, land, streets, etc...</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. turn the data into images</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom.png);">
+            <a href="http://presentations.opengeo.org/2011_IMAK/Workshop_OpenSource_Stack/geowebcache/basics.html" class="source" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-tile.png); background-size: 25%;">
+        </div>
+
+        <div class="slide">
+            <h2>3. put the images on a server</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <a href="http://www.intechopen.com/books/cartography-a-tool-for-spatial-analysis/web-map-tile-services-for-spatial-data-infrastructures-management-and-optimization#F3" class="source" target="_blank">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>tiles grow exponentially</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 0:</h2>
+            <h2>1 tile</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 1:</h2>
+            <h2>4 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 2:</h2>
+            <h2>16 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>zoom level 18:</h2>
+            <h2>68,719,476,736 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tile-pyramid.jpg);">
+            <h2>total at level 18:</h2>
+            <h2>91,625,968,981 tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-2.jpg);">
+            <a href="http://maptimeboston.github.io/web-maps-101/#17" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-3.jpg);">
+            <a href="http://maptimeboston.github.io/web-maps-101/#17" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/openwhatevermap.png);">
+            <h2>tiles use the same <em>zoom</em>, <em>x</em>, and <em>y</em> values, so they're interchangeable</h2>
+            <a href="http://www.openwhatevermap.org/" class="source">openwhatevermap.org</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/maptiler.png);">
+            <a href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/" class="source" target="_blank">maptiler.org</a>
+        </div>
+
+        <div class="slide">
+            <h2>so how do you <em>make</em> raster or vector tiles?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>it depends!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>in theory you can make tiles on your own</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/openstreetmap.png);">
+            <h2>there is a free global data source</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapnik.png);">
+            <h2>and the software for making tiles is open source</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but keeping your global OpenStreetMap data up to date can be difficult</h2>
+        </div>
+
+        <div class="slide">
+            <h2>and configuring tile-making software isn't the easiest</h2>
+        </div>
+
+        <div class="slide">
+            <h2>there are entire small companies that do this kind of thing</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but many mapmakers turn to Mapbox</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox is a popular platform for making base tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill.png);">
+            <h2>TileMill</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-tilemill-discontinued.png);">
+        </div>
+
+        <div class="slide">
+            <h2>how TileMill worked</h2>
+            <h2>
+                <ol>
+                    <li>add data</li>
+                    <li>style the data</li>
+                    <li>generate and upload tiles</li>
+                </ol>
+            </h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-4.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tilemill-process-5.png);">
+        </div>
+
+        <div class="slide">
+            <h2>there are some downsides to this approach</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you have to add the data yourself</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Mapbox would charge you by the amount of memory you take up</h2>
+        </div>
+
+        <div class="slide">
+            <h2>if one tile is 25 KB, all tiles up to and including zoom 18 would be around 2 TB</h2>
+        </div>
+
+        <div class="slide">
+            <h2>unless you're paying a ton, you're not going to have worldwide tiles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>and even if you did, you need to bring the data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>are you going to download all of OpenStreetMap?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-planet.png);">
+            <a href="http://wiki.openstreetmap.org/wiki/Planet.osm" class="source" target="_blank">OSM planet</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/osm-planet-diff.png);">
+            <h2>and keep it up to date?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic.png);">
+            <a href="https://www.mapbox.com/mapbox-studio-classic/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic.png);">
+            <h2>Mapbox provides modified OpenStreetMap data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic.png);">
+            <h2>Mapbox provides modified OpenStreetMap data</h2>
+            <h2>using vector tiles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tiles-zoom-3.jpg);">
+            <h2>with vector tiles, all the map data is split into the same exact grid pattern</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-simplify.gif);">
+            <h2>and the data is filtered and simplified for the zoom level you're at</h2>
+        </div>
+
+        <div class="slide">
+            <h2>the data is sent to the browser/application for each tile, then the <em>browser</em> (or application) styles it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>this opens up possibilities:</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-dynamic-style.gif);">
+            <h2>1. dynamic styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-fractional-zoom.gif);">
+            <h2>2. fractional zoom levels (eg 3.5 rather than 3 or 4)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-perspective.gif);">
+            <h2>3. dynamic perspective</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vector-projections.gif);">
+            <h2>4. more projections</h2>
+            <a href="https://mapzen.com/blog/escape-from-mercator/" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>vector tiles are still based on vector data sources, eg OSM</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic-process-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic-process-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic-process-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic-process-4.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic-process-5.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-classic-process-6.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new.png);">
+            <h2>the current Mapbox Studio</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new.png);">
+            <h2>Mapbox still provides modified OpenStreetMap data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-classic.png);">
+            <h2>sometimes you'll see references to "studio classic" or other "classic" things</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-classic.png);">
+            <h2>we're going to avoid those and stick to the latest Mapbox Studio</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new.png);">
+            <h2>Mapbox still provides modified OpenStreetMap data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-online.png);">
+            <h2>entirely online</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new-layers-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new-layers-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new-layers-3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-new-layers-4.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-home.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-feature-layer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-color.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-color-zoom.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-field.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-filter-data.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-publish.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 1</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-share.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-share-cartodb.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 2</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-custom-basemap-no-mapbox.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 3</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data.png);">
+            <h2>you can add your own data source</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data-style.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-data-style.png);">
+            <h2>and add these to styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-two-filters.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-studio-two-filters.png);">
+            <h2>add layers multiple times if you want to do things like choropleths</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">in-class exercise, part 4</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl.png);">
+            <a href="https://www.mapbox.com/maps/" class="source" target="_blank">mapbox.com/maps</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl.gif);">
+            <a href="https://www.mapbox.com/mapbox-gl-js/examples/" class="source" target="_blank">Mapbox GL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mapbox-gl-examples.png);">
+            <a href="https://www.mapbox.com/mapbox-gl-js/examples/" class="source" target="_blank">Mapbox GL examples</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/webgl-caniuse.png);">
+            <a href="http://caniuse.com/#feat=webgl" class="source" target="_blank">caniuse.com</a>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>In-class Excercise | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">Advanced Interactive Web Mapping, Programming, and Design</a>
+                <h1>In-class Excercises: Mapbox Studio</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Mapbox Studio</h2>
+                <ol>
+                    <li>Create an account with <a href="https://www.mapbox.com/">Mapbox</a> if you don't already have one.</li>
+                    <li>Log in to your Mapbox account.</li>
+                    <li>Once logged in, go to the <strong>Studio</strong> page (link in the top right).</li>
+                    <li>Under <strong>Styles</strong>, click <strong>New style</strong> and pick a style to start from.</li>
+                    <li>Edit your style. Use some zoom-independent styling and zoom-dependent styling. Look into filtering data in some layers.</li>
+                    <li>Publish your style.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Mapbox tiles in Leaflet</h2>
+                <ol>
+                    <li>Open a Leaflet map you have made in the past, either for in-class work or an assignment.</li>
+                    <li>In your Mapbox account, under Styles, click the button to the right of <strong>Edit</strong> for one of your styles. Then click <strong>Share &amp; use</strong>.</li>
+                    <li>On the next page, to the right under <strong>Use style in other apps</strong>, select <strong>CartoDB</strong> and copy the resulting URL in the box under it.</li>
+                    <li>Back in your Leaflet map, replace the URL for the <code>L.tileLayer</code> with the URL you just copied.</li>
+                    <li>When you're done you should have a map with Mapbox tiles as in <a href="http://jsbin.com/lakurez/1/edit?js,output">this jsbin</a>.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Mapbox tiles in CartoDB</h2>
+                <ol>
+                    <li>Open a CartoDB map you have made in the past.</li>
+                    <li>Find and click the <strong>Change basemap</strong> button in the lower left.</li>
+                    <li>Click the <strong>+</strong> next to <strong>Yours</strong>.</li>
+                    <li>Under <strong>XYZ</strong> (<strong>not</strong> Mapbox), paste the same URL you used in the previous section.</li>
+                    <li>Your CartoDB map should now be using your Mapbox style.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Adding data to Mapbox Studio</h2>
+                <ol>
+                    <li>Pick a relatively large dataset you would like to add to your Mapbox style. Consider <a href="http://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page#mappluto">MapPLUTO for one of the boroughs</a> if you don't have anything in mind.</li>
+                    <li>In your Mapbox account, go to <strong>Tilesets</strong> and upload the data as a new tileset. If it is a shapefile leave it zipped.</li>
+                    <li>Edit your style.</li>
+                    <li>Click <strong>New layer</strong> and select the data you uploaded as the tileset next to <strong>Source</strong>.</li>
+                    <li>Consider adding filters if appropriate.</li>
+                    <li>Click <strong>Create layer</strong>.</li>
+                    <li>Style the layer as you would any other layer.</li>
+                    <li>Publish the resulting style.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
