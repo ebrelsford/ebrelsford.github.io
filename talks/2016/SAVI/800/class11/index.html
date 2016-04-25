@@ -70,23 +70,23 @@
 
         <div class="slide">
             <pre style="font-size: 45px;"><code>&lt;p&gt;
-    &lt;span class="name"&gt;{{name}}&lt;/span&gt;:
-    &lt;span class="job"&gt;{{job}}&lt;/span&gt;
+    &lt;span&gt;{{name}}&lt;/span&gt;:
+    &lt;span&gt;{{job}}&lt;/span&gt;
 &lt;/p&gt;</code></pre>
         </div>
 
         <div class="slide">
             <pre style="font-size: 45px;"><code>&lt;p&gt;
-    &lt;span class="name"&gt;{{name}}&lt;/span&gt;:
-    &lt;span class="job"&gt;{{job}}&lt;/span&gt;
+    &lt;span&gt;{{name}}&lt;/span&gt;:
+    &lt;span&gt;{{job}}&lt;/span&gt;
 &lt;/p&gt;</code></pre>
             <h2>anything in {{}} gets replaced by Mustache</h2>
         </div>
 
         <div class="slide">
             <pre style="font-size: 45px;"><code>&lt;p&gt;
-    &lt;span class="name"&gt;{{name}}&lt;/span&gt;:
-    &lt;span class="job"&gt;{{job}}&lt;/span&gt;
+    &lt;span&gt;{{name}}&lt;/span&gt;:
+    &lt;span&gt;{{job}}&lt;/span&gt;
 &lt;/p&gt;
             
 ...
@@ -99,8 +99,8 @@ var context = {
 
         <div class="slide">
             <pre style="font-size: 45px;"><code>&lt;p&gt;
-    &lt;span class="name"&gt;Frank&lt;/span&gt;:
-    &lt;span class="job"&gt;milkman&lt;/span&gt;
+    &lt;span&gt;Frank&lt;/span&gt;:
+    &lt;span&gt;milkman&lt;/span&gt;
 &lt;/p&gt;</code></pre>
         </div>
 
@@ -340,7 +340,14 @@ var context = {
             <h2>with CartoDB you ask the server for the data and can add GIS operations to it</h2>
         </div>
 
-        <div class="slide" style="background-image: url(img/postgis-sql.png);">
+        <div class="slide">
+            <pre><code>
+SELECT neighbourhood,
+  ST_Convexhull(
+    ST_Collect(the_geom_webmercator)
+  ) AS the_geom_webmercator 
+FROM listings
+GROUP BY neighbourhood</code></pre>
         </div>
 
         <div class="slide">
@@ -366,7 +373,7 @@ var context = {
         </div>
 
         <div class="slide" style="background-image: url(img/gis-server.png);">
-            <h2>there are a few concerns with this arrangement:</h2>
+            <h2>there are a few potential issues with this arrangement:</h2>
         </div>
 
         <div class="slide" style="background-image: url(img/gis-server.png);">
