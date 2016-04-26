@@ -65,30 +65,6 @@
                 <p><a href="http://jsbin.com/leyuge/5/edit?js,output">This jsbin</a> contains a working example if you get stuck.</p>
             </section>
 
-            <section>
-                <h2>Part 7: Turf, aggregation</h2>
-                <p>Make a choropleth map by counting the number of points in each polygon and classifying the polygons.</p>
-                <ol>
-                    <li>Start with <a href="http://jsbin.com/nicobu/latest/edit?js,output">this jsbin</a>, which loads city council districts and vacant lots in Queens.</li>
-                    <li>Use <a href="http://turfjs.org/static/docs/module-turf_count.html"><code>turf.count</code></a> to get the city council districts including the number of vacant lots in each one.</li>
-                    <li>Set <code>classes</code> to the result of classifying the city council districts by the number of vacant lots in each, for example by using <a href="http://turfjs.org/static/docs/module-turf_jenks.html"><code>turf.jenks</code></a>. Use 4 classes.</li>
-                    <li>Add the resulting GeoJSON object to <code>turfLayer</code>.</li>
-                    <li>This <a href="http://jsbin.com/cayuqi/2/edit">jsbin</a> is a working example.</li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>Part 8: Turf, dynamic</h2>
-                <p>Make a map that uses Turf in response to user input.</p>
-                <ol>
-                    <li>Start with <a href="http://jsbin.com/yanawa/latest/edit?js,output">this jsbin</a>.</li>
-                    <li>Where the file indicates that you should, use <a href="http://leafletjs.com/reference.html#layergroup-clearlayers"><code>clearLayers()</code></a> to get rid of any existing layers on <code>turfLayer</code>.</li>
-                    <li>As indicated, use <a href="http://leafletjs.com/reference.html#layergroup-getlayers"><code>getLayers()</code></a> to write an <code>if</code> statement that checks that the number of layers on <code>turfLayer</code> is at least 3.</li>
-                    <li>Within the <code>if</code> statement from 3, find the convex hull of the <code>clickedPoints</code> and add that to <code>turfLayer</code>.</li>
-                    <li>This <a href="http://jsbin.com/tiquyu/2/edit">jsbin</a> is a working example.</li>
-                </ol>
-            </section>
-
             <footer>
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Interactive Web Mapping, Programming, and Design</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
             </footer>

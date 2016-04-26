@@ -607,38 +607,5 @@ var geojson = dataLayer<strong>.toGeoJson()</strong>;</code></pre>
             <h2><a href="inclass.html">please do in-class exercise part 6</a></h2>
         </div>
 
-        <div class="slide">
-            <h2 style="font-size: 95px;">since many Turf functions return GeoJSON objects, you can run another Turf function on the returned object</h2>
-        </div>
-
-        <div class="slide">
-            <pre style="font-size: 45px;"><code>var convex = turf.convex(points);
-var buffered = turf.buffer(convex, 150, 'feet');</code></pre>
-        </div>
-
-        <div class="slide" style="background-image: url(img/turf-count.png);">
-        </div>
-
-        <div class="slide" style="background-image: url(img/turf-count.png);">
-            <h2>each new feature will have a <em>countField</em> property with the count</h2>
-        </div>
-
-        <div class="slide" style="background-image: url(img/turf-count.png);">
-            <h2>you set countField as a parameter</h2>
-        </div>
-
-        <div class="slide">
-            <h2>for example</h2>
-            <pre style="font-size: 45px;"><code>turf.count(polygons, bodegaPoints, 'bodegaCount');</code></pre>
-        </div>
-
-        <div class="slide">
-            <h2><a href="inclass.html">please do in-class exercise part 7</a></h2>
-        </div>
-
-        <div class="slide">
-            <h2><a href="inclass.html">please do in-class exercise part 8</a></h2>
-        </div>
-
     </body>
 </html>
