@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 12 | Advanced Interactive Web Mapping, Programming, and Design</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Advanced Interactive Web Mapping, Programming, and Design, Class 12</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h2>Advanced Interactive Web Mapping, Programming, and Design</h2>
+            <p>Class 12</p>
+        </div>
+
+        <div class="slide">
+            <h2>remember: we're not meeting next week</h2>
+        </div>
+
+        <div class="slide">
+            <h2>see you Monday May 9th</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2 style="font-size: 95px;">since many Turf functions return GeoJSON objects, you can run another Turf function on the returned object</h2>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code>var convex = turf.convex(points);
+var buffered = turf.buffer(convex, 150, 'feet');</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count.png);">
+            <h2>each new feature will have a <em>countField</em> property with the count</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count.png);">
+            <h2>you set countField as a parameter</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example</h2>
+            <pre style="font-size: 45px;"><code>turf.count(polygons, bodegaPoints, 'bodegaCount');</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count-1.png);">
+            <a href="http://jsbin.com/dodevaq/2/edit" class="source">jsbin</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count-1.png);">
+            <h2>counting points in polygons</h2>
+            <a href="http://jsbin.com/dodevaq/2/edit" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code><span style="font-style: italic">load points
+load polygons</span>
+var polygonsWithCounts = turf.count(points, polygons, 'count');
+L.geoJson(polygonsWithCounts).addTo(map);</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count-2.png);">
+            <a href="http://jsbin.com/dodevaq/edit?js,output" class="source">jsbin</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count-2.png);">
+            <h2>trying to style polygons based on those counts</h2>
+            <a href="http://jsbin.com/dodevaq/edit?js,output" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code><span style="font-style: italic">load points
+load polygons</span>
+var polygonsWithCounts = turf.count(points, polygons, 'count');
+<span style="font-style: italic;">find the maximum count</span>
+L.geoJson(polygonsWithCounts).addTo(map, {
+    style: function (feature) {
+        <span style="font-style: italic;">vary something by count and maximum count</span>
+    }
+});</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/turf-count-3.png);">
+            <a href="http://jsbin.com/cayuqi/2/edit?js,output" class="source">jsbin</a>
+        </div>
+
+        <div class="slide">
+            <pre style="font-size: 45px;"><code><span style="font-style: italic">load points
+load polygons</span>
+var polygonsWithCounts = turf.count(points, polygons, 'count');
+<span style="font-style: italic;">find classes by count</span>
+L.geoJson(polygonsWithCounts).addTo(map, {
+    style: function (feature) {
+        <span style="font-style: italic;">vary something by classes</span>
+    }
+});</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">please do in-class exercise part 1</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html">please do in-class exercise part 2</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/596.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596-signs.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/596-rockaways.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/edgemere-urban-renewal-park-streetview.png);">
+            <a href="https://www.google.com/maps/place/Edgemere+Urban+Renewal+Park/@40.595588,-73.776975,3a,75y,172.62h,90t/data=!3m4!1e1!3m2!1sZgWcG17VxRvOezZpdWXGkA!2e0!4m6!1m3!3m2!1s0x0:0xae6844ceae037acd!2sEdgemere+Urban+Renewal+Park!3m1!1s0x0:0xae6844ceae037acd!6m1!1e1" target="_blank">
+                Edgemere Urban Renewal Park
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/edgemere-urban-renewal-park-signs.jpg);">
+            <a class="source" href="http://596acres.org/en/lot/4158370033/" target="_blank">
+                596 Acres
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/edgemere-urban-renewal-park-signs-zoom.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/edgemere-urban-renewal-park-signs-zoom.jpg);">
+            <h2>call Parks and say "where's our park?"</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/edgemere-urban-renewal-park.png);">
+            <a href="https://www.google.com/maps/place/Edgemere+Urban+Renewal+Park/@40.595588,-73.776975,17z/data=!4m6!1m3!3m2!1s0x0:0xae6844ceae037acd!2sEdgemere+Urban+Renewal+Park!3m1!1s0x0:0xae6844ceae037acd" target="_blank">
+                Edgemere Urban Renewal Park
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/moses.jpg);">
+            <h2>What is urban renewal?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arverne-1968.png);">
+            <h2>Urban</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arverne-satellite.png);">
+            <h2>Renewal</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/arverne-curbed.jpg);">
+            <h2>today</h2>
+            <a class="source" href="http://kensinger.blogspot.com/">Nathan Kensinger</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/spura.jpg);">
+            <h2>today</h2>
+            <a class="source" href="http://www.nycedc.com/project/seward-park-mixed-use-development-project">NYC EDC</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/lincoln-center.jpg);">
+            <h2>today</h2>
+            <a class="source" href="http://performingartseducators.org/index.php/fourth-post/">Performing Arts Educators</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cadman-plaza.jpg);">
+            <h2>today</h2>
+            <a class="source" href="http://www.panoramio.com/photo/34791344">Panoramio</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>so let's map them!</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we weren't the first to have this idea</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdp1968.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdp1968.png);">
+            <h2>Community Development Program Progress Report (1968)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdp1968-map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdp1968-map-zoom.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdp1968-arverne-map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/atlas1984.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/atlas1984.png);">
+            <h2>Atlas of Urban Renewal (1984)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/atlas1984-manhattan.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/atlas1984-e14th.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/atlas1984-e14th-zoom.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>what will it take?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what will it take?</h2>
+            <ol>
+                <li>get the data</li>
+                <li>clean the data</li>
+                <li>merge the data with other useful datasets</li>
+            </ol>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foil-letter.png);">
+            <h2>FOIL</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foil-paper.jpg);">
+            <h2>FOILed!</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/foil-letter-inspection.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bronx-park-south-plan.JPG);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bronx-park-south-plan-detail.JPG);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/plan-map.JPG);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/arverne-google-drive.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/crown-heights-google-drive.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/crown-heights-google-drive.png);">
+            <h2>thanks to amazing volunteers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer_final_excel.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/disappointed.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer_final_excel_arrow.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer_final_excel_arrow2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tax-map.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/tax-map-zoom.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/nyc-shp.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urban-reviewer-full.png);">
+            <a href="http://urbanreviewer.org" target="_blank">urban reviewer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/leaflet.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/just-mapbox.gif);">
+            <h2>tiles created via OpenStreetMap and Mapbox</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data-geojson.gif);">
+            <h2>~10,000 polygons</h2>
+            <h2>6 MB</h2>
+            <h2>not particularly fast</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/features-list.png);">
+            <h2>list plans</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/features-outline.png);">
+            <h2>outline plans</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/features-search.png);">
+            <h2>search for plans</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/features-highlight.png);">
+            <h2>highlight parcels</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/just-cartodb.gif);">
+            <h2>CartoDB</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-tile.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cartodb-grid.png);">
+        </div>
+
+        <div class="slide">
+            <ol>
+                <li>Leaflet</li>
+                <li>Mapbox tiles</li>
+                <li>CartoDB layer on top with cartodb.js</li>
+            </ol>
+        </div>
+
+        <div class="slide" style="background-color: white; background-image: url(img/cartodb_sql_api1.png);">
+            <h2 style="font-size: 90px; line-height: 95px;">making it interactive</h2>
+        </div>
+
+        <div class="slide" style="background-color: white; background-image: url(img/cartodb_sql_api2.png);">
+            <h2 style="font-size: 90px; line-height: 95px;">making it interactive</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/search.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/search-code.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/search-code.png);">
+            <h2><code>SELECT name</code></h2>
+            <h2><code>FROM plans</code></h2>
+            <h2><code>WHERE name ILIKE '%lincol%'</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/typeahead.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/plan_hover.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/plan-hover-code.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/plan-hover-code.png);">
+            <h2><code>ST_Union, ST_ConvexHull, ST_Buffer</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/plan_name_hover.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lot_hover.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lot-hover-code.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/lot-hover-code.png);">
+            <h2>yeah we use the SQL API here too</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/lot-hover-code.png);">
+            <h2>1. construct SQL query to find the lot you're over</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/lot-hover-code.png);">
+            <h2>2. get GeoJSON and add to map</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/highlight.gif);">
+            <h2>dynamic styles</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/highlight.gif);">
+            <h2>dynamic styles</h2>
+            <h2><code>setCartoCSS()</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-cartocss-vars.png);">
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/js/cartocss.js" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-cartocss-concat.png);">
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/js/cartocss.js" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-cartocss-concat.png);">
+            <h2>create a string with the CartoCSS you want to use</h2>
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/js/cartocss.js" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-setcartocss.png);">
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/js/plansmap.js" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/filter_date.gif);">
+            <h2>dynamic data</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/filter_date.gif);">
+            <h2>dynamic data</h2>
+            <h2><code>setSQL()</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-setsql.png);">
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/js/plansmap.js" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/still-vacant1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/still-vacant2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/still-vacant3.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-text.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-text.png);">
+            <h2>each of these is a page hosted on GitHub Pages</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-github-pages.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-github-pages.png);">
+            <h2>we wanted collaborators to edit the pages without using HTML</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jekyll.png);">
+            <a href="http://jekyllrb.com/" class="source" target="_blank">jekyll</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/jekyll.png);">
+            <h2>plain text or markdown &rarr; HTML</h2>
+            <a href="http://jekyllrb.com/" class="source" target="_blank">jekyll</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-markdown.png);">
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/plans/Brooklyn/Williamsburg%20I/index.md" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-markdown.png);">
+            <h2>and we don't want to teach everyone GitHub</h2>
+            <a href="https://github.com/596acres/urbanreviewer/blob/gh-pages/plans/Brooklyn/Williamsburg%20I/index.md" class="source" target="_blank">code</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/proseio.png);">
+            <a href="http://prose.io/" class="source" target="_blank">prose.io</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-proseio.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-proseio-preview.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-data.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/urbanreviewer-plan-data-github.png);">
+        </div>
+
+    </body>
+</html>
