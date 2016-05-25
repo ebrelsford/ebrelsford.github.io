@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Assignment 1 | Introduction to GIS Software: QGIS</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+        <header>
+            <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+            <h1>Assignment 1</h1>
+            <p>Due <strong>Sunday, June 5th at midnight</strong></p>
+        </header>
+
+        <section>
+            <h2>Recommended readings and resources</h2>
+            <p>Readings that reinforce what was talked about in the first two classes:</p>
+            <ul>
+                <li><a href="http://giscommons.org/introduction-concepts/">GIS Commons: Introduction</a></li>
+                <li><a href="http://2012books.lardbucket.org/books/geographic-information-system-basics/">Geographic Information System Basics, Chapters 1 and 2</a></li>
+            </ul>
+            <p>General QGIS background and help:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=sQ8ytFJE_Wk">QGIS 2.0</a>, a video about QGIS 2.0 that goes into the history of the software a bit</li>
+                <li>the <a href="http://docs.qgis.org/2.2/en/docs/user_manual/">QGIS User Guide</a></li>
+                <li><a href="https://www.packtpub.com/hardware-and-creative/learning-qgis-20">Learning QGIS 2.0</a></li>
+                <li><a href="http://gis.stackexchange.com/">GIS Stack Exchange</a>, a Q&amp;A site where people with GIS questions ask for help and people in the community answer their questions</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Videos</h2>
+            <ol>
+                <li><a href="https://www.youtube.com/watch?v=iOhhFIIOb08">QGIS Projections</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dioyfbAs6wk">QGIS Print Composer</a></li>
+                <li><a href="https://www.youtube.com/watch?v=kSRAkdQuGwc">QGIS CSVs</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Q0e6lzpoyYU">QGIS Regional Map</a></li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Part 1: A map of NYC data</h2>
+            <p>In class this week we covered cartographic design principles and got a taste of QGIS. Use this assignment to get more familiar with QGIS and use it to compose printable maps.</p>
+            <p>Make a map of something in NYC by downloading some data (eg from the <a href="https://nycopendata.socrata.com/">NYC Open Data Portal</a>) and mapping it with QGIS.</p>
+            <p>Finding data can be difficult, and we will be going over this in more detail in future classes. I suggest that you <strong>start looking for data early</strong> and email the mailing list if you have specific data you are looking for and are having a hard time finding. It is never too soon to start looking for data related to a potential project idea.</p>
+            <p>We will be going over how to turn data with addresses into spatial data (geocoding), but you're not expected to do this in this assignment. To find data available as a shapefile: <a href="https://data.cityofnewyork.us/data?browseSearch=&amp;scope=&amp;agency=&amp;cat=&amp;type=maps">filter the datasets to view only maps</a>, select a dataset, find the <strong>Export</strong> button near the top right of the page, and select <strong>Shapefile</strong>.</p>
+            <p>Style your map as you find appropriate and create a PDF using Print Composer.</p>
+        </section>
+
+        <section>
+            <h2>Part 2: A regional map</h2>
+            <p>Pick a part of the world that you like or want to know more about and try your hand at making a thematic map of that area.</p>
+            <ol>
+                <li>Download Natural Earth data to make a map of a region you choose. <a href="http://www.naturalearthdata.com/">Natural Earth</a> is a free-to-use and accurate data set for the whole world, and it is the go-to data for this type of task. You will likely be interested in the <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors">10m cultural</a> and <a href="http://www.naturalearthdata.com/downloads/10m-physical-vectors">10m physical</a> vector files, but feel free to use any that make sense for your map. All of the files are available on the <a href="http://www.naturalearthdata.com/downloads/">Natural Earth downloads page</a>.</li>
+                <li>Open the data in QGIS.</li>
+                <li>Using the techniques described in <a href="https://www.youtube.com/watch?v=Q0e6lzpoyYU">the QGIS Regional Map video</a>, layer the data in such a way that your <strong>theme</strong> is furthered. Example themes might be: disputed territory, Antarctic claims, and transportation infrastructure. You are free to find and incorporate other data, but it will be fine to stick with Natural Earth data for this assignment.</li>
+                <li>Change your project properties to a <strong>projection</strong> that makes sense for the region you are looking at, and justify this in your submission. If you need help finding a good one, try <a href="http://projectionwizard.org/">Projection Wizard</a>.</li>
+                <li>Export your map using the QGIS print composer and submit it via email along with an example of an expression you used while working on the map.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Submitting your work</h2>
+            <p>This work is due Sunday, June 5th at midnight.</p>
+            <p>Use the QGIS <strong>Print Composer</strong> to create <strong>two PDFs</strong>: one NYC map and one regional map. Make sure to add map accessories such as legends, titles, and scale bars as appropriate.</p>
+            <p>Finally, include a <strong>short summary</strong> (1/2 page is fine) of what you did for this assignment. Explain what you created and how you did so. What did you have problems with? What did you enjoy? What would you like to know how to do next?</p>
+            <p>I want to see that you are thinking about cartographic concepts as we discussed in class and that you are exploring QGIS's ability to make maps exported as PDFs.</p>
+            <p>Please email me your summary and attach the PDFs.</p>
+        </section>
+
+        <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </footer>
+        </main>
+    </body>
+</html>
