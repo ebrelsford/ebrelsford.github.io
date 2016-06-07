@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: MapPLUTO metadata</h2>
+                <ol>
+                    <li>Download <a href="http://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page#mappluto">MapPLUTO data</a> for one borough.</li>
+                    <li>Unzip the data.</li>
+                    <li>Find and open the "data dictionary" in the unzipped folder, which should have a name like <code>PLUTODD16v1.pdf</code>. This is MapPLUTO's metadata.</li>
+                    <li>Read through the metadata and the data dictionary. How is <code>LandUse</code> defined?</li>
+                    <li>Find a column with which you can make a <strong>categorized</strong> map.</li>
+                    <li>Open the shapefile with a name like <code>BXMapPLUTO.shp</code> (the first two characters will change depending on the borough you picked). If the data disappears as you zoom in, save the layer as a new one and open that.</li>
+                    <li>Make a categorized map using the column you found.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Filtering with QGIS</h2>
+                <ol>
+                    <li>Open the MapPLUTO data from the last part.</li>
+                    <li>Right-click on the layer and select <strong>Filter...</strong>.</li>
+                    <li>Use the Query Builder to create an expression that filters the data to one city council district (the <code>Council</code> column).</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Selecting and Saving Data</h2>
+                <ol>
+                    <li>Keep the data from the last part, clearing any filters you have on it.</li>
+                    <li>Select data using <strong>Select by expression</strong>:
+                        <ol>
+                            <li>Features with <code>NumFloors</code> over 10.</li>
+                            <li>Features with <code>Easements</code> over 0.</li>
+                            <li>Features with <code>LandUse</code> equal to the code for "Commercial &amp; Office Buildings" according to the data dictionary.</li>
+                            <li>Another selection of your choosing.</li>
+                        </ol>
+                    </li>
+                    <li>Save one of the above selections as a new layer.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Filtering data with expressions</h2>
+                <ol>
+                    <li>Open the original MapPLUTO shapefile you downloaded (not the result of filtering from the previous part).</li>
+                    <li>Style the data with a <strong>Rule-based</strong> style to show only the features that you selected for one of the selections from the previous part.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 5: Style using expressions</h2>
+                <ol>
+                    <li>Download and open the <a href="http://data.insideairbnb.com/united-states/ny/new-york-city/2016-06-02/visualisations/listings.csv">AirBnB listing data for NYC</a> via <a href="http://insideairbnb.com/">Inside AirBnB</a>.</li>
+                    <li>Style the size of the markers based on the <code>price</code> attribute, dividing by a 100. Your expression should look like <code>"price" / 100</code>.</li>
+                    <li>There are some very large prices we would like to hide for this map. Filter the layer to only show features where <code>price</code> is less than 2000.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>

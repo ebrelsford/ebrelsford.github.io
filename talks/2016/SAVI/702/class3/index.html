@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 3 | Introduction to GIS Software: QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Introduction to GIS Software: QGIS, Class 3</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to GIS Software: QGIS</h1>
+        </div>
+
+        <div class="slide">
+            <h2>(review)</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is a <em>datum</em>?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is a <em>projection</em>?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_families.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/2263.png);">
+            <h2>name the projection</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/nyc-lexi.png);">
+            <h2>Lexi</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-james.png);">
+            <h2>James</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/regional-ori.png);">
+            <h2>Ori</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/regional-karen.png);">
+            <h2>Karen</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-background.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-blending.png);">
+        </div>
+
+        <div class="slide">
+            <h2>when does the projection matter?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>display</h2>
+        </div>
+
+        <div class="slide">
+            <h2>when calculating distance</h2>
+        </div>
+
+        <div class="slide">
+            <h2>when calculating area</h2>
+        </div>
+
+        <div class="slide">
+            <h2>when you need features to overlap</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig3-38t.jpg);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig3-43.gif);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig3-44.gif);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/utm-zones.jpg);">
+            <a class="source" href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_wizard.png);">
+            <a class="source" href="http://projectionwizard.org/">projectionwizard.org</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Finding data</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_open_data.png);">
+            <a class="source" href="http://data.cityofnewyork.us">data.cityofnewyork.us</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bytes-of-the-big-apple.png);">
+            <a class="source" href="http://www1.nyc.gov/site/planning/data-maps/open-data.page">bytes of the big apple</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data_gov.png);">
+            <a class="source" href="http://data.gov">data.gov</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/american_factfinder.png);">
+            <a class="source" href="http://factfinder2.census.gov">american factfinder</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/world_databank.png);">
+            <a class="source" href="http://databank.worldbank.org">databank.worldbank.org</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/earthquake_search.png);">
+            <a class="source" href="http://earthquake.usgs.gov/earthquakes/search">USGS earthquake data</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gadm.png);">
+            <a class="source" href="http://gadm.org">GADM</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/poi-factory.png);">
+            <a class="source" href="http://www.poi-factory.com/">POI Factory</a>
+        </div>
+
+        <div class="slide">
+            <h2>data is often imperfect</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shrug.gif);">
+            <h2>hopefully its creator at least documents it</h2>
+        </div>
+
+        <div class="slide">
+            <h2>metadata</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/metadata_hands_off.jpg);">
+            <a class="source" href="http://pontiactribune.com/court-rules-nsa-bulk-collection-of-metadata-illegal/">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/metadata_me.jpg);">
+            <a class="source" href="http://www.wsj.com/articles/SB10001424127887324049504578545352803220058">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>metadata</h2>
+            <p>"data about data"</p>
+        </div>
+
+        <div class="slide">
+            <h2>metadata can help you understand what a dataset contains</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/metadata_map_pluto.png);">
+            <a class="source" href="http://www.nyc.gov/html/dcp/html/bytes/applbyte.shtml#pluto">MapPLUTO</a>
+        </div>
+
+        <div class="slide">
+            <h2>metadata might include:</h2>
+            <ul>
+                <li>data quality</li>
+                <li>data organization</li>
+                <li>projection / coordinate reference system</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>cont'd:</h2>
+            <ul>
+                <li>details about attributes</li>
+                <li>how recent the data is</li>
+                <li>contact organization / person</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/metadata_natural_earth.png);">
+            <a class="source" href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/">Natural Earth</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/metadata_natural_earth1.png);">
+            <a class="source" href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/">Natural Earth</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/library.png);">
+            <a class="source" href="https://data.cityofnewyork.us/Business/Library/p4pf-fyc4#About">Library on NYC Open Data</a>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 1</a></h2>
+        </div>
+
+        <div class="slide">
+            <h1>thematic maps</h1>
+        </div>
+
+        <div class="slide">
+            <h1>thematic maps focus on a theme or subject</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/state_atlas_exploitation.jpg);">
+        </div>
+
+        <div class="slide">
+            <h1>vs reference maps</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/reference_map_oregon.jpg);">
+            <a href="https://www.lib.utexas.edu/maps/oregon.html" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h1>Qualitative vs Quantitative</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/wood_fences.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/wood_fences_legend.jpg);">
+        </div>
+
+        <div class="slide">
+            <h1>qualitative thematic maps use features' qualities</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/state_atlas_dates.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/land_cover.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bachelors_degree.jpg);">
+            <a class="source" href="http://rkpjrhist615.wordpress.com/page/6/">source</a>
+        </div>
+
+        <div class="slide">
+            <h1>qualitative thematic maps use features' numeric qualities</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bachelors_degree.jpg);">
+            <h2>this is a qualitative thematic map</h2>
+            <a class="source" href="http://rkpjrhist615.wordpress.com/page/6/">source</a>
+        </div>
+
+        <div class="slide">
+            <h2>making a thematic map requires selecting data relevant to your theme</h2>
+        </div>
+
+        <div class="slide">
+            <h2>...and layering this data on other, base data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you usually want to select certain features from your layer</h2>
+        </div>
+
+        <div class="slide">
+            <h2>there are a few ways to do this</h2>
+        </div>
+
+        <div class="slide">
+            <h2>first, we're going to talk about layer filters</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/filters-pre.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/filters-menu.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/filters-dialog.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/filters-post.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 2</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_column_filter.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_column_filter.png);">
+            <h2>column filtering</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_select_by_expression.png);">
+            <h2>select by expression</h2>
+        </div>
+
+        <div class="slide">
+            <h2>expressions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_expressions_fields_values.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_expressions_math.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_expressions_string.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_expressions_geometry.png);">
+        </div>
+
+        <div class="slide">
+            <h2>selecting data and saving as a new layer is another way to isolate data</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 3</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>advanced styling</h2>
+        </div>
+
+        <div class="slide">
+            <h2>hiding data with expressions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_style_rule_based.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 4</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can use expressions to change details for styles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>QGIS calls these "data defined overrides"</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_style_expressions.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 5</a></h2>
+        </div>
+
+    </body>
+</html>
