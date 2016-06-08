@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Adding columns to an attribute table</h2>
+                <ol>
+                    <li>Download and open the city council districts shapefile via <a href="http://www1.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page">Bytes of the Big Apple</a>.</li>
+                    <li>Enter edit mode for the layer by going to <strong>Layer &gt; Toggle Editing</strong>.</li>
+                    <li>Open the <strong>Field Calculator</strong>.</li>
+                    <li>Create a new field with name <code>area_sqft</code>, type <code>Decimal number (real)</code>, length <code>15</code>, and precision <code>2</code>. Use the expression <code>$area</code> to calculate the area.</li>
+                    <li>Confirm that the field was added to the attribute table.</li>
+                    <li>Do this again, but this time call the field <code>area_sqmi</code> and use the expression <code>$area / (5280 * 5280)</code> to calculate the area in square miles.</li>
+                    <li>Exit edit mode.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Counting points in polygons in QGIS</h2>
+                <ol>
+                    <li>Re-open the city council districts from the previous part if you closed it.</li>
+                    <li>Find the count of points in by city council district: go to <strong>Vector > Analysis Tools > Points in Polygon</strong> and ensure that the city council districts are selected for the polygon layer, mean streets data for the points layer.</li>
+                    <li>Open the attribute table for the new shapefile. It should have a new column named <code>PNTCNT</code>. Is it <code>NULL</code> for every feature? Why might this be, and how can you fix it?</li>
+                    <li>Fix the problem and leave the file open for the next part.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Styling choropleths in QGIS</h2>
+                <ol>
+                    <li>Using the data from the previous part, style it using a <strong>Graduated</strong> style with the new <code>PNTCNT</code> column.</li>
+                    <li>Try a few classification schemes and look at the histogram for each.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Normalizing data in QGIS</h2>
+                <ol>
+                    <li>Using the data from the previous part, style it using a <strong>Graduated</strong> style with the new <code>PNTCNT</code> column <strong>normalized to the area of the city council districts</strong>.</li>
+                    <li>To do this, create a new column using the <strong>Field Calculator</strong> and divide the count by the area in square miles. Use this new column to make a graduated style.</li>
+                    <li>Again, try a few classification schemes and look at the histogram for each.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 5: Style using expressions</h2>
+                <ol>
+                    <li>Download and open the <a href="http://data.insideairbnb.com/united-states/ny/new-york-city/2016-06-02/visualisations/listings.csv">AirBnB listing data for NYC</a> via <a href="http://insideairbnb.com/">Inside AirBnB</a>.</li>
+                    <li>Style the size of the markers based on the <code>price</code> attribute, dividing by a 100. Your expression should look like <code>"price" / 100</code>.</li>
+                    <li>There are some very large prices we would like to hide for this map. Filter the layer to only show features where <code>price</code> is less than 2000.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
