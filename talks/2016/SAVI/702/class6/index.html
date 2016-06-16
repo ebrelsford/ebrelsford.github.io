@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 6 | Introduction to GIS Software: QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Introduction to GIS Software: QGIS, Class 6</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to GIS Software: QGIS</h1>
+        </div>
+
+        <div class="slide">
+            <h2>what do you need to <em>join</em> two datasets?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>what is the difference between the decennial census and ACS?</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>PUMAs</h2>
+        </div>
+
+        <div class="slide">
+            <h2>Public Use Microdata Areas</h2>
+        </div>
+
+        <div class="slide">
+            <h2>PUMAs have at least 100,000 people in them</h2>
+        </div>
+
+        <div class="slide">
+            <h2>since PUMAs are larger than census tracts, they tend to handle margin of error better</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-pumas.png);">
+            <a href="http://www1.nyc.gov/assets/planning/download/pdf/data-maps/nyc-population/census2010/puma_cd_map.pdf" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-pumas.png);">
+            <h2>in NYC, PUMAs were drawn to roughly follow community districts</h2>
+            <a href="http://www1.nyc.gov/assets/planning/download/pdf/data-maps/nyc-population/census2010/puma_cd_map.pdf" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+            <h2>NTAs</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+            <h2>Neighborhood Tabulation Area</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+            <h2>NTAs are specific to NYC</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+            <h2>NTAs fit within PUMAs and are made up of census tracts</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+            <h2>since an NTA has to fit within a PUMA, it doesn't always correspond to a neighborhood's commonly known boundary</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc-ntas.png);">
+            <h2>the city aggregates some census data at the NTA level</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-one-field.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-multiple-fields.png);">
+        </div>
+
+        <div class="slide">
+            <h2>with numbers, you can do most mathematic operations</h2>
+        </div>
+
+        <div class="slide">
+            <h2>add fields with <code>+</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>subtract fields with <code>-</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>divide fields with <code>/</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>multiply fields with <code>*</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>if you need some part of your math to happen before others, use parentheses</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example, <br/><code>3 + 5 * 2</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example, <br/><code>3 + 5 * 2</code> <br/>is not the same as <br/><code>(3 + 5) * 2</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-missing-values.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-missing-values-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-under-layer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-under-layer.png);">
+            <h2>one solution: add another layer of the same polygons, under your choropleth</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-rule-based.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth-rule-based.png);">
+            <h2>or make a rule-based style, make a "no data" rule checking for NULL</h2>
+        </div>
+
+        <div class="slide">
+            <h2>What is NULL?</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mr-null.png);">
+            <a href="http://www.wired.com/2015/11/null/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mr-null.png);">
+            <h2>a special value in most computing environments, including QGIS</h2>
+            <a href="http://www.wired.com/2015/11/null/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mr-null.png);">
+            <h2>NULL means <em>empty</em></h2>
+            <a href="http://www.wired.com/2015/11/null/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mr-null.png);">
+            <h2>for numbers, NULL doesn't mean <em>zero</em>, it means the absence of a number</h2>
+            <a href="http://www.wired.com/2015/11/null/" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-is-null.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-is-null.png);">
+            <h2>to check for null, use <code>IS NULL</code> and <code>IS NOT NULL</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 1</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/string-in.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/string-in.png);">
+            <h2><code>IN</code>: let the field match any of these values</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/string-or.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/string-or.png);">
+            <h2><code>OR</code>: either condition can be true</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/condition-and.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/condition-and.png);">
+            <h2><code>AND</code>: both conditions must be true</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-or-and.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-or-and.png);">
+            <h2>you can combine <code>OR</code> and <code>AND</code>, but be careful</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-or-and-parens.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-or-and-parens.png);">
+            <h2>use parentheses if you're not sure how they will work</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-not.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-not.png);">
+            <h2><code>NOT</code> will invert your conditions</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/conditions-not.png);">
+            <h2>I recommend using parentheses anytime you use <code>NOT</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 2</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-types.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-types.png);">
+            <h2>in QGIS, the <em>type</em> of your field matters</h2>
+        </div>
+
+        <div class="slide">
+            <h2>fields have to be <em>integer</em>, <em>real</em>, <em>text</em>, or <em>date</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>integers</em> are numbers with no digits after the decimal</h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>integer</em> examples: <code>5</code>, <code>243</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>reals</em> are numbers with digits after the decimal</h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>real</em> examples: <code>0.0002</code>, <code>19.4</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>text</em> is a piece of text</h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>text</em> examples: <code>ponies</code>, <code>Portugal</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/alignment.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/alignment-numbers.png);">
+            <h2>numbers are aligned right</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/alignment-text.png);">
+            <h2>text is aligned left</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+            <h2>sometimes numbers are imported as text</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+            <h2>this will keep you from performing numeric operations</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+            <h2>like making a <em>graduated</em> style, or adding two numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/conversion-functions.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/conversion-functions.png);">
+            <h2>the conversion functions will let you deal with this</h2>
+        </div>
+
+        <div class="slide">
+            <code>to_int( [field_name] )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_int( [field_name] )</code>
+            <h2>converts text to integers</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example:</h2>
+            <code>to_int( "sat_takers" )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_real( [field_name] )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_real( [field_name] )</code>
+            <h2>converts text to decimal numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail_message.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail_message.png);">
+            <h2>this isn't going to work if there are commas in the numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_success.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/format_csv.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/format_csv.png);">
+            <h2>I recommend doing this kind of editing in your spreadsheet program</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 3</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>joining with PLUTO using BBL</h2>
+            <a href="https://data.cityofnewyork.us/Housing-Development/Oil-Boilers-Detailed-Fuel-Consumption-and-Building/jfzu-yy6n">oil boilers</a>
+            <a href="https://data.cityofnewyork.us/Social-Services/Vacant-Lots-Cleaned/u6gg-xejf">vacant lots cleaned</a>
+        </div>
+
+    </body>
+</html>
