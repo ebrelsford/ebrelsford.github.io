@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Mapping SAT results</h2>
+                <ol>
+                    <li>Download <a href="data/class7data.zip">today's data</a>.</li>
+                    <li>Join the spreadsheet (<code>SAT_Results.csv</code>) to the shapefile (<code>Public_School_Locations</code>).</li>
+                    <li>Use <strong>Select by expression</strong> to select the features that successfully joined with the spreadsheet and save that selection to a new shapefile. You will want to select all features where one of the fields that was joined from the spreadsheet <code>IS NOT NULL</code>.</li>
+                    <li>Use the <strong>Field Calculator</strong> to replace all <code>s</code> values in the columns that should be numeric with <code>NULL</code>.</li>
+                    <li>Create a new column for each column that should be numeric, converting the value in the original column from text to an integer.</li>
+                    <li>Now that we have numeric columns, use them to style the schools using graduated styles.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Spatial Joins, points to polygons</h2>
+				<p>Here we add data to NYC's school districts based on the SAT results of the schools that fall within them.</p>
+                <ol>
+                    <li>Use the joined layer we created in the last part.</li>
+                    <li>Download the shapefile for <a href="https://data.cityofnewyork.us/Education/School-Districts/r8nu-ymqj">NYC School Districts</a>.</li>
+                    <li>Join by location by going to <strong>Vector &gt; Data Management Tools &gt; Join Attributes By Location</strong>:
+                        <ol>
+                            <li>Make the school districts the <strong>Target vector layer</strong>.</li>
+                            <li>Make the schools with SAT scores the <strong>Join vector layer</strong>.</li>
+                            <li>Under <strong>Attribute Summary</strong>, select <strong>Take summary of intersecting features</strong> and leave <strong>Mean</strong> selected.</li>
+                            <li>Select a place to save the results and click <strong>OK</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>Examine the resulting shapefile's attribute table.</li>
+                    <li>Style the data using a graduated style.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Spatial Join, polygons to points</h2>
+				<p>This time we will add data to the schools by which school district each falls into.</p>
+                <ol>
+                    <li>Clear the layers from the previous part or create a new project.</li>
+                    <li>Open the shapefile <code>Public_School_Locations</code> and the original school districts shapefile that you downloaded in the previous part.</li>
+                    <li>Join by location by going to <strong>Vector &gt; Data Management Tools &gt; Join Attributes By Location</strong>:
+                        <ol>
+                            <li>This time make the schools the <strong>Target vector layer</strong>.</li>
+                            <li>And this time make the school districts the <strong>Join vector layer</strong>.</li>
+                            <li>Under <strong>Attribute Summary</strong>, select <strong>Take attributes of the first located feature</strong>.</li>
+                            <li>Select a place to save the results and click <strong>OK</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>Examine the resulting shapefile's attribute table.</li>
+                    <li>Style the resulting shapefile. For example, use a categorized style on school district number.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Clipping and Buffering</h2>
+                <ol>
+                    <li>In QGIS, open <code>TRI_2013_NY.csv</code> in <a href="data/data.zip">today's data</a>. You can learn more about it at <a href="http://www2.epa.gov/toxics-release-inventory-tri-program/tri-basic-data-files-calendar-years-1987-2014">the EPA's download page</a> for the data.</li>
+                    <li>Also open the <code>nybb</code> (borough boundaries) shapefile.</li>
+                    <li>Convert <code>TRI_2013_NY</code> to 2263 so it will overlap with the borough boundaries.</li>
+                    <li>Under <strong>Vector &gt; Geoprocessing Tools &gt; Clip</strong>, clip the TRI data to the borough boundaries. The result should be a new shapefile with <strong>only</strong> TRIs in the five boroughs.</li>
+                    <li>Now buffer the data from the previous step by 1000 feet (<strong>Vector &gt; Geoprocessing Tools &gt; Buffer</strong>). Do not check <strong>Dissolve Buffer Results</strong>.</li>
+                    <li>Now add the <code>Public_School_Locations</code> layer to QGIS.</li>
+                    <li>Select by location (<strong>Vector &gt; Research &gt; Select by Location</strong>) to find public schools within 1000 feet of a TRI feature.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 5: Overlay Operations</h2>
+                <ol>
+                    <li>Use the <code>Seasnakes</code> data included in the zipfile you downloaded. The data is a small extract of the sea snakes data available at <a href="http://www.iucnredlist.org/technical-documents/spatial-data">IUCN</a>.</li>
+                    <li>Use <strong>Vector &gt; Geoprocessing Tools &gt; Intersect</strong> to find only the places where the habitats of <code>snake1</code> and <code>snake2</code> overlap.</li>
+                    <li>Use <strong>Vector &gt; Geoprocessing Tools &gt; Union</strong> to find places where the habitats of <code>snake1</code> and <code>snake3</code> overlap and the places where each exists on its own. Style each feature differently using rule-based styles.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 7 | Introduction to GIS Software: QGIS</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Introduction to GIS Software: QGIS, Class 7</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Introduction to GIS Software: QGIS</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-types.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/field-types.png);">
+            <h2>in QGIS, the <em>type</em> of your field matters</h2>
+        </div>
+
+        <div class="slide">
+            <h2>fields have to be <em>integer</em>, <em>real</em>, <em>text</em>, or <em>date</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>integers</em> are numbers with no digits after the decimal</h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>integer</em> examples: <code>5</code>, <code>243</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>reals</em> are numbers with digits after the decimal</h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>real</em> examples: <code>0.0002</code>, <code>19.4</code></h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>text</em> is a piece of text</h2>
+        </div>
+
+        <div class="slide">
+            <h2><em>text</em> examples: <code>ponies</code>, <code>Portugal</code></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/alignment.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/alignment-numbers.png);">
+            <h2>numbers are aligned right</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/alignment-text.png);">
+            <h2>text is aligned left</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+            <h2>sometimes numbers are imported as text</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+            <h2>this will keep you from performing numeric operations</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fields-numbers-text.png);">
+            <h2>like making a <em>graduated</em> style, or adding two numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/conversion-functions.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/conversion-functions.png);">
+            <h2>the conversion functions will let you deal with this</h2>
+        </div>
+
+        <div class="slide">
+            <code>to_int( [field_name] )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_int( [field_name] )</code>
+            <h2>converts text to integers</h2>
+        </div>
+
+        <div class="slide">
+            <h2>for example:</h2>
+            <code>to_int( "sat_takers" )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_real( [field_name] )</code>
+        </div>
+
+        <div class="slide">
+            <code>to_real( [field_name] )</code>
+            <h2>converts text to decimal numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail_message.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_fail_message.png);">
+            <h2>this isn't going to work if there are commas in the numbers</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/convert_success.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/format_csv.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/format_csv.png);">
+            <h2>I recommend doing this kind of editing in your spreadsheet program</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 1</a></h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>PLUTO has a handy field called BBL</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>BBLs are unique identifiers for every parcel in NYC</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>BBL: borough, block, and lot number</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>2038610014</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>2</h2>
+            <h2>2: borough code (Bronx)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>203861</h2>
+            <h2>3861: block number</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>2038610014</h2>
+            <h2>14: lot number</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/oasis-bbl.png);">
+            <a href="http://www.oasisnyc.net/map.aspx?zoomto=lot:2038610014" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/oil-boilers-bbls.png);">
+            <a href="https://data.cityofnewyork.us/Housing-Development/Oil-Boilers-Detailed-Fuel-Consumption-and-Building/jfzu-yy6n" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/oil-boilers-bbls.png);">
+			<h2>this spreadsheet has no coordinates, but you can join the BBLs</h2>
+            <a href="https://data.cityofnewyork.us/Housing-Development/Oil-Boilers-Detailed-Fuel-Consumption-and-Building/jfzu-yy6n" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>BBLs are <em>always</em> 10 digits</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>1 digit: borough code</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>1 digit: borough code</h2>
+            <h2>5 digits: block number</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/pluto-bbl.png);">
+            <h2>1 digit: borough code</h2>
+            <h2>5 digits: block number</h2>
+            <h2>4 digits: lot number</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vacant-lots-cleaned-bbls.png);">
+            <a href="https://data.cityofnewyork.us/Social-Services/Vacant-Lots-Cleaned/u6gg-xejf" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vacant-lots-cleaned-bbls.png);">
+			<h2>this spreadsheet has no coordinates</h2>
+            <a href="https://data.cityofnewyork.us/Social-Services/Vacant-Lots-Cleaned/u6gg-xejf" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/vacant-lots-cleaned-bbls.png);">
+			<h2>you can build BBLs if you need to</h2>
+            <a href="https://data.cityofnewyork.us/Social-Services/Vacant-Lots-Cleaned/u6gg-xejf" class="source">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-1.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-1.png);">
+			<h2 style="font-size: 70px;"><code>concat('2', "Block", "Lot")</code></h2>
+			<h2>(don't use this, it won't work)</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-1.png);">
+			<h2><code>concat</code> concatenates (adds) strings</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-1.png);">
+			<h2>here we add <code>2</code> (the borough code) and the <code>Block</code> and <code>Lot</code> fields together</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-1.png);">
+			<h2>but it's not ten digits long</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-2.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-2.png);">
+			<h2>you need to add <code>0</code>s to the left of the block and lot fields</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bbl-take-2.png);">
+			<h2 style="font-size: 50px;"><code>concat('2', lpad("Block", 5, '0'), lpad("Lot", 4, '0'))</code></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>attribute joins combine data based on a common column</h2>
+        </div>
+
+        <div class="slide">
+            <h2>we can also join based on a common <em>geography</em></h2>
+        </div>
+
+        <div class="slide">
+            <h2>this will help us summarize data for points in a polygon</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_spatial_join.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_spatial_join.png);">
+			<h2>the <em>target layer</em> is where you want the data to be added</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_spatial_join.png);">
+			<h2>the <em>join layer</em> is where you want the data to come from</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 2</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>you can also use spatial joins to add data to points</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_spatial_join_reverse.png);">
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 3</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>GISs</h2>
+            <ul>
+                <li>view spatial data</li>
+                <li>make maps with spatial data</li>
+                <li>create spatial data</li>
+                <li>modify spatial data</li>
+                <li>analyze spatial data</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>GISs</h2>
+            <ul>
+                <li style="text-decoration: line-through;">view spatial data</li>
+                <li>make maps with spatial data</li>
+                <li>create spatial data</li>
+                <li>modify spatial data</li>
+                <li>analyze spatial data</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>GISs</h2>
+            <ul>
+                <li style="text-decoration: line-through;">view spatial data</li>
+                <li style="text-decoration: line-through;">make maps with spatial data</li>
+                <li>create spatial data</li>
+                <li>modify spatial data</li>
+                <li>analyze spatial data</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>buffers</h2>
+        </div>
+
+        <div class="slide">
+            <h2>buffers</h2>
+            <p>make a "buffer" around features</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-26.gif);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_buffer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_buffer.png);">
+            <h2>buffer distance is in the layer's projection's units</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-31.gif);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 4</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>overlay operations</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/set_operations.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-32.png);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-35.png);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_menu.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/intersect.gif);">
+            <h2>Intersect</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_shapes.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_intersect.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_intersect_alone.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/union.png);">
+            <h2>Union</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_union.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_union_table.png);">
+        </div>
+
+        <div class="slide">
+            <h2>Symmetric difference</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_symdiff.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_symdiff_alone.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/geoprocessing_symdiff_table.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-38.png);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-43.png);">
+            <a class="source" href="http://www.paulbolstad.net/gisbook.html">source</a>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 5</a></h2>
+        </div>
+
+    </body>
+</html>
