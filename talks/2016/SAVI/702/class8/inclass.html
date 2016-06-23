@@ -36,7 +36,17 @@
             <section>
                 <h2>Part 3: Combining Geoprocessing Operations</h2>
                 <ol>
-                    <li>Open the QGIS project file <code>pa.qgs</code> in today's data.</li>
+                    <li>Open these shapefiles in today's data:
+                        <ul>
+                            <li>PaCounty2015_01 (PA counties)</li>
+                            <li>DCNR_StateParks201308 (PA state parks)</li>
+                            <li>Limit_Marcellus_Poly_110317 (Marcellus shale)</li>
+                        </ul>
+                        and this CSV:
+                        <ul>
+                            <li>Oil_Gas_Well_Historical_Production_Report</li>
+                        </ul>
+                    </li>
                     <li>Convert all layers to the same projection to make geoprocessing easier. Use State Plane Pennsylvania North (3650).</li>
                     <li><strong>Buffer</strong> the parks by two miles (10,560 feet). Use <strong>Select by location</strong> to determine how many wells are within the buffered state parks.</li>
                     <li><strong>Intersect</strong> counties and the Marcellus Shale layer to find the parts of counties that are in the shale.</li>
