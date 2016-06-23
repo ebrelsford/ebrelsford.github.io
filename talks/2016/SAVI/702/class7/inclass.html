@@ -25,7 +25,7 @@
 
             <section>
                 <h2>Part 2: Spatial Joins, points to polygons</h2>
-				<p>Here we add data to NYC's school districts based on the SAT results of the schools that fall within them.</p>
+                <p>Here we add data to NYC's school districts based on the SAT results of the schools that fall within them.</p>
                 <ol>
                     <li>Use the joined layer we created in the last part.</li>
                     <li>Download the shapefile for <a href="https://data.cityofnewyork.us/Education/School-Districts/r8nu-ymqj">NYC School Districts</a>.</li>
@@ -44,7 +44,7 @@
 
             <section>
                 <h2>Part 3: Spatial Join, polygons to points</h2>
-				<p>This time we will add data to the schools by which school district each falls into.</p>
+                <p>This time we will add data to the schools by which school district each falls into.</p>
                 <ol>
                     <li>Clear the layers from the previous part or create a new project.</li>
                     <li>Open the shapefile <code>Public_School_Locations</code> and the original school districts shapefile that you downloaded in the previous part.</li>
@@ -58,28 +58,6 @@
                     </li>
                     <li>Examine the resulting shapefile's attribute table.</li>
                     <li>Style the resulting shapefile. For example, use a categorized style on school district number.</li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>Part 4: Clipping and Buffering</h2>
-                <ol>
-                    <li>In QGIS, open <code>TRI_2013_NY.csv</code> in <a href="data/data.zip">today's data</a>. You can learn more about it at <a href="http://www2.epa.gov/toxics-release-inventory-tri-program/tri-basic-data-files-calendar-years-1987-2014">the EPA's download page</a> for the data.</li>
-                    <li>Also open the <code>nybb</code> (borough boundaries) shapefile.</li>
-                    <li>Convert <code>TRI_2013_NY</code> to 2263 so it will overlap with the borough boundaries.</li>
-                    <li>Under <strong>Vector &gt; Geoprocessing Tools &gt; Clip</strong>, clip the TRI data to the borough boundaries. The result should be a new shapefile with <strong>only</strong> TRIs in the five boroughs.</li>
-                    <li>Now buffer the data from the previous step by 1000 feet (<strong>Vector &gt; Geoprocessing Tools &gt; Buffer</strong>). Do not check <strong>Dissolve Buffer Results</strong>.</li>
-                    <li>Now add the <code>Public_School_Locations</code> layer to QGIS.</li>
-                    <li>Select by location (<strong>Vector &gt; Research &gt; Select by Location</strong>) to find public schools within 1000 feet of a TRI feature.</li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>Part 5: Overlay Operations</h2>
-                <ol>
-                    <li>Use the <code>Seasnakes</code> data included in the zipfile you downloaded. The data is a small extract of the sea snakes data available at <a href="http://www.iucnredlist.org/technical-documents/spatial-data">IUCN</a>.</li>
-                    <li>Use <strong>Vector &gt; Geoprocessing Tools &gt; Intersect</strong> to find only the places where the habitats of <code>snake1</code> and <code>snake2</code> overlap.</li>
-                    <li>Use <strong>Vector &gt; Geoprocessing Tools &gt; Union</strong> to find places where the habitats of <code>snake1</code> and <code>snake3</code> overlap and the places where each exists on its own. Style each feature differently using rule-based styles.</li>
                 </ol>
             </section>
 
