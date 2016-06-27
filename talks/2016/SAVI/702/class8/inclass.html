@@ -34,32 +34,7 @@
             </section>
 
             <section>
-                <h2>Part 3: Combining Geoprocessing Operations</h2>
-                <ol>
-                    <li>Open these shapefiles in today's data:
-                        <ul>
-                            <li>PaCounty2015_01 (PA counties)</li>
-                            <li>DCNR_StateParks201308 (PA state parks)</li>
-                            <li>Limit_Marcellus_Poly_110317 (Marcellus shale)</li>
-                        </ul>
-                        and this CSV:
-                        <ul>
-                            <li>Oil_Gas_Well_Historical_Production_Report</li>
-                        </ul>
-                    </li>
-                    <li>Convert all layers to the same projection to make geoprocessing easier. Use State Plane Pennsylvania North (3650).</li>
-                    <li><strong>Buffer</strong> the parks by two miles (10,560 feet). Use <strong>Select by location</strong> to determine how many wells are within the buffered state parks.</li>
-                    <li><strong>Intersect</strong> counties and the Marcellus Shale layer to find the parts of counties that are in the shale.</li>
-                    <li><strong>Dissolve</strong> the intersected layer by county name.</li>
-                    <li>Calculate the area of the dissolved features. This is the area of county within the shale.</li>
-                    <li>Join the area from the previous step to the original counties layer.</li>
-                    <li>Style the counties by the percentage of area covered by the shale.</li>
-                    <li>If you have time, use a similar process to the one above to style the counties by percentage of area within two miles of an oil or gas well.</li>
-                </ol>
-            </section>
-
-            <section>
-                <h2>Part 4: Geocoding</h2>
+                <h2>Part 3: Geocoding</h2>
                 <ol>
                     <li>Open <code>FDNY_Firehouse_Listing.csv</code> in Excel.</li>
                     <li>Add a state column and fill each cell in it with <strong>NY</strong>.</li>
