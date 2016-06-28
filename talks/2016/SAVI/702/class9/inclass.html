@@ -6,94 +6,96 @@
     </head>
     <body>
         <main>
-            <header>
-                <a href="..">&larr; Introduction to GIS Software: QGIS</a>
-                <h1>In-class Excercises</h1>
-            </header>
+        <header>
+            <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+            <h1>In-class Excercises</h1>
+        </header>
 
-            <section>
-                <h2>Part 1: Combining Geoprocessing Operations</h2>
-                <ol>
-                    <li>Open these shapefiles in today's data:
-                        <ul>
-                            <li>PaCounty2015_01 (PA counties)</li>
-                            <li>DCNR_StateParks201308 (PA state parks)</li>
-                            <li>Limit_Marcellus_Poly_110317 (Marcellus shale)</li>
-                        </ul>
-                        and this CSV:
-                        <ul>
-                            <li>Oil_Gas_Well_Historical_Production_Report</li>
-                        </ul>
-                    </li>
-                    <li>Convert all layers to the same projection to make geoprocessing easier. Use State Plane Pennsylvania North (3650).</li>
-                    <li><strong>Buffer</strong> the parks by two miles (10,560 feet). Use <strong>Select by location</strong> to determine how many wells are within the buffered state parks.</li>
-                    <li><strong>Intersect</strong> counties and the Marcellus Shale layer to find the parts of counties that are in the shale.</li>
-                    <li><strong>Dissolve</strong> the intersected layer by county name.</li>
-                    <li>Calculate the area of the dissolved features. This is the area of county within the shale.</li>
-                    <li>Join the area from the previous step to the original counties layer.</li>
-                    <li>Style the counties by the percentage of area covered by the shale.</li>
-                    <li>If you have time, use a similar process to the one above to style the counties by percentage of area within two miles of an oil or gas well.</li>
-                </ol>
-            </section>
+        <section>
+            <h2>Part 1: Combining Geoprocessing Operations</h2>
+            <ol>
+                <li>Open these shapefiles in today's data:
+                    <ul>
+                        <li>PaCounty2015_01 (PA counties)</li>
+                        <li>DCNR_StateParks201308 (PA state parks)</li>
+                        <li>Limit_Marcellus_Poly_110317 (Marcellus shale)</li>
+                    </ul>
+                    and this CSV:
+                    <ul>
+                        <li>Oil_Gas_Well_Historical_Production_Report</li>
+                    </ul>
+                </li>
+                <li>Convert all layers to the same projection to make geoprocessing easier. Use State Plane Pennsylvania North (3650).</li>
+                <li><strong>Buffer</strong> the parks by two miles (10,560 feet). Use <strong>Select by location</strong> to determine how many wells are within the buffered state parks.</li>
+                <li><strong>Intersect</strong> counties and the Marcellus Shale layer to find the parts of counties that are in the shale.</li>
+                <li><strong>Dissolve</strong> the intersected layer by county name.</li>
+                <li>Calculate the area of the dissolved features. This is the area of county within the shale.</li>
+                <li>Join the area from the previous step to the original counties layer.</li>
+                <li>Style the counties by the percentage of area covered by the shale.</li>
+                <li>If you have time, use a similar process to the one above to style the counties by percentage of area within two miles of an oil or gas well.</li>
+            </ol>
+        </section>
 
-            <section>
-                <h2>Part 2: Model builder</h2>
-                <ol>
-                    <li>Make a model with the graphical modeler (<strong>Processing &gt; Graphical Modeler</strong>) that:
-						<ol>
-							<li>takes an input vector layer,</li>
-							<li>reprojects it into 2263, and</li>
-							<li>buffers it by 2000 feet.</li>
-						</ol>
-					</li>
-                    <li>Test the model with a NYC-based dataset of your choosing.</li>
-                    <li>If you have time, add another input (for example, a number or another layer) and another algorithm to your model.</li>
-                </ol>
-            </section>
+        <section>
+            <h2>Part 2: Model builder</h2>
+            <ol>
+                <li>Make a model with the graphical modeler (<strong>Processing &gt; Graphical Modeler</strong>) that:
+                    <ol>
+                        <li>takes an input vector layer,</li>
+                        <li>reprojects it into 2263, and</li>
+                        <li>buffers it by 2000 feet.</li>
+                    </ol>
+                </li>
+                <li>Test the model with a NYC-based dataset of your choosing.</li>
+                <li>If you have time, add another input (for example, a number or another layer) and another algorithm to your model.</li>
+            </ol>
+        </section>
 
-            <section>
-                <h2>Part 3: Hexbins</h2>
-                <ol>
-                    <li>Open <code>Oil_Gas_Well_Historical_Production_Report.csv</code>.</li>
-                    <li>Save the wells as a new layer and convert to projection <code>3650</code>.</li>
-                    <li>Ensure your project is also in projection <code>3650</code>.</li>
-                    <li>Install the <strong>MMQGIS</strong> QGIS plugin if you have not.</li>
-                    <li>Create a hexagon layer using MMQGIS, <strong>MMQGIS &gt; Create &gt; Create Grid Lines Layer</strong>:
-                        <ol>
-                            <li>Browse for a location for the new shapefile.</li>
-                            <li>Change the dropdown at the bottom to <strong>Hexagon</strong>.</li>
-                            <li>Adjust the size of the hexagons by changing <strong>H Spacing</strong> to <code>52800</code>.</li>
-                        </ol>
-                    </li>
-                    <li>Count the wells in the resulting hexagons using <strong>Points in polygon</strong>.</li>
-                    <li>Make a choropleth with the resulting layer.</li>
-                </ol>
-            </section>
+        <section>
+            <h2>Part 3: Hexbins</h2>
+            <p>Here we make two choropleths using <strong>Points in polygon</strong>&mdash;one with the PA counties and one using a grid of hexagons.</p>
+            <ol>
+                <li>Open <code>Oil_Gas_Well_Historical_Production_Report.csv</code>. We will call this data the "wells" layer from now on.</li>
+                <li>Save the wells as a new layer and convert to projection <code>3650</code>. Remove the original wells layer.</li>
+                <li>Open <code>PaCounty2015_01.shp</code>, use Save As to save in the projection <code>3650</code>, and use <strong>Points in polygon</strong> to count the number of wells in each county. Make a choropleth of the result.</li>
+                <li>Ensure your project is also in projection <code>3650</code>. Check in <strong>Project &gt; Project Properties</strong>.</li>
+                <li>Install the <strong>MMQGIS</strong> QGIS plugin if you have not.</li>
+                <li>Create a hexagon layer using MMQGIS, <strong>MMQGIS &gt; Create &gt; Create Grid Lines Layer</strong>:
+                    <ol>
+                        <li>Browse for a location for the new shapefile.</li>
+                        <li>Change the dropdown at the bottom to <strong>Hexagon</strong>.</li>
+                        <li>Adjust the size of the hexagons by changing <strong>H Spacing</strong> to <code>52800</code>.</li>
+                    </ol>
+                </li>
+                <li>Count the wells in the resulting hexagons using <strong>Points in polygon</strong>.</li>
+                <li>Make a choropleth with the resulting layer.</li>
+            </ol>
+        </section>
 
-            <section>
-                <h2>Part 4: Heatmaps</h2>
-                <ol>
-                    <li>Install (or enable) the <strong>Heatmap</strong> QGIS plugin if you have not already done so.</li>
-                    <li>Open the wells file from the previous part.</li>
-                    <li>Create a heatmap by going to <strong>Raster &gt; Heatmap &gt; Heatmap</strong>:
-                        <ol>
-                            <li>Select an output raster location.</li>
-                            <li>Set the <strong>Radius</strong> field to <code>10560</code>.</li>
-                        </ol>
-                    </li>
-                    <li>Style the output raster.</li>
-                    <li>Make more heatmaps, adjusting:
-                        <ul>
-                            <li>the resolution of the raster (<strong>rows</strong> and <strong>columns</strong>)</li>
-                            <li>kernel shape</li>
-                        </ul>
-                    </li>
-                </ol>
-            </section>
+        <section>
+            <h2>Part 4: Heatmaps</h2>
+            <ol>
+                <li>Install (or enable) the <strong>Heatmap</strong> QGIS plugin if you have not already done so.</li>
+                <li>Open the wells file projected to <code>3650</code> from the previous part.</li>
+                <li>Create a heatmap by going to <strong>Raster &gt; Heatmap &gt; Heatmap</strong>:
+                    <ol>
+                        <li>Select an output raster location.</li>
+                        <li>Set the <strong>Radius</strong> field to <code>10560</code>.</li>
+                    </ol>
+                </li>
+                <li>Style the output raster. Use <strong>Singleband Psuedocolor</strong>.</li>
+                <li>Make more heatmaps, adjusting:
+                    <ul>
+                        <li>the resolution of the raster (<strong>rows</strong> and <strong>columns</strong>)</li>
+                        <li>kernel shape</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
 
-            <footer>
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-            </footer>
+        <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </footer>
         </main>
     </body>
 </html>
