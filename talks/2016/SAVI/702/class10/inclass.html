@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Hexbins</h2>
+                <p>Here we make two choropleths using <strong>Points in polygon</strong>&mdash;one with the PA counties and one using a grid of hexagons.</p>
+                <ol>
+                    <li>Open <code>Oil_Gas_Well_Historical_Production_Report.csv</code>. We will call this data the "wells" layer from now on.</li>
+                    <li>Save the wells as a new layer and convert to projection <code>3650</code>. Remove the original wells layer.</li>
+                    <li>Open <code>PaCounty2015_01.shp</code>, use Save As to save in the projection <code>3650</code>, and use <strong>Points in polygon</strong> to count the number of wells in each county. Make a choropleth of the result.</li>
+                    <li>Ensure your project is also in projection <code>3650</code>. Check in <strong>Project &gt; Project Properties</strong>.</li>
+                    <li>Install the <strong>MMQGIS</strong> QGIS plugin if you have not.</li>
+                    <li>Create a hexagon layer using MMQGIS, <strong>MMQGIS &gt; Create &gt; Create Grid Lines Layer</strong>:
+                        <ol>
+                            <li>Browse for a location for the new shapefile.</li>
+                            <li>Change the dropdown at the bottom to <strong>Hexagon</strong>.</li>
+                            <li>Adjust the size of the hexagons by changing <strong>H Spacing</strong> to <code>52800</code>.</li>
+                        </ol>
+                    </li>
+                    <li>Count the wells in the resulting hexagons using <strong>Points in polygon</strong>.</li>
+                    <li>Make a choropleth with the resulting layer.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Heatmaps</h2>
+                <ol>
+                    <li>Install (or enable) the <strong>Heatmap</strong> QGIS plugin if you have not already done so.</li>
+                    <li>Open the wells file projected to <code>3650</code> from the previous part.</li>
+                    <li>Create a heatmap by going to <strong>Raster &gt; Heatmap &gt; Heatmap</strong>:
+                        <ol>
+                            <li>Select an output raster location.</li>
+                            <li>Set the <strong>Radius</strong> field to <code>10560</code>.</li>
+                        </ol>
+                    </li>
+                    <li>Style the output raster. Use <strong>Singleband Psuedocolor</strong>.</li>
+                    <li>Make more heatmaps, adjusting:
+                        <ul>
+                            <li>the resolution of the raster (<strong>rows</strong> and <strong>columns</strong>)</li>
+                            <li>kernel shape</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Creating Shapefiles</h2>
+                <ol>
+                    <li>Open QGIS, clear all existing layers.</li>
+                    <li>Using the OpenLayers plugin, load a satellite layer and zoom to an area of interest.</li>
+                    <li>Create a shapefile: <strong>Layer &gt; Create Layer &gt; New Shapefile Layer</strong>.</li>
+                    <li>In the <strong>New Vector Layer</strong> dialog:
+                        <ol>
+                            <li>select <strong>Point</strong> for <strong>Type</strong>,</li>
+                            <li>leave <strong>File encoding</strong> as it is,</li>
+                            <li>pick a projection, and</li>
+                            <li>add a few attributes, with a few different <strong>Types</strong>.</li>
+                        </ol>
+                    </li>
+                    <li>Turn on <strong>Editing Mode</strong> for the new layer (<strong>Layer &gt; Toggle Editing</strong>).</li>
+                    <li>With the <strong>Add Feature</strong> tool and the satellite layer as a reference, add a few points and add data to the points when prompted.</li>
+                    <li>Use the <strong>Move Feature</strong> tool to move one of your points.</li>
+                    <li>Create a shapefile of <strong>lines</strong>. Use the satellite imagery to trace and create some roads and/or waterways. Right-click to finish each line.</li>
+                    <li>Create a shapefile of <strong>polygons</strong>. Use the satellite imagery to trace and create features for buildings, areas, and/or larger waterways. Right-click to finish each polygon.</li>
+                    <li>Experiment with other edit functions available under the <strong>Edit</strong> menu.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 4: Georeferencing</h2>
+                <ol>
+                    <li>Go to <a href="http://www.urbanreviewer.org/">Urban Reviewer</a>.</li>
+                    <li>Find an urban renewal plan with a map image on the right when you select it. If you have a hard time finding one with a scanned map, use <a href="http://www.urbanreviewer.org/#map=17/40.6911/-73.9629&plan=Pratt+Institute">the Pratt Institute plan</a>.</li>
+                    <li>Click on the image to make it larger, then right click on it and <strong>save as</strong> to save it to your computer.</li>
+                    <li>Open QGIS.</li>
+                    <li>Use the OpenLayers plugin to add a Google Hybrid layer.</li>
+                    <li>Zoom to the general area your image should be in.</li>
+                    <li>Install or enable <strong>Georeferencer GDAL</strong> in the plugins area of QGIS.</li>
+                    <li>Go to <strong>Raster &gt; Georeferencer &gt; Georeferencer</strong> to open the Georeferencer window.</li>
+                    <li>Go to <strong>File &gt; Open Raster</strong> and select the image you downloaded from Urban Reviewer.</li>
+                    <li>Add 3 or 4 ground control points:
+                        <ol>
+                            <li>Switch between the Georeferencer and map windows and find a common point between the two (generally a street corner will be best).</li>
+                            <li>Click the <strong>Add point</strong> button in the Georeferencer window.</li>
+                            <li>Click on the common point in the Georeferencer window.</li>
+                            <li>When prompted to <strong>Enter map coordinates</strong>, select the <strong>From map canvas</strong> button.</li>
+                            <li>Click on the common point on the map.</li>
+                        </ol>
+                    </li>
+                    <li>Once you are happy with the ground control points, click the <strong>Settings</strong> icon in the Georeferencer window.</li>
+                    <li>Set <strong>Transformation type</strong> to <strong>Thin plate spline</strong>.</li>
+                    <li>Set <strong>Target SRS</strong> to <strong>3857</strong> (the projection the reference map is in).</li>
+                    <li>Select a location to save to.</li>
+                    <li>Check <strong>Load in QGIS when done</strong>.</li>
+                    <li>Click <strong>Start Georeferencing</strong> in the Georeferencer window (looks like a play button).</li>
+                    <li>The Georeferenced image should show up on your map.</li>
+                    <li>Find a ground control point that doesn't line up as much as you would like.</li>
+                    <li>Delete the ground control point in the Georeferencer window.</li>
+                    <li>Add a replacement ground control point.</li>
+                    <li>Georeference it again&mdash;by default your georeferenced image will be overwritten, so change the destination in the georeferencer settings if you want to make a new file.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
