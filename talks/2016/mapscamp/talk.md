@@ -34,6 +34,9 @@ While we tend to talk about the large and relatively coordinated data projects t
    * Mean Streets
   * Scraping
    * Inside Airbnb
+  * Good ol' qualitative research
+   * Anti-Eviction Project
+   * Parksdale
  6. In-depth with a project I was involved in, Urban Reviewer
 
 
