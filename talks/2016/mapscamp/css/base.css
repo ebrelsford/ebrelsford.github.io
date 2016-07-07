@@ -72,6 +72,7 @@ img {
 h1, h2, h3 {
     font-family: 'CooperHewitt-Heavy', sans-serif;
     margin-bottom: 25px;
+    text-shadow: #fdfdfd 0 4px, #fdfdfd -4px 0, #fdfdfd 0 -4px, #fdfdfd 4px 0, #fdfdfd 4px 4px, #fdfdfd -4px -4px, #fdfdfd 4px -4px, #fdfdfd -4px 4px;
 }
 
 p {

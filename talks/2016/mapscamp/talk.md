@@ -10,8 +10,6 @@ While we tend to talk about the large and relatively coordinated data projects t
   * Open data portals
   * OSM
   * Public Lab
-  * Open Aerial Map?
-  * Gazetteers such as Mapzen's
  3. But once you have the tools you're using and the base data, finding your own data becomes a project of its own
   * The moment where you realize you need to create or aggregate the data on your own can be pretty illuminating
   * Google search, open data portal search, ...nothing?
@@ -27,8 +25,8 @@ While we tend to talk about the large and relatively coordinated data projects t
   * Georeferencing old maps
    * Eg with QGIS and scanned maps (HOLC redlining maps)
    * Ron's HOLC map, other HOLC maps
-  * Transcribing from paper and academic literature
-   * Aggregating data from the news and other sources
+   * NYPL Labs
+  * Transcribing from paper and academic literature, aggregating data from the news and other sources
    * OUTgoing
    * The Counted
    * Mean Streets
@@ -36,7 +34,6 @@ While we tend to talk about the large and relatively coordinated data projects t
    * Inside Airbnb
   * Good ol' qualitative research
    * Anti-Eviction Project
-   * Parksdale
  6. In-depth with a project I was involved in, Urban Reviewer
 
 
