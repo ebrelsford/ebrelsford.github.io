@@ -55,8 +55,8 @@ q:before, q:after {
 body {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 70px;
-    background: black;
-    color: white;
+    background: #fdfdfd;
+    color: #060606;
 }
 
 b, strong { font-weight: bold }
@@ -72,7 +72,6 @@ img {
 h1, h2, h3 {
     font-family: 'CooperHewitt-Heavy', sans-serif;
     margin-bottom: 25px;
-    text-shadow: black 0 4px, black -4px 0, black 0 -4px, black 4px 0, black 4px 4px, black -4px -4px, black 4px -4px, black -4px 4px;
 }
 
 p {
