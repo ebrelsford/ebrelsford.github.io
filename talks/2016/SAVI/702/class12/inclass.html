@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>In-class Excercises | Introduction to GIS Software: QGIS</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Introduction to GIS Software: QGIS</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Public Lab imagery</h2>
+                <ol>
+                    <li>Go to the <a href="https://publiclab.org/archive">Public Lab Archive</a>.</li>
+                    <li>Find imagery in a part of the world you're interested in.</li>
+                    <li>Download the <strong>GeoTiff</strong> of that imagery.</li>
+                    <li>Open the GeoTiff in QGIS and compare it to satellite imagery available through the OpenLayers plugin.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Downloading OpenStreetMap Data: Metro Extracts</h2>
+                <ol>
+                    <li>Go to the <a href="https://mapzen.com/data/metro-extracts/">Mapzen's Metro Extracts</a> of OSM.</li>
+                    <li>Find a city you want to download data for.</li>
+                    <li>Download both the <strong>OSM2PGSQL SHP</strong> and <strong>IMPOSM SHP</strong> files for the city you picked.</li>
+                    <li>Open shapefiles from both files in QGIS and examine the geometries and attributes.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Downloading OpenStreetMap Data: OSM Downloader</h2>
+                <ol>
+                    <li>In QGIS, optionally remove the layers from the previous part.</li>
+                    <li>Install or enable the <strong>OSMDownloader</strong> QGIS plugin.</li>
+                    <li>Use the OpenLayers plugin to add a reference layer to QGIS.</li>
+                    <li>Zoom to an area you would like to download OSM data for. Zoom in far as the plugin will download all data for the area you are viewing.</li>
+                    <li>Go to <strong>Vector &gt; OpenStreetMap &gt; Download Data</strong> and pick a place to save the data. Ensure that your filename ends with <strong>.osm</strong>.</li>
+                    <li>Drag your resulting file into QGIS.</li>
+                    <li>In the <strong>Select vector layers to add</strong> dialog, select all of the layers and click <strong>OK</strong>.</li>
+                    <li>You should now have all of the OSM data for the area you were viewing.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introduction to GIS Software: QGIS</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
