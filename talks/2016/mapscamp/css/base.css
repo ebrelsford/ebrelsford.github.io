@@ -94,11 +94,7 @@ div.slide {
 }
 
 a {
-    background: #FFCDF1;
-}
-
-h2 a {
-    color: white;
+    background: none;
 }
 
 li {
@@ -150,6 +146,7 @@ li {
  * Other styles
  */
 a.source {
+    border-bottom: 3px solid #FFCDF1;
     float: right;
     font-size: 35px;
     line-height: 40px;
