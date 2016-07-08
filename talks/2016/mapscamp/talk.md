@@ -113,4 +113,10 @@ This is an example by a former student of mine, Ron Morrison. He georeferenced a
 
 A lot of my students' work becomes transcribing and aggregating data. This can take a lot of work!
 
-One example of this that I find exciting is Jeff Ferzoco's (are you here Jeff?) OUTgoing NYC map which shows the locations LGBT nightlife spots over time.
+One example of this that I find exciting is Jeff Ferzoco's (are you here Jeff?) OUTgoing NYC map which shows the locations LGBT nightlife spots over time. Jeff has done a ton of research, including reading texts and surveying people, to find these historic locations.
+
+On the map you can find details about each spot, including when it was in operation.
+
+WNYC collected data about fatal traffic crashes in NYC in 2014 in its Mean Streets project. As you can see, the project shows the location of the crash and, where available, tells the story of the people who died in that crash. It's very easy to download the city's crash data and make simple maps with it, but it's so humanizing to include stories and pictures of the people involved.
+
+The Guardian's project, The Counted, similarly aggregates information about people who were killed by police in the US.
