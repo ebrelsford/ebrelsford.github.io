@@ -95,7 +95,8 @@ div.slide {
 }
 
 a {
-    background: none;
+    background-color: rgba(255,255,255,0.8);
+    border-bottom: 3px solid #FFCDF1;
 }
 
 li {
