@@ -75,9 +75,9 @@ He says: "...there is no injunction on the state to map its roads anymore than t
 
 "It would be gratifying to live in a state that produced 1.75 million copies of such maps and distributed them free of cost...but states find it more expedient to publish maps of highways."
 
-So through some confluence of these reasons and many others, there are plenty of phenomena have not been mapped. My students inevitably hit a point where googling and searching a few open data portals does not suffice, and their work is suddenly twice as difficult as it looked like it was going to be before. There is always that moment where you realize that it might not matter how much you work at it--the data may simply not exist.
+So through some confluence of these reasons and many others, plenty of phenomena have not been mapped. My students inevitably hit a point where googling and searching a few open data portals does not suffice, and their work is suddenly twice as difficult as it looked like it was going to be before. There is always that moment where you realize that it might not matter how much you work at it--the data may simply not exist.
 
-What do we do next? There are a number of options, and I'd like to walk you through them here along with examples of projects that have used these methods.
+What do we do next? There are a number of options, and I'd like to walk you through them here along with examples of projects that have used these methods. Finally, I'll go into a bit more depth with a project that I worked on recently.
 
 First let's talk about surveying on foot. I love collecting data this way when I can, it's such an intimate method and tends to give me a better understanding of what I'm mapping and the area I'm looking at.
 
