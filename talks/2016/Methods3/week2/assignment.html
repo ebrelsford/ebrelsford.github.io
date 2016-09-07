@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Assignment 2 | Methods 3</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="../css/inclass.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Methods 3</a>
+                <h1>Assignment 2</h1>
+            </header>
+
+            <section>
+                <p>In class this week we covered cartographic design principles and got a taste of QGIS. Use this assignment to get more familiar with QGIS and use it to compose printable maps.</p>
+            </section>
+
+            <section>
+                <h2>Resources</h2>
+                <ul>
+                    <li>I made <a href="https://www.youtube.com/embed/Q0e6lzpoyYU">a short video</a> that should help with this assignment (make sure to turn HD on).</li>
+                    <li><a href="https://www.youtube.com/watch?v=iOhhFIIOb08">A video on projections in QGIS</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dioyfbAs6wk">And finally a video on the print composer specifically.</a></li>
+                    <li>Gretchen Peterson has <a class="" href="https://www.youtube.com/watch?v=FCm1DtQB4Pk">an excellent presentation on styling with QGIS</a> that you might find useful.</li>
+                    <li>the <a href="http://docs.qgis.org/2.2/en/docs/user_manual/">QGIS User Guide</a></li>
+                    <li><a href="https://www.packtpub.com/hardware-and-creative/learning-qgis-20">Learning QGIS 2.0</a></li>
+                    <li><a href="http://gis.stackexchange.com/">GIS Stack Exchange</a>, a Q&amp;A site where people with GIS questions ask for help and people in the community answer their questions</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Part 1: A Small Scale Map</h2>
+                <p>Pick a part of the world that you like or want to know more about and try your hand at making a thematic map of that area.</p>
+                <ol>
+                    <li>Download Natural Earth data to make a map of a region you choose. <a href="http://www.naturalearthdata.com/">Natural Earth</a> is a free-to-use and accurate data set for the whole world, and it is the go-to data for this type of task. You will likely be interested in the <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors">10m cultural</a> and <a href="http://www.naturalearthdata.com/downloads/10m-physical-vectors">10m physical</a> vector files, but feel free to use any that make sense for your map. All of the files are available on the <a href="http://www.naturalearthdata.com/downloads/">Natural Earth downloads page</a>.</li>
+                    <li>Open the data in QGIS.</li>
+                    <li>Using the techniques described in <a class="" href="https://www.youtube.com/watch?v=Q0e6lzpoyYU">the QGIS Regional Map video</a>, layer the data in such a way that your <strong>theme</strong> is furthered. Example themes might be: disputed territory, Antarctic claims, and transportation infrastructure. You are free to find and incorporate other data, but it will be fine to stick with Natural Earth data for this assignment.</li>
+                    <li>Export your map using the QGIS print composer.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: A Map of NYC</h2>
+                <p>Make a map of something in NYC by downloading some data (eg from the <a href="https://nycopendata.socrata.com/">NYC Open Data Portal</a>) and mapping it with QGIS.</p>
+                <p>Finding data can be difficult, and we will be going over this in more detail in future classes. I suggest that you <strong>start looking for data early</strong> and email the mailing list if you have specific data you are looking for and are having a hard time finding. To give you an idea of what's out there, some data sets I find entertaining / useful are <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9">311 calls</a>, <a id="" class="" title="" href="https://data.cityofnewyork.us/City-Government/DSNY-Graffiti-Information/gpwd-npar" target="">Graffiti Locations</a>, and <a id="" href="https://data.cityofnewyork.us/Recreation/Individual-Landmarks/ch5p-r223">Landmarks</a>. Outside of the data portal a few interesting datasets are fivethirtyeight's <a href="https://github.com/fivethirtyeight/uber-tlc-foil-response">Uber data</a> and <a href="http://insideairbnb.com/get-the-data.html">Inside Airbnb's data</a>. Feel free to use one of the above if you're having a hard time finding data. Don't let finding data take up more than an hour or so for this assignment--I'm more interested in seeing that you can make a map at the scale of NYC right now.</p>
+                <p>You need to find data that has coordinates--likely latitude and longitude or state plane Long Island. We will be going over how to turn data with addresses into spatial data (geocoding), but you're not expected to do this in this assignment. To find data: <a href="https://data.cityofnewyork.us/data?browseSearch=&amp;scope=&amp;agency=&amp;cat=&amp;type=maps">filter the datasets to view only maps</a>, select a dataset, find the <strong>Export</strong> button near the top right of the page, and select <strong>Shapefile</strong>.</p>
+                <p>Style your map as you find appropriate and create a PDF using Print Composer.</p>
+            </section>
+
+            <section>
+                <h2>Submitting Your Work</h2>
+                <p>Use the QGIS <strong>Print Composer</strong> to create <strong>two PDFs</strong>: one of your map from Part 1, the other of your map from Part 2. Make sure to add map accessories such as legends, titles, and scale bars as appropriate.</p>
+                <p>Finally, include a <strong>short summary</strong> (1/2 page is fine) of what you did for this assignment. Explain what you created and how you did so. What did you have problems with? What did you enjoy? What would you like to know how to do next?</p>
+                <p>In both parts I want to see that you are thinking about cartographic concepts as we discussed in class and that you are exploring QGIS's ability to make maps exported as PDFs.</p>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Methods 3</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
+
