@@ -8,6 +8,8 @@ window.addEventListener('load', function() {
     }
     w.addEventListener('resize', set);
     w.addEventListener('scroll', function update(e) {
+        cur = Math.floor(w.scrollY / w.innerHeight);
+        if (w.location.hash !== cur) w.location.hash = cur;
         e.preventDefault();
     });
     w.addEventListener('DOMMouseScroll', function(e) {
