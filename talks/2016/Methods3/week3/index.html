@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 3 | Methods 3</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya+Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Methods 3, Lecture 3</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Methods 3</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/wikipedia_uneven.png);">
+            <a class="source" href="http://geonet.oii.ox.ac.uk/blog/the-geographically-uneven-coverage-of-wikipedia-2/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/taxi_map.gif);">
+            <a class="source" href="http://nyctaxi.herokuapp.com/">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <div>pick a map, any map, and assess:</div>
+            <ul>
+                <li>design choices</li>
+                <li>data</li>
+                <li>point of view</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h2>design choices</h2>
+            <p>Is it effective?</p>
+            <p>Does it follow cartographic principles?</p>
+            <p>How could it be improved?</p>
+        </div>
+
+        <div class="slide">
+            <h2>data</h2>
+            <p>Are data sources listed?</p>
+            <p>If the data was modified, is this described?</p>
+        </div>
+
+        <div class="slide">
+            <h2>point of view</h2>
+            <p>Does the map make a statement?</p>
+            <p>Could it make the statement more effectively?</p>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>every projection distorts some aspect of the geography</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you have to pick the one(s) that make the most sense for what you're doing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/state_plane.jpg);">
+            <a class="source" href="http://gis.tulaliptribes-nsn.gov/Home/FrequentlyAskedQuestions.aspx">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/epsg_2263.png);">
+            <a class="source" href="http://spatialreference.org/ref/epsg/2263/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/epsg_2263.png);">
+            <h2>best for New York area, many city datasets use this</h2>
+            <a class="source" href="http://spatialreference.org/ref/epsg/2263/">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>projections are just math</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_math.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartHow/HowBraunC/howBraunC.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_math.png);">
+            <h2>luckily GISs are pretty good at math</h2>
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartHow/HowBraunC/howBraunC.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>you will encounter projections in three ways in QGIS:</h2>
+        </div>
+
+        <div class="slide">
+            <ol>
+                <li>rendering (making your map look good)</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <ol>
+                <li>rendering (making your map look good)</li>
+                <li>overlay (making data line up)</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <ol>
+                <li>rendering (making your map look good)</li>
+                <li>overlay (making data line up)</li>
+                <li>assignment (QGIS doesn't know which projection the data should be in)</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h2>(1) usually you will pick a projection for your project to make your data look good</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/project-settings.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-project.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-project.png);">
+            <h2>to do this, change your project's projection</h2>
+        </div>
+
+        <div class="slide">
+            <h1>lab</h1>
+            <a href="inclass.html">in-class exercises, part 1a</a>
+        </div>
+
+        <div class="slide">
+            <h2>(2) sometimes you need to change the projection of a layer to do calculations</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/save-as.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer.png);">
+            <h2>to do this, you must save the layer with the new projection</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer-change.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer-change-no-no-no.png);"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-projections-layer-change-no-no-no.png);">
+            <h2>don't change a layer's projection without saving as a new layer</h2>
+        </div>
+
+        <div class="slide">
+            <h1>lab</h1>
+            <a href="inclass.html">in-class exercises, part 1b</a>
+        </div>
+
+        <div class="slide">
+            <h2>shapefiles</h2>
+        </div>
+
+        <div class="slide">
+            <h2>shapefiles have some annoying properties</h2>
+        </div>
+
+        <div class="slide">
+            <h2>1. column names limited to ten characters</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-column-names.png);">
+            <h2>how do you pronounce "C_DIG2DESC"?</h2>
+        </div>
+
+        <div class="slide">
+            <h2>2. multiple files make up a shapefile</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-files.png);">
+        </div>
+
+        <div class="slide">
+            <h2>3. one geometry type per shapefile</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shapefile-one-geometry-per-file.png);">
+        </div>
+
+        <div class="slide">
+            <h2>despite it all, shapefiles are still by far the most common spatial data format</h2>
+        </div>
+
+        <div class="slide">
+            <h2>but CSVs are common and handy for point data</h2>
+        </div>
+
+        <div class="slide">
+            <h2>these are simply text files</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/csv.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/csv.png);">
+            <h2><em>c</em>omma <em>s</em>eparated <em>v</em>alues</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class excercise, part 1c</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Attributes</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/attributes.png);">
+        </div>
+
+        <div class="slide">
+            <h1>Selection</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/selection.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>thematic maps</h1>
+        </div>
+
+        <div class="slide">
+            <h1>thematic maps focus on a theme or subject</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/state_atlas_exploitation.jpg);">
+        </div>
+
+        <div class="slide">
+            <h1>vs reference maps</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/reference_map_oregon.jpg);">
+            <a href="https://www.lib.utexas.edu/maps/oregon.html" class="source">source</a>
+        </div>
+
+        <div class="slide">
+            <h1>Qualitative vs Quantitative</h1>
+        </div>
+
+        <div class="slide">
+            <h1>qualitative thematic maps categorize features' attributes</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/wood_fences.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/wood_fences_legend.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/land_cover.jpg);">
+        </div>
+
+        <div class="slide">
+            <h1>lab</h1>
+            <a href="inclass.html">in-class exercises, part 2</a>
+        </div>
+
+        <div class="slide">
+            <h1>quantitative thematic maps use features' numeric attributes</h1>
+        </div>
+
+        <div class="slide">
+            <h1>quantitative thematic maps</h1>
+            <p>aka choropleth maps</p>
+        </div>
+
+        <div class="slide">
+            <h1>choropleth</h1>
+            <p><strong>choro</strong>: region</p>
+            <p><strong>pleth</strong>: multitude</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bachelors_degree.jpg);">
+            <a class="source" href="http://rkpjrhist615.wordpress.com/page/6/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/population_growth.jpg);">
+            <a class="source" href="http://www.osmmc.ca/gallery.php">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/smoking_rates.png);">
+            <a class="source" href="http://www.nytimes.com/interactive/2014/03/25/us/smoking-rate-map.html?_r=0">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gis_fundamentals.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-15.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-16.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-17.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-18.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/incarcerated_population.jpg);">
+            <a class="source" href="http://personal.frostburg.edu/ingarvie0/Maps.htm">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth_multiethnic.jpg);">
+            <a class="source" href="http://uxblog.idvsolutions.com/2011/10/telling-truth.html">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/choropleth_multiethnic_histogram.jpg);">
+            <a class="source" href="http://uxblog.idvsolutions.com/2011/10/telling-truth.html">source</a>
+        </div>
+
+
+        <div class="slide">
+            <h1>the Modifiable Areal Unit Problem</h1>
+        </div>
+
+        <div class="slide">
+            <h2>the Modifiable Areal Unit Problem</h2>
+            <p>the boundaries you create can influence the way your data looks without changing the data</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/maup_rate_numbers.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/cdc_ebola.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/gerrymander.png);">
+            <a class="source" href="https://en.wikipedia.org/wiki/Gerrymandering">
+                the gerrymander
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/post_2012.png);">
+            <a class="source" href="http://giscollective.org/geographic-data-assumptions-maup-and-ecological-fallacies/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/post_2012_counties.png);">
+            <a class="source" href="http://giscollective.org/geographic-data-assumptions-maup-and-ecological-fallacies/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/countymap_purple.png);">
+            <a class="source" href="http://www-personal.umich.edu/~mejn/election/2012/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/countycartogram_purple.png);">
+            <a class="source" href="http://www-personal.umich.edu/~mejn/election/2012/">
+                2012 presidential election, source
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>lab</h1>
+            <a href="inclass.html">in-class exercises, part 3</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Finding data</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nyc_open_data.png);">
+            <a class="source" href="http://data.cityofnewyork.us">data.cityofnewyork.us</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bytes.png);">
+            <a class="source" href="http://nyc.gov/html/dcp/html/bytes/applbyte.shtml">bytes of the big apple</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/data_gov.png);">
+            <a class="source" href="http://data.gov">data.gov</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/american_factfinder.png);">
+            <a class="source" href="http://factfinder2.census.gov">american factfinder</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/world_databank.png);">
+            <a class="source" href="http://databank.worldbank.org">databank.worldbank.org</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/earthquake_search.png);">
+            <a class="source" href="http://earthquake.usgs.gov/earthquakes/search">USGS earthquake data</a>
+        </div>
+
+    </body>
+</html>
