@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QGIS Workshop</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet' type='text/css'>
+
+        <link href="css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="css/base.css" rel="stylesheet" />
+
+        <script src="js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to GIS Workshop</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>GIS</h1>
+        </div>
+
+        <div class="slide">
+            <h1>Geographic Information Systems</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/illustrator.jpg);">
+            <a class="source" href="https://www.youtube.com/watch?v=WPP7Nh_waNs">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/excel.png);">
+            <a class="source" href="http://www.cognossource.com/excel-odbc-data-advisor/">source</a>
+        </div>
+
+        <div class="slide">
+            <p>"Any system for capturing, storing, checking, and displaying data related to positions on the Earth's surface"</p>
+            <a class="source" href="http://education.nationalgeographic.org/encyclopedia/geographic-information-system-gis/">National Geographic Education Encyclopedia</a>
+        </div>
+
+        <div class="slide">
+            <p>"In a GIS, you connect <strong>data</strong> with <strong>geography</strong>."</p>
+            <a class="source" href="http://gisgeography.com/what-gis-geographic-information-systems/">GISgeography.com</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/esri.gif);">
+            <a class="source" href="http://www.esri.com/">ESRI</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis.png); background-size: 40%;">
+            <a class="source" href="http://www.qgis.org/">QGIS</a>
+        </div>
+
+        <div class="slide">
+            <h2>QGIS is open source</h2>
+        </div>
+
+        <div class="slide">
+            <h2>QGIS runs on Windows, Mac, and Linux</h2>
+        </div>
+
+        <div class="slide">
+            <h2>QGIS is free</h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Loading data in QGIS</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-add-layer.png);">
+        </div>
+
+        <div class="slide">
+            <h1>Attributes</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/attributes.png);">
+        </div>
+
+        <div class="slide">
+            <h1>Styling data</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-layer-properties.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-style.png);">
+        </div>
+
+        <div class="slide">
+            <h1>
+                <a href="../exercises.html">Exercise 1</a>
+            </h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>opening CSVs</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-open-csv.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-open-csv-dialog.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-open-csv-set-crs.png);">
+        </div>
+
+        <div class="slide">
+            <h1>Projections</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/orange_projection.jpg);">
+            <a class="source" href="http://csc.noaa.gov/geozone/happy-birthday-mercator/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projections_faces.png);">
+            <a class="source" href="http://flowingdata.com/2014/01/13/map-projections-illustrated-with-a-face/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/projection_diagram.jpg);">
+            <a class="source" href="http://catalog.flatworldknowledge.com/bookhub/reader/3798?e=campbell_1.0-ch02_s02">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/sa_projections.png);">
+            <a class="source" href="http://sandbox.azavea.com/projection-overlays/south-america.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/earth_wind_map.png);">
+            <a class="source" href="http://earth.nullschool.net/">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <p>projections mainly distort</p>
+            <ul style="list-style: disc; padding-left: 50px;">
+                <li>area (equivalence)</li>
+                <li>shape (conformity)</li>
+                <li>distance</li>
+            </ul>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mercator_puzzle.png);">
+            <a class="source" href="http://bramus.github.io/mercator-puzzle-redux/">
+                mercator puzzle
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tissot_mercator.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tissot_mollweide.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/tissot_oblique_mercator.png);">
+            <a class="source" href="http://www.progonos.com/furuti/MapProj/Normal/CartProp/Distort/distort.html">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h2>every projection distorts some aspect of the geography</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you have to pick the one(s) that make the most sense for what you're doing</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-selection-tools.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-selection-tools.png);">
+            <h1>selection tools</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-filter.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-filter-dialog.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-filter-dialog.png);">
+            <h1>filtering data</h1>
+        </div>
+
+        <div class="slide">
+            <h1>
+                <a href="../exercises.html">Exercise 2</a>
+            </h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Choropleth maps</h1>
+        </div>
+
+        <div class="slide">
+            <h1>choropleth</h1>
+            <p><strong>choro</strong>: region</p>
+            <p><strong>pleth</strong>: multitude</p>
+        </div>
+
+        <div class="slide" style="background-image: url(img/bachelors_degree.jpg);">
+            <a class="source" href="http://rkpjrhist615.wordpress.com/page/6/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/population_growth.jpg);">
+            <a class="source" href="http://www.osmmc.ca/gallery.php">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/smoking_rates.png);">
+            <a class="source" href="http://www.nytimes.com/interactive/2014/03/25/us/smoking-rate-map.html?_r=0">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-15.gif);">
+            <a class="source" href="http://www.amazon.com/GIS-Fundamentals-Geographic-Information-Systems/dp/0971764735">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-16.gif);">
+            <a class="source" href="http://www.amazon.com/GIS-Fundamentals-Geographic-Information-Systems/dp/0971764735">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-17.gif);">
+            <a class="source" href="http://www.amazon.com/GIS-Fundamentals-Geographic-Information-Systems/dp/0971764735">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/fig9-18.gif);">
+            <a class="source" href="http://www.amazon.com/GIS-Fundamentals-Geographic-Information-Systems/dp/0971764735">
+                source
+            </a>
+        </div>
+
+        <div class="slide">
+            <h1>
+                <a href="../exercises.html">Exercise 3</a>
+            </h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/qgis-select-by-location.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-select-by-location-dialog.png);">
+        </div>
+
+        <div class="slide">
+            <h1>print composer</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-print-composer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-print-composer-dialog.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-print-composer-map.png);">
+        </div>
+
+        <div class="slide">
+            <h1>print composers and styles are only saved if you create a project</h1>
+        </div>
+
+        <div class="slide">
+            <h1>when you open a project, it loads data from your CSVs and shapefiles</h1>
+        </div>
+
+        <div class="slide">
+            <h1>it's best to keep your projects and shapefiles in the same folder</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-save.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-heatmap.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-heatmap-menu.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis-heatmap-dialog.png);">
+        </div>
+
+        <div class="slide">
+            <h1>
+                <a href="../exercises.html">Exercise 4</a>
+            </h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Attribute joins</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/grafting.jpg);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/grafting.jpg);">
+            <h1>joins relate two datasets to each other</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/graft-potato-tomato.jpg);">
+            <a class="source" href="http://motherboard.vice.com/read/why-does-the-tomato-potato-plant-exist">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/graft-potato-tomato.jpg);">
+            <h1>joins create new hybrid datasets</h1>
+            <a class="source" href="http://motherboard.vice.com/read/why-does-the-tomato-potato-plant-exist">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/ketchup-n-fries.jpg);">
+            <a class="source" href="https://diybackyardfarm.com/2015/06/03/have-you-seen-this-cool-plant/">source</a>
+        </div>
+
+
+        <div class="slide" style="background-image: url(img/census_results.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_results.png);">
+            <h1>"I have this spreadsheet I want to map..."</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_tracts.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_tracts.png);">
+            <h1>you need a file with relatable geographies</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_ids.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_ids.png);">
+            <h1>and a column in each file that relates the two</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Geocoding</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/geocoding.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/census_geocoder.png);">
+            <a class="source" href="http://geocoding.geo.census.gov/geocoder/locations/addressbatch?form">Census geocoder</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/gpsvisualizer.png);">
+            <a class="source" href="http://www.gpsvisualizer.com/geocoder/">GPS visualizer</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/smartystreets.png);">
+            <a class="source" href="http://smartystreets.com">smartystreets</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/mmqgis.png);">
+            <h2>mmqgis</h2>
+            <a class="source" href="http://michaelminn.com/linux/mmqgis/">
+                source
+            </a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/kidnappings.png);">
+            <a class="source" href="http://fivethirtyeight.com/datalab/mapping-kidnappings-in-nigeria/">
+                source
+            </a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h1>Manipulating and editing data</h1>
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_buffer.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_table_manager.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_field_calculator.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/qgis_edit_toolbar.png);">
+        </div>
+
+    </body>
+</html>

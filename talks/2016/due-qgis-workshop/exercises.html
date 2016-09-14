@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QGIS Workshop</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya+Sans' rel='stylesheet' type='text/css'>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: #046980;
+                font-family: 'Alegreya Sans', sans-serif;
+                font-size: 20px;
+            }
+
+            .container {
+                background: rgba(255,255,255,0.85);
+                margin: 75px;
+                padding: 10px;
+            }
+
+            .container > section {
+                margin: 50px;
+            }
+
+            h1, h2, h3, h4, h5 {
+                font-family: 'Arvo', sans-serif;
+            }
+
+            h1 {
+                font-size: 60px;
+                margin-bottom: 0;
+            }
+
+            h2 {
+                font-size: 45px;
+                margin-bottom: 1px;
+            }
+
+            a {
+                color: black;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+
+            ul {
+                margin: 0;
+            }
+
+            header {
+                font-size: 14px;
+                margin-left: 2%;
+            }
+
+            header p {
+                margin: 0;
+            }
+
+            footer {
+                margin-left: 2%;
+                margin-top: 100px;
+                margin-bottom: 25px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <header>
+                <h1>Exercises</h1>
+                <p>
+                    <a href="index.html">&larr; QGIS Workshop</a>
+                </p>
+            </header>
+
+            <section id="exercise-1">
+                <h3>
+                    Exercise 1: styling layers
+                </h3>
+                <ol>
+                    <li>Download <a href="data/qgisworkshop.zip">the data for the day</a>.</li>
+                    <li>Open QGIS.</li>
+                    <li>Open the shapefile in <strong>School Districts</strong>.</li>
+                    <li>Open the shapefile in <strong>Public School Locations</strong>.</li>
+                    <li>Style both layers.</li>
+                    <li>Add labels to the school districts layer.</li>
+                </ol>
+            </section>
+
+            <section id="exercise-2">
+                <h3>
+                    Exercise 2: opening CSVs, making selections
+                </h3>
+                <ol>
+                    <li>Open the CSV in the <strong>NYPD Motor Vehicle Collisions</strong> folder, setting the projection appropriately.</li>
+                    <li>Select only those features where more than one person was injured.</li>
+                    <li>Filter the layer to only those features where more than one person was injured.</li>
+                    <li>Save the filtered features to a shapefile.</li>
+                </ol>
+            </section>
+
+            <section id="exercise-3">
+                <h3>
+                    Exercise 3: counting points in polygons, making choropleths
+                </h3>
+                <ol>
+                    <li>Open the shapefile in <strong>School Districts</strong>.</li>
+                    <li>Open the filtered shapefile of <strong>NYPD Motor Vehicle Collisions</strong> from the previous exercise.</li>
+                    <li>Count the number of crashes in each school district: <strong>Vector &gt; Analysis Tools &gt; Points in polygon</strong>.</li>
+                    <li>Create a choropleth: style the resulting layer using a <strong>Graduated</strong> style on the count column.</li>
+                </ol>
+            </section>
+
+            <section id="exercise-4">
+                <h3>
+                    Exercise 4: using print composer
+                </h3>
+                <ol>
+                    <li>Open the shapefile in <strong>School Districts</strong>.</li>
+                    <li>Open the shapefile in <strong>Public School Locations</strong></li>
+                    <li>Save the school locations to a new shapefile, changing the projection to <strong>4326</strong>.</li>
+                    <li>Select one school district and save it to a new shapefile.</li>
+                    <li>Select all the schools in the school district from the previous step (<strong>Vector &gt; Research Tools &gt; Select by location</strong>) and save them to a new shapefile.</li>
+                    <li>Remove all layers except the selected school district and schools.</li>
+                    <li>Add a base map.</li>
+                    <li>Create a print composer, adding the map, a title, and a legend.</li>
+                    <li>Export a PDF of your map.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">QGIS Workshop</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+
+        </div>
+    </body>
+</html>
