@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>In-class Excercises | Methods 3</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="../css/inclass.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Methods 3</a>
+                <h1>In-class Excercises</h1>
+            </header>
+
+            <section>
+                <h2>Part 1: Attribute Joins</h2>
+                <ol>
+                    <li>Download <a href="data/week4data.zip">this class's data</a>.</li>
+                    <li>Open the file <strong>Public_School_locations</strong> in QGIS.</li>
+                    <li>Open the CSV <strong>SAT_Results.csv</strong> in QGIS using the <strong>Add Delimited Text Layer</strong> tool.</li>
+                    <li>Attribute join the SAT results to the public schools.</li>
+                    <li>Style the schools.</li>
+                    <li>Save the joined layer as a new shapefile.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 2: Spatial Joins</h2>
+                <ol>
+                    <li>Keep the joined layer from Part 1 open in QGIS.</li>
+                    <li>Open the shapefile in <strong>city_council_districts</strong>.</li>
+                    <li>Use <strong>Vector &gt; Data Management Tools &gt; Join attributes by location</strong> to find the average SAT math score by city council district.</li>
+                    <li>Style the city council districts by the average score.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Part 3: Geoprocessing</h2>
+                <ol>
+                    <li>Clip <strong>nys_census_tracts</strong> to the <strong>borough_boundaries</strong>. That is, remove the parts of the tracts that are outside of the borough boundaries.</li>
+                    <li>Select resulting census tracts in a selected borough.</li>
+                    <li>Buffer <strong>Graffiti_Locations</strong> by 500 feet.</li>
+                    <li>How many <strong>Public_School_locations</strong> are within 500 feet of a point in <strong>Graffiti_Locations</strong>? Use <strong>Vector &gt; Analysis Tools &gt; Select by location</strong>.</li>
+                </ol>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Methods 3</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>

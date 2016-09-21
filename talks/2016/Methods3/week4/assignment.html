@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Assignment 4 | Methods 3</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="../css/inclass.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Methods 3</a>
+                <h1>Assignment 4</h1>
+            </header>
+
+            <section>
+                <p>This week we covered two major features of any GIS that help you modify data: geoprocessing and joining. The purpose of this assignment is to give you some experience with both of these.</p>
+            </section>
+
+            <section>
+                <h2>Resources</h2>
+                <p>Consider perusing <a href="https://docs.google.com/document/d/1Vyz1hfKn4OWW8BJA9z_VNjnE9glziQ2I4CqwPIrwksk/edit#heading=h.7ixjrcyzxtbq">the class's data sources collaborative doc</a> and adding data sources that you find.</p>
+                <p>Videos below, best viewed in order but chopped up for your convenience. As always, change the video resolution to HD if you want to be able to see what's going on.</p>
+                <p>Getting and using data from the US census:</p>
+                <p><iframe src="https://www.youtube.com/embed/HtKMf3L-rR0?rel=0" width="640" height="360"></iframe></p>
+                <p><strong>Clipping in QGIS:</strong></p>
+                <p><iframe src="https://www.youtube.com/embed/U3pngCq3TFw?rel=0" width="640" height="360"></iframe></p>
+                <p><strong>Buffering in QGIS:</strong></p>
+                <p><iframe src="https://www.youtube.com/embed/eN6ZaO9hFRs?rel=0" width="640" height="360"></iframe></p>
+                <p><strong>Geoprocessing in QGIS:</strong></p>
+                <p><iframe src="https://www.youtube.com/embed/mGSNfohiSgU?rel=0" width="640" height="360"></iframe></p>
+                <p><strong>Spatial Joins in QGIS:</strong></p>
+                <p><iframe src="https://www.youtube.com/embed/WQ0dMdKbKtU?rel=0" width="640" height="360"></iframe></p>
+                <p><strong>Attribute Joins in QGIS:</strong></p>
+                <p><iframe src="https://www.youtube.com/embed/82aRDdJdhI0?rel=0" width="640" height="360"></iframe></p>
+            </section>
+
+            <section>
+                <h2>Part 1: Project Brainstorm</h2>
+                <p>Your final project for this course will include an offline GIS portion and an online portion. It can be related to your thesis. As stated in the <a id="" class=" instructure_scribd_file instructure_file_link" title="syllabus.pdf" href="/courses/1324634/files/60045842/download?wrap=1" target="">syllabus for this course</a>, the final project will be 50% of your grade.</p>
+                <p>Use this part of the assignment to start thinking about what your final project will be. Come up with one or two ideas and answer the following questions in your response:</p>
+                <ul>
+                    <li>What is the topic for the project?</li>
+                    <li>What kind of analysis would be useful?</li>
+                    <li>How you share it online?</li>
+                    <li>Where would you start looking for data on this topic?</li>
+                    <li>Are there community groups working on this topic that might find this project useful?</li>
+                </ul>
+                <p>You don't have to write more than a paragraph per idea for this part. Show that you have started thinking about a project, and we can discuss the ideas next week. You're encouraged, but not required, to use these project ideas in the rest of this assignment (and in your assignments generally).</p>
+            </section>
+
+            <section>
+                <h2>Part 2: Geoprocessing</h2>
+                <p>Geoprocessing tools give you the means to overlay multiple vector layers in order to modify the layers and potentially combine them. You are most likely going to find the following geoprocessing functions to be the most useful:</p>
+                <ul>
+                    <li>clipping</li>
+                    <li>buffers</li>
+                    <li>difference</li>
+                </ul>
+                <p>You may find a use for the other items under <strong>Vector &gt; Geoprocessing Tools</strong> in QGIS. <strong>Experiment with a few datasets</strong> and at least two geoprocessing functions. Take screenshots of the results that you get and briefly write about them in your response. What are they doing? How might they be useful? Note that you do not have to make a print composer for this part of the assignment.</p>
+            </section>
+
+            <section>
+                <h2>Part 3: Joins</h2>
+                <p>When you <em>join</em> two or more datasets, you combine them feature-by-feature, and this often gives attributes to a feature that it would not have otherwise had. There are two types of joins: <strong>spatial</strong> and <strong>attribute</strong>.</p>
+                <p><strong>Spatial joins</strong> add attributes to features based on where they are spatially. For example, if you have parks and city council districts and want the parks to have some of the attributes from their corresponding council districts, you would use a spatial join to do this. In QGIS, you do this by going to <strong>Vector &gt; Data Management Tools &gt; Join Attributes by Location</strong>. Use a spatial join to add data to features and submit two screenshots: (1) the attribute table of the features before the join and (2) the attribute table of the features after the join.</p>
+                <p><strong>Attribute joins</strong> add attributes to features based on a <strong>unique identifier</strong>. Often you will have a spatial dataset (such as a shapefile) and a CSV file with extra data that you would like to map. As long as both the spatial data and the CSV have a common unique identifier (sometimes this is a name, but it could be a unique number or an address) you can join them in QGIS and add the data from the CSV to the spatial data. Combine two datasets using an <strong>attribute join</strong> and submit two screenshots: (1) the attribute table of the features before the join, and (2) the attribute table of the features after the join. If you're having trouble finding suitable datasets, consider joining the BBLs (aka "borough, block, and lot numbers") in this <a href="https://data.cityofnewyork.us/Housing-Development/Oil-Boilers-Detailed-Fuel-Consumption-and-Building/jfzu-yy6n">oil boilers</a> set with those in <a href="http://www1.nyc.gov/site/planning/data-maps/open-data.page">MapPLUTO</a> for one borough (or more if you like), or getting data through the Census Bureau's <a href="http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">American FactFinder</a>. If you'd like more of a challenge, create BBLs for the rows in the <a href="https://data.cityofnewyork.us/City-Government/ECB-Notice-of-Violations/y6h5-jvss">ECB's notice of violations</a> and join those with a borough in MapPLUTO. There is no penalty for using these datasets, this is purely an opportunity to work with this operation on your own.</p>
+            </section>
+
+            <section>
+                <h2>Submitting Your Work</h2>
+                <p>Include your <strong>written response</strong> to Part 1.</p>
+                <p>Include <strong>screenshots</strong> of your geoprocessing experiment from Part 2.</p>
+                <p>Include <strong>two </strong><strong>screenshots</strong> of your spatial join from Part 3.</p>
+                <p>Finally, include a <strong>short summary</strong> (1/2 page) of what you did for this assignment. Explain what you created and how you did so. What did you have problems with? What did you enjoy? What would you like to know how to do next?</p>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Methods 3</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
