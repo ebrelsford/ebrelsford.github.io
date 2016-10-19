@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Assignment 8 | Methods 3</title>
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya Sans' rel='stylesheet' type='text/css'>
+        <link href="../css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="../css/inclass.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <a href="..">&larr; Methods 3</a>
+                <h1>Assignment 8</h1>
+            </header>
+
+            <section>
+                <h2>Resources</h2>
+                <ul>
+                    <li>The <a id="" class="" title="" href="http://ebrelsford.github.io/talks/2015/Methods3/week7/materials/cartocss-reference.pdf" target="">CartoCSS reference sheet</a></li>
+                    <li>The <a id="" class="" title="" href="http://ebrelsford.github.io/talks/2015/Methods3/week7/materials/advanced-cartocss-reference.pdf" target="">advanced CartoCSS reference sheet</a></li>
+                    <li>The <a href="https://carto.com/docs/carto-engine/cartocss/">CARTO documentation on CartoCSS</a>, even though they use the old editor in screenshots</li>
+                    <li><a href="https://www.mapbox.com/tilemill/docs/manual/carto/">Mapbox's documentation</a> can also be useful</li>
+                    <li>Not CartoCSS specific, but <a href="http://www.personal.psu.edu/mzs114/ScaleMaster/ScaleMasterv0.html">ScaleMaster</a> might give you some ideas for how to change your map styling at various zoom levels.</li>
+                    <li>Finally, here's a video, <strong>CartoCSS &amp; CartoDB</strong>. It uses the old editor interface, but it still covers the CartoCSS code well:
+                        <iframe src="https://www.youtube.com/embed/7_opI97diZQ?list=UUsmBq4ziqRgBZSJK8sGF0Fg" width="640" height="360"></iframe>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Part 1: CARTO &amp; CartoCSS</h2>
+                <p>Create a map in CARTO. Then do the following:</p>
+                <ol>
+                    <li>Add at least one <strong>zoom-specific</strong> styling rule. That is, your features' styles should change somehow according to the map's zoom level.</li>
+                    <li>Add at least one <strong>attribute-specific</strong> styling rule. That is, some features should be styled differently according to the value of one or more of their attributes.</li>
+                    <li>Add a <strong>property</strong> that your styles are not currently using. You can find all of the properties in the <a href="https://github.com/mapbox/carto/blob/master/docs/latest.md">CartoCSS documentation</a>. Mostly points will use properties that start with <em>marker-</em>, polygons will use properties that start with <em>polygon-</em>.</li>
+                    <li>Consider how the map will look when shared online. Give thought to the <strong>title</strong>, <strong>description</strong>, and <strong>pop-ups</strong> you use. Add text boxes as it makes sense to, including context to aid the reader. Modify your pop-up's labels to make them more readable.</li>
+                </ol>
+                <p>Submit a <strong>link</strong> to the map (please leave it online at least until I give you a grade for the assignment), and the final <strong>CartoCSS</strong> (copy and paste into a document and create a PDF).</p>
+            </section>
+
+            <section>
+                <h2>Part 2: CartoCSS</h2>
+                <p>Here's a little bit of <a href="https://github.com/hotosm/hdm-cartocss">CartoCSS</a> from OpenStreetMap's <a href="http://www.openstreetmap.org/#map=15/40.7119/-73.9922&amp;layers=H">Humanitarian layer</a>:</p>
+                <pre style="padding-left: 30px;">@power_line: #7a5960;
+
+#power-line[zoom&gt;=16] {
+    line-color: @power_line;
+    line-width: 1;
+}
+#power-point[type='pole'][zoom&gt;=18] {
+    marker-fill: @land;
+    marker-width: 4;
+    marker-height: 4;
+    marker-line-color: @power_line;
+    marker-line-width: 2;
+}
+</pre>
+                <p>Answer the following:</p>
+                <ol>
+                    <li><span style="color: #000000;">When will the second statement (the one starting with <strong>#power-point</strong>) apply? That is, does it work at all zoom levels? Which features will be styled this way?<br /></span></li>
+                    <li><span style="color: #000000;">What color(s) will the <strong>power-line</strong> and <strong>power-point</strong> layers be styled with? You don't have to describe the color itself (eg "red" or "blueish"), but you should write the color the way you would in CartoCSS.</span></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2><span style="color: #000000;">Submitting your work</span></h2>
+                <p><span style="color: #000000;">Please submit the <strong>link</strong>, and <strong>code</strong> from Part 1 as well as your <strong>answers</strong> to Part 2.</span></p>
+            </section>
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Methods 3</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ebrelsford.github.io/" property="cc:attributionName" rel="cc:attributionURL">Eric Brelsford</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </footer>
+        </main>
+    </body>
+</html>
