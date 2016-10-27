@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 9 | Methods 3</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link href='http://fonts.googleapis.com/css?family=Arvo|Alegreya+Sans' rel='stylesheet' type='text/css'>
+
+        <link href="../css/pig.css" rel="stylesheet" type="text/css" />
+        <link href="../css/base.css" rel="stylesheet" />
+
+        <script src="../js/pig.js"></script>
+    </head>
+    <body>
+
+        <div class="slide">
+            <p>Welcome to Methods 3, Lecture 9</p>
+            <p>This is a web page that can be viewed as slides.</p>
+            <p>→ to move forward</p>
+            <p>← to go back</p>
+        </div>
+
+        <div class="slide">
+            <h1>Methods 3</h1>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-fill: #ff307a;
+    marker-line-color: #FFF;
+    marker-line-width: 0.25;
+    marker-line-opacity: 0.4;
+    marker-width: 2;
+    marker-allow-overlap: true;
+}</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>#earthquakes {
+    marker-width: 3;
+    ...
+    [zoom &gt;= 10][zoom &lt; 16] {
+        marker-width: 8;
+    }
+}</code></pre>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/sruti.png);">
+            <span style="background: white; float: right;">Sruti</span>
+            <a href="https://thenewschool.carto.com/u/sruti/builder/d010a744-9bfa-11e6-a674-0e3ebc282e83/embed?state=%7B%22map%22%3A%7B%22ne%22%3A%5B13.175771224423402%2C60.64453125000001%5D%2C%22sw%22%3A%5B31.80289258670676%2C92.98828125%5D%7D%2C%22widgets%22%3A%7B%22d1ef6c15-7130-4ebb-9aec-8fbbf6cb2d70%22%3A%7B%22acceptedCategories%22%3A%5B%22city%22%2C%22town%22%5D%2C%22locked%22%3Atrue%7D%2C%2227bd90a0-61be-4cea-a98b-37151063b586%22%3A%7B%22normalized%22%3Atrue%7D%7D%7D" class="source">CARTO map</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/sruti-code.png);">
+            <span style="background: white; float: right;">Sruti</span>
+            <a href="https://thenewschool.carto.com/u/sruti/builder/d010a744-9bfa-11e6-a674-0e3ebc282e83/embed?state=%7B%22map%22%3A%7B%22ne%22%3A%5B13.175771224423402%2C60.64453125000001%5D%2C%22sw%22%3A%5B31.80289258670676%2C92.98828125%5D%7D%2C%22widgets%22%3A%7B%22d1ef6c15-7130-4ebb-9aec-8fbbf6cb2d70%22%3A%7B%22acceptedCategories%22%3A%5B%22city%22%2C%22town%22%5D%2C%22locked%22%3Atrue%7D%2C%2227bd90a0-61be-4cea-a98b-37151063b586%22%3A%7B%22normalized%22%3Atrue%7D%7D%7D" class="source">CARTO map</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/isabel.png);">
+            <span style="background: white; float: right;">Isabel</span>
+            <a href="https://thenewschool.carto.com/u/isaffon/builder/c7b50b58-9c3b-11e6-8e54-0e98b61680bf/embed?state=%7B%22map%22%3A%7B%22ne%22%3A%5B40.66605624777337%2C-74.11548614501952%5D%2C%22sw%22%3A%5B40.786130547387124%2C-73.86280059814453%5D%7D%7D" class="source">CARTO map</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/isabel-code.png);">
+            <span style="background: white; float: right;">Isabel</span>
+            <a href="https://thenewschool.carto.com/u/isaffon/builder/c7b50b58-9c3b-11e6-8e54-0e98b61680bf/embed?state=%7B%22map%22%3A%7B%22ne%22%3A%5B40.66605624777337%2C-74.11548614501952%5D%2C%22sw%22%3A%5B40.786130547387124%2C-73.86280059814453%5D%7D%7D" class="source">CARTO map</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/nypd-map.png);">
+            <a class="source" href="http://www.villagevoice.com/news/interactive-map-shows-where-nypd-officers-live-9249670">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nypd-map-blog-post.png);">
+            <a class="source" href="http://blog.labsbell.com/blog/NYPDHomeZip">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nypd-map-tweet.png);">
+            <a class="source" href="https://twitter.com/fitnr/status/789834308454346752">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nypd-map-data.png);">
+            <a class="source" href="https://github.com/Bellspringsteen/other.nyc/tree/master/NYCGOV/NYPD/NypdOfficersHomeZip/resources">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nypd-map-normalized.png);">
+            <a class="source" href="https://fitnr.carto.com/viz/91587a4c-9865-11e6-a662-0e3ff518bd15/public_map">source</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/nypd-map-dots.png);">
+            <a class="source" href="https://fitnr.carto.com/viz/aa7e76e0-9863-11e6-914d-0ecd1babdde5/public_map">source</a>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/carto-analyses.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-analyses.png);">
+            <h2>analysis</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-analyses.png);">
+            <h2>in many cases, these are shortcuts for things you'll do in QGIS</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/analysis.gif);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/analysis.gif);">
+            <h2>some take a long time or won't work at all</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/analysis.gif);">
+            <h2>some are only available if you pay for credits</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-analysis-chain.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-analysis-chain.png);">
+            <h2>you can chain analyses</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-analysis-chain.png);">
+            <h2>for example, to combine filters</h2>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class exercise, part 1</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>HTML</h2>
+        </div>
+
+        <div class="slide">
+            <h2>HTML gives <strong>content</strong> and <strong>structure</strong> to web pages</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;Hi, I'm a paragraph&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;</code></pre>
+            <p>
+                the paragraph <strong>opening tag</strong>
+            </p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;</code></pre>
+            <p>
+                the paragraph <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with
+            </p>
+            <pre><code>&lt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;</code></pre>
+            <p>
+                the paragraph <strong>opening tag</strong>
+            </p>
+            <p>
+                opening tags always start with
+            </p>
+            <pre><code>&lt;</code></pre>
+            <p>and end with</p>
+            <pre><code>&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;/p&gt;</code></pre>
+            <p>the paragraph <strong>closing tag</strong></p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;/p&gt;</code></pre>
+            <p>the paragraph <strong>closing tag</strong></p>
+            <p>closing tags always start with</p>
+            <pre><code>&lt;/</code></pre>
+            <p>and end with</p>
+            <pre><code>&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <span class="code">&lt;p&gt;Hi, I'm a paragraph&lt;/p&gt;</span>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;Hi, I'm a paragraph&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2>HTML in CARTO</h2>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-popup-html.png);">
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-legend-html.png);">
+        </div>
+
+        <div class="slide">
+            <h2>you can use this to add links within CARTO maps</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;a href="http://data.cityofnewyork.us"&gt;source&lt;/a&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class exercise, part 2</a></h2>
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+        </div>
+
+        <div class="slide">
+            <h2>CSS</h2>
+            <p>makes things look nice</p>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p&gt;Hi, I'm a paragraph&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;p style="font-size: 20px;"&gt;Hi, I'm a paragraph&lt;/p&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;div class="CDB-infowindow"&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;div class="CDB-infowindow" style="color: green;"&gt;</code></pre>
+        </div>
+
+        <div class="slide">
+            <h2><a href="inclass.html" target="_blank">in-class exercise, part 3</a></h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can do this with any part of the CARTO pop-ups</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can add HTML and style it with CSS before and after CARTO legends</h2>
+        </div>
+
+        <div class="slide">
+            <h2>you can add images with HTML</h2>
+        </div>
+
+        <div class="slide">
+            <pre><code>&lt;img src="http://i.ytimg.com/cat.jpg" /&gt;</code></pre>
+        </div>
+
+        <div class="slide" style="background-image: url(img/carto-popup-image.png);">
+        </div>
+
+        <div class="slide intermission"></div>
+
+        <div class="slide" style="background-image: url(img/codecademy-html.png);">
+            <a class="source" href="http://www.codecademy.com/tracks/web">codecademy.com/tracks/web</a>
+        </div>
+
+        <div class="slide" style="background-image: url(img/shayhowe.png);">
+            <a class="source" href="http://learn.shayhowe.com/html-css">learn.shayhowe.com/html-css</a>
+        </div>
+
+    </body>
+</html>
